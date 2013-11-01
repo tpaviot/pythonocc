@@ -491,7 +491,7 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInte
 };
 %extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
@@ -541,6 +541,8 @@ class NMTDS_CArray1OfIndexRange {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") NMTDS_CArray1OfIndexRange::~NMTDS_CArray1OfIndexRange %{
@@ -721,6 +723,10 @@ class NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger : public TCollec
 		const BooleanOperations_IndexedDataMapOfShapeInteger & FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		BooleanOperations_IndexedDataMapOfShapeInteger & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K1);
 
 };
 %feature("shadow") NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
@@ -786,7 +792,7 @@ class NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : public TC
 };
 %extend NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
@@ -823,7 +829,7 @@ class NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public TCollection_MapNode {
 };
 %extend NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_StdMapNodeOfMapOfPassKeyBoolean::~NMTDS_StdMapNodeOfMapOfPassKeyBoolean %{
@@ -998,6 +1004,10 @@ class NMTDS_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		const Bnd_Box & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		Bnd_Box & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K1);
 
 };
 %feature("shadow") NMTDS_IndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapOfShapeBox %{
@@ -1050,7 +1060,7 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_Ma
 };
 %extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
@@ -1167,6 +1177,10 @@ class NMTDS_IndexedDataMapOfShapeBndSphere : public TCollection_BasicMap {
 		const NMTDS_BndSphere & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		NMTDS_BndSphere & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K1);
 
 };
 %feature("shadow") NMTDS_IndexedDataMapOfShapeBndSphere::~NMTDS_IndexedDataMapOfShapeBndSphere %{
@@ -1337,7 +1351,7 @@ class NMTDS_ListNodeOfListOfPassKeyBoolean : public TCollection_MapNode {
 };
 %extend NMTDS_ListNodeOfListOfPassKeyBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_ListNodeOfListOfPassKeyBoolean::~NMTDS_ListNodeOfListOfPassKeyBoolean %{
@@ -1393,6 +1407,10 @@ class NMTDS_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 		const TopoDS_Shape  FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape  ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K1);
 
 };
 %feature("shadow") NMTDS_IndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapOfIntegerShape %{
@@ -1475,7 +1493,7 @@ class NMTDS_StdMapNodeOfMapOfPassKey : public TCollection_MapNode {
 };
 %extend NMTDS_StdMapNodeOfMapOfPassKey {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_StdMapNodeOfMapOfPassKey::~NMTDS_StdMapNodeOfMapOfPassKey %{
@@ -1528,7 +1546,7 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere : public TCollect
 };
 %extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere %{
@@ -1799,7 +1817,7 @@ class NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapNo
 };
 %extend NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
@@ -1937,7 +1955,7 @@ class NMTDS_ListNodeOfListOfPassKey : public TCollection_MapNode {
 };
 %extend NMTDS_ListNodeOfListOfPassKey {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_ListNodeOfListOfPassKey::~NMTDS_ListNodeOfListOfPassKey %{
@@ -1983,6 +2001,10 @@ class NMTDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		TColStd_MapOfInteger & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		TColStd_MapOfInteger & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") NMTDS_DataMapOfIntegerMapOfInteger::~NMTDS_DataMapOfIntegerMapOfInteger %{
@@ -2179,7 +2201,7 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollectio
 };
 %extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{

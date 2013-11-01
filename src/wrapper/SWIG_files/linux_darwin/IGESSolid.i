@@ -1302,7 +1302,7 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SolidOfRevolution::~IGESSolid_SolidOfRevolution %{
@@ -1357,7 +1357,7 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_HArray1OfShell::~IGESSolid_HArray1OfShell %{
@@ -1455,7 +1455,7 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Ellipsoid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Ellipsoid::~IGESSolid_Ellipsoid %{
@@ -1543,7 +1543,7 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConeFrustum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ConeFrustum::~IGESSolid_ConeFrustum %{
@@ -1588,7 +1588,7 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SolidOfLinearExtrusion::~IGESSolid_SolidOfLinearExtrusion %{
@@ -1686,7 +1686,7 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidAssembly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SolidAssembly::~IGESSolid_SolidAssembly %{
@@ -1821,7 +1821,7 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_CylindricalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_CylindricalSurface::~IGESSolid_CylindricalSurface %{
@@ -1864,7 +1864,7 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SelectedComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SelectedComponent::~IGESSolid_SelectedComponent %{
@@ -1909,7 +1909,7 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 };
 %extend IGESSolid_BooleanTree {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_BooleanTree::~IGESSolid_BooleanTree %{
@@ -2001,7 +2001,7 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_HArray1OfLoop::~IGESSolid_HArray1OfLoop %{
@@ -2122,7 +2122,7 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Shell::~IGESSolid_Shell %{
@@ -2210,7 +2210,7 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ToroidalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ToroidalSurface::~IGESSolid_ToroidalSurface %{
@@ -2253,7 +2253,7 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SolidInstance::~IGESSolid_SolidInstance %{
@@ -2339,7 +2339,7 @@ class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SphericalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SphericalSurface::~IGESSolid_SphericalSurface %{
@@ -2376,7 +2376,7 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESSolid_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SpecificModule::~IGESSolid_SpecificModule %{
@@ -2544,7 +2544,7 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Sphere {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Sphere::~IGESSolid_Sphere %{
@@ -2630,7 +2630,7 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Cylinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Cylinder::~IGESSolid_Cylinder %{
@@ -2767,7 +2767,7 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 };
 %extend IGESSolid_RightAngularWedge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_RightAngularWedge::~IGESSolid_RightAngularWedge %{
@@ -2808,7 +2808,7 @@ class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESSolid_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ReadWriteModule::~IGESSolid_ReadWriteModule %{
@@ -2849,7 +2849,7 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 };
 %extend IGESSolid_VertexList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_VertexList::~IGESSolid_VertexList %{
@@ -2978,7 +2978,7 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_HArray1OfFace::~IGESSolid_HArray1OfFace %{
@@ -3087,7 +3087,7 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_PlaneSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_PlaneSurface::~IGESSolid_PlaneSurface %{
@@ -3187,7 +3187,7 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Torus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Torus::~IGESSolid_Torus %{
@@ -3232,7 +3232,7 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Face::~IGESSolid_Face %{
@@ -3324,7 +3324,7 @@ class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfVertexList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_HArray1OfVertexList::~IGESSolid_HArray1OfVertexList %{
@@ -3381,7 +3381,7 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Loop::~IGESSolid_Loop %{
@@ -3467,7 +3467,7 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConicalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ConicalSurface::~IGESSolid_ConicalSurface %{
@@ -3551,7 +3551,7 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ManifoldSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ManifoldSolid::~IGESSolid_ManifoldSolid %{
@@ -3711,7 +3711,7 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 };
 %extend IGESSolid_EdgeList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_EdgeList::~IGESSolid_EdgeList %{
@@ -3832,7 +3832,7 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESSolid_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_GeneralModule::~IGESSolid_GeneralModule %{
@@ -3893,7 +3893,7 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Block {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Block::~IGESSolid_Block %{

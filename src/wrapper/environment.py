@@ -31,8 +31,8 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = '0.6dev'         # Define pythonOCC version
-GEOM_RELEASE = 'geom-5.1.5.9' # located in /src/contrib/
+VERSION = '0.6-rc1'         # Define pythonOCC version
+GEOM_RELEASE = 'geom-6.3.1.8' # located in /src/contrib/
 SMESH_RELEASE = 'smesh-5.1.2.2' # located in /src/contrib
 #===============================================================================
 # UTILITIES
@@ -116,8 +116,8 @@ except:
 SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s_py%s%s'%(sys.platform,sys.version_info[0],sys.version_info[1]))
         
 if sys.platform=='win32':
-    OCC_INC = 'Z:\\oce-0.8.0-win\\include\\oce'
-    OCC_LIB = 'Z:\\oce-0.8.0-win\\Win32\\lib'
+    OCC_INC = 'Z:\\oce-0.11-win-msvc2008\\include'
+    OCC_LIB = 'Z:\\oce-0.11-win-msvc2008\\Win32\\lib'
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','win32')
     # Try to find OCC paths from environment analysis
 
@@ -150,21 +150,16 @@ elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    if OCC_ROOT!=None:
-        OCC_INC = os.path.join(OCC_ROOT,'inc')
-        OCC_LIB = os.path.join(OCC_ROOT,'lib')
-    else:
-        OCC_INC = '/usr/include/opencascade'
-        OCC_LIB = '/usr/lib'
+    OCC_INC = '/usr/local/include/oce'
+    OCC_LIB = '/usr/local/lib'
     SALOME_GEOM_LIB = '/usr/local/lib'
     SALOME_SMESH_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
-    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
+    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
-                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
-                     ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1')]      
+                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]      
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
+                 '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%SWIG_OUT_DIR]
     ECA = []
     if bits==64:
@@ -189,7 +184,6 @@ elif sys.platform=='darwin':
     os.environ['CPP'] = 'g++'
     OCC_INC = '/usr/local/include/oce'
     OCC_LIB = '/usr/local/lib'
-      
     SALOME_GEOM_LIB = '/usr/local/lib/'
     SALOME_SMESH_LIB = '/usr/local/lib/'        
     GCC_XML_PATH = which('gccxml')
@@ -216,7 +210,7 @@ PYTHON_LIB = sysconfig.get_python_lib()
 VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
-BOOST_INC = os.path.join(os.getcwd(),'contrib')
-SALOME_GEOM_INC = os.path.join(os.getcwd(),'wrapper','geom','inc_pythonocc')
+BOOST_INC = os.path.join(os.getcwd(),'contrib','boost-1.52.0')
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','geom-6.3.1.8','inc_pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'inc')
 

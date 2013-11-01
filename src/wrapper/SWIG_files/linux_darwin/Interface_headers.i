@@ -135,11 +135,11 @@ $HeaderURL$
 #include<InterfaceGraphic.hxx>
 #include<InterfaceGraphic_Aspect.hxx>
 #include<InterfaceGraphic_Cextern.hxx>
+#include<InterfaceGraphic_Cocoa.hxx>
 #include<InterfaceGraphic_Graphic3d.hxx>
 #include<InterfaceGraphic_Labels.hxx>
 #include<InterfaceGraphic_Portability.hxx>
 #include<InterfaceGraphic_PrimitiveArray.hxx>
-#include<InterfaceGraphic_RawBufferData.hxx>
 #include<InterfaceGraphic_X11.hxx>
 #include<InterfaceGraphic_XWD.hxx>
 #include<InterfaceGraphic_degeneration.hxx>
@@ -156,6 +156,6 @@ $HeaderURL$
 #include<Handle_Standard_Type.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
-#include<Message_Msg.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
+#include<Message_Msg.hxx>
 %}

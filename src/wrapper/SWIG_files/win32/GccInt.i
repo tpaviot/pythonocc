@@ -355,7 +355,7 @@ class GccInt_Bisec : public MMgt_TShared {
 };
 %extend GccInt_Bisec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_Bisec::~GccInt_Bisec %{
@@ -388,7 +388,7 @@ class GccInt_BParab : public GccInt_Bisec {
 };
 %extend GccInt_BParab {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BParab::~GccInt_BParab %{
@@ -427,7 +427,7 @@ class GccInt_BElips : public GccInt_Bisec {
 };
 %extend GccInt_BElips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BElips::~GccInt_BElips %{
@@ -466,7 +466,7 @@ class GccInt_BCirc : public GccInt_Bisec {
 };
 %extend GccInt_BCirc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BCirc::~GccInt_BCirc %{
@@ -505,7 +505,7 @@ class GccInt_BPoint : public GccInt_Bisec {
 };
 %extend GccInt_BPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BPoint::~GccInt_BPoint %{
@@ -544,7 +544,7 @@ class GccInt_BLine : public GccInt_Bisec {
 };
 %extend GccInt_BLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BLine::~GccInt_BLine %{
@@ -583,7 +583,7 @@ class GccInt_BHyper : public GccInt_Bisec {
 };
 %extend GccInt_BHyper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BHyper::~GccInt_BHyper %{

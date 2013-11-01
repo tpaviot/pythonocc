@@ -421,7 +421,7 @@ class ShHealOper_SplitCurve3d : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShHealOper_SplitCurve3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShHealOper_SplitCurve3d::~ShHealOper_SplitCurve3d %{
@@ -522,7 +522,7 @@ class ShHealOper_SplitCurve2d : public ShapeUpgrade_SplitCurve2d {
 };
 %extend ShHealOper_SplitCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShHealOper_SplitCurve2d::~ShHealOper_SplitCurve2d %{

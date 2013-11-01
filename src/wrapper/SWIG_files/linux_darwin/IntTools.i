@@ -49,7 +49,6 @@ $HeaderURL$
 
 %include IntTools_headers.i
 
-typedef IntTools_Context * IntTools_PContext;
 
 
 
@@ -547,6 +546,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IntTools_Context;
+class Handle_IntTools_Context : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntTools_Context();
+		%feature("autodoc", "1");
+		Handle_IntTools_Context(const Handle_IntTools_Context &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntTools_Context(const IntTools_Context *anItem);
+		%feature("autodoc", "1");
+		Handle_IntTools_Context & operator=(const Handle_IntTools_Context &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntTools_Context & operator=(const IntTools_Context *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IntTools_Context DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntTools_Context {
+	IntTools_Context* GetObject() {
+	return (IntTools_Context*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IntTools_Context::~Handle_IntTools_Context %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IntTools_Context {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
 class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TCollection_SeqNode {
 	public:
@@ -630,7 +667,7 @@ class IntTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_SequenceNodeOfSequenceOfCurves::~IntTools_SequenceNodeOfSequenceOfCurves %{
@@ -667,7 +704,7 @@ class IntTools_SequenceNodeOfSequenceOfRoots : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfRoots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_SequenceNodeOfSequenceOfRoots::~IntTools_SequenceNodeOfSequenceOfRoots %{
@@ -907,7 +944,7 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_ListNodeOfListOfBox::~IntTools_ListNodeOfListOfBox %{
@@ -990,6 +1027,10 @@ class IntTools_IndexedDataMapOfTransientAddress : public TCollection_BasicMap {
 		const Standard_Address & FindFromKey(const Handle_Standard_Transient &K) const;
 		%feature("autodoc", "1");
 		Standard_Address & ChangeFromKey(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") IntTools_IndexedDataMapOfTransientAddress::~IntTools_IndexedDataMapOfTransientAddress %{
@@ -1042,7 +1083,7 @@ class IntTools_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend IntTools_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_TopolTool::~IntTools_TopolTool %{
@@ -1758,7 +1799,7 @@ class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfRanges {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_SequenceNodeOfSequenceOfRanges::~IntTools_SequenceNodeOfSequenceOfRanges %{
@@ -1922,7 +1963,7 @@ class IntTools_StdMapNodeOfMapOfCurveSample : public TCollection_MapNode {
 };
 %extend IntTools_StdMapNodeOfMapOfCurveSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_StdMapNodeOfMapOfCurveSample::~IntTools_StdMapNodeOfMapOfCurveSample %{
@@ -2071,6 +2112,10 @@ class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 		Bnd_Box & ChangeFind(const IntTools_SurfaceRangeSample &K);
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const IntTools_SurfaceRangeSample &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const IntTools_SurfaceRangeSample &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const IntTools_SurfaceRangeSample &K);
 
 };
 %feature("shadow") IntTools_DataMapOfSurfaceSampleBox::~IntTools_DataMapOfSurfaceSampleBox %{
@@ -2107,7 +2152,7 @@ class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfSurfaceRangeSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_ListNodeOfListOfSurfaceRangeSample::~IntTools_ListNodeOfListOfSurfaceRangeSample %{
@@ -2181,7 +2226,7 @@ class IntTools_StdMapNodeOfMapOfSurfaceSample : public TCollection_MapNode {
 };
 %extend IntTools_StdMapNodeOfMapOfSurfaceSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_StdMapNodeOfMapOfSurfaceSample::~IntTools_StdMapNodeOfMapOfSurfaceSample %{
@@ -2226,7 +2271,9 @@ class IntTools_EdgeFace {
 		%feature("autodoc", "1");
 		void SetRange(const Standard_Real aFirst, const Standard_Real aLast);
 		%feature("autodoc", "1");
-		void SetContext(const IntTools_PContext &theContext);
+		void SetContext(const Handle_IntTools_Context &theContext);
+		%feature("autodoc", "1");
+		const Handle_IntTools_Context & Context() const;
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -2276,7 +2323,7 @@ class IntTools_SequenceNodeOfSequenceOfCommonPrts : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfCommonPrts {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_SequenceNodeOfSequenceOfCommonPrts::~IntTools_SequenceNodeOfSequenceOfCommonPrts %{
@@ -2392,7 +2439,7 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 };
 %extend IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_SequenceNodeOfSequenceOfPntOn2Faces::~IntTools_SequenceNodeOfSequenceOfPntOn2Faces %{
@@ -2496,7 +2543,7 @@ class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNo
 };
 %extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox::~IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox %{
@@ -2659,7 +2706,9 @@ class IntTools_BeanFaceIntersector {
 		%feature("autodoc", "1");
 		void Init(const BRepAdaptor_Curve &theCurve, const BRepAdaptor_Surface &theSurface, const Standard_Real theFirstParOnCurve, const Standard_Real theLastParOnCurve, const Standard_Real theUMinParameter, const Standard_Real theUMaxParameter, const Standard_Real theVMinParameter, const Standard_Real theVMaxParameter, const Standard_Real theBeanTolerance, const Standard_Real theFaceTolerance);
 		%feature("autodoc", "1");
-		void SetContext(const IntTools_PContext &theContext);
+		void SetContext(const Handle_IntTools_Context &theContext);
+		%feature("autodoc", "1");
+		const Handle_IntTools_Context & Context() const;
 		%feature("autodoc", "1");
 		void SetBeanParameters(const Standard_Real theFirstParOnCurve, const Standard_Real theLastParOnCurve);
 		%feature("autodoc", "1");
@@ -2708,7 +2757,7 @@ class IntTools_ListNodeOfListOfCurveRangeSample : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfCurveRangeSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_ListNodeOfListOfCurveRangeSample::~IntTools_ListNodeOfListOfCurveRangeSample %{
@@ -2946,7 +2995,11 @@ class IntTools_ShrunkRange {
 		%feature("autodoc", "1");
 		IntTools_ShrunkRange();
 		%feature("autodoc", "1");
-		IntTools_ShrunkRange(const TopoDS_Edge aE, const TopoDS_Vertex aV1, const TopoDS_Vertex aV2, const IntTools_Range &aR, const IntTools_Context &ICtx);
+		IntTools_ShrunkRange(const TopoDS_Edge aE, const TopoDS_Vertex aV1, const TopoDS_Vertex aV2, const IntTools_Range &aR, const Handle_IntTools_Context &ICtx);
+		%feature("autodoc", "1");
+		void SetContext(const Handle_IntTools_Context &aContext);
+		%feature("autodoc", "1");
+		const Handle_IntTools_Context & Context() const;
 		%feature("autodoc", "1");
 		void SetShrunkRange(const IntTools_Range &aR);
 		%feature("autodoc", "1");
@@ -3194,6 +3247,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntTools_Curve;
+class IntTools_Curve {
+	public:
+		%feature("autodoc", "1");
+		IntTools_Curve();
+		%feature("autodoc", "1");
+		IntTools_Curve(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
+		%feature("autodoc", "1");
+		void SetCurves(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
+		%feature("autodoc", "1");
+		void SetCurve(const Handle_Geom_Curve &Curve3d);
+		%feature("autodoc", "1");
+		void SetFirstCurve2d(const Handle_Geom2d_Curve &FirstCurve2d);
+		%feature("autodoc", "1");
+		void SetSecondCurve2d(const Handle_Geom2d_Curve &SecondCurve2d);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Curve() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & FirstCurve2d() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & SecondCurve2d() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasBounds() const;
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
+		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
+		%feature("autodoc","D0() -> Standard_Real");
+
+		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
+		%feature("autodoc", "1");
+		GeomAbs_CurveType Type() const;
+
+};
+%feature("shadow") IntTools_Curve::~IntTools_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntTools_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntTools_DataMapOfCurveSampleBox;
 class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 	public:
@@ -3221,6 +3323,10 @@ class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 		Bnd_Box & ChangeFind(const IntTools_CurveRangeSample &K);
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const IntTools_CurveRangeSample &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const IntTools_CurveRangeSample &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const IntTools_CurveRangeSample &K);
 
 };
 %feature("shadow") IntTools_DataMapOfCurveSampleBox::~IntTools_DataMapOfCurveSampleBox %{
@@ -3240,7 +3346,7 @@ def __del__(self):
 
 
 %nodefaultctor IntTools_Context;
-class IntTools_Context {
+class IntTools_Context : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		IntTools_Context();
@@ -3256,6 +3362,8 @@ class IntTools_Context {
 		IntTools_SurfaceRangeLocalizeData & SurfaceData(const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		BRepClass3d_SolidClassifier & SolidClassifier(const TopoDS_Solid aSolid);
+		%feature("autodoc", "1");
+		Geom2dHatch_Hatcher & Hatcher(const TopoDS_Face aF);
 		%feature("autodoc","ComputeVE(const aV, const aE) -> Standard_Real");
 
 		Standard_Integer ComputeVE(const TopoDS_Vertex aV, const TopoDS_Edge aE, Standard_Real &OutValue);
@@ -3288,7 +3396,19 @@ class IntTools_Context {
 		%feature("autodoc","ProjectPointOnEdge(const aP, const aE) -> Standard_Real");
 
 		Standard_Boolean ProjectPointOnEdge(const gp_Pnt aP, const TopoDS_Edge aE, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
+};
+%extend IntTools_Context {
+	Handle_IntTools_Context GetHandle() {
+	return *(Handle_IntTools_Context*) &$self;
+	}
+};
+%extend IntTools_Context {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
 };
 %feature("shadow") IntTools_Context::~IntTools_Context %{
 def __del__(self):
@@ -3332,9 +3452,13 @@ class IntTools_FaceFace {
 		%feature("autodoc", "1");
 		Standard_Boolean TangentFaces() const;
 		%feature("autodoc", "1");
-		void PrepareLines3D();
+		void PrepareLines3D(const Standard_Boolean bToSplit=1);
 		%feature("autodoc", "1");
 		void SetList(IntSurf_ListOfPntOn2S & ListOfPnts);
+		%feature("autodoc", "1");
+		void SetContext(const Handle_IntTools_Context &aContext);
+		%feature("autodoc", "1");
+		const Handle_IntTools_Context & Context() const;
 
 };
 %feature("shadow") IntTools_FaceFace::~IntTools_FaceFace %{
@@ -3373,7 +3497,7 @@ class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode
 };
 %extend IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_DataMapNodeOfDataMapOfCurveSampleBox::~IntTools_DataMapNodeOfDataMapOfCurveSampleBox %{
@@ -3421,55 +3545,6 @@ def __del__(self):
 %}
 
 %extend IntTools_CurveRangeSample {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntTools_Curve;
-class IntTools_Curve {
-	public:
-		%feature("autodoc", "1");
-		IntTools_Curve();
-		%feature("autodoc", "1");
-		IntTools_Curve(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		void SetCurves(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		void SetCurve(const Handle_Geom_Curve &Curve3d);
-		%feature("autodoc", "1");
-		void SetFirstCurve2d(const Handle_Geom2d_Curve &FirstCurve2d);
-		%feature("autodoc", "1");
-		void SetSecondCurve2d(const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Curve() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & FirstCurve2d() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & SecondCurve2d() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasBounds() const;
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
-
-		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
-		%feature("autodoc","D0() -> Standard_Real");
-
-		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
-		%feature("autodoc", "1");
-		GeomAbs_CurveType Type() const;
-
-};
-%feature("shadow") IntTools_Curve::~IntTools_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3547,7 +3622,7 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public TCo
 };
 %extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress::~IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress %{

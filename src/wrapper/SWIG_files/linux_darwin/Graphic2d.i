@@ -1516,6 +1516,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Graphic2d_InfiniteLine;
+class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic2d_InfiniteLine();
+		%feature("autodoc", "1");
+		Handle_Graphic2d_InfiniteLine(const Handle_Graphic2d_InfiniteLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_InfiniteLine(const Graphic2d_InfiniteLine *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_InfiniteLine & operator=(const Handle_Graphic2d_InfiniteLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_InfiniteLine & operator=(const Graphic2d_InfiniteLine *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic2d_InfiniteLine DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic2d_InfiniteLine {
+	Graphic2d_InfiniteLine* GetObject() {
+	return (Graphic2d_InfiniteLine*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic2d_InfiniteLine::~Handle_Graphic2d_InfiniteLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic2d_InfiniteLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Graphic2d_Ellips;
 class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 	public:
@@ -1662,44 +1700,6 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic2d_Buffer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Graphic2d_InfiniteLine;
-class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic2d_InfiniteLine();
-		%feature("autodoc", "1");
-		Handle_Graphic2d_InfiniteLine(const Handle_Graphic2d_InfiniteLine &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_InfiniteLine(const Graphic2d_InfiniteLine *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_InfiniteLine & operator=(const Handle_Graphic2d_InfiniteLine &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_InfiniteLine & operator=(const Graphic2d_InfiniteLine *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic2d_InfiniteLine DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic2d_InfiniteLine {
-	Graphic2d_InfiniteLine* GetObject() {
-	return (Graphic2d_InfiniteLine*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic2d_InfiniteLine::~Handle_Graphic2d_InfiniteLine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic2d_InfiniteLine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2034,7 +2034,7 @@ class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_InfiniteLineDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_InfiniteLineDefinitionError::~Graphic2d_InfiniteLineDefinitionError %{
@@ -2077,7 +2077,7 @@ class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_PolylineDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_PolylineDefinitionError::~Graphic2d_PolylineDefinitionError %{
@@ -2148,7 +2148,7 @@ class Graphic2d_Primitive : public MMgt_TShared {
 };
 %extend Graphic2d_Primitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Primitive::~Graphic2d_Primitive %{
@@ -2203,7 +2203,7 @@ class Graphic2d_Line : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Line::~Graphic2d_Line %{
@@ -2245,7 +2245,7 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 };
 %extend Graphic2d_Polyline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Polyline::~Graphic2d_Polyline %{
@@ -2301,7 +2301,7 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 };
 %extend Graphic2d_ViewMapping {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_ViewMapping::~Graphic2d_ViewMapping %{
@@ -2338,7 +2338,7 @@ class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNo
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SequenceNodeOfSequenceOfGraphicObject::~Graphic2d_SequenceNodeOfSequenceOfGraphicObject %{
@@ -2377,7 +2377,7 @@ class Graphic2d_VectorialMarker : public Graphic2d_Line {
 };
 %extend Graphic2d_VectorialMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_VectorialMarker::~Graphic2d_VectorialMarker %{
@@ -2421,7 +2421,7 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 };
 %extend Graphic2d_PolylineMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_PolylineMarker::~Graphic2d_PolylineMarker %{
@@ -2521,7 +2521,7 @@ class Graphic2d_View : public MMgt_TShared {
 };
 %extend Graphic2d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_View::~Graphic2d_View %{
@@ -2582,7 +2582,7 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Image {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Image::~Graphic2d_Image %{
@@ -2665,7 +2665,7 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Text {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Text::~Graphic2d_Text %{
@@ -2708,7 +2708,7 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 };
 %extend Graphic2d_FramedText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_FramedText::~Graphic2d_FramedText %{
@@ -2751,7 +2751,7 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_TextDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_TextDefinitionError::~Graphic2d_TextDefinitionError %{
@@ -2868,7 +2868,7 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 };
 %extend Graphic2d_GraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_GraphicObject::~Graphic2d_GraphicObject %{
@@ -2962,7 +2962,7 @@ class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_SegmentDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SegmentDefinitionError::~Graphic2d_SegmentDefinitionError %{
@@ -3032,7 +3032,7 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 };
 %extend Graphic2d_ImageFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_ImageFile::~Graphic2d_ImageFile %{
@@ -3077,7 +3077,7 @@ class Graphic2d_InfiniteLine : public Graphic2d_Line {
 };
 %extend Graphic2d_InfiniteLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_InfiniteLine::~Graphic2d_InfiniteLine %{
@@ -3144,7 +3144,7 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 };
 %extend Graphic2d_SetOfSegments {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SetOfSegments::~Graphic2d_SetOfSegments %{
@@ -3204,7 +3204,7 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 };
 %extend Graphic2d_SetOfMarkers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SetOfMarkers::~Graphic2d_SetOfMarkers %{
@@ -3262,7 +3262,7 @@ class Graphic2d_HidingText : public Graphic2d_Text {
 };
 %extend Graphic2d_HidingText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_HidingText::~Graphic2d_HidingText %{
@@ -3299,7 +3299,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPolyline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SequenceNodeOfSequenceOfPolyline::~Graphic2d_SequenceNodeOfSequenceOfPolyline %{
@@ -3342,7 +3342,7 @@ class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_EllipsDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_EllipsDefinitionError::~Graphic2d_EllipsDefinitionError %{
@@ -3510,7 +3510,7 @@ class Graphic2d_Drawer : public Standard_Transient {
 };
 %extend Graphic2d_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Drawer::~Graphic2d_Drawer %{
@@ -3602,7 +3602,7 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 };
 %extend Graphic2d_TransientManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_TransientManager::~Graphic2d_TransientManager %{
@@ -3681,7 +3681,7 @@ class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
 };
 %extend Graphic2d_HSequenceOfPrimitives {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_HSequenceOfPrimitives::~Graphic2d_HSequenceOfPrimitives %{
@@ -3760,7 +3760,7 @@ class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
 };
 %extend Graphic2d_HSequenceOfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_HSequenceOfVertex::~Graphic2d_HSequenceOfVertex %{
@@ -3868,7 +3868,7 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 };
 %extend Graphic2d_OverrideColorError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_OverrideColorError::~Graphic2d_OverrideColorError %{
@@ -3916,7 +3916,7 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 };
 %extend Graphic2d_SetOfPolylines {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SetOfPolylines::~Graphic2d_SetOfPolylines %{
@@ -3959,7 +3959,7 @@ class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_ImageDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_ImageDefinitionError::~Graphic2d_ImageDefinitionError %{
@@ -4042,7 +4042,7 @@ class Graphic2d_Buffer : public MMgt_TShared {
 };
 %extend Graphic2d_Buffer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Buffer::~Graphic2d_Buffer %{
@@ -4085,7 +4085,7 @@ class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 };
 %extend Graphic2d_DetectionColorError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_DetectionColorError::~Graphic2d_DetectionColorError %{
@@ -4164,7 +4164,7 @@ class Graphic2d_DisplayList : public MMgt_TShared {
 };
 %extend Graphic2d_DisplayList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_DisplayList::~Graphic2d_DisplayList %{
@@ -4201,7 +4201,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode 
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPrimitives {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SequenceNodeOfSequenceOfPrimitives::~Graphic2d_SequenceNodeOfSequenceOfPrimitives %{
@@ -4238,7 +4238,7 @@ class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfBuffer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SequenceNodeOfSequenceOfBuffer::~Graphic2d_SequenceNodeOfSequenceOfBuffer %{
@@ -4317,7 +4317,7 @@ class Graphic2d_BufferList : public MMgt_TShared {
 };
 %extend Graphic2d_BufferList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_BufferList::~Graphic2d_BufferList %{
@@ -4367,7 +4367,7 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 };
 %extend Graphic2d_CircleMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_CircleMarker::~Graphic2d_CircleMarker %{
@@ -4404,7 +4404,7 @@ class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_SequenceNodeOfSequenceOfVertex::~Graphic2d_SequenceNodeOfSequenceOfVertex %{
@@ -4512,7 +4512,7 @@ class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_TransientDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_TransientDefinitionError::~Graphic2d_TransientDefinitionError %{
@@ -4561,7 +4561,7 @@ class Graphic2d_Marker : public Graphic2d_Line {
 };
 %extend Graphic2d_Marker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Marker::~Graphic2d_Marker %{
@@ -4661,7 +4661,7 @@ class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_DrawerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_DrawerDefinitionError::~Graphic2d_DrawerDefinitionError %{
@@ -4728,7 +4728,7 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 };
 %extend Graphic2d_HidingGraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_HidingGraphicObject::~Graphic2d_HidingGraphicObject %{
@@ -4773,7 +4773,7 @@ class Graphic2d_Segment : public Graphic2d_Line {
 };
 %extend Graphic2d_Segment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Segment::~Graphic2d_Segment %{
@@ -4877,7 +4877,7 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Paragraph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Paragraph::~Graphic2d_Paragraph %{
@@ -4925,7 +4925,7 @@ class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 };
 %extend Graphic2d_EllipsMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_EllipsMarker::~Graphic2d_EllipsMarker %{
@@ -4980,7 +4980,7 @@ class Graphic2d_HArray1OfVertex : public MMgt_TShared {
 };
 %extend Graphic2d_HArray1OfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_HArray1OfVertex::~Graphic2d_HArray1OfVertex %{
@@ -5023,7 +5023,7 @@ class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_CircleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_CircleDefinitionError::~Graphic2d_CircleDefinitionError %{
@@ -5201,7 +5201,7 @@ class Graphic2d_Ellips : public Graphic2d_Line {
 };
 %extend Graphic2d_Ellips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Ellips::~Graphic2d_Ellips %{
@@ -5257,7 +5257,7 @@ class Graphic2d_Circle : public Graphic2d_Line {
 };
 %extend Graphic2d_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_Circle::~Graphic2d_Circle %{
@@ -5300,7 +5300,7 @@ class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_MarkerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Graphic2d_MarkerDefinitionError::~Graphic2d_MarkerDefinitionError %{

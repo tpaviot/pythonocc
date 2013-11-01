@@ -133,6 +133,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor MgtBRep;
+class MgtBRep {
+	public:
+		%feature("autodoc", "1");
+		MgtBRep();
+		%feature("autodoc", "1");
+		static		Handle_PTopoDS_HShape Translate(const TopoDS_Shape aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
+		%feature("autodoc", "1");
+		static		void Translate1(const TopoDS_Shape aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);
+		%feature("autodoc", "1");
+		static		void Translate(const Handle_PTopoDS_HShape &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
+		%feature("autodoc", "1");
+		static		void Translate1(const PTopoDS_Shape1 &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
+
+};
+%feature("shadow") MgtBRep::~MgtBRep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MgtBRep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MgtBRep_TranslateTool1;
 class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 	public:
@@ -195,7 +226,7 @@ class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 };
 %extend MgtBRep_TranslateTool1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MgtBRep_TranslateTool1::~MgtBRep_TranslateTool1 %{
@@ -276,7 +307,7 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 };
 %extend MgtBRep_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MgtBRep_TranslateTool::~MgtBRep_TranslateTool %{
@@ -289,37 +320,6 @@ def __del__(self):
 %}
 
 %extend MgtBRep_TranslateTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MgtBRep;
-class MgtBRep {
-	public:
-		%feature("autodoc", "1");
-		MgtBRep();
-		%feature("autodoc", "1");
-		static		Handle_PTopoDS_HShape Translate(const TopoDS_Shape aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
-		%feature("autodoc", "1");
-		static		void Translate1(const TopoDS_Shape aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);
-		%feature("autodoc", "1");
-		static		void Translate(const Handle_PTopoDS_HShape &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
-		%feature("autodoc", "1");
-		static		void Translate1(const PTopoDS_Shape1 &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
-
-};
-%feature("shadow") MgtBRep::~MgtBRep %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MgtBRep {
 	void _kill_pointed() {
 		delete $self;
 	}

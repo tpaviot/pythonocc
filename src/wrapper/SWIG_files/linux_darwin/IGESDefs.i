@@ -621,7 +621,7 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_GenericData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_GenericData::~IGESDefs_GenericData %{
@@ -676,7 +676,7 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 };
 %extend IGESDefs_HArray1OfTabularData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_HArray1OfTabularData::~IGESDefs_HArray1OfTabularData %{
@@ -723,7 +723,7 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESDefs_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_GeneralModule::~IGESDefs_GeneralModule %{
@@ -760,7 +760,7 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESDefs_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_SpecificModule::~IGESDefs_SpecificModule %{
@@ -875,7 +875,7 @@ class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESDefs_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_ReadWriteModule::~IGESDefs_ReadWriteModule %{
@@ -928,7 +928,7 @@ class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AssociativityDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_AssociativityDef::~IGESDefs_AssociativityDef %{
@@ -1150,7 +1150,7 @@ class IGESDefs_MacroDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_MacroDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_MacroDef::~IGESDefs_MacroDef %{
@@ -1195,7 +1195,7 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_UnitsData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_UnitsData::~IGESDefs_UnitsData %{
@@ -1264,7 +1264,7 @@ class IGESDefs_AttributeDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AttributeDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_AttributeDef::~IGESDefs_AttributeDef %{
@@ -1309,7 +1309,7 @@ class IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %extend IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_HArray1OfHArray1OfTextDisplayTemplate::~IGESDefs_HArray1OfHArray1OfTextDisplayTemplate %{
@@ -1368,7 +1368,7 @@ class IGESDefs_TabularData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_TabularData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_TabularData::~IGESDefs_TabularData %{
@@ -1480,7 +1480,7 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AttributeTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESDefs_AttributeTable::~IGESDefs_AttributeTable %{

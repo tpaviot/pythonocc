@@ -238,6 +238,10 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		TCollection_AsciiString & ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") Resource_DataMapOfAsciiStringAsciiString::~Resource_DataMapOfAsciiStringAsciiString %{
@@ -325,7 +329,7 @@ class Resource_Manager : public MMgt_TShared {
 };
 %extend Resource_Manager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Resource_Manager::~Resource_Manager %{
@@ -449,7 +453,7 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 };
 %extend Resource_NoSuchResource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Resource_NoSuchResource::~Resource_NoSuchResource %{
@@ -495,6 +499,10 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		TCollection_ExtendedString & ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") Resource_DataMapOfAsciiStringExtendedString::~Resource_DataMapOfAsciiStringExtendedString %{
@@ -582,7 +590,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString %{
@@ -621,7 +629,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{

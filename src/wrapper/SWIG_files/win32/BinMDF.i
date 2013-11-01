@@ -307,7 +307,7 @@ class BinMDF_ADriver : public MMgt_TShared {
 };
 %extend BinMDF_ADriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDF_ADriver::~BinMDF_ADriver %{
@@ -344,7 +344,7 @@ class BinMDF_TagSourceDriver : public BinMDF_ADriver {
 };
 %extend BinMDF_TagSourceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDF_TagSourceDriver::~BinMDF_TagSourceDriver %{
@@ -389,7 +389,7 @@ class BinMDF_ADriverTable : public MMgt_TShared {
 };
 %extend BinMDF_ADriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDF_ADriverTable::~BinMDF_ADriverTable %{
@@ -428,7 +428,7 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 };
 %extend BinMDF_DataMapNodeOfTypeADriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDF_DataMapNodeOfTypeADriverMap::~BinMDF_DataMapNodeOfTypeADriverMap %{
@@ -479,7 +479,7 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 };
 %extend BinMDF_DoubleMapNodeOfTypeIdMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDF_DoubleMapNodeOfTypeIdMap::~BinMDF_DoubleMapNodeOfTypeIdMap %{
@@ -623,7 +623,7 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 };
 %extend BinMDF_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDF_ReferenceDriver::~BinMDF_ReferenceDriver %{
@@ -669,6 +669,10 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 		Handle_BinMDF_ADriver & ChangeFind(const Handle_Standard_Type &K);
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriver & operator()(const Handle_Standard_Type &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Type &K);
 
 };
 %feature("shadow") BinMDF_TypeADriverMap::~BinMDF_TypeADriverMap %{

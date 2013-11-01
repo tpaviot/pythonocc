@@ -527,7 +527,7 @@ class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqN
 };
 %extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
@@ -588,7 +588,7 @@ class TDocStd_Owner : public TDF_Attribute {
 };
 %extend TDocStd_Owner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_Owner::~TDocStd_Owner %{
@@ -634,6 +634,10 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 		TDF_IDMap & ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
 		TDF_IDMap & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
 
 };
 %feature("shadow") TDocStd_LabelIDMapDataMap::~TDocStd_LabelIDMapDataMap %{
@@ -707,7 +711,7 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 };
 %extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_DataMapNodeOfLabelIDMapDataMap::~TDocStd_DataMapNodeOfLabelIDMapDataMap %{
@@ -801,7 +805,7 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 };
 %extend TDocStd_XLinkRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_XLinkRoot::~TDocStd_XLinkRoot %{
@@ -922,7 +926,7 @@ class TDocStd_Document : public CDM_Document {
 };
 %extend TDocStd_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_Document::~TDocStd_Document %{
@@ -957,7 +961,7 @@ class TDocStd_CompoundDelta : public TDF_Delta {
 };
 %extend TDocStd_CompoundDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_CompoundDelta::~TDocStd_CompoundDelta %{
@@ -1148,7 +1152,7 @@ class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %extend TDocStd_SequenceNodeOfSequenceOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_SequenceNodeOfSequenceOfDocument::~TDocStd_SequenceNodeOfSequenceOfDocument %{
@@ -1223,7 +1227,7 @@ class TDocStd_Modified : public TDF_Attribute {
 };
 %extend TDocStd_Modified {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_Modified::~TDocStd_Modified %{
@@ -1300,7 +1304,7 @@ class TDocStd_XLink : public TDF_Attribute {
 };
 %extend TDocStd_XLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_XLink::~TDocStd_XLink %{
@@ -1385,7 +1389,7 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 };
 %extend TDocStd_MultiTransactionManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_MultiTransactionManager::~TDocStd_MultiTransactionManager %{
@@ -1428,15 +1432,15 @@ class TDocStd_Application : public CDF_Application {
 		%feature("autodoc", "1");
 		Standard_Integer IsInSession(const TCollection_ExtendedString &path) const;
 		%feature("autodoc", "1");
-		CDF_RetrievableStatus Open(const TCollection_ExtendedString &path, Handle_TDocStd_Document & aDoc);
+		PCDM_ReaderStatus Open(const TCollection_ExtendedString &path, Handle_TDocStd_Document & aDoc);
 		%feature("autodoc", "1");
-		CDF_StoreStatus SaveAs(const Handle_TDocStd_Document &aDoc, const TCollection_ExtendedString &path);
+		PCDM_StoreStatus SaveAs(const Handle_TDocStd_Document &aDoc, const TCollection_ExtendedString &path);
 		%feature("autodoc", "1");
-		CDF_StoreStatus Save(const Handle_TDocStd_Document &aDoc);
+		PCDM_StoreStatus Save(const Handle_TDocStd_Document &aDoc);
 		%feature("autodoc", "1");
-		CDF_StoreStatus SaveAs(const Handle_TDocStd_Document &aDoc, const TCollection_ExtendedString &path, TCollection_ExtendedString & theStatusMessage);
+		PCDM_StoreStatus SaveAs(const Handle_TDocStd_Document &aDoc, const TCollection_ExtendedString &path, TCollection_ExtendedString & theStatusMessage);
 		%feature("autodoc", "1");
-		CDF_StoreStatus Save(const Handle_TDocStd_Document &aDoc, TCollection_ExtendedString & theStatusMessage);
+		PCDM_StoreStatus Save(const Handle_TDocStd_Document &aDoc, TCollection_ExtendedString & theStatusMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1448,7 +1452,7 @@ class TDocStd_Application : public CDF_Application {
 };
 %extend TDocStd_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_Application::~TDocStd_Application %{
@@ -1497,7 +1501,7 @@ class TDocStd_ApplicationDelta : public MMgt_TShared {
 };
 %extend TDocStd_ApplicationDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_ApplicationDelta::~TDocStd_ApplicationDelta %{

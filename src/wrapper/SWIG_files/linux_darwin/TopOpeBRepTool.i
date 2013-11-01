@@ -440,6 +440,10 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox2d : public TCollection_BasicMap {
 		const Bnd_Box2d & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		Bnd_Box2d & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapOfShapeBox2d::~TopOpeBRepTool_IndexedDataMapOfShapeBox2d %{
@@ -592,7 +596,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCo
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d %{
@@ -729,7 +733,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : publi
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
@@ -1185,7 +1189,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNod
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface::~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface %{
@@ -1248,7 +1252,7 @@ class TopOpeBRepTool_HBoxTool : public MMgt_TShared {
 };
 %extend TopOpeBRepTool_HBoxTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_HBoxTool::~TopOpeBRepTool_HBoxTool %{
@@ -1285,7 +1289,7 @@ class TopOpeBRepTool_ListNodeOfListOfC2DF : public TCollection_MapNode {
 };
 %extend TopOpeBRepTool_ListNodeOfListOfC2DF {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_ListNodeOfListOfC2DF::~TopOpeBRepTool_ListNodeOfListOfC2DF %{
@@ -1331,6 +1335,10 @@ class TopOpeBRepTool_DataMapOfShapeface : public TCollection_BasicMap {
 		TopOpeBRepTool_face & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopOpeBRepTool_face & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepTool_DataMapOfShapeface::~TopOpeBRepTool_DataMapOfShapeface %{
@@ -1376,6 +1384,10 @@ class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
 		TopOpeBRepTool_ListOfC2DF & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopOpeBRepTool_ListOfC2DF & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepTool_DataMapOfShapeListOfC2DF::~TopOpeBRepTool_DataMapOfShapeListOfC2DF %{
@@ -1700,6 +1712,10 @@ class TopOpeBRepTool_IndexedDataMapOfSolidClassifier : public TCollection_BasicM
 		const BRepClass3d_SolidClassifier & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		BRepClass3d_SolidClassifier & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapOfSolidClassifier::~TopOpeBRepTool_IndexedDataMapOfSolidClassifier %{
@@ -1793,6 +1809,10 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		const Bnd_Box & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		Bnd_Box & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapOfShapeBox::~TopOpeBRepTool_IndexedDataMapOfShapeBox %{
@@ -1878,7 +1898,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TColl
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
@@ -1995,7 +2015,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity %{
@@ -2051,6 +2071,10 @@ class TopOpeBRepTool_IndexedDataMapOfShapeconnexity : public TCollection_BasicMa
 		const TopOpeBRepTool_connexity & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		TopOpeBRepTool_connexity & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepTool_IndexedDataMapOfShapeconnexity::~TopOpeBRepTool_IndexedDataMapOfShapeconnexity %{
@@ -2224,7 +2248,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public TCollection_
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF::~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF %{
@@ -2270,6 +2294,10 @@ class TopOpeBRepTool_DataMapOfOrientedShapeC2DF : public TCollection_BasicMap {
 		TopOpeBRepTool_C2DF & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopOpeBRepTool_C2DF & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepTool_DataMapOfOrientedShapeC2DF::~TopOpeBRepTool_DataMapOfOrientedShapeC2DF %{
@@ -2388,7 +2416,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public TCollectio
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF::~TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF %{

@@ -60,6 +60,8 @@ $HeaderURL$
 %rename(FindUniqueContext) TNaming::FindUniqueContext;
 %rename(FindUniqueContextSet) TNaming::FindUniqueContextSet;
 %rename(SubstituteSShape) TNaming::SubstituteSShape;
+%rename(OuterWire) TNaming::OuterWire;
+%rename(OuterShell) TNaming::OuterShell;
 %rename(IDList) TNaming::IDList;
 %rename(Print) TNaming::Print;
 %rename(CopyTool) TNaming_CopyShape::CopyTool;

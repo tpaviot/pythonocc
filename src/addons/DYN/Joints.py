@@ -22,56 +22,50 @@ import ode
 
 from OCC.gp import *
 
-#class BaseJoint(ode.Joint):
-#    ''' Base class for all joints
-#    '''
-#    def __init__(self,*kargs):
-#        ode.Join.__ini__(self,*kargs)
-#        print 'BaseJoint initialized'
-#    #ode.Joint.__init__(self,*kargs)
-#    #    self._parent_context = kargs[0]
-#
-#    def attach_shapes(self,shape1,shape2):
-#        dynamic_context1 = shape1.get_dynamic_context()
-#        dynamic_context2 = shape2.get_dynamic_context()
-#        assert(dynamic_context1 == dynamic_context2)
-#        self.attach(shape1,shape2)
-        
-class DynamicHingeJoint(ode.HingeJoint):
-    """ Create a hinge joint between 2 dynamic shapes
-    """
-    def _init__(self,dyn_context):
-        self.dyn_context = dyn_context
-        ode.HingeJoint.__init__(self,*kargs)
-        
+class BaseJoint(object):
+    ''' Base class for all joints
+    '''
     def set_anchor(self,gp_point_center):
         ''' Set the anchor of the ball joint
         '''
         self.setAnchor(gp_point_center.Coord())
-    
+
+    def attach_shapes(self,shape1,shape2):
+        self.attach(shape1,shape2)
+
     def set_axis(self, gp_direction):
         ''' sets the hinge axis, which is a gp_Dir
         '''
         self.setAxis(gp_direction.Coord())
-    
-    def attach_shapes(self,shape1,shape2):
-        self.attach(shape1,shape2)
-    
-class DynamicBallJoint(ode.BallJoint):
+
+class DynamicHingeJoint(ode.HingeJoint, BaseJoint):
+    """ Create a hinge joint between 2 dynamic shapes
+    """
+    def __init__(self,dyn_context):
+        self.dyn_context = dyn_context
+        ode.HingeJoint.__init__(self,dyn_context)
+
+class DynamicUniversalJoint(ode.HingeJoint, BaseJoint):
+    """ Create a hinge joint between 2 dynamic shapes
+    """
+    def __init__(self,dyn_context):
+        self.dyn_context = dyn_context
+        ode.UniversalJoint.__init__(self,dyn_context)
+
+class DynamicSliderJoint(ode.SliderJoint, BaseJoint):
+    """ Create a slider joint between 2 dynamic shapes
+    """
+    def __init__(self,dyn_context):
+        self.dyn_context = dyn_context
+        ode.SliderJoint.__init__(self, dyn_context)
+        #del self.set_anchor # not present with a slider joint
+
+class DynamicBallJoint(ode.BallJoint, BaseJoint):
     """ Create a joint between 2 DynamicShapes
     """
     def __init__(self,dyn_context):
         self.dyn_context = dyn_context
         ode.BallJoint.__init__(self,dyn_context)
-    
-    def set_anchor(self,gp_point_center):
-        ''' Set the anchor of the ball joint
-        '''
-        coords = gp_point_center.Coord()
-        self.setAnchor(coords)
-        
-    def attach_shapes(self, shape1, shape2):
-        self.attach(shape1,shape2)
 
 import os
 

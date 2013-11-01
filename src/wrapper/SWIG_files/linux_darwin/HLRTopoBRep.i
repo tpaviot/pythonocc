@@ -224,7 +224,7 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 };
 %extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData::~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData %{
@@ -263,7 +263,7 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 };
 %extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData::~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData %{
@@ -309,6 +309,10 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 		HLRTopoBRep_ListOfVData & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		HLRTopoBRep_ListOfVData & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") HLRTopoBRep_MapOfShapeListOfVData::~HLRTopoBRep_MapOfShapeListOfVData %{
@@ -701,7 +705,7 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 };
 %extend HLRTopoBRep_OutLiner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_OutLiner::~HLRTopoBRep_OutLiner %{
@@ -738,7 +742,7 @@ class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 };
 %extend HLRTopoBRep_ListNodeOfListOfVData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_ListNodeOfListOfVData::~HLRTopoBRep_ListNodeOfListOfVData %{
@@ -784,6 +788,10 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 		HLRTopoBRep_FaceData & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		HLRTopoBRep_FaceData & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") HLRTopoBRep_DataMapOfShapeFaceData::~HLRTopoBRep_DataMapOfShapeFaceData %{

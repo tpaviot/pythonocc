@@ -60,11 +60,11 @@ $HeaderURL$
 %rename(DownCast) Handle_Graphic2d_Paragraph::DownCast;
 %rename(DownCast) Handle_Graphic2d_TransientManager::DownCast;
 %rename(DownCast) Handle_Graphic2d_ImageDefinitionError::DownCast;
+%rename(DownCast) Handle_Graphic2d_InfiniteLine::DownCast;
 %rename(DownCast) Handle_Graphic2d_Ellips::DownCast;
 %rename(DownCast) Handle_Graphic2d_HidingText::DownCast;
 %rename(DownCast) Handle_Graphic2d_DrawerDefinitionError::DownCast;
 %rename(DownCast) Handle_Graphic2d_Buffer::DownCast;
-%rename(DownCast) Handle_Graphic2d_InfiniteLine::DownCast;
 %rename(DownCast) Handle_Graphic2d_TransientDefinitionError::DownCast;
 %rename(DownCast) Handle_Graphic2d_Marker::DownCast;
 %rename(DownCast) Handle_Graphic2d_FramedText::DownCast;

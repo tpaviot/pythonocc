@@ -253,11 +253,12 @@ $HeaderURL$
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<TopTools_ListOfShape.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Circ.hxx>
-#include<TopTools_ListOfShape.hxx>
 #include<TopOpeBRepDS_BuildTool.hxx>
 #include<TColGeom_SequenceOfCurve.hxx>
+#include<TopoDS_Compound.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Pnt.hxx>
 #include<LocOpe.hxx>

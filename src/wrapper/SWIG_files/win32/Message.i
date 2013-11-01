@@ -568,7 +568,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 %extend Message_ProgressIndicator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Message_ProgressIndicator::~Message_ProgressIndicator %{
@@ -607,7 +607,7 @@ class Message_Printer : public MMgt_TShared {
 };
 %extend Message_Printer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Message_Printer::~Message_Printer %{
@@ -644,7 +644,7 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 };
 %extend Message_SequenceNodeOfSequenceOfPrinters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Message_SequenceNodeOfSequenceOfPrinters::~Message_SequenceNodeOfSequenceOfPrinters %{
@@ -697,7 +697,7 @@ class Message_Messenger : public MMgt_TShared {
 };
 %extend Message_Messenger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Message_Messenger::~Message_Messenger %{
@@ -826,7 +826,7 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 };
 %extend Message_SequenceNodeOfSequenceOfProgressScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
@@ -1018,7 +1018,7 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 };
 %extend Message_ListNodeOfListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Message_ListNodeOfListOfMsg::~Message_ListNodeOfListOfMsg %{
@@ -1138,7 +1138,7 @@ class Message_PrinterOStream : public Message_Printer {
 };
 %extend Message_PrinterOStream {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Message_PrinterOStream::~Message_PrinterOStream %{

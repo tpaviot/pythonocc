@@ -37,6 +37,7 @@ $HeaderURL$
 
 // Additional headers necessary for compilation.
 
+#include<BRepClass3d.hxx>
 #include<BRepClass3d_DataMapIteratorOfMapOfInter.hxx>
 #include<BRepClass3d_DataMapNodeOfMapOfInter.hxx>
 #include<BRepClass3d_Intersector3d.hxx>

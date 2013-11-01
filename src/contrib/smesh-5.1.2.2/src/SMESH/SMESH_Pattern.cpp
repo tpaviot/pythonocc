@@ -1228,7 +1228,7 @@ static bool checkQuads (const TIsoNode* node,
         maxLen2 = Max( maxLen2, ( n[1]->myUV - n[2]->myUV ).SquareModulus() );
       }
       maxLen2 = Max( maxLen2, ( n[2]->myUV - node->myUV ).SquareModulus() );
-      minDiag = sqrt( maxLen2 ) * PI / 60.; // ~ maxLen * Sin( 3 deg )
+      minDiag = sqrt( maxLen2 ) * M_PI / 60.; // ~ maxLen * Sin( 3 deg )
     }
 
     // check if newUV is behind 3 dirs: n[0]-n[1], n[1]-n[2] and n[0]-n[2]
@@ -1779,7 +1779,7 @@ bool SMESH_Pattern::
     double initAngle = initTgt1.Angle( initTgt2 );
     double angle = node->myDir[0].Angle( node->myDir[1] );
     if ( reversed ) angle = -angle;
-    if ( initAngle > angle && initAngle - angle > PI / 2.1 ) {
+    if ( initAngle > angle && initAngle - angle > M_PI / 2.1 ) {
       // find a close internal node
       TIsoNode* nClose = 0;
       list< TIsoNode* > testNodes;

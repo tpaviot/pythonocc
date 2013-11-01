@@ -23,7 +23,7 @@ class TestEdge_Line(unittest.TestCase):
         self.assertEqual(pnt.Coord(),(0,0,0))
 
     def test_pnt2param(self):
-        param, pnt = self.edg.project_pnt_on_edge(gp_Pnt())
+        param, pnt = self.edg.project_vertex(gp_Pnt())
         self.assertEqual(param,0.)
         self.assertEqual( gp_Pnt().IsEqual(pnt, 0.000001), 1)
 
@@ -77,12 +77,7 @@ class TestFace_Sphere(unittest.TestCase):
         self.assertEqual(trimmed, False)
 
     def test_planar(self):
-        is_planar, pln = self.face.is_planar()
-        self.assertEqual(is_planar, False)
-
-    def test_global_properties(self):
-        centre = self.face.GlobalProperties.centre()
-        self.assertEqual(centre, gp_Pnt(0.660189250701, 0.360663031426, 0.0))
+        self.assertEqual(self.face.is_planar(), False)
 
 class TestVertex_Point(unittest.TestCase):
     def test_pnt(self):

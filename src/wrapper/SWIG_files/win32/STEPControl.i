@@ -215,7 +215,7 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %extend STEPControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPControl_ActorWrite::~STEPControl_ActorWrite %{
@@ -260,7 +260,7 @@ class STEPControl_Controller : public XSControl_Controller {
 };
 %extend STEPControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPControl_Controller::~STEPControl_Controller %{
@@ -350,7 +350,7 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 };
 %extend STEPControl_ActorRead {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPControl_ActorRead::~STEPControl_ActorRead %{
@@ -382,6 +382,8 @@ class STEPControl_Reader : public XSControl_Reader {
 		Standard_Boolean TransferRoot(const Standard_Integer num=1);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbRootsForTransfer();
+		%feature("autodoc", "1");
+		void FileUnits(TColStd_SequenceOfAsciiString & theUnitLengthNames, TColStd_SequenceOfAsciiString & theUnitAngleNames, TColStd_SequenceOfAsciiString & theUnitSolidAngleNames);
 
 };
 %feature("shadow") STEPControl_Reader::~STEPControl_Reader %{

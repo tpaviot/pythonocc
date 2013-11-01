@@ -1,0 +1,96 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	GEOMAlgo_SurfaceTools.cdl
+-- Created:	Thu Jan 27 11:03:49 2005
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+class SurfaceTools from GEOMAlgo 
+
+	---Purpose: 
+
+uses 
+    Pnt      from gp, 
+    Pln      from gp, 
+    Cylinder from gp, 
+    Sphere   from gp,
+    Surface  from Geom, 
+    Surface from GeomAdaptor, 
+    State    from TopAbs,	
+    State from GEOMAlgo
+
+--raises
+
+is 
+ 
+
+    IsAnalytic(myclass;  
+    	    aS:Surface from Geom) 
+    	returns Boolean from Standard; 
+    
+    IsCoaxial(myclass;  
+    	    aP1  :  Pnt from gp; 
+    	    aP2  :  Pnt from gp; 
+	    aCyl :  Cylinder from gp; 
+            aTol :  Real from Standard) 	     
+    	returns Boolean from Standard; 
+     
+    IsConformState(myclass;  
+    	    aST1:State from TopAbs; 
+    	    aST2:State from GEOMAlgo) 
+    	returns Boolean from Standard; 		  
+
+    GetState(myclass; 
+	    aP:Pnt from gp;  	     
+    	    aS:Surface from GeomAdaptor; 
+    	    aTol:Real from Standard; 
+    	    aSt:out State from TopAbs)
+    	returns Integer from Standard; 
+	
+    GetState(myclass; 
+	    aP:Pnt from gp;  	     
+    	    aS:Surface from Geom; 
+    	    aTol:Real from Standard; 
+    	    aSt:out State from TopAbs)
+    	returns Integer from Standard;
+
+    Distance(myclass;  
+    	    aP:Pnt from gp;  	 
+    	    aPln:Pln from gp) 
+    	returns Real from Standard; 
+
+    Distance(myclass;  
+    	    aP:Pnt from gp;  	 
+    	    aCyl:Cylinder from gp) 
+    	returns Real from Standard; 
+	 
+    Distance(myclass;  
+    	    aP:Pnt from gp;  	 
+    	    aSph:Sphere from gp) 
+    	returns Real from Standard; 
+	 
+    ReverseState(myclass; 
+    	    aSt: State from TopAbs) 
+	returns State from TopAbs; 
+	 
+--fields
+
+end SurfaceTools;

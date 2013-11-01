@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopoDS
+import TCollection
 import TopAbs
 import Bnd
-import TCollection
 };

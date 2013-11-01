@@ -52,7 +52,6 @@ $HeaderURL$
 %rename(Match) StdPrs_WFRestrictedFace::Match;
 %rename(MatchUIso) StdPrs_WFRestrictedFace::MatchUIso;
 %rename(MatchVIso) StdPrs_WFRestrictedFace::MatchVIso;
-%rename(Add) StdPrs_ShadedPoleSurface::Add;
 %rename(Add) StdPrs_WFDeflectionRestrictedFace::Add;
 %rename(AddUIso) StdPrs_WFDeflectionRestrictedFace::AddUIso;
 %rename(AddVIso) StdPrs_WFDeflectionRestrictedFace::AddVIso;

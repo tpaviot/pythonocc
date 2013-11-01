@@ -132,31 +132,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdPrs_ShadedPoleSurface;
-class StdPrs_ShadedPoleSurface : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		StdPrs_ShadedPoleSurface();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Surface &aSurface, const Handle_Prs3d_Drawer &aDrawer);
-
-};
-%feature("shadow") StdPrs_ShadedPoleSurface::~StdPrs_ShadedPoleSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdPrs_ShadedPoleSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdPrs_Point;
 class StdPrs_Point : public Prs3d_Root {
 	public:
@@ -406,7 +381,9 @@ class StdPrs_ShadedShape : public Prs3d_Root {
 		%feature("autodoc", "1");
 		StdPrs_ShadedShape();
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		static		void Add(const Handle_Prs3d_Presentation &thePresentation, const TopoDS_Shape theShape, const Handle_Prs3d_Drawer &theDrawer);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &thePresentation, const TopoDS_Shape theShape, const Handle_Prs3d_Drawer &theDrawer, const Standard_Boolean theHasTexels, const gp_Pnt2d theUVOrigin, const gp_Pnt2d theUVRepeat, const gp_Pnt2d theUVScale);
 
 };
 %feature("shadow") StdPrs_ShadedShape::~StdPrs_ShadedShape %{

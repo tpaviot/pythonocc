@@ -708,7 +708,7 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfListOfLoop::~BOP_ListNodeOfListOfListOfLoop %{
@@ -755,7 +755,7 @@ class BOP_HistoryCollector : public MMgt_TShared {
 };
 %extend BOP_HistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_HistoryCollector::~BOP_HistoryCollector %{
@@ -791,7 +791,7 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SectionHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_SectionHistoryCollector::~BOP_SectionHistoryCollector %{
@@ -869,7 +869,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo %{
@@ -1044,7 +1044,7 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SolidSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_SolidSolidHistoryCollector::~BOP_SolidSolidHistoryCollector %{
@@ -1599,7 +1599,7 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfFaceInfo::~BOP_ListNodeOfListOfFaceInfo %{
@@ -1833,7 +1833,7 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfEdgeInfo::~BOP_ListNodeOfListOfEdgeInfo %{
@@ -1876,7 +1876,7 @@ class BOP_Loop : public MMgt_TShared {
 };
 %extend BOP_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_Loop::~BOP_Loop %{
@@ -2186,6 +2186,10 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 		const BOP_ListOfFaceInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		BOP_ListOfFaceInfo & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BOP_IndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapOfEdgeListFaceInfo %{
@@ -2238,7 +2242,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
@@ -2336,7 +2340,7 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfCheckResult {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfCheckResult::~BOP_ListNodeOfListOfCheckResult %{
@@ -2555,7 +2559,7 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 };
 %extend BOP_SequenceNodeOfSeqOfSeqOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_SequenceNodeOfSeqOfSeqOfShape::~BOP_SequenceNodeOfSeqOfSeqOfShape %{
@@ -2629,7 +2633,7 @@ class BOP_ShellSolid : public BOP_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean CheckArgTypes() const;
 		%feature("autodoc", "1");
-		Standard_Boolean SplitFace(const Standard_Integer theFaceIndex, TopTools_DataMapOfShapeInteger & theMapOfEdgeIndex, TopTools_ListOfShape & theListOfFace) const;
+		Standard_Boolean SplitFace(const Standard_Integer theFaceIndex, const TColStd_IndexedMapOfInteger &aFFIndicesMap, TopTools_DataMapOfShapeInteger & theMapOfEdgeIndex, TopTools_ListOfShape & theListOfFace) const;
 		%feature("autodoc", "1");
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
@@ -2836,49 +2840,21 @@ class BOP_FaceBuilder {
 		%feature("autodoc", "1");
 		void Do(const BOP_WireEdgeSet &aWES, const Standard_Boolean aForceClass=1);
 		%feature("autodoc", "1");
+		void SetContext(const Handle_IntTools_Context &aCtx);
+		%feature("autodoc", "1");
+		const Handle_IntTools_Context & Context() const;
+		%feature("autodoc", "1");
 		const BOP_WireEdgeSet & WES() const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & NewFaces() const;
 		%feature("autodoc", "1");
 		void SetTreatment(const Standard_Integer aTreatment);
 		%feature("autodoc", "1");
-		void SetManifoldFlag(const Standard_Boolean aMFlag);
-		%feature("autodoc", "1");
 		void SetTreatSDScales(const Standard_Integer aTreatment);
-		%feature("autodoc", "1");
-		Standard_Boolean ManifoldFlag() const;
 		%feature("autodoc", "1");
 		Standard_Integer Treatment() const;
 		%feature("autodoc", "1");
 		Standard_Integer TreatSDScales() const;
-		%feature("autodoc", "1");
-		Standard_Integer InitFace();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreFace() const;
-		%feature("autodoc", "1");
-		void NextFace();
-		%feature("autodoc", "1");
-		Standard_Integer InitWire();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreWire() const;
-		%feature("autodoc", "1");
-		void NextWire();
-		%feature("autodoc", "1");
-		Standard_Boolean IsOldWire() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  OldWire() const;
-		%feature("autodoc", "1");
-		const TopoDS_Wire  Wire() const;
-		%feature("autodoc", "1");
-		void FindNextValidElement();
-		%feature("autodoc", "1");
-		Standard_Integer InitEdge();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreEdge() const;
-		%feature("autodoc", "1");
-		void NextEdge();
-		%feature("autodoc", "1");
-		const TopoDS_Edge  Edge() const;
 
 };
 %feature("shadow") BOP_FaceBuilder::~BOP_FaceBuilder %{
@@ -2915,7 +2891,7 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfLoop::~BOP_ListNodeOfListOfLoop %{
@@ -3139,7 +3115,7 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_ShellSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_ShellSolidHistoryCollector::~BOP_ShellSolidHistoryCollector %{
@@ -3256,7 +3232,7 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_WireSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_WireSolidHistoryCollector::~BOP_WireSolidHistoryCollector %{
@@ -3312,6 +3288,10 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 		const BOP_PSoClassif & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BOP_IndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapOfSolidClassifier %{
@@ -3550,7 +3530,7 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfConnexityBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfConnexityBlock::~BOP_ListNodeOfListOfConnexityBlock %{
@@ -3741,6 +3721,10 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 		const BOP_ListOfEdgeInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		BOP_ListOfEdgeInfo & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BOP_IndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapOfVertexListEdgeInfo %{
@@ -3824,7 +3808,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo %{

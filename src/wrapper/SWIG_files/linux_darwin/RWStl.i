@@ -58,15 +58,15 @@ class RWStl {
 		%feature("autodoc", "1");
 		RWStl();
 		%feature("autodoc", "1");
-		static		Standard_Boolean WriteBinary(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
+		static		Standard_Boolean WriteBinary(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath, const Handle_Message_ProgressIndicator &aProgInd=0);
 		%feature("autodoc", "1");
-		static		Standard_Boolean WriteAscii(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
+		static		Standard_Boolean WriteAscii(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath, const Handle_Message_ProgressIndicator &aProgInd=0);
 		%feature("autodoc", "1");
-		static		Handle_StlMesh_Mesh ReadFile(const OSD_Path &aPath);
+		static		Handle_StlMesh_Mesh ReadFile(const OSD_Path &aPath, const Handle_Message_ProgressIndicator &aProgInd=0);
 		%feature("autodoc", "1");
-		static		Handle_StlMesh_Mesh ReadBinary(const OSD_Path &aPath);
+		static		Handle_StlMesh_Mesh ReadBinary(const OSD_Path &aPath, const Handle_Message_ProgressIndicator &aProgInd=0);
 		%feature("autodoc", "1");
-		static		Handle_StlMesh_Mesh ReadAscii(const OSD_Path &aPath);
+		static		Handle_StlMesh_Mesh ReadAscii(const OSD_Path &aPath, const Handle_Message_ProgressIndicator &aProgInd=0);
 
 };
 %feature("shadow") RWStl::~RWStl %{

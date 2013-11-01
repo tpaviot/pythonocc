@@ -144,4 +144,5 @@ $HeaderURL$
 #include<Handle_StepRepr_Representation.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_StepRepr_RepresentationRelationship.hxx>
+#include<TColStd_SequenceOfAsciiString.hxx>
 %}

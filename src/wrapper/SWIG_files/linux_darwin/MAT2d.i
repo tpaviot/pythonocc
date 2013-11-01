@@ -528,7 +528,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger %{
@@ -577,7 +577,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerBisec::~MAT2d_DataMapNodeOfDataMapOfIntegerBisec %{
@@ -626,7 +626,7 @@ class MAT2d_Circuit : public MMgt_TShared {
 };
 %extend MAT2d_Circuit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_Circuit::~MAT2d_Circuit %{
@@ -663,7 +663,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry::~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry %{
@@ -746,7 +746,7 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 };
 %extend MAT2d_SequenceNodeOfSequenceOfConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfConnexion::~MAT2d_SequenceNodeOfSequenceOfConnexion %{
@@ -953,6 +953,10 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 		gp_Vec2d  ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		gp_Vec2d  operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfIntegerVec2d::~MAT2d_DataMapOfIntegerVec2d %{
@@ -1276,7 +1280,7 @@ class MAT2d_Connexion : public MMgt_TShared {
 };
 %extend MAT2d_Connexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_Connexion::~MAT2d_Connexion %{
@@ -1322,6 +1326,10 @@ class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
 		gp_Pnt2d  ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		gp_Pnt2d  operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfIntegerPnt2d::~MAT2d_DataMapOfIntegerPnt2d %{
@@ -1367,6 +1375,10 @@ class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 		TColStd_SequenceOfInteger & ChangeFind(const MAT2d_BiInt &K);
 		%feature("autodoc", "1");
 		TColStd_SequenceOfInteger & operator()(const MAT2d_BiInt &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const MAT2d_BiInt &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const MAT2d_BiInt &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapOfBiIntSequenceOfInteger %{
@@ -1415,7 +1427,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerVec2d::~MAT2d_DataMapNodeOfDataMapOfIntegerVec2d %{
@@ -1471,6 +1483,10 @@ class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const MAT2d_BiInt &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const MAT2d_BiInt &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const MAT2d_BiInt &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfBiIntInteger::~MAT2d_DataMapOfBiIntInteger %{
@@ -1538,7 +1554,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve::~MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve %{
@@ -1587,7 +1603,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfBiIntInteger::~MAT2d_DataMapNodeOfDataMapOfBiIntInteger %{
@@ -1664,6 +1680,10 @@ class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
 		MAT2d_SequenceOfConnexion & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		MAT2d_SequenceOfConnexion & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapOfIntegerSequenceOfConnexion %{
@@ -1709,6 +1729,10 @@ class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
 		Bisector_Bisec & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Bisector_Bisec & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfIntegerBisec::~MAT2d_DataMapOfIntegerBisec %{
@@ -1757,7 +1781,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollectio
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion %{
@@ -1834,6 +1858,10 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 		Handle_MAT2d_Connexion & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfIntegerConnexion::~MAT2d_DataMapOfIntegerConnexion %{
@@ -1944,7 +1972,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerConnexion::~MAT2d_DataMapNodeOfDataMapOfIntegerConnexion %{
@@ -2030,7 +2058,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d::~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d %{

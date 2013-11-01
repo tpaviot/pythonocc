@@ -54,7 +54,6 @@ $HeaderURL$
 #include<HLRBRep_Hider.hxx>
 #include<HLRBRep_IntConicCurveOfCInter.hxx>
 #include<HLRBRep_InterCSurf.hxx>
-#include<HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter.hxx>
 #include<HLRBRep_InternalAlgo.hxx>
 #include<HLRBRep_Intersector.hxx>
 #include<HLRBRep_LineTool.hxx>
@@ -88,7 +87,6 @@ $HeaderURL$
 #include<HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter.hxx>
 #include<HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter.hxx>
 #include<HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter.hxx>
-#include<HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter.hxx>
 #include<HLRBRep_ThePolygonOfInterCSurf.hxx>
 #include<HLRBRep_ThePolygonToolOfInterCSurf.hxx>
 #include<HLRBRep_ThePolyhedronOfInterCSurf.hxx>
@@ -126,7 +124,6 @@ $HeaderURL$
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<IntRes2d_Domain.hxx>
-#include<gp_Pnt2d.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
@@ -138,6 +135,7 @@ $HeaderURL$
 #include<Handle_HLRAlgo_PolyAlgo.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<HLRAlgo_EdgeStatus.hxx>
+#include<gp_Pnt2d.hxx>
 #include<BRepAdaptor_Surface.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pln.hxx>

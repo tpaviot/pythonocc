@@ -191,44 +191,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
-class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder();
-		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	MeshVS_SequenceNodeOfSequenceOfPrsBuilder* GetObject() {
-	return (MeshVS_SequenceNodeOfSequenceOfPrsBuilder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MeshVS_PrsBuilder;
 class Handle_MeshVS_PrsBuilder : public Handle_MMgt_TShared {
 	public:
@@ -831,6 +793,44 @@ def __del__(self):
 %}
 
 %extend Handle_MeshVS_SensitivePolyhedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
+class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder();
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	MeshVS_SequenceNodeOfSequenceOfPrsBuilder* GetObject() {
+	return (MeshVS_SequenceNodeOfSequenceOfPrsBuilder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1503,7 +1503,7 @@ class MeshVS_DataSource : public MMgt_TShared {
 };
 %extend MeshVS_DataSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataSource::~MeshVS_DataSource %{
@@ -1542,7 +1542,7 @@ class MeshVS_DataSource3D : public MeshVS_DataSource {
 };
 %extend MeshVS_DataSource3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataSource3D::~MeshVS_DataSource3D %{
@@ -1588,6 +1588,10 @@ class MeshVS_DataMapOfHArray1OfSequenceOfInteger : public TCollection_BasicMap {
 		Handle_MeshVS_HArray1OfSequenceOfInteger & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_MeshVS_HArray1OfSequenceOfInteger & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapOfHArray1OfSequenceOfInteger %{
@@ -1624,7 +1628,7 @@ class MeshVS_StdMapNodeOfMapOfTwoNodes : public TCollection_MapNode {
 };
 %extend MeshVS_StdMapNodeOfMapOfTwoNodes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_StdMapNodeOfMapOfTwoNodes::~MeshVS_StdMapNodeOfMapOfTwoNodes %{
@@ -1673,7 +1677,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerColor : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerColor::~MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
@@ -1741,7 +1745,7 @@ class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 };
 %extend MeshVS_DeformedDataSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DeformedDataSource::~MeshVS_DeformedDataSource %{
@@ -1809,7 +1813,7 @@ class MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public TCollection_SeqNode {
 };
 %extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
@@ -1917,6 +1921,10 @@ class MeshVS_DataMapOfColorMapOfInteger : public TCollection_BasicMap {
 		TColStd_MapOfInteger & ChangeFind(const Quantity_Color &K);
 		%feature("autodoc", "1");
 		TColStd_MapOfInteger & operator()(const Quantity_Color &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Quantity_Color &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Quantity_Color &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfColorMapOfInteger::~MeshVS_DataMapOfColorMapOfInteger %{
@@ -2059,7 +2067,7 @@ class MeshVS_HArray1OfSequenceOfInteger : public MMgt_TShared {
 };
 %extend MeshVS_HArray1OfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_HArray1OfSequenceOfInteger::~MeshVS_HArray1OfSequenceOfInteger %{
@@ -2153,7 +2161,7 @@ class MeshVS_PrsBuilder : public MMgt_TShared {
 };
 %extend MeshVS_PrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_PrsBuilder::~MeshVS_PrsBuilder %{
@@ -2209,7 +2217,7 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_VectorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_VectorPrsBuilder::~MeshVS_VectorPrsBuilder %{
@@ -2255,6 +2263,10 @@ class MeshVS_DataMapOfTwoColorsMapOfInteger : public TCollection_BasicMap {
 		TColStd_MapOfInteger & ChangeFind(const MeshVS_TwoColors &K);
 		%feature("autodoc", "1");
 		TColStd_MapOfInteger & operator()(const MeshVS_TwoColors &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const MeshVS_TwoColors &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const MeshVS_TwoColors &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapOfTwoColorsMapOfInteger %{
@@ -2295,7 +2307,7 @@ class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
 };
 %extend MeshVS_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveSegment::~MeshVS_SensitiveSegment %{
@@ -2351,6 +2363,10 @@ class MeshVS_DataMapOfIntegerBoolean : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerBoolean::~MeshVS_DataMapOfIntegerBoolean %{
@@ -2409,7 +2425,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerBoolean::~MeshVS_DataMapNodeOfDataMapOfIntegerBoolean %{
@@ -2459,7 +2475,7 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 };
 %extend MeshVS_SensitivePolyhedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitivePolyhedron::~MeshVS_SensitivePolyhedron %{
@@ -2508,7 +2524,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public TCollection_MapNode 
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
@@ -2585,6 +2601,10 @@ class MeshVS_DataMapOfIntegerMeshEntityOwner : public TCollection_BasicMap {
 		Handle_MeshVS_MeshEntityOwner & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_MeshVS_MeshEntityOwner & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapOfIntegerMeshEntityOwner %{
@@ -2636,7 +2656,7 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 };
 %extend MeshVS_SensitiveMesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveMesh::~MeshVS_SensitiveMesh %{
@@ -2712,7 +2732,7 @@ class MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public TCollecti
 };
 %extend MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger %{
@@ -2758,6 +2778,10 @@ class MeshVS_DataMapOfIntegerColor : public TCollection_BasicMap {
 		Quantity_Color & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Quantity_Color & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerColor::~MeshVS_DataMapOfIntegerColor %{
@@ -2851,7 +2875,7 @@ class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_NodalColorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_NodalColorPrsBuilder::~MeshVS_NodalColorPrsBuilder %{
@@ -2926,7 +2950,7 @@ class MeshVS_Drawer : public MMgt_TShared {
 };
 %extend MeshVS_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_Drawer::~MeshVS_Drawer %{
@@ -2975,7 +2999,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerVector : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerVector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerVector::~MeshVS_DataMapNodeOfDataMapOfIntegerVector %{
@@ -3024,7 +3048,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public TCollection_MapNo
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString::~MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString %{
@@ -3070,6 +3094,10 @@ class MeshVS_DataMapOfIntegerMaterial : public TCollection_BasicMap {
 		Graphic3d_MaterialAspect & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Graphic3d_MaterialAspect & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerMaterial::~MeshVS_DataMapOfIntegerMaterial %{
@@ -3143,7 +3171,7 @@ class MeshVS_TextPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_TextPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_TextPrsBuilder::~MeshVS_TextPrsBuilder %{
@@ -3277,6 +3305,10 @@ class MeshVS_DataMapOfIntegerVector : public TCollection_BasicMap {
 		gp_Vec  ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		gp_Vec  operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerVector::~MeshVS_DataMapOfIntegerVector %{
@@ -3325,7 +3357,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public TCollection_MapNode
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors::~MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors %{
@@ -3386,7 +3418,7 @@ class MeshVS_ElementalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_ElementalColorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_ElementalColorPrsBuilder::~MeshVS_ElementalColorPrsBuilder %{
@@ -3425,7 +3457,7 @@ class MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public TCollection_MapNod
 };
 %extend MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger %{
@@ -3565,7 +3597,7 @@ class MeshVS_SensitiveFace : public Select3D_SensitiveFace {
 };
 %extend MeshVS_SensitiveFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveFace::~MeshVS_SensitiveFace %{
@@ -3611,6 +3643,10 @@ class MeshVS_DataMapOfIntegerTwoColors : public TCollection_BasicMap {
 		MeshVS_TwoColors & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		MeshVS_TwoColors & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerTwoColors::~MeshVS_DataMapOfIntegerTwoColors %{
@@ -3682,7 +3718,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
@@ -3731,7 +3767,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public TCollection_M
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
@@ -3871,7 +3907,7 @@ class MeshVS_Mesh : public AIS_InteractiveObject {
 };
 %extend MeshVS_Mesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_Mesh::~MeshVS_Mesh %{
@@ -3910,7 +3946,7 @@ class MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public TCollection_Ma
 };
 %extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
@@ -3956,6 +3992,10 @@ class MeshVS_DataMapOfIntegerOwner : public TCollection_BasicMap {
 		Handle_SelectMgr_EntityOwner & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerOwner::~MeshVS_DataMapOfIntegerOwner %{
@@ -4001,6 +4041,10 @@ class MeshVS_DataMapOfIntegerAsciiString : public TCollection_BasicMap {
 		TCollection_AsciiString & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		TCollection_AsciiString & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerAsciiString::~MeshVS_DataMapOfIntegerAsciiString %{
@@ -4048,7 +4092,7 @@ class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_MeshPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshPrsBuilder::~MeshVS_MeshPrsBuilder %{
@@ -4105,7 +4149,7 @@ class MeshVS_MeshOwner : public SelectMgr_EntityOwner {
 };
 %extend MeshVS_MeshOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshOwner::~MeshVS_MeshOwner %{
@@ -4191,7 +4235,7 @@ class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
 };
 %extend MeshVS_MeshEntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
@@ -4241,7 +4285,7 @@ class MeshVS_DummySensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend MeshVS_DummySensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MeshVS_DummySensitiveEntity::~MeshVS_DummySensitiveEntity %{

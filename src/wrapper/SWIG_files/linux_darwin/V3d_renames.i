@@ -33,7 +33,6 @@ $HeaderURL$
 %rename(DownCast) Handle_V3d_View::DownCast;
 %rename(DownCast) Handle_V3d_PerspectiveView::DownCast;
 %rename(DownCast) Handle_V3d_Plane::DownCast;
-%rename(DownCast) Handle_V3d_Camera::DownCast;
 %rename(DownCast) Handle_V3d_OrthographicView::DownCast;
 %rename(DownCast) Handle_V3d_ColorScaleLayerItem::DownCast;
 %rename(DownCast) Handle_V3d_Viewer::DownCast;

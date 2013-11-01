@@ -45,7 +45,6 @@ $HeaderURL$
 #include <Handle_OSD_Exception_PRIV_INSTRUCTION.hxx>
 #include <Handle_OSD_Exception_STACK_OVERFLOW.hxx>
 #include <Handle_OSD_Exception_STATUS_NO_MEMORY.hxx>
-#include <Handle_OSD_FontMgr.hxx>
 #include <Handle_OSD_OSDError.hxx>
 #include <Handle_OSD_SIGBUS.hxx>
 #include <Handle_OSD_SIGHUP.hxx>
@@ -56,7 +55,6 @@ $HeaderURL$
 #include <Handle_OSD_SIGSEGV.hxx>
 #include <Handle_OSD_SIGSYS.hxx>
 #include <Handle_OSD_Signal.hxx>
-#include <Handle_OSD_SystemFont.hxx>
 #include <Handle_Quantity_ColorDefinitionError.hxx>
 #include <Handle_Quantity_DateDefinitionError.hxx>
 #include <Handle_Quantity_HArray1OfColor.hxx>
@@ -128,8 +126,6 @@ $HeaderURL$
 #include <OSD_File.hxx>
 #include <OSD_FileIterator.hxx>
 #include <OSD_FileNode.hxx>
-#include <OSD_FontAspect.hxx>
-#include <OSD_FontMgr.hxx>
 #include <OSD_FromWhere.hxx>
 #include <OSD_Function.hxx>
 #include <OSD_Host.hxx>
@@ -139,7 +135,7 @@ $HeaderURL$
 #include <OSD_LockType.hxx>
 #include <OSD_MAllocHook.hxx>
 #include <OSD_MailBox.hxx>
-#include <OSD_NListOfSystemFont.hxx>
+#include <OSD_MemInfo.hxx>
 #include <OSD_OEMType.hxx>
 #include <OSD_OSDError.hxx>
 #include <OSD_OpenMode.hxx>
@@ -165,12 +161,10 @@ $HeaderURL$
 #include <OSD_Signals.hxx>
 #include <OSD_SingleProtection.hxx>
 #include <OSD_SysType.hxx>
-#include <OSD_SystemFont.hxx>
 #include <OSD_Thread.hxx>
 #include <OSD_ThreadFunction.hxx>
 #include <OSD_Timer.hxx>
 #include <OSD_WNT.hxx>
-#include <OSD_WNT_1.hxx>
 #include <OSD_WNT_BREAK.hxx>
 #include <OSD_WhoAmI.hxx>
 #include <Quantity_AbsorbedDose.hxx>
@@ -270,11 +264,13 @@ $HeaderURL$
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
+#include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineAlloc.hxx>
 #include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
@@ -328,11 +324,11 @@ $HeaderURL$
 #include <Standard_SStream.hxx>
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
-#include <Standard_Static.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
 #include <Standard_ThreadId.hxx>
+#include <Standard_Time.hxx>
 #include <Standard_TooManyUsers.hxx>
 #include <Standard_Transient.hxx>
 #include <Standard_Type.hxx>

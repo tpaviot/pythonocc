@@ -173,7 +173,7 @@ class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetriev
 };
 %extend BinXCAFDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinXCAFDrivers_DocumentRetrievalDriver::~BinXCAFDrivers_DocumentRetrievalDriver %{
@@ -210,7 +210,7 @@ class BinXCAFDrivers_DocumentStorageDriver : public BinDrivers_DocumentStorageDr
 };
 %extend BinXCAFDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinXCAFDrivers_DocumentStorageDriver::~BinXCAFDrivers_DocumentStorageDriver %{

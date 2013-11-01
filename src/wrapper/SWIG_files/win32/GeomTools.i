@@ -304,7 +304,7 @@ class GeomTools_UndefinedTypeHandler : public MMgt_TShared {
 };
 %extend GeomTools_UndefinedTypeHandler {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomTools_UndefinedTypeHandler::~GeomTools_UndefinedTypeHandler %{

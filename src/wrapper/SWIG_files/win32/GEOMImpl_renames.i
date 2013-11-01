@@ -33,7 +33,6 @@ $HeaderURL$
 %rename(DownCast) Handle_GEOMImpl_DraftDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_VariableFilletDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_ImportDriver::DownCast;
-%rename(DownCast) Handle_GEOMImpl_MarkerDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_SphereDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_EllipseDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_MeasureDriver::DownCast;
@@ -47,6 +46,8 @@ $HeaderURL$
 %rename(DownCast) Handle_GEOMImpl_FilletDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_VectorDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_OffsetDriver::DownCast;
+%rename(DownCast) Handle_GEOMImpl_MarkerDriver::DownCast;
+%rename(DownCast) Handle_GEOMImpl_NSketcherDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_ScaleDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_FaceDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_BooleanDriver::DownCast;
@@ -88,6 +89,9 @@ $HeaderURL$
 %rename(GetID) GEOMImpl_CopyDriver::GetID;
 %rename(GetID) GEOMImpl_BooleanDriver::GetID;
 %rename(GetID) GEOMImpl_3DSketcherDriver::GetID;
+%rename(GetID) GEOMImpl_NSketcherDriver::GetID;
+%rename(SetGUI) GEOMImpl_ISketcherOperations::SetGUI;
+%rename(SetAISContext) GEOMImpl_ISketcherOperations::SetAISContext;
 %rename(GetID) GEOMImpl_ProjectionDriver::GetID;
 %rename(GetID) GEOMImpl_Fillet1dDriver::GetID;
 %rename(GetID) GEOMImpl_VectorDriver::GetID;

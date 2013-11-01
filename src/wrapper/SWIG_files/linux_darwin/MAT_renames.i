@@ -27,9 +27,9 @@ $HeaderURL$
 %rename(DownCast) Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt::DownCast;
 %rename(DownCast) Handle_MAT_SequenceNodeOfSequenceOfArc::DownCast;
 %rename(DownCast) Handle_MAT_BasicElt::DownCast;
+%rename(DownCast) Handle_MAT_DataMapNodeOfDataMapOfIntegerNode::DownCast;
 %rename(DownCast) Handle_MAT_Bisector::DownCast;
 %rename(DownCast) Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector::DownCast;
-%rename(DownCast) Handle_MAT_DataMapNodeOfDataMapOfIntegerNode::DownCast;
 %rename(DownCast) Handle_MAT_Zone::DownCast;
 %rename(DownCast) Handle_MAT_Graph::DownCast;
 %rename(DownCast) Handle_MAT_TListNodeOfListOfBisector::DownCast;

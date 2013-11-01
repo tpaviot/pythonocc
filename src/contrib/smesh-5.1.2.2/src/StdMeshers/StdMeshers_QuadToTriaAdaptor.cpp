@@ -1038,19 +1038,19 @@ bool StdMeshers_QuadToTriaAdaptor::Compute2ndPart(SMESH_Mesh& aMesh)
           double ang1 = fabs(VN1.Angle(VI1));
           double ang2 = fabs(VN2.Angle(VI2));
           double h1,h2;
-          if(ang1>PI/3.)
+          if(ang1>M_PI/3.)
             h1 = VI1.Magnitude()/2;
           else
             h1 = VI1.Magnitude()*cos(ang1);
-          if(ang2>PI/3.)
+          if(ang2>M_PI/3.)
             h2 = VI2.Magnitude()/2;
           else
             h2 = VI2.Magnitude()*cos(ang2);
           double coef1 = 0.5;
-          if(ang1<PI/3)
+          if(ang1<M_PI/3)
             coef1 -= cos(ang1)*0.25;
           double coef2 = 0.5;
-          if(ang2<PI/3)
+          if(ang2<M_PI/3)
             coef2 -= cos(ang1)*0.25;
 
           SMDS_MeshNode* aNode1 = const_cast<SMDS_MeshNode*>(Ns1[4]);

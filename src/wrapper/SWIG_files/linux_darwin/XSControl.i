@@ -384,7 +384,7 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 };
 %extend XSControl_SignTransferStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_SignTransferStatus::~XSControl_SignTransferStatus %{
@@ -495,7 +495,7 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 };
 %extend XSControl_ConnectedShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_ConnectedShapes::~XSControl_ConnectedShapes %{
@@ -744,7 +744,7 @@ class XSControl_Controller : public MMgt_TShared {
 };
 %extend XSControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_Controller::~XSControl_Controller %{
@@ -865,7 +865,7 @@ class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 };
 %extend XSControl_SelectForTransfer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
@@ -930,7 +930,7 @@ class XSControl_TransferWriter : public MMgt_TShared {
 };
 %extend XSControl_TransferWriter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_TransferWriter::~XSControl_TransferWriter %{
@@ -1027,7 +1027,7 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 };
 %extend XSControl_WorkSession {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_WorkSession::~XSControl_WorkSession %{
@@ -1154,7 +1154,7 @@ class XSControl_TransferReader : public MMgt_TShared {
 };
 %extend XSControl_TransferReader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_TransferReader::~XSControl_TransferReader %{

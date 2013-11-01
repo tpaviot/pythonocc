@@ -57,44 +57,6 @@ enum MAT_Side {
 
 
 
-%nodefaultctor Handle_MAT_TListNodeOfListOfBisector;
-class Handle_MAT_TListNodeOfListOfBisector : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfBisector();
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfBisector(const Handle_MAT_TListNodeOfListOfBisector &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfBisector(const MAT_TListNodeOfListOfBisector *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfBisector & operator=(const Handle_MAT_TListNodeOfListOfBisector &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfBisector & operator=(const MAT_TListNodeOfListOfBisector *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MAT_TListNodeOfListOfBisector DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_TListNodeOfListOfBisector {
-	MAT_TListNodeOfListOfBisector* GetObject() {
-	return (MAT_TListNodeOfListOfBisector*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MAT_TListNodeOfListOfBisector::~Handle_MAT_TListNodeOfListOfBisector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MAT_TListNodeOfListOfBisector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MAT_ListOfBisector;
 class Handle_MAT_ListOfBisector : public Handle_MMgt_TShared {
 	public:
@@ -393,6 +355,44 @@ def __del__(self):
 %}
 
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MAT_TListNodeOfListOfBisector;
+class Handle_MAT_TListNodeOfListOfBisector : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfBisector();
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfBisector(const Handle_MAT_TListNodeOfListOfBisector &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfBisector(const MAT_TListNodeOfListOfBisector *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfBisector & operator=(const Handle_MAT_TListNodeOfListOfBisector &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfBisector & operator=(const MAT_TListNodeOfListOfBisector *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MAT_TListNodeOfListOfBisector DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_TListNodeOfListOfBisector {
+	MAT_TListNodeOfListOfBisector* GetObject() {
+	return (MAT_TListNodeOfListOfBisector*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MAT_TListNodeOfListOfBisector::~Handle_MAT_TListNodeOfListOfBisector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MAT_TListNodeOfListOfBisector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -730,6 +730,10 @@ class MAT_DataMapOfIntegerBasicElt : public TCollection_BasicMap {
 		Handle_MAT_BasicElt & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT_DataMapOfIntegerBasicElt::~MAT_DataMapOfIntegerBasicElt %{
@@ -766,7 +770,7 @@ class MAT_SequenceNodeOfSequenceOfArc : public TCollection_SeqNode {
 };
 %extend MAT_SequenceNodeOfSequenceOfArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_SequenceNodeOfSequenceOfArc::~MAT_SequenceNodeOfSequenceOfArc %{
@@ -817,7 +821,7 @@ class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
 };
 %extend MAT_TListNodeOfListOfEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_TListNodeOfListOfEdge::~MAT_TListNodeOfListOfEdge %{
@@ -879,7 +883,7 @@ class MAT_Graph : public MMgt_TShared {
 };
 %extend MAT_Graph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_Graph::~MAT_Graph %{
@@ -925,6 +929,10 @@ class MAT_DataMapOfIntegerBisector : public TCollection_BasicMap {
 		Handle_MAT_Bisector & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_MAT_Bisector & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT_DataMapOfIntegerBisector::~MAT_DataMapOfIntegerBisector %{
@@ -1071,7 +1079,7 @@ class MAT_TListNodeOfListOfBisector : public MMgt_TShared {
 };
 %extend MAT_TListNodeOfListOfBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_TListNodeOfListOfBisector::~MAT_TListNodeOfListOfBisector %{
@@ -1164,7 +1172,7 @@ class MAT_Bisector : public MMgt_TShared {
 };
 %extend MAT_Bisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_Bisector::~MAT_Bisector %{
@@ -1249,7 +1257,7 @@ class MAT_ListOfBisector : public MMgt_TShared {
 };
 %extend MAT_ListOfBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_ListOfBisector::~MAT_ListOfBisector %{
@@ -1306,7 +1314,7 @@ class MAT_Edge : public MMgt_TShared {
 };
 %extend MAT_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_Edge::~MAT_Edge %{
@@ -1482,7 +1490,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBasicElt::~MAT_DataMapNodeOfDataMapOfIntegerBasicElt %{
@@ -1533,7 +1541,7 @@ class MAT_BasicElt : public MMgt_TShared {
 };
 %extend MAT_BasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_BasicElt::~MAT_BasicElt %{
@@ -1582,7 +1590,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBisector::~MAT_DataMapNodeOfDataMapOfIntegerBisector %{
@@ -1628,6 +1636,10 @@ class MAT_DataMapOfIntegerArc : public TCollection_BasicMap {
 		Handle_MAT_Arc & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_MAT_Arc & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT_DataMapOfIntegerArc::~MAT_DataMapOfIntegerArc %{
@@ -1676,7 +1688,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerArc::~MAT_DataMapNodeOfDataMapOfIntegerArc %{
@@ -1762,7 +1774,7 @@ class MAT_Node : public MMgt_TShared {
 };
 %extend MAT_Node {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_Node::~MAT_Node %{
@@ -1833,7 +1845,7 @@ class MAT_Arc : public MMgt_TShared {
 };
 %extend MAT_Arc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_Arc::~MAT_Arc %{
@@ -1870,7 +1882,7 @@ class MAT_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 };
 %extend MAT_SequenceNodeOfSequenceOfBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_SequenceNodeOfSequenceOfBasicElt::~MAT_SequenceNodeOfSequenceOfBasicElt %{
@@ -1916,6 +1928,10 @@ class MAT_DataMapOfIntegerNode : public TCollection_BasicMap {
 		Handle_MAT_Node & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_MAT_Node & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT_DataMapOfIntegerNode::~MAT_DataMapOfIntegerNode %{
@@ -1962,7 +1978,7 @@ class MAT_Zone : public MMgt_TShared {
 };
 %extend MAT_Zone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_Zone::~MAT_Zone %{
@@ -2047,7 +2063,7 @@ class MAT_ListOfEdge : public MMgt_TShared {
 };
 %extend MAT_ListOfEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_ListOfEdge::~MAT_ListOfEdge %{
@@ -2096,7 +2112,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerNode : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerNode::~MAT_DataMapNodeOfDataMapOfIntegerNode %{

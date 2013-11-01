@@ -1,0 +1,103 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	ModGlue_BuilderArea.cdl
+-- Created:	
+-- Author:	Peter KURNEV  
+--
+deferred class BuilderArea from GEOMAlgo 
+    	inherits Algo from GEOMAlgo 
+	 
+	---Purpose: The root class for algorithms to build  
+    	--          faces/solids from set of edges/faces  
+
+uses 
+    Shape from TopoDS,
+    ListOfShape from TopTools,
+    MapOfOrientedShape from TopTools, 
+    Context from IntTools, 
+    PContext from IntTools
+
+--raises
+
+is 
+    Initialize  
+    	---Purpose:  Empty  constructor
+    	returns BuilderArea from GEOMAlgo; 
+    ---C++: alias "Standard_EXPORT virtual ~GEOMAlgo_BuilderArea();" 
+     
+    SetContext(me:out; 
+    	    theContext:Context from IntTools);  
+	---Purpose: Sets cashed geometrical tools   
+	    
+    SetShapes(me:out; 
+    	    theLS:ListOfShape from TopTools); 
+    	---Purpose: Sets edges/faces to process 
+	
+    Shapes(me) 
+    	---Purpose: Returns edges/faces to process 
+    	returns ListOfShape from TopTools;   
+    ---C++:  return const &  
+     
+    Loops(me)  
+    	---Purpose: Returns wires/shells that have been built  
+    	returns ListOfShape from TopTools; 
+    ---C++:  return const &   
+     
+    Areas(me) 
+    	---Purpose: Returns faces/solids that have been built  
+    	returns ListOfShape from TopTools; 
+    ---C++:  return const &     
+     
+    PerformShapesToAvoid(me:out) 
+	---Purpose:  Collect the edges/faces that 
+	--           a) are internal        	 
+	--           b) are the same and have different orientation         	 
+    	is virtual protected; 
+	 
+    PerformLoops(me:out) 
+	---Purpose: Build draft faces/shells 
+        --          a)myLoops - draft faces/shells that consist of  
+        --                      boundary edges/faces 
+	--          b)myLoopsInternal - draft faces/shells that contains 
+	--                               inner edges/faces 
+    	is virtual protected;  
+	 
+    PerformAreas(me:out)   
+    	---Purpose: Build draft faces/solids that contains boundary faces   
+    	is virtual protected;  
+
+    PerformInternalShapes(me:out)   
+    	---Purpose: Build finalized faces/solids with internal wires/shells   
+    	is virtual protected;  
+     
+
+fields 
+    myShapes         :  ListOfShape from TopTools is protected;  
+    myLoops          :  ListOfShape from TopTools is protected;  
+    myLoopsInternal  :  ListOfShape from TopTools is protected;
+    myShapesToAvoid  :  MapOfOrientedShape from TopTools is protected;  
+    myAreas          :  ListOfShape from TopTools is protected;  
+    --
+    myContext        :  PContext from IntTools is protected;    	 
+
+end BuilderArea; 
+

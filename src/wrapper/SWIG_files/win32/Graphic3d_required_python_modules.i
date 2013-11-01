@@ -33,4 +33,5 @@ import Quantity
 import Aspect
 import OSD
 import TColStd
+import Font
 };

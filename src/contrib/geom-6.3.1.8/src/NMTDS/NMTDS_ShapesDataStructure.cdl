@@ -1,0 +1,100 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	NMTDS_ShapesDataStructure.cdl
+-- Created:	Mon Dec  1 10:17:05 2003
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class ShapesDataStructure from NMTDS  
+    inherits ShapesDataStructure from BooleanOperations  
+
+	---Purpose: 
+
+uses  
+    Box from Bnd,
+    IndexedMapOfInteger from TColStd,
+    Shape from TopoDS, 
+    IndexedDataMapOfShapeAncestorsSuccessors from BooleanOperations,
+    CArray1OfIndexRange from NMTDS, 
+    IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger from NMTDS
+--raises
+
+is 
+    Create 
+    	returns ShapesDataStructure from NMTDS; 
+	 
+    SetCompositeShape(me:out; 
+    	    aS:Shape from TopoDS);   
+    	 
+    Init(me:out);
+     
+    Ranges(me) 
+    	returns CArray1OfIndexRange from NMTDS; 
+    ---C++: return const & 
+     
+    CompositeShape(me) 
+        returns Shape from TopoDS; 
+    ---C++: return const &  
+     
+    ShapeRangeIndex(me; 
+    	aId:Integer from Standard) 
+    	returns  Integer from Standard;
+     
+    Rank (me; 
+    	  anIndex:Integer from Standard) 
+	  returns Integer from Standard    
+    	is redefined;                   
+	 
+    ShapeIndex  (me;  
+    	    aS:Shape from TopoDS; 
+    	    iRank:Integer from Standard) 
+    	returns Integer from Standard  
+    	is redefined;   
+
+-- Modified to Add new methods Thu Sep 14 14:35:18 2006 
+-- Contribution of Samtech www.samcef.com BEGIN 
+    FillMap (me;  
+    	    aS  :Shape from TopoDS; 
+    	    aMSA: out IndexedDataMapOfShapeAncestorsSuccessors from BooleanOperations;  
+    	    aMS : out IndexedDataMapOfShapeAncestorsSuccessors from BooleanOperations);  
+     
+    FillSubshapes (me;  
+    	    aS  :Shape from TopoDS; 
+    	    aMSA:out IndexedDataMapOfShapeAncestorsSuccessors from BooleanOperations;  
+    	    aMS :out IndexedDataMapOfShapeAncestorsSuccessors from BooleanOperations); 
+-- Contribution of Samtech www.samcef.com END 
+
+    GetAllSuccessors(me; 
+    	anIndex:Integer from Standard; 
+	aScrs  :out IndexedMapOfInteger from TColStd);   
+
+    ComputeBoxEx(me; 
+    	anIndex:Integer from Standard; 
+	aBox:out Box from Bnd);   
+
+fields
+    myCompositeShape:  Shape from TopoDS is protected; 
+    myRanges        :  CArray1OfIndexRange from NMTDS is protected; 
+    myShapeIndexMap :  IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger from NMTDS is protected;  
+     
+end ShapesDataStructure;
+    

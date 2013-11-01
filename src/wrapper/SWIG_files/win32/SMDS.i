@@ -54,7 +54,7 @@ typedef SMDS_MeshNode const * SMDS_pNode;
 typedef SMDS_Iterator<const SMDS_MeshFace*> SMDS_FaceIterator;
 typedef SMDS_Iterator<const SMDS_MeshVolume*> SMDS_VolumeIterator;
 typedef SMDS_MeshElement const * SMDS_pElement;
-typedef NCollection_DataMap<int, SMDS_MeshElement*> SMDS_IdElementMap;
+typedef NCollection_DataMap<int, SMDS_MeshElement*, NCollection_DefaultHasher<int> > SMDS_IdElementMap;
 typedef SMDS_Iterator<SMDS_MeshElement const*> SMDS_ElemIterator;
 typedef SMDS_Iterator<const SMDS_MeshNode*> SMDS_NodeIterator;
 typedef SMDS_Iterator<const SMDS_MeshEdge*> SMDS_EdgeIterator;

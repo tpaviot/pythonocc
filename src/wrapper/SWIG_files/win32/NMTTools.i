@@ -564,7 +564,7 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public 
 };
 %extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger %{
@@ -690,6 +690,10 @@ class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_Basic
 		const TopTools_IndexedMapOfShape & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") NMTTools_IndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape %{
@@ -910,7 +914,7 @@ class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
 };
 %extend NMTTools_StdMapNodeOfMapOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_StdMapNodeOfMapOfPaveBlock::~NMTTools_StdMapNodeOfMapOfPaveBlock %{
@@ -956,6 +960,10 @@ class NMTTools_DataMapOfIntegerFaceInfo : public TCollection_BasicMap {
 		NMTTools_FaceInfo & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		NMTTools_FaceInfo & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") NMTTools_DataMapOfIntegerFaceInfo::~NMTTools_DataMapOfIntegerFaceInfo %{
@@ -1036,6 +1044,8 @@ class NMTTools_CommonBlockPool {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") NMTTools_CommonBlockPool::~NMTTools_CommonBlockPool %{
@@ -1072,7 +1082,7 @@ class NMTTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 };
 %extend NMTTools_ListNodeOfListOfCommonBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_ListNodeOfListOfCommonBlock::~NMTTools_ListNodeOfListOfCommonBlock %{
@@ -1229,7 +1239,7 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : publ
 };
 %extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
@@ -1275,6 +1285,10 @@ class NMTTools_DataMapOfIntegerListOfPaveBlock : public TCollection_BasicMap {
 		BOPTools_ListOfPaveBlock & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		BOPTools_ListOfPaveBlock & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") NMTTools_DataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapOfIntegerListOfPaveBlock %{
@@ -1356,7 +1370,7 @@ class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection
 };
 %extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
@@ -1412,6 +1426,10 @@ class NMTTools_IndexedDataMapOfIndexedMapOfInteger : public TCollection_BasicMap
 		const TColStd_IndexedMapOfInteger & FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K);
 
 };
 %feature("shadow") NMTTools_IndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapOfIndexedMapOfInteger %{
@@ -1487,7 +1505,7 @@ class NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo : public TCollection_MapNod
 };
 %extend NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo::~NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo %{
@@ -1524,7 +1542,7 @@ class NMTTools_ListNodeOfListOfCoupleOfShape : public TCollection_MapNode {
 };
 %extend NMTTools_ListNodeOfListOfCoupleOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_ListNodeOfListOfCoupleOfShape::~NMTTools_ListNodeOfListOfCoupleOfShape %{
@@ -1580,6 +1598,10 @@ class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
 		const BOPTools_PaveBlock & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		BOPTools_PaveBlock & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") NMTTools_IndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapOfShapePaveBlock %{
@@ -1663,7 +1685,7 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public TColl
 };
 %extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock %{

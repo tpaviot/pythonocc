@@ -40,6 +40,7 @@ import TCollection
 import DsgPrs
 import SelectMgr
 import Poly
+import StdSelect
 import TopLoc
 import V3d
 import PrsMgr

@@ -441,7 +441,7 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 };
 %extend ShapeAnalysis_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_Surface::~ShapeAnalysis_Surface %{
@@ -992,7 +992,7 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 };
 %extend ShapeAnalysis_TransferParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_TransferParameters::~ShapeAnalysis_TransferParameters %{
@@ -1031,7 +1031,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal::~ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal %{
@@ -1102,7 +1102,7 @@ class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
 };
 %extend ShapeAnalysis_FreeBoundData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_FreeBoundData::~ShapeAnalysis_FreeBoundData %{
@@ -1181,7 +1181,7 @@ class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
 };
 %extend ShapeAnalysis_HSequenceOfFreeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_HSequenceOfFreeBounds::~ShapeAnalysis_HSequenceOfFreeBounds %{
@@ -1227,6 +1227,10 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 		TColStd_ListOfReal & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TColStd_ListOfReal & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") ShapeAnalysis_DataMapOfShapeListOfReal::~ShapeAnalysis_DataMapOfShapeListOfReal %{
@@ -1438,7 +1442,7 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 };
 %extend ShapeAnalysis_TransferParametersProj {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_TransferParametersProj::~ShapeAnalysis_TransferParametersProj %{
@@ -1618,7 +1622,7 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 };
 %extend ShapeAnalysis_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_Wire::~ShapeAnalysis_Wire %{
@@ -1825,7 +1829,7 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 };
 %extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::~ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds %{

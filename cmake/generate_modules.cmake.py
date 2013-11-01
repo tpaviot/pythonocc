@@ -4,7 +4,7 @@ import Modules
 
 # create OCE_Modules_Unix.cmake file
 fp = open("OCE_Modules_Unix.cmake","w")
-fp.write("LIST(APPEND OCC_MODULES\n")
+fp.write("LIST(APPEND OCE_MODULES\n")
 # write all module names
 unix_module_names = []
 for module in (Modules.COMMON_MODULES+Modules.UNIX_MODULES):
@@ -17,7 +17,7 @@ fp.close()
 
 # create OCE_Modules_Win.cmake file
 fp = open("OCE_Modules_Win.cmake","w")
-fp.write("LIST(APPEND OCC_MODULES\n")
+fp.write("LIST(APPEND OCE_MODULES\n")
 # write all module names
 win_module_names = []
 for module in (Modules.COMMON_MODULES+Modules.WIN_MODULES):

@@ -42,9 +42,3 @@ $HeaderURL$
 %rename(NbIntervals) Geom2dInt_Geom2dCurveTool::NbIntervals;
 %rename(Intervals) Geom2dInt_Geom2dCurveTool::Intervals;
 %rename(GetInterval) Geom2dInt_Geom2dCurveTool::GetInterval;
-%rename(Bounding) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::Bounding;
-%rename(DeflectionOverEstimation) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::DeflectionOverEstimation;
-%rename(Closed) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::Closed;
-%rename(NbSegments) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::NbSegments;
-%rename(BeginOfSeg) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::BeginOfSeg;
-%rename(EndOfSeg) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::EndOfSeg;

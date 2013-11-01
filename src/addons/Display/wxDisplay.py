@@ -22,21 +22,9 @@ import sys
 import wx
 import OCCViewer
 
-if sys.platform == 'darwin' or sys.platform == 'linux2':
-    BaseClass = wx.Panel
-else:
-    import wx.glcanvas
-    BaseClass = wx.glcanvas.GLCanvas
-    attribList = (wx.glcanvas.WX_GL_RGBA, # RGBA
-                  wx.glcanvas.WX_GL_DOUBLEBUFFER, # Double Buffered
-                  )
-
-class wxBaseViewer(BaseClass):
+class wxBaseViewer(wx.Panel):
     def __init__(self, parent = None):
-        if BaseClass == wx.Panel:
-            BaseClass.__init__(self,parent)
-        else:
-            BaseClass.__init__(self,parent,attribList=attribList)
+        wx.Panel.__init__(self,parent)
         self.Bind( wx.EVT_SIZE , self.OnSize)
         self.Bind( wx.EVT_IDLE , self.OnIdle)
         self.Bind( wx.EVT_MOVE , self.OnMove)
@@ -84,26 +72,6 @@ class wxBaseViewer(BaseClass):
         pass
     def OnKeyDown(self,event):
         pass
-        
-class wxViewer2d(wxBaseViewer):
-     def __init__(self, *kargs):
-        wxBaseViewer.__init__(self, *kargs)
-        print "wxViewer2d inited"
-        
-     def InitDriver(self):
-        """
-        This method is called after __init__ in the wxBaseViewer class
-        """
-        self._display = OCCViewer.Viewer2d(self.GetHandle())
-        self._display.Create()
-        self._inited = True
-    
-     def OnMotion(self, evt):
-        print "Motion!!"
-        pt = evt.GetPosition()
-        print pt.x, pt.y
-        self._display.MoveTo(pt.x,pt.y)
-
     
 class wxNISViewer3d(wxBaseViewer):
     def __init__(self, *kargs):
@@ -215,7 +183,7 @@ class wxViewer3d(wxBaseViewer):
             self._display.Repaint()
             
     def ZoomAll(self, evt):
-        self._display.Zoom_FitAll()
+        self._display.FitAll()
 
     def Repaint(self, evt):
        if self._inited:
@@ -314,7 +282,6 @@ def Test3d():
             
         def runTests(self):
             self.canva._display.Test()
-            self.canva._display.DisplayMessage("po","po")
             
     app = wx.PySimpleApp()
     wx.InitAllImageHandlers()
@@ -326,62 +293,6 @@ def Test3d():
     app.SetTopWindow(frame)
     app.MainLoop()            
 
-def TestNIS3d():
-    class AppFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            menuBar = wx.MenuBar()
-            DemoMenu = wx.Menu()
-            demo_id = wx.NewId()
-            DemoMenu.Append(demo_id, "Run DoIt")
-            self.Bind(wx.EVT_MENU, self.doit, id=demo_id)
-            menuBar.Append(DemoMenu, "&Emmenthaler")
-            self.SetMenuBar(menuBar)
-        
-        def doit(self,event=None):
-            display = OCCViewer.NISViewer3d(self.GetHandle())
-            display.Create()
-            print "oui"
-            
-        def runTests(self):
-            self.canva._display.Test()
-            
-    #display = OCCViewer.NISViewer3d(0)
-    app = wx.PySimpleApp()
-    wx.InitAllImageHandlers()
-    frame = AppFrame(None)
-    frame.Show(True)
-    #wx.SafeYield()
-    #h = frame.GetHandle()
-    #display.SetWindow(h)
-    #display.Create()
-    #frame.canva.InitDriver()
-    #frame.Show(True)
-    #wx.SafeYield()
-
-    #frame.runTests()
-    app.SetTopWindow(frame)
-    app.MainLoop()     
-    
-def Test2d():
-    class AppFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "wxDisplay2d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            self.canva = wxViewer2d(self)
-            
-        def runTests(self):
-            self.canva._display.Test()
-            
-    app = wx.PySimpleApp()
-    wx.InitAllImageHandlers()
-    frame = AppFrame(None)
-    frame.Show(True)
-    wx.SafeYield() #under Linux, frame must be shown before Display3D is initialized
-    frame.canva.InitDriver()
-    frame.runTests()
-    app.SetTopWindow(frame)
-    app.MainLoop()            
-
+   
 if __name__=="__main__":
     Test3d()
-    #Test3d()

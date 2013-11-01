@@ -267,7 +267,7 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 };
 %extend BRepTopAdaptor_HVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_HVertex::~BRepTopAdaptor_HVertex %{
@@ -393,7 +393,7 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend BRepTopAdaptor_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_TopolTool::~BRepTopAdaptor_TopolTool %{
@@ -439,6 +439,10 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		BRepTopAdaptor_Tool & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		BRepTopAdaptor_Tool & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepTopAdaptor_MapOfShapeTool::~BRepTopAdaptor_MapOfShapeTool %{
@@ -477,7 +481,7 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{

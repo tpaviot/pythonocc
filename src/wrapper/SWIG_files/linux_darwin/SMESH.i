@@ -50,17 +50,17 @@ $HeaderURL$
 
 %include SMESH_headers.i
 
-typedef NCollection_DataMap<const SMDS_MeshElement*,NCollection_Sequence<const SMDS_MeshElement*> > SMESH_DataMapOfElemPtrSequenceOfElemPtr;
+typedef NCollection_DataMap<const SMDS_MeshElement*,NCollection_Sequence<const SMDS_MeshElement*>,NCollection_DefaultHasher<const SMDS_MeshElement*> > SMESH_DataMapOfElemPtrSequenceOfElemPtr;
 typedef NCollection_BaseCollection<SMDS_MeshElement const*> SMESH_BaseCollectionElemPtr;
 typedef SMDS_Iterator<SMESH_OctreeNode*> SMESH_OctreeNodeIterator;
 typedef NCollection_Sequence<SMDS_MeshElement const*> SMESH_SequenceOfElemPtr;
-typedef NCollection_IndexedMap<TopoDS_Shape> SMESH_IndexedMapOfShape;
+typedef NCollection_IndexedMap<TopoDS_Shape,NCollection_DefaultHasher<TopoDS_Shape> > SMESH_IndexedMapOfShape;
 typedef NCollection_BaseCollection<SMDS_MeshNode const*> SMESH_BaseCollectionNodePtr;
 typedef NCollection_Sequence<SMDS_MeshNode const*> SMESH_SequenceOfNode;
 typedef NCollection_BaseCollection<TopoDS_Shape> SMESH_BaseCollectionShape;
 typedef NCollection_BaseCollection<NCollection_Sequence<const SMDS_MeshElement*> > SMESH_BaseCollectionSequenceOfElemPtr;
-typedef NCollection_BaseCollection<NCollection_IndexedMap<TopoDS_Shape> > SMESH_BaseCollectionIndexedMapOfShape;
-typedef NCollection_IndexedDataMap<TopoDS_Shape,NCollection_IndexedMap<TopoDS_Shape> > SMESH_IndexedDataMapOfShapeIndexedMapOfShape;
+typedef NCollection_BaseCollection<NCollection_IndexedMap<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> > > SMESH_BaseCollectionIndexedMapOfShape;
+typedef NCollection_IndexedDataMap<TopoDS_Shape,NCollection_IndexedMap<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> >,NCollection_DefaultHasher<TopoDS_Shape> > SMESH_IndexedDataMapOfShapeIndexedMapOfShape;
 
 enum SMESH_ComputeErrorName {
 	COMPERR_OK,
@@ -108,118 +108,6 @@ def __del__(self):
 %}
 
 %extend Handle_SMESH_MeshVSLink {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_HypoPredicate;
-class SMESH_HypoPredicate {
-	public:
-		%feature("autodoc", "1");
-		virtual		bool IsOk(const SMESH_Hypothesis *aHyp, const TopoDS_Shape aShape) const;
-
-};
-%feature("shadow") SMESH_HypoPredicate::~SMESH_HypoPredicate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_HypoPredicate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_HypoFilter;
-class SMESH_HypoFilter : public SMESH_HypoPredicate {
-	public:
-		%feature("autodoc", "1");
-		SMESH_HypoFilter();
-		%feature("autodoc", "1");
-		SMESH_HypoFilter(SMESH_HypoPredicate* aPredicate, bool =true);
-		%feature("autodoc", "1");
-		SMESH_HypoFilter & Init(SMESH_HypoPredicate* aPredicate, bool =true);
-		%feature("autodoc", "1");
-		SMESH_HypoFilter & And(SMESH_HypoPredicate* aPredicate);
-		%feature("autodoc", "1");
-		SMESH_HypoFilter & AndNot(SMESH_HypoPredicate* aPredicate);
-		%feature("autodoc", "1");
-		SMESH_HypoFilter & Or(SMESH_HypoPredicate* aPredicate);
-		%feature("autodoc", "1");
-		SMESH_HypoFilter & OrNot(SMESH_HypoPredicate* aPredicate);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsAlgo();
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsAuxiliary();
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsApplicableTo(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsAssignedTo(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * Is(const SMESH_Hypothesis *theHypo);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsGlobal(const TopoDS_Shape theMainShape);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsMoreLocalThan(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * HasName(const std::string &theName);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * HasDim(const int theDim);
-		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * HasType(const int theHypType);
-		%feature("autodoc", "1");
-		bool IsAny() const;
-
-};
-%feature("shadow") SMESH_HypoFilter::~SMESH_HypoFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_HypoFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend SMESH_HypoFilter {
-	SMESH_HypoFilter () {}
-};
-
-
-%nodefaultctor SMESH_Group;
-class SMESH_Group {
-	public:
-		%feature("autodoc", "1");
-		SMESH_Group(int , const SMESH_Mesh *theMesh, const SMDSAbs_ElementType theType, const char *theName, const TopoDS_Shape theShape=TopoDS_Shape( ));
-		%feature("autodoc", "1");
-		void SetName(const char *theName);
-		%feature("autodoc", "1");
-		const char * GetName() const;
-		%feature("autodoc", "1");
-		SMESHDS_GroupBase * GetGroupDS();
-
-};
-%feature("shadow") SMESH_Group::~SMESH_Group %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_Group {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -370,7 +258,7 @@ class SMESH_MeshVSLink : public MeshVS_DataSource3D {
 };
 %extend SMESH_MeshVSLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SMESH_MeshVSLink::~SMESH_MeshVSLink %{
@@ -586,6 +474,29 @@ def __del__(self):
 %}
 
 %extend SMESH_Pattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_HypoPredicate;
+class SMESH_HypoPredicate {
+	public:
+		%feature("autodoc", "1");
+		virtual		bool IsOk(const SMESH_Hypothesis *aHyp, const TopoDS_Shape aShape) const;
+
+};
+%feature("shadow") SMESH_HypoPredicate::~SMESH_HypoPredicate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_HypoPredicate {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -877,6 +788,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor SMESH_Group;
+class SMESH_Group {
+	public:
+		%feature("autodoc", "1");
+		SMESH_Group(int , const SMESH_Mesh *theMesh, const SMDSAbs_ElementType theType, const char *theName, const TopoDS_Shape theShape=TopoDS_Shape( ));
+		%feature("autodoc", "1");
+		void SetName(const char *theName);
+		%feature("autodoc", "1");
+		const char * GetName() const;
+		%feature("autodoc", "1");
+		SMESHDS_GroupBase * GetGroupDS();
+
+};
+%feature("shadow") SMESH_Group::~SMESH_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Group {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor SMESH_ComputeError;
 class SMESH_ComputeError {
 	public:
@@ -932,6 +872,68 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+
+
+%nodefaultctor SMESH_HypoFilter;
+class SMESH_HypoFilter : public SMESH_HypoPredicate {
+	public:
+		%feature("autodoc", "1");
+		SMESH_HypoFilter();
+		%feature("autodoc", "1");
+		SMESH_HypoFilter(SMESH_HypoPredicate* aPredicate, bool =true);
+		%feature("autodoc", "1");
+		SMESH_HypoFilter & Init(SMESH_HypoPredicate* aPredicate, bool =true);
+		%feature("autodoc", "1");
+		SMESH_HypoFilter & And(SMESH_HypoPredicate* aPredicate);
+		%feature("autodoc", "1");
+		SMESH_HypoFilter & AndNot(SMESH_HypoPredicate* aPredicate);
+		%feature("autodoc", "1");
+		SMESH_HypoFilter & Or(SMESH_HypoPredicate* aPredicate);
+		%feature("autodoc", "1");
+		SMESH_HypoFilter & OrNot(SMESH_HypoPredicate* aPredicate);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * IsAlgo();
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * IsAuxiliary();
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * IsApplicableTo(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * IsAssignedTo(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * Is(const SMESH_Hypothesis *theHypo);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * IsGlobal(const TopoDS_Shape theMainShape);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * IsMoreLocalThan(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * HasName(const std::string &theName);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * HasDim(const int theDim);
+		%feature("autodoc", "1");
+		static		SMESH_HypoPredicate * HasType(const int theHypType);
+		%feature("autodoc", "1");
+		virtual		bool IsOk(const SMESH_Hypothesis *aHyp, const TopoDS_Shape aShape) const;
+		%feature("autodoc", "1");
+		bool IsAny() const;
+
+};
+%feature("shadow") SMESH_HypoFilter::~SMESH_HypoFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_HypoFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend SMESH_HypoFilter {
+	SMESH_HypoFilter () {}
 };
 
 

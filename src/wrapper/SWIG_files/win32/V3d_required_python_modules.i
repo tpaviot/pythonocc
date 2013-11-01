@@ -32,6 +32,5 @@ import Aspect
 import Quantity
 import Graphic3d
 import Visual3d
-import Image
 import gp
 };

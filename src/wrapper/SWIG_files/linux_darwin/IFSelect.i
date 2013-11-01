@@ -1121,44 +1121,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_SelectCombine;
-class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine(const Handle_IFSelect_SelectCombine &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine(const IFSelect_SelectCombine *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine & operator=(const Handle_IFSelect_SelectCombine &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectCombine & operator=(const IFSelect_SelectCombine *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectCombine DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectCombine {
-	IFSelect_SelectCombine* GetObject() {
-	return (IFSelect_SelectCombine*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectCombine::~Handle_IFSelect_SelectCombine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectCombine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_SelectFlag;
 class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
 	public:
@@ -1381,6 +1343,44 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SelectCombine;
+class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine(const Handle_IFSelect_SelectCombine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine(const IFSelect_SelectCombine *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine & operator=(const Handle_IFSelect_SelectCombine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine & operator=(const IFSelect_SelectCombine *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectCombine DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectCombine {
+	IFSelect_SelectCombine* GetObject() {
+	return (IFSelect_SelectCombine*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectCombine::~Handle_IFSelect_SelectCombine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectCombine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3041,7 +3041,7 @@ class IFSelect_Editor : public MMgt_TShared {
 };
 %extend IFSelect_Editor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Editor::~IFSelect_Editor %{
@@ -3121,7 +3121,7 @@ class IFSelect_Selection : public MMgt_TShared {
 };
 %extend IFSelect_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Selection::~IFSelect_Selection %{
@@ -3164,7 +3164,7 @@ class IFSelect_SelectDeduct : public IFSelect_Selection {
 };
 %extend IFSelect_SelectDeduct {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectDeduct::~IFSelect_SelectDeduct %{
@@ -3223,7 +3223,7 @@ class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectAnyList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectAnyList::~IFSelect_SelectAnyList %{
@@ -3258,7 +3258,7 @@ class IFSelect_SelectInList : public IFSelect_SelectAnyList {
 };
 %extend IFSelect_SelectInList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectInList::~IFSelect_SelectInList %{
@@ -3305,7 +3305,7 @@ class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectExtract {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectExtract::~IFSelect_SelectExtract %{
@@ -3338,7 +3338,7 @@ class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectAnyType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectAnyType::~IFSelect_SelectAnyType %{
@@ -3377,7 +3377,7 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectErrorEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectErrorEntities::~IFSelect_SelectErrorEntities %{
@@ -3412,7 +3412,7 @@ class IFSelect_SelectBase : public IFSelect_Selection {
 };
 %extend IFSelect_SelectBase {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectBase::~IFSelect_SelectBase %{
@@ -3479,7 +3479,7 @@ class IFSelect_SelectPointed : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectPointed {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectPointed::~IFSelect_SelectPointed %{
@@ -3524,7 +3524,7 @@ class IFSelect_SelectControl : public IFSelect_Selection {
 };
 %extend IFSelect_SelectControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectControl::~IFSelect_SelectControl %{
@@ -3561,7 +3561,7 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 };
 %extend IFSelect_SelectDiff {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectDiff::~IFSelect_SelectDiff %{
@@ -3651,7 +3651,7 @@ class IFSelect_Dispatch : public MMgt_TShared {
 };
 %extend IFSelect_Dispatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Dispatch::~IFSelect_Dispatch %{
@@ -3690,7 +3690,7 @@ class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerSignature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispPerSignature::~IFSelect_DispPerSignature %{
@@ -3731,7 +3731,7 @@ class IFSelect_Transformer : public MMgt_TShared {
 };
 %extend IFSelect_Transformer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Transformer::~IFSelect_Transformer %{
@@ -3833,7 +3833,7 @@ class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 };
 %extend IFSelect_SequenceNodeOfTSeqOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfTSeqOfSelection::~IFSelect_SequenceNodeOfTSeqOfSelection %{
@@ -3870,7 +3870,7 @@ class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_Seq
 };
 %extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfAppliedModifiers::~IFSelect_SequenceNodeOfSequenceOfAppliedModifiers %{
@@ -3998,7 +3998,7 @@ class IFSelect_SelectCombine : public IFSelect_Selection {
 };
 %extend IFSelect_SelectCombine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectCombine::~IFSelect_SelectCombine %{
@@ -4035,7 +4035,7 @@ class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 };
 %extend IFSelect_SelectUnion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectUnion::~IFSelect_SelectUnion %{
@@ -4074,7 +4074,7 @@ class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectModelRoots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectModelRoots::~IFSelect_SelectModelRoots %{
@@ -4143,7 +4143,7 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 };
 %extend IFSelect_TransformStandard {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_TransformStandard::~IFSelect_TransformStandard %{
@@ -4202,7 +4202,7 @@ class IFSelect_PacketList : public MMgt_TShared {
 };
 %extend IFSelect_PacketList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_PacketList::~IFSelect_PacketList %{
@@ -4254,7 +4254,7 @@ class IFSelect_Signature : public Interface_SignType {
 };
 %extend IFSelect_Signature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Signature::~IFSelect_Signature %{
@@ -4291,7 +4291,7 @@ class IFSelect_SignValidity : public IFSelect_Signature {
 };
 %extend IFSelect_SignValidity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignValidity::~IFSelect_SignValidity %{
@@ -4334,7 +4334,7 @@ class IFSelect_SelectType : public IFSelect_SelectAnyType {
 };
 %extend IFSelect_SelectType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectType::~IFSelect_SelectType %{
@@ -4411,7 +4411,7 @@ class IFSelect_ModelCopier : public MMgt_TShared {
 };
 %extend IFSelect_ModelCopier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_ModelCopier::~IFSelect_ModelCopier %{
@@ -4462,7 +4462,7 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerCount {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispPerCount::~IFSelect_DispPerCount %{
@@ -4539,7 +4539,7 @@ class IFSelect_SignatureList : public MMgt_TShared {
 };
 %extend IFSelect_SignatureList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignatureList::~IFSelect_SignatureList %{
@@ -4578,7 +4578,7 @@ class IFSelect_CheckCounter : public IFSelect_SignatureList {
 };
 %extend IFSelect_CheckCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_CheckCounter::~IFSelect_CheckCounter %{
@@ -4630,7 +4630,7 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 };
 %extend IFSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_WorkLibrary::~IFSelect_WorkLibrary %{
@@ -4761,7 +4761,7 @@ class IFSelect_EditForm : public MMgt_TShared {
 };
 %extend IFSelect_EditForm {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_EditForm::~IFSelect_EditForm %{
@@ -4869,7 +4869,7 @@ class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectExplore {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectExplore::~IFSelect_SelectExplore %{
@@ -4908,7 +4908,7 @@ class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 };
 %extend IFSelect_SelectSignedShared {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSignedShared::~IFSelect_SelectSignedShared %{
@@ -4959,7 +4959,7 @@ class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectSuite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSuite::~IFSelect_SelectSuite %{
@@ -5004,7 +5004,7 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 };
 %extend IFSelect_SelectSignedSharing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSignedSharing::~IFSelect_SelectSignedSharing %{
@@ -5076,7 +5076,7 @@ class IFSelect_SelectShared : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectShared {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectShared::~IFSelect_SelectShared %{
@@ -5121,7 +5121,7 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectSent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSent::~IFSelect_SelectSent %{
@@ -5158,7 +5158,7 @@ class IFSelect_SignType : public IFSelect_Signature {
 };
 %extend IFSelect_SignType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignType::~IFSelect_SignType %{
@@ -5193,7 +5193,7 @@ class IFSelect_SignAncestor : public IFSelect_SignType {
 };
 %extend IFSelect_SignAncestor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignAncestor::~IFSelect_SignAncestor %{
@@ -5244,7 +5244,7 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerFiles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispPerFiles::~IFSelect_DispPerFiles %{
@@ -5276,6 +5276,10 @@ class IFSelect_WorkSession : public MMgt_TShared {
 		const Handle_IFSelect_ShareOut & ShareOut() const;
 		%feature("autodoc", "1");
 		void SetShareOut(const Handle_IFSelect_ShareOut &shareout);
+		%feature("autodoc", "1");
+		void SetModeStat(const Standard_Boolean theMode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetModeStat() const;
 		%feature("autodoc", "1");
 		void SetLibrary(const Handle_IFSelect_WorkLibrary &lib);
 		%feature("autodoc", "1");
@@ -5601,7 +5605,7 @@ class IFSelect_WorkSession : public MMgt_TShared {
 };
 %extend IFSelect_WorkSession {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_WorkSession::~IFSelect_WorkSession %{
@@ -5642,7 +5646,7 @@ class IFSelect_SignMultiple : public IFSelect_Signature {
 };
 %extend IFSelect_SignMultiple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignMultiple::~IFSelect_SignMultiple %{
@@ -5706,7 +5710,7 @@ class IFSelect_Activator : public MMgt_TShared {
 };
 %extend IFSelect_Activator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Activator::~IFSelect_Activator %{
@@ -5789,7 +5793,7 @@ class IFSelect_SessionPilot : public IFSelect_Activator {
 };
 %extend IFSelect_SessionPilot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SessionPilot::~IFSelect_SessionPilot %{
@@ -5856,7 +5860,7 @@ class IFSelect_SignCounter : public IFSelect_SignatureList {
 };
 %extend IFSelect_SignCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignCounter::~IFSelect_SignCounter %{
@@ -5897,7 +5901,7 @@ class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectModelEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectModelEntities::~IFSelect_SelectModelEntities %{
@@ -5942,7 +5946,7 @@ class IFSelect_DispGlobal : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispGlobal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispGlobal::~IFSelect_DispGlobal %{
@@ -6068,7 +6072,7 @@ class IFSelect_SelectRange : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectRange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectRange::~IFSelect_SelectRange %{
@@ -6111,7 +6115,7 @@ class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectFlag {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectFlag::~IFSelect_SelectFlag %{
@@ -6152,7 +6156,7 @@ class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectRootComps {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectRootComps::~IFSelect_SelectRootComps %{
@@ -6193,7 +6197,7 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectRoots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectRoots::~IFSelect_SelectRoots %{
@@ -6262,7 +6266,7 @@ class IFSelect_ListEditor : public MMgt_TShared {
 };
 %extend IFSelect_ListEditor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_ListEditor::~IFSelect_ListEditor %{
@@ -6303,7 +6307,7 @@ class IFSelect_SessionDumper : public MMgt_TShared {
 };
 %extend IFSelect_SessionDumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SessionDumper::~IFSelect_SessionDumper %{
@@ -6336,7 +6340,7 @@ class IFSelect_BasicDumper : public IFSelect_SessionDumper {
 };
 %extend IFSelect_BasicDumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_BasicDumper::~IFSelect_BasicDumper %{
@@ -6386,7 +6390,7 @@ class IFSelect_AppliedModifiers : public MMgt_TShared {
 };
 %extend IFSelect_AppliedModifiers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_AppliedModifiers::~IFSelect_AppliedModifiers %{
@@ -6425,7 +6429,7 @@ class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 };
 %extend IFSelect_SelectIntersection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectIntersection::~IFSelect_SelectIntersection %{
@@ -6520,7 +6524,7 @@ class IFSelect_ShareOut : public MMgt_TShared {
 };
 %extend IFSelect_ShareOut {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_ShareOut::~IFSelect_ShareOut %{
@@ -6656,7 +6660,7 @@ class IFSelect_IntParam : public MMgt_TShared {
 };
 %extend IFSelect_IntParam {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_IntParam::~IFSelect_IntParam %{
@@ -6707,7 +6711,7 @@ class IFSelect_GeneralModifier : public MMgt_TShared {
 };
 %extend IFSelect_GeneralModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_GeneralModifier::~IFSelect_GeneralModifier %{
@@ -6744,7 +6748,7 @@ class IFSelect_SignCategory : public IFSelect_Signature {
 };
 %extend IFSelect_SignCategory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignCategory::~IFSelect_SignCategory %{
@@ -6843,7 +6847,7 @@ class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 };
 %extend IFSelect_SequenceNodeOfTSeqOfDispatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfTSeqOfDispatch::~IFSelect_SequenceNodeOfTSeqOfDispatch %{
@@ -6896,7 +6900,7 @@ class IFSelect_SelectSignature : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectSignature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSignature::~IFSelect_SelectSignature %{
@@ -6947,7 +6951,7 @@ class IFSelect_ParamEditor : public IFSelect_Editor {
 };
 %extend IFSelect_ParamEditor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_ParamEditor::~IFSelect_ParamEditor %{
@@ -6986,7 +6990,7 @@ class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectUnknownEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectUnknownEntities::~IFSelect_SelectUnknownEntities %{
@@ -7027,7 +7031,7 @@ class IFSelect_Act : public IFSelect_Activator {
 };
 %extend IFSelect_Act {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Act::~IFSelect_Act %{
@@ -7062,7 +7066,7 @@ class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 };
 %extend IFSelect_SelectIncorrectEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectIncorrectEntities::~IFSelect_SelectIncorrectEntities %{
@@ -7099,7 +7103,7 @@ class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqN
 };
 %extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfGeneralModifier::~IFSelect_SequenceNodeOfSequenceOfGeneralModifier %{
@@ -7178,7 +7182,7 @@ class IFSelect_HSeqOfSelection : public MMgt_TShared {
 };
 %extend IFSelect_HSeqOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_HSeqOfSelection::~IFSelect_HSeqOfSelection %{
@@ -7213,7 +7217,7 @@ class IFSelect_Modifier : public IFSelect_GeneralModifier {
 };
 %extend IFSelect_Modifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_Modifier::~IFSelect_Modifier %{
@@ -7258,7 +7262,7 @@ class IFSelect_DispPerOne : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerOne {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispPerOne::~IFSelect_DispPerOne %{
@@ -7366,7 +7370,7 @@ class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectEntityNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectEntityNumber::~IFSelect_SelectEntityNumber %{
@@ -7472,7 +7476,7 @@ class IFSelect_GraphCounter : public IFSelect_SignCounter {
 };
 %extend IFSelect_GraphCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_GraphCounter::~IFSelect_GraphCounter %{
@@ -7509,7 +7513,7 @@ class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNo
 };
 %extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfInterfaceModel::~IFSelect_SequenceNodeOfSequenceOfInterfaceModel %{
@@ -7548,7 +7552,7 @@ class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectSharing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSharing::~IFSelect_SelectSharing %{
@@ -7654,7 +7658,7 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 };
 %extend IFSelect_ModifEditForm {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_ModifEditForm::~IFSelect_ModifEditForm %{
@@ -7693,7 +7697,7 @@ class IFSelect_ModifReorder : public IFSelect_Modifier {
 };
 %extend IFSelect_ModifReorder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IFSelect_ModifReorder::~IFSelect_ModifReorder %{

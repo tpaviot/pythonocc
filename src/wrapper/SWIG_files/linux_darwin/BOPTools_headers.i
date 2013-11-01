@@ -157,7 +157,7 @@ $HeaderURL$
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<IntTools_Curve.hxx>
-#include<IntTools_Context.hxx>
+#include<Handle_IntTools_Context.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<IntTools_Range.hxx>

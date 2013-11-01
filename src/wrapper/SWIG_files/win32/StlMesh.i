@@ -339,7 +339,7 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 };
 %extend StlMesh_MeshDomain {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StlMesh_MeshDomain::~StlMesh_MeshDomain %{
@@ -406,7 +406,7 @@ class StlMesh_Mesh : public MMgt_TShared {
 };
 %extend StlMesh_Mesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StlMesh_Mesh::~StlMesh_Mesh %{
@@ -545,7 +545,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode 
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StlMesh_SequenceNodeOfSequenceOfMeshTriangle::~StlMesh_SequenceNodeOfSequenceOfMeshTriangle %{
@@ -657,7 +657,7 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 };
 %extend StlMesh_MeshTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StlMesh_MeshTriangle::~StlMesh_MeshTriangle %{
@@ -694,7 +694,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StlMesh_SequenceNodeOfSequenceOfMeshDomain::~StlMesh_SequenceNodeOfSequenceOfMeshDomain %{
@@ -731,7 +731,7 @@ class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StlMesh_SequenceNodeOfSequenceOfMesh::~StlMesh_SequenceNodeOfSequenceOfMesh %{

@@ -559,7 +559,7 @@ class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 };
 %extend Blend_SequenceNodeOfSequenceOfPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Blend_SequenceNodeOfSequenceOfPoint::~Blend_SequenceNodeOfSequenceOfPoint %{

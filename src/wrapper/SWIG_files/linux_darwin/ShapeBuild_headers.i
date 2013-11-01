@@ -92,7 +92,6 @@ $HeaderURL$
 #include<Geom2dInt_GInter.hxx>
 #include<Geom2dInt_Geom2dCurveTool.hxx>
 #include<Geom2dInt_IntConicCurveOfGInter.hxx>
-#include<Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
@@ -104,7 +103,6 @@ $HeaderURL$
 #include<Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_TheProjPCurOfGInter.hxx>
 #include<Geom2dLProp_CLProps2d.hxx>
 #include<Geom2dLProp_CurAndInf2d.hxx>
@@ -448,6 +446,7 @@ $HeaderURL$
 #include<TopTools_DataMapIteratorOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeShape.hxx>
@@ -458,6 +457,7 @@ $HeaderURL$
 #include<TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
@@ -468,6 +468,7 @@ $HeaderURL$
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapOfShapeReal.hxx>
 #include<TopTools_DataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
@@ -494,6 +495,7 @@ $HeaderURL$
 #include<TopTools_MapIteratorOfMapOfShape.hxx>
 #include<TopTools_MapOfOrientedShape.hxx>
 #include<TopTools_MapOfShape.hxx>
+#include<TopTools_MutexForShapeProvider.hxx>
 #include<TopTools_OrientedShapeMapHasher.hxx>
 #include<TopTools_SequenceNodeOfSequenceOfShape.hxx>
 #include<TopTools_SequenceOfShape.hxx>

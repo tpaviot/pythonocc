@@ -113,7 +113,7 @@ class StlAPI_Writer {
 				}
 		};
 		%feature("autodoc", "1");
-		void Write(const TopoDS_Shape aShape, const char * aFileName);
+		void Write(const TopoDS_Shape aShape, const char * aFileName, const Standard_Boolean InParallel=0);
 
 };
 %feature("shadow") StlAPI_Writer::~StlAPI_Writer %{

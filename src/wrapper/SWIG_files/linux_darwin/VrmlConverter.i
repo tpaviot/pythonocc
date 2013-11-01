@@ -505,7 +505,7 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 };
 %extend VrmlConverter_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") VrmlConverter_Drawer::~VrmlConverter_Drawer %{
@@ -550,7 +550,7 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 };
 %extend VrmlConverter_LineAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") VrmlConverter_LineAspect::~VrmlConverter_LineAspect %{
@@ -589,7 +589,7 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 };
 %extend VrmlConverter_IsoAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") VrmlConverter_IsoAspect::~VrmlConverter_IsoAspect %{
@@ -642,7 +642,7 @@ class VrmlConverter_Projector : public MMgt_TShared {
 };
 %extend VrmlConverter_Projector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") VrmlConverter_Projector::~VrmlConverter_Projector %{
@@ -722,7 +722,7 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 };
 %extend VrmlConverter_ShadingAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") VrmlConverter_ShadingAspect::~VrmlConverter_ShadingAspect %{
@@ -792,7 +792,7 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 };
 %extend VrmlConverter_PointAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") VrmlConverter_PointAspect::~VrmlConverter_PointAspect %{

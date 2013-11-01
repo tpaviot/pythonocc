@@ -376,7 +376,7 @@ class GccAna_NoSolution : public Standard_Failure {
 };
 %extend GccAna_NoSolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccAna_NoSolution::~GccAna_NoSolution %{

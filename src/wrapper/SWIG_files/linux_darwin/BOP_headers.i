@@ -209,6 +209,7 @@ $HeaderURL$
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<gp_Pnt.hxx>
 #include<TopTools_SequenceOfShape.hxx>
+#include<Handle_IntTools_Context.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Dir.hxx>
 #include<BOPTools_IndexedDataMapOfIntegerState.hxx>

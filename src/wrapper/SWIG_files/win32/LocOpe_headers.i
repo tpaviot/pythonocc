@@ -256,6 +256,7 @@ $HeaderURL$
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<TopoDS_Compound.hxx>
 #include<TColGeom_SequenceOfCurve.hxx>
 #include<LocOpe.hxx>
 #include<gp_Vec.hxx>

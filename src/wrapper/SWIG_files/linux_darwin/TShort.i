@@ -240,7 +240,7 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray1OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_HArray1OfShortReal::~TShort_HArray1OfShortReal %{
@@ -417,7 +417,7 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray2OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_HArray2OfShortReal::~TShort_HArray2OfShortReal %{
@@ -509,7 +509,7 @@ class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 };
 %extend TShort_SequenceNodeOfSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_SequenceNodeOfSequenceOfShortReal::~TShort_SequenceNodeOfSequenceOfShortReal %{
@@ -588,7 +588,7 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 };
 %extend TShort_HSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_HSequenceOfShortReal::~TShort_HSequenceOfShortReal %{

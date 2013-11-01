@@ -636,7 +636,7 @@ class ShapeFix_Root : public MMgt_TShared {
 };
 %extend ShapeFix_Root {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Root::~ShapeFix_Root %{
@@ -699,7 +699,7 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 };
 %extend ShapeFix_ComposeShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_ComposeShell::~ShapeFix_ComposeShell %{
@@ -750,7 +750,7 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 };
 %extend ShapeFix_EdgeProjAux {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_EdgeProjAux::~ShapeFix_EdgeProjAux %{
@@ -1262,7 +1262,7 @@ class ShapeFix_Wire : public ShapeFix_Root {
 };
 %extend ShapeFix_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Wire::~ShapeFix_Wire %{
@@ -1291,7 +1291,7 @@ class ShapeFix_Solid : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		virtual		void Init(const TopoDS_Solid solid);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform();
+		virtual		Standard_Boolean Perform(const Handle_Message_ProgressIndicator &theProgress=0);
 		%feature("autodoc", "1");
 		TopoDS_Solid SolidFromShell(const TopoDS_Shell shell);
 		%feature("autodoc", "1");
@@ -1345,7 +1345,7 @@ class ShapeFix_Solid : public ShapeFix_Root {
 };
 %extend ShapeFix_Solid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Solid::~ShapeFix_Solid %{
@@ -1413,7 +1413,7 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 };
 %extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_SequenceNodeOfSequenceOfWireSegment::~ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
@@ -1459,6 +1459,10 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		Bnd_Box2d & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Bnd_Box2d & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") ShapeFix_DataMapOfShapeBox2d::~ShapeFix_DataMapOfShapeBox2d %{
@@ -1560,7 +1564,7 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 };
 %extend ShapeFix_Wireframe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Wireframe::~ShapeFix_Wireframe %{
@@ -1585,7 +1589,7 @@ class ShapeFix {
 		%feature("autodoc", "1");
 		ShapeFix();
 		%feature("autodoc", "1");
-		static		Standard_Boolean SameParameter(const TopoDS_Shape shape, const Standard_Boolean enforce, const Standard_Real preci=0.0);
+		static		Standard_Boolean SameParameter(const TopoDS_Shape shape, const Standard_Boolean enforce, const Standard_Real preci=0.0, const Handle_Message_ProgressIndicator &theProgress=0);
 		%feature("autodoc", "1");
 		static		void EncodeRegularity(const TopoDS_Shape shape, const Standard_Real tolang=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
@@ -1735,7 +1739,7 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 };
 %extend ShapeFix_FixSmallFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_FixSmallFace::~ShapeFix_FixSmallFace %{
@@ -1856,7 +1860,7 @@ class ShapeFix_Shell : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shell shell);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform();
+		Standard_Boolean Perform(const Handle_Message_ProgressIndicator &theProgress=0);
 		%feature("autodoc", "1");
 		Standard_Boolean FixFaceOrientation(const TopoDS_Shell shell, const Standard_Boolean isAccountMultiConex=1, const Standard_Boolean NonManifold=0);
 		%feature("autodoc", "1");
@@ -1914,7 +1918,7 @@ class ShapeFix_Shell : public ShapeFix_Root {
 };
 %extend ShapeFix_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Shell::~ShapeFix_Shell %{
@@ -1953,7 +1957,7 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 };
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
@@ -2130,6 +2134,8 @@ class ShapeFix_Face : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		Standard_Boolean FixSplitFace(const TopTools_DataMapOfShapeListOfShape &MapWires);
 		%feature("autodoc", "1");
+		Standard_Boolean FixPeriodicDegenerated();
+		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wire FixWireTool();
@@ -2144,7 +2150,7 @@ class ShapeFix_Face : public ShapeFix_Root {
 };
 %extend ShapeFix_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Face::~ShapeFix_Face %{
@@ -2173,7 +2179,7 @@ class ShapeFix_Shape : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform();
+		Standard_Boolean Perform(const Handle_Message_ProgressIndicator &theProgress=0);
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape() const;
 		%feature("autodoc", "1");
@@ -2279,7 +2285,7 @@ class ShapeFix_Shape : public ShapeFix_Root {
 };
 %extend ShapeFix_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Shape::~ShapeFix_Shape %{
@@ -2381,7 +2387,7 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 };
 %extend ShapeFix_SplitCommonVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_SplitCommonVertex::~ShapeFix_SplitCommonVertex %{
@@ -2446,7 +2452,7 @@ class ShapeFix_Edge : public MMgt_TShared {
 };
 %extend ShapeFix_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Edge::~ShapeFix_Edge %{

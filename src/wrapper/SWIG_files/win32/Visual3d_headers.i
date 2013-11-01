@@ -127,6 +127,7 @@ $HeaderURL$
 #include<Handle_Aspect_GraphicDevice.hxx>
 #include<Handle_Aspect_Window.hxx>
 #include<Graphic3d_Vector.hxx>
+#include<TColStd_SequenceOfInteger.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_Graphic3d_DataStructureManager.hxx>
 #include<Quantity_Color.hxx>
@@ -137,7 +138,9 @@ $HeaderURL$
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
 #include<Aspect_Background.hxx>
 #include<Aspect_GradientBackground.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>
+#include<Image_PixMap.hxx>
 %}

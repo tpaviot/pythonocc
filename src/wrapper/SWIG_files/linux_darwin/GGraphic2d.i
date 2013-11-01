@@ -188,7 +188,7 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 };
 %extend GGraphic2d_SetOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GGraphic2d_SetOfCurves::~GGraphic2d_SetOfCurves %{
@@ -231,7 +231,7 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 };
 %extend GGraphic2d_CurveDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GGraphic2d_CurveDefinitionError::~GGraphic2d_CurveDefinitionError %{
@@ -270,7 +270,7 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 };
 %extend GGraphic2d_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GGraphic2d_Curve::~GGraphic2d_Curve %{

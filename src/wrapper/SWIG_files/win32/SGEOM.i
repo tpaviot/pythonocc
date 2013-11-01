@@ -264,7 +264,7 @@ class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNo
 };
 %extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
@@ -311,7 +311,7 @@ class GEOM_Application : public TDocStd_Application {
 };
 %extend GEOM_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_Application::~GEOM_Application %{
@@ -514,6 +514,10 @@ class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") GEOM_DataMapOfAsciiStringTransient::~GEOM_DataMapOfAsciiStringTransient %{
@@ -618,7 +622,7 @@ class GEOM_SubShapeDriver : public TFunction_Driver {
 };
 %extend GEOM_SubShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_SubShapeDriver::~GEOM_SubShapeDriver %{
@@ -782,7 +786,7 @@ class GEOM_Function : public MMgt_TShared {
 };
 %extend GEOM_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_Function::~GEOM_Function %{
@@ -905,7 +909,7 @@ class GEOM_Object : public MMgt_TShared {
 };
 %extend GEOM_Object {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_Object::~GEOM_Object %{

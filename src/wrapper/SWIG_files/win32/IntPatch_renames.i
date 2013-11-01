@@ -34,13 +34,6 @@ $HeaderURL$
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfPoint::DownCast;
 %rename(DownCast) Handle_IntPatch_GLine::DownCast;
-%rename(Bounding) IntPatch_PolygoTool::Bounding;
-%rename(DeflectionOverEstimation) IntPatch_PolygoTool::DeflectionOverEstimation;
-%rename(Closed) IntPatch_PolygoTool::Closed;
-%rename(NbSegments) IntPatch_PolygoTool::NbSegments;
-%rename(BeginOfSeg) IntPatch_PolygoTool::BeginOfSeg;
-%rename(EndOfSeg) IntPatch_PolygoTool::EndOfSeg;
-%rename(Dump) IntPatch_PolygoTool::Dump;
 %rename(FirstParameter) IntPatch_HCurve2dTool::FirstParameter;
 %rename(LastParameter) IntPatch_HCurve2dTool::LastParameter;
 %rename(Continuity) IntPatch_HCurve2dTool::Continuity;

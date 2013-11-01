@@ -562,6 +562,10 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 		gp_Pnt  ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		gp_Pnt  operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") LocOpe_DataMapOfShapePnt::~LocOpe_DataMapOfShapePnt %{
@@ -650,6 +654,8 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 
 		virtual		Standard_Boolean OnEdge(const TopoDS_Vertex V, TopoDS_Edge & E, Standard_Real &OutValue);
 		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsFaceWithSection(const TopoDS_Shape aFace) const;
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -660,7 +666,7 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 };
 %extend LocOpe_ProjectedWires {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_ProjectedWires::~LocOpe_ProjectedWires %{
@@ -687,7 +693,11 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
+		void SetCheckInterior(const Standard_Boolean ToCheckInterior);
+		%feature("autodoc", "1");
 		void Bind(const TopoDS_Wire W, const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void Bind(const TopoDS_Compound Comp, const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void Bind(const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
@@ -705,7 +715,7 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 };
 %extend LocOpe_WiresOnShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_WiresOnShape::~LocOpe_WiresOnShape %{
@@ -785,7 +795,7 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfCirc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfCirc::~LocOpe_SequenceNodeOfSequenceOfCirc %{
@@ -892,7 +902,7 @@ class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfPntFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfPntFace::~LocOpe_SequenceNodeOfSequenceOfPntFace %{
@@ -933,7 +943,7 @@ class LocOpe_GeneratedShape : public MMgt_TShared {
 };
 %extend LocOpe_GeneratedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_GeneratedShape::~LocOpe_GeneratedShape %{
@@ -972,7 +982,7 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 };
 %extend LocOpe_GluedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_GluedShape::~LocOpe_GluedShape %{
@@ -1052,7 +1062,7 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfLin {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfLin::~LocOpe_SequenceNodeOfSequenceOfLin %{
@@ -1091,7 +1101,7 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 };
 %extend LocOpe_HBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_HBuilder::~LocOpe_HBuilder %{
@@ -1130,7 +1140,7 @@ class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 };
 %extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LocOpe_DataMapNodeOfDataMapOfShapePnt::~LocOpe_DataMapNodeOfDataMapOfShapePnt %{
@@ -1634,6 +1644,8 @@ class LocOpe_SplitShape {
 		void Add(const TopoDS_Vertex V, const Standard_Real P, const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Wire W, const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void Add(const TopTools_ListOfShape &Lwires, const TopoDS_Face F);
 		%feature("autodoc", "1");
 		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");

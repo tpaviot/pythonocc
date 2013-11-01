@@ -52,9 +52,9 @@ $HeaderURL$
 typedef TNaming_DataMapOfShapePtrRefShape * TNaming_PtrDataMapOfShapePtrRefShape;
 typedef TNaming_NamedShape * TNaming_PtrAttribute;
 typedef TNaming_RefShape * TNaming_PtrRefShape;
-typedef NCollection_DataMap<TopoDS_Shape, NCollection_Map<TopoDS_Shape> > TNaming_DataMapOfShapeMapOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, NCollection_Map<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> >, NCollection_DefaultHasher<TopoDS_Shape> > TNaming_DataMapOfShapeMapOfShape;
 typedef TNaming_Node * TNaming_PtrNode;
-typedef NCollection_Map<TopoDS_Shape> TNaming_MapOfShape;
+typedef NCollection_Map<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> > TNaming_MapOfShape;
 
 enum TNaming_Evolution {
 	TNaming_PRIMITIVE,
@@ -77,6 +77,7 @@ enum TNaming_NameType {
 	TNaming_FILTERBYNEIGHBOURGS,
 	TNaming_ORIENTATION,
 	TNaming_WIREIN,
+	TNaming_SHELLIN,
 	};
 
 
@@ -719,7 +720,7 @@ class TNaming_UsedShapes : public TDF_Attribute {
 };
 %extend TNaming_UsedShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_UsedShapes::~TNaming_UsedShapes %{
@@ -780,7 +781,7 @@ class TNaming_TranslateTool : public MMgt_TShared {
 };
 %extend TNaming_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_TranslateTool::~TNaming_TranslateTool %{
@@ -826,6 +827,10 @@ class TNaming {
 		static		TopoDS_Shape FindUniqueContextSet(const TopoDS_Shape S, const TopoDS_Shape Context, Handle_TopTools_HArray1OfShape & Arr);
 		%feature("autodoc", "1");
 		static		Standard_Boolean SubstituteSShape(const TDF_Label &accesslabel, const TopoDS_Shape From, TopoDS_Shape & To);
+		%feature("autodoc", "1");
+		static		Standard_Boolean OuterWire(const TopoDS_Face theFace, TopoDS_Wire & theWire);
+		%feature("autodoc", "1");
+		static		Standard_Boolean OuterShell(const TopoDS_Solid theSolid, TopoDS_Shell & theShell);
 		%feature("autodoc", "1");
 		static		void IDList(TDF_IDList & anIDList);
 		%feature("autodoc", "1");
@@ -940,7 +945,7 @@ class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 };
 %extend TNaming_StdMapNodeOfMapOfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_StdMapNodeOfMapOfNamedShape::~TNaming_StdMapNodeOfMapOfNamedShape %{
@@ -1245,7 +1250,7 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %extend TNaming_DeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DeltaOnRemoval::~TNaming_DeltaOnRemoval %{
@@ -1321,7 +1326,7 @@ class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollect
 };
 %extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape %{
@@ -1353,8 +1358,6 @@ class TNaming_Builder {
 		void Delete(const TopoDS_Shape oldShape);
 		%feature("autodoc", "1");
 		void Modify(const TopoDS_Shape oldShape, const TopoDS_Shape newShape);
-		%feature("autodoc", "1");
-		void Replace(const TopoDS_Shape oldShape, const TopoDS_Shape newShape);
 		%feature("autodoc", "1");
 		void Select(const TopoDS_Shape aShape, const TopoDS_Shape inShape);
 		%feature("autodoc", "1");
@@ -1395,7 +1398,7 @@ class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 };
 %extend TNaming_ListNodeOfListOfMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_ListNodeOfListOfMapOfShape::~TNaming_ListNodeOfListOfMapOfShape %{
@@ -1492,7 +1495,7 @@ class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode 
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapeShapesSet::~TNaming_DataMapNodeOfDataMapOfShapeShapesSet %{
@@ -1595,7 +1598,7 @@ class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
 };
 %extend TNaming_ListNodeOfListOfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_ListNodeOfListOfNamedShape::~TNaming_ListNodeOfListOfNamedShape %{
@@ -1650,8 +1653,6 @@ class TNaming_NamedShape : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
 		%feature("autodoc", "1");
-		void OldPaste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
-		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
 		virtual		void BeforeRemoval();
@@ -1678,7 +1679,7 @@ class TNaming_NamedShape : public TDF_Attribute {
 };
 %extend TNaming_NamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_NamedShape::~TNaming_NamedShape %{
@@ -1914,7 +1915,7 @@ class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNod
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapePtrRefShape::~TNaming_DataMapNodeOfDataMapOfShapePtrRefShape %{
@@ -1982,7 +1983,7 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 };
 %extend TNaming_DeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DeltaOnModification::~TNaming_DeltaOnModification %{
@@ -2071,6 +2072,10 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 		TNaming_PtrRefShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TNaming_PtrRefShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TNaming_DataMapOfShapePtrRefShape::~TNaming_DataMapOfShapePtrRefShape %{
@@ -2182,7 +2187,7 @@ class TNaming_Naming : public TDF_Attribute {
 };
 %extend TNaming_Naming {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_Naming::~TNaming_Naming %{
@@ -2228,6 +2233,10 @@ class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {
 		TNaming_ShapesSet & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TNaming_ShapesSet & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TNaming_DataMapOfShapeShapesSet::~TNaming_DataMapOfShapeShapesSet %{

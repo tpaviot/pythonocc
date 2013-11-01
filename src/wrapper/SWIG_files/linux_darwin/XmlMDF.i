@@ -300,7 +300,7 @@ class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 };
 %extend XmlMDF_DataMapNodeOfTypeADriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_DataMapNodeOfTypeADriverMap::~XmlMDF_DataMapNodeOfTypeADriverMap %{
@@ -339,7 +339,7 @@ class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
 };
 %extend XmlMDF_DataMapNodeOfMapOfDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_DataMapNodeOfMapOfDriver::~XmlMDF_DataMapNodeOfMapOfDriver %{
@@ -385,6 +385,10 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 		Handle_XmlMDF_ADriver & ChangeFind(const Handle_Standard_Type &K);
 		%feature("autodoc", "1");
 		Handle_XmlMDF_ADriver & operator()(const Handle_Standard_Type &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Type &K);
 
 };
 %feature("shadow") XmlMDF_TypeADriverMap::~XmlMDF_TypeADriverMap %{
@@ -431,7 +435,7 @@ class XmlMDF_ADriver : public MMgt_TShared {
 };
 %extend XmlMDF_ADriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_ADriver::~XmlMDF_ADriver %{
@@ -472,7 +476,7 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDF_TagSourceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_TagSourceDriver::~XmlMDF_TagSourceDriver %{
@@ -578,6 +582,10 @@ class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 		Handle_XmlMDF_ADriver & ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		Handle_XmlMDF_ADriver & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") XmlMDF_MapOfDriver::~XmlMDF_MapOfDriver %{
@@ -618,7 +626,7 @@ class XmlMDF_ADriverTable : public MMgt_TShared {
 };
 %extend XmlMDF_ADriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
@@ -659,7 +667,7 @@ class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDF_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_ReferenceDriver::~XmlMDF_ReferenceDriver %{

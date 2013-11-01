@@ -459,7 +459,7 @@ class PrsMgr_Presentation : public MMgt_TShared {
 };
 %extend PrsMgr_Presentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation::~PrsMgr_Presentation %{
@@ -498,7 +498,7 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 };
 %extend PrsMgr_Presentation2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation2d::~PrsMgr_Presentation2d %{
@@ -541,7 +541,7 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 };
 %extend PrsMgr_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Prs::~PrsMgr_Prs %{
@@ -643,7 +643,7 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 };
 %extend PrsMgr_SequenceNodeOfPresentations {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_SequenceNodeOfPresentations::~PrsMgr_SequenceNodeOfPresentations %{
@@ -696,6 +696,10 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void UpdateLocation(const Handle_Prs3d_Presentation &P);
 		%feature("autodoc", "1");
+		virtual		void SetZLayer(const Handle_PrsMgr_PresentationManager &thePrsMgr, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		Standard_Integer GetZLayer(const Handle_PrsMgr_PresentationManager &thePrsMgr) const;
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -706,7 +710,7 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 };
 %extend PrsMgr_PresentableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentableObject::~PrsMgr_PresentableObject %{
@@ -748,7 +752,7 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 };
 %extend PrsMgr_Presentation3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation3d::~PrsMgr_Presentation3d %{
@@ -787,6 +791,10 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer DisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode) const;
 		%feature("autodoc", "1");
+		void SetZLayer(const Handle_PrsMgr_PresentableObject &thePresentableObject, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		Standard_Integer GetZLayer(const Handle_PrsMgr_PresentableObject &thePresentableObject) const;
+		%feature("autodoc", "1");
 		Standard_Boolean IsDisplayed(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsHighlighted(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
@@ -817,7 +825,7 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 };
 %extend PrsMgr_PresentationManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentationManager::~PrsMgr_PresentationManager %{
@@ -889,7 +897,7 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 };
 %extend PrsMgr_PresentationManager2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentationManager2d::~PrsMgr_PresentationManager2d %{
@@ -954,7 +962,7 @@ class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
 };
 %extend PrsMgr_PresentationManager3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentationManager3d::~PrsMgr_PresentationManager3d %{

@@ -492,7 +492,7 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_HSequenceOfCurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HSequenceOfCurveConstraint::~GeomPlate_HSequenceOfCurveConstraint %{
@@ -529,7 +529,7 @@ class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_Seq
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfCurveConstraint::~GeomPlate_SequenceNodeOfSequenceOfCurveConstraint %{
@@ -566,7 +566,7 @@ class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_Seq
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
@@ -621,7 +621,7 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 };
 %extend GeomPlate_HArray1OfHCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HArray1OfHCurveOnSurface::~GeomPlate_HArray1OfHCurveOnSurface %{
@@ -766,7 +766,7 @@ class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 };
 %extend GeomPlate_HArray1OfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HArray1OfSequenceOfReal::~GeomPlate_HArray1OfSequenceOfReal %{
@@ -883,7 +883,7 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_HSequenceOfPointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HSequenceOfPointConstraint::~GeomPlate_HSequenceOfPointConstraint %{
@@ -997,7 +997,7 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_CurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_CurveConstraint::~GeomPlate_CurveConstraint %{
@@ -1034,7 +1034,7 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfAij {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfAij::~GeomPlate_SequenceNodeOfSequenceOfAij %{
@@ -1130,7 +1130,7 @@ class GeomPlate_Surface : public Geom_Surface {
 };
 %extend GeomPlate_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_Surface::~GeomPlate_Surface %{
@@ -1425,7 +1425,7 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_PointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomPlate_PointConstraint::~GeomPlate_PointConstraint %{

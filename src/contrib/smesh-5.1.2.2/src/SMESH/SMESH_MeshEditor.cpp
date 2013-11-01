@@ -1352,7 +1352,7 @@ double getAngle(const SMDS_MeshElement * tr1,
                 const SMDS_MeshNode *    n1,
                 const SMDS_MeshNode *    n2)
 {
-  double angle = 2*PI; // bad angle
+  double angle = 2*M_PI; // bad angle
 
   // get normals
   SMESH::Controls::TSequenceOfXYZ P1, P2;

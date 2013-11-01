@@ -50,13 +50,13 @@ $HeaderURL$
 %rename(DownCast) Handle_IFSelect_SignCounter::DownCast;
 %rename(DownCast) Handle_IFSelect_PacketList::DownCast;
 %rename(DownCast) Handle_IFSelect_HSeqOfSelection::DownCast;
-%rename(DownCast) Handle_IFSelect_SelectCombine::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectFlag::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectSuite::DownCast;
 %rename(DownCast) Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier::DownCast;
 %rename(DownCast) Handle_IFSelect_SignType::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectControl::DownCast;
 %rename(DownCast) Handle_IFSelect_WorkLibrary::DownCast;
+%rename(DownCast) Handle_IFSelect_SelectCombine::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectIntersection::DownCast;
 %rename(DownCast) Handle_IFSelect_CheckCounter::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectBase::DownCast;

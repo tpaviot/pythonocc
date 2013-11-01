@@ -49,7 +49,20 @@ $HeaderURL$
 
 %include IntPolyh_headers.i
 
+typedef NCollection_Vector<IntPolyh_Couple> IntPolyh_VectorOfType;
+typedef IntPolyh_Array<IntPolyh_Couple> IntPolyh_ArrayOfCouples;
 typedef IntPolyh_MaillageAffinage * IntPolyh_PMaillageAffinage;
+typedef NCollection_Vector<IntPolyh_SectionLine> IntPolyh_VectorOfType;
+typedef IntPolyh_Array<IntPolyh_SectionLine> IntPolyh_ArrayOfSectionLines;
+typedef NCollection_Vector<IntPolyh_Edge> IntPolyh_VectorOfType;
+typedef IntPolyh_Array<IntPolyh_Edge> IntPolyh_ArrayOfEdges;
+typedef NCollection_Vector<IntPolyh_StartPoint> IntPolyh_VectorOfType;
+typedef IntPolyh_Array<IntPolyh_StartPoint> IntPolyh_ArrayOfTangentZones;
+typedef NCollection_Vector<IntPolyh_Triangle> IntPolyh_VectorOfType;
+typedef NCollection_Vector<IntPolyh_Point> IntPolyh_VectorOfType;
+typedef IntPolyh_Array<IntPolyh_StartPoint> IntPolyh_ArrayOfStartPoints;
+typedef IntPolyh_Array<IntPolyh_Triangle> IntPolyh_ArrayOfTriangles;
+typedef IntPolyh_Array<IntPolyh_Point> IntPolyh_ArrayOfPoints;
 
 
 
@@ -267,36 +280,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPolyh_ArrayOfCouples;
-class IntPolyh_ArrayOfCouples {
+%nodefaultctor IntPolyh_Array<IntPolyh_Couple>;
+class IntPolyh_Array<IntPolyh_Couple> {
 	public:
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfCouples();
+		IntPolyh_Array(const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfCouples(const Standard_Integer nn);
+		IntPolyh_Array(const Standard_Integer aN, const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
+		IntPolyh_Array<IntPolyh_Couple> & operator=(const IntPolyh_Array<IntPolyh_Couple> &aOther);
 		%feature("autodoc", "1");
-		Standard_Integer NbCouples() const;
+		IntPolyh_Array<IntPolyh_Couple> & Copy(const IntPolyh_Array<IntPolyh_Couple> &aOther);
 		%feature("autodoc", "1");
-		void SetNbCouples(const Standard_Integer fint);
+		void Init(const Standard_Integer aN);
 		%feature("autodoc", "1");
-		void IncNbCouples();
+		void IncrementNbItems();
 		%feature("autodoc", "1");
-		const IntPolyh_Couple & Value(const Standard_Integer nn) const;
+		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
-		const IntPolyh_Couple & operator[](const Standard_Integer nn) const;
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		IntPolyh_Couple & ChangeValue(const Standard_Integer nn);
+		void SetNbItems(const Standard_Integer aNb);
 		%feature("autodoc", "1");
-		IntPolyh_Couple & operator[](const Standard_Integer nn);
+		const IntPolyh_Couple & Value(const Standard_Integer aIndex) const;
 		%feature("autodoc", "1");
-		void Destroy();
+		const IntPolyh_Couple & operator[](const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		IntPolyh_Couple & ChangeValue(const Standard_Integer aIndex);
+		%feature("autodoc", "1");
+		IntPolyh_Couple & operator[](const Standard_Integer aIndex);
 		%feature("autodoc", "1");
 		void Dump() const;
 
 };
-%feature("shadow") IntPolyh_ArrayOfCouples::~IntPolyh_ArrayOfCouples %{
+%feature("shadow") IntPolyh_Array<IntPolyh_Couple>::~IntPolyh_Array<IntPolyh_Couple> %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -305,47 +322,47 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPolyh_ArrayOfCouples {
+%extend IntPolyh_Array<IntPolyh_Couple> {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IntPolyh_ArrayOfSectionLines;
-class IntPolyh_ArrayOfSectionLines {
+%nodefaultctor IntPolyh_Array<IntPolyh_SectionLine>;
+class IntPolyh_Array<IntPolyh_SectionLine> {
 	public:
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfSectionLines();
+		IntPolyh_Array(const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfSectionLines(const Standard_Integer nn);
+		IntPolyh_Array(const Standard_Integer aN, const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
+		IntPolyh_Array<IntPolyh_SectionLine> & operator=(const IntPolyh_Array<IntPolyh_SectionLine> &aOther);
 		%feature("autodoc", "1");
-		const IntPolyh_SectionLine & Value(const Standard_Integer nn) const;
+		IntPolyh_Array<IntPolyh_SectionLine> & Copy(const IntPolyh_Array<IntPolyh_SectionLine> &aOther);
 		%feature("autodoc", "1");
-		const IntPolyh_SectionLine & operator[](const Standard_Integer nn) const;
+		void Init(const Standard_Integer aN);
 		%feature("autodoc", "1");
-		IntPolyh_SectionLine & ChangeValue(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_SectionLine & operator[](const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfSectionLines & Copy(const IntPolyh_ArrayOfSectionLines &Other);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfSectionLines & operator=(const IntPolyh_ArrayOfSectionLines &Other);
+		void IncrementNbItems();
 		%feature("autodoc", "1");
 		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbSectionLines() const;
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		void IncrementNbSectionLines();
+		void SetNbItems(const Standard_Integer aNb);
 		%feature("autodoc", "1");
-		void Destroy();
+		const IntPolyh_SectionLine & Value(const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		const IntPolyh_SectionLine & operator[](const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		IntPolyh_SectionLine & ChangeValue(const Standard_Integer aIndex);
+		%feature("autodoc", "1");
+		IntPolyh_SectionLine & operator[](const Standard_Integer aIndex);
 		%feature("autodoc", "1");
 		void Dump() const;
 
 };
-%feature("shadow") IntPolyh_ArrayOfSectionLines::~IntPolyh_ArrayOfSectionLines %{
+%feature("shadow") IntPolyh_Array<IntPolyh_SectionLine>::~IntPolyh_Array<IntPolyh_SectionLine> %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -354,7 +371,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPolyh_ArrayOfSectionLines {
+%extend IntPolyh_Array<IntPolyh_SectionLine> {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -412,42 +429,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPolyh_ArrayOfEdges;
-class IntPolyh_ArrayOfEdges {
+%nodefaultctor IntPolyh_Array<IntPolyh_Edge>;
+class IntPolyh_Array<IntPolyh_Edge> {
 	public:
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfEdges();
+		IntPolyh_Array(const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfEdges(const Standard_Integer nn);
+		IntPolyh_Array(const Standard_Integer aN, const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
+		IntPolyh_Array<IntPolyh_Edge> & operator=(const IntPolyh_Array<IntPolyh_Edge> &aOther);
 		%feature("autodoc", "1");
-		Standard_Integer const GetN() const;
+		IntPolyh_Array<IntPolyh_Edge> & Copy(const IntPolyh_Array<IntPolyh_Edge> &aOther);
 		%feature("autodoc", "1");
-		Standard_Integer const NbEdges() const;
+		void Init(const Standard_Integer aN);
 		%feature("autodoc", "1");
-		void SetNbEdges(const Standard_Integer endaof);
+		void IncrementNbItems();
 		%feature("autodoc", "1");
-		void IncNbEdges();
+		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
-		const IntPolyh_Edge & Value(const Standard_Integer nn) const;
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		const IntPolyh_Edge & operator[](const Standard_Integer nn) const;
+		void SetNbItems(const Standard_Integer aNb);
 		%feature("autodoc", "1");
-		IntPolyh_Edge & ChangeValue(const Standard_Integer nn);
+		const IntPolyh_Edge & Value(const Standard_Integer aIndex) const;
 		%feature("autodoc", "1");
-		IntPolyh_Edge & operator[](const Standard_Integer nn);
+		const IntPolyh_Edge & operator[](const Standard_Integer aIndex) const;
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfEdges & Copy(const IntPolyh_ArrayOfEdges &Other);
+		IntPolyh_Edge & ChangeValue(const Standard_Integer aIndex);
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfEdges & operator=(const IntPolyh_ArrayOfEdges &Other);
-		%feature("autodoc", "1");
-		void Destroy();
+		IntPolyh_Edge & operator[](const Standard_Integer aIndex);
 		%feature("autodoc", "1");
 		void Dump() const;
 
 };
-%feature("shadow") IntPolyh_ArrayOfEdges::~IntPolyh_ArrayOfEdges %{
+%feature("shadow") IntPolyh_Array<IntPolyh_Edge>::~IntPolyh_Array<IntPolyh_Edge> %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -456,7 +471,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPolyh_ArrayOfEdges {
+%extend IntPolyh_Array<IntPolyh_Edge> {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -481,7 +496,7 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 };
 %extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPolyh_SequenceNodeOfSeqOfStartPoints::~IntPolyh_SequenceNodeOfSeqOfStartPoints %{
@@ -500,40 +515,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPolyh_ArrayOfTangentZones;
-class IntPolyh_ArrayOfTangentZones {
+%nodefaultctor IntPolyh_Array<IntPolyh_StartPoint>;
+class IntPolyh_Array<IntPolyh_StartPoint> {
 	public:
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTangentZones();
+		IntPolyh_Array(const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTangentZones(const Standard_Integer nn);
+		IntPolyh_Array(const Standard_Integer aN, const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
+		IntPolyh_Array<IntPolyh_StartPoint> & operator=(const IntPolyh_Array<IntPolyh_StartPoint> &aOther);
 		%feature("autodoc", "1");
-		const IntPolyh_StartPoint & Value(const Standard_Integer nn) const;
+		IntPolyh_Array<IntPolyh_StartPoint> & Copy(const IntPolyh_Array<IntPolyh_StartPoint> &aOther);
 		%feature("autodoc", "1");
-		const IntPolyh_StartPoint & operator[](const Standard_Integer nn) const;
+		void Init(const Standard_Integer aN);
 		%feature("autodoc", "1");
-		IntPolyh_StartPoint & ChangeValue(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_StartPoint & operator[](const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTangentZones & Copy(const IntPolyh_ArrayOfTangentZones &Other);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTangentZones & operator=(const IntPolyh_ArrayOfTangentZones &Other);
+		void IncrementNbItems();
 		%feature("autodoc", "1");
 		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTangentZones() const;
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		void IncrementNbTangentZones();
+		void SetNbItems(const Standard_Integer aNb);
 		%feature("autodoc", "1");
-		void Destroy();
+		const IntPolyh_StartPoint & Value(const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		const IntPolyh_StartPoint & operator[](const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		IntPolyh_StartPoint & ChangeValue(const Standard_Integer aIndex);
+		%feature("autodoc", "1");
+		IntPolyh_StartPoint & operator[](const Standard_Integer aIndex);
 		%feature("autodoc", "1");
 		void Dump() const;
 
 };
-%feature("shadow") IntPolyh_ArrayOfTangentZones::~IntPolyh_ArrayOfTangentZones %{
+%feature("shadow") IntPolyh_Array<IntPolyh_StartPoint>::~IntPolyh_Array<IntPolyh_StartPoint> %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -542,7 +557,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPolyh_ArrayOfTangentZones {
+%extend IntPolyh_Array<IntPolyh_StartPoint> {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -616,6 +631,10 @@ class IntPolyh_Point {
 		void Dump() const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer i) const;
+		%feature("autodoc", "1");
+		void SetDegenerated(const Standard_Boolean theFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean Degenerated() const;
 
 };
 %feature("shadow") IntPolyh_Point::~IntPolyh_Point %{
@@ -634,36 +653,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPolyh_ArrayOfStartPoints;
-class IntPolyh_ArrayOfStartPoints {
+%nodefaultctor IntPolyh_Array<IntPolyh_Triangle>;
+class IntPolyh_Array<IntPolyh_Triangle> {
 	public:
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfStartPoints();
+		IntPolyh_Array(const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfStartPoints(const Standard_Integer nn);
+		IntPolyh_Array(const Standard_Integer aN, const Standard_Integer aIncrement=256);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
+		IntPolyh_Array<IntPolyh_Triangle> & operator=(const IntPolyh_Array<IntPolyh_Triangle> &aOther);
 		%feature("autodoc", "1");
-		const IntPolyh_StartPoint & Value(const Standard_Integer nn) const;
+		IntPolyh_Array<IntPolyh_Triangle> & Copy(const IntPolyh_Array<IntPolyh_Triangle> &aOther);
 		%feature("autodoc", "1");
-		const IntPolyh_StartPoint & operator[](const Standard_Integer nn) const;
+		void Init(const Standard_Integer aN);
 		%feature("autodoc", "1");
-		IntPolyh_StartPoint & ChangeValue(const Standard_Integer nn);
+		void IncrementNbItems();
 		%feature("autodoc", "1");
-		IntPolyh_StartPoint & operator[](const Standard_Integer nn);
+		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfStartPoints & Copy(const IntPolyh_ArrayOfStartPoints &Other);
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		IntPolyh_ArrayOfStartPoints & operator=(const IntPolyh_ArrayOfStartPoints &Other);
+		void SetNbItems(const Standard_Integer aNb);
 		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
+		const IntPolyh_Triangle & Value(const Standard_Integer aIndex) const;
 		%feature("autodoc", "1");
-		void Destroy();
+		const IntPolyh_Triangle & operator[](const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		IntPolyh_Triangle & ChangeValue(const Standard_Integer aIndex);
+		%feature("autodoc", "1");
+		IntPolyh_Triangle & operator[](const Standard_Integer aIndex);
 		%feature("autodoc", "1");
 		void Dump() const;
 
 };
-%feature("shadow") IntPolyh_ArrayOfStartPoints::~IntPolyh_ArrayOfStartPoints %{
+%feature("shadow") IntPolyh_Array<IntPolyh_Triangle>::~IntPolyh_Array<IntPolyh_Triangle> %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -672,7 +695,56 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPolyh_ArrayOfStartPoints {
+%extend IntPolyh_Array<IntPolyh_Triangle> {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPolyh_Array<IntPolyh_Point>;
+class IntPolyh_Array<IntPolyh_Point> {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_Array(const Standard_Integer aIncrement=256);
+		%feature("autodoc", "1");
+		IntPolyh_Array(const Standard_Integer aN, const Standard_Integer aIncrement=256);
+		%feature("autodoc", "1");
+		IntPolyh_Array<IntPolyh_Point> & operator=(const IntPolyh_Array<IntPolyh_Point> &aOther);
+		%feature("autodoc", "1");
+		IntPolyh_Array<IntPolyh_Point> & Copy(const IntPolyh_Array<IntPolyh_Point> &aOther);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer aN);
+		%feature("autodoc", "1");
+		void IncrementNbItems();
+		%feature("autodoc", "1");
+		Standard_Integer GetN() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		void SetNbItems(const Standard_Integer aNb);
+		%feature("autodoc", "1");
+		const IntPolyh_Point & Value(const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		const IntPolyh_Point & operator[](const Standard_Integer aIndex) const;
+		%feature("autodoc", "1");
+		IntPolyh_Point & ChangeValue(const Standard_Integer aIndex);
+		%feature("autodoc", "1");
+		IntPolyh_Point & operator[](const Standard_Integer aIndex);
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") IntPolyh_Array<IntPolyh_Point>::~IntPolyh_Array<IntPolyh_Point> %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPolyh_Array<IntPolyh_Point> {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -720,59 +792,6 @@ def __del__(self):
 %}
 
 %extend IntPolyh_Intersection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPolyh_ArrayOfTriangles;
-class IntPolyh_ArrayOfTriangles {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles();
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		Standard_Integer const GetN() const;
-		%feature("autodoc", "1");
-		Standard_Integer const NbTriangles() const;
-		%feature("autodoc", "1");
-		void SetNbTriangles(const Standard_Integer endaot);
-		%feature("autodoc", "1");
-		void IncNbTriangles();
-		%feature("autodoc", "1");
-		const IntPolyh_Triangle & Value(const Standard_Integer nn) const;
-		%feature("autodoc", "1");
-		const IntPolyh_Triangle & operator[](const Standard_Integer nn) const;
-		%feature("autodoc", "1");
-		IntPolyh_Triangle & ChangeValue(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_Triangle & operator[](const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles & Copy(const IntPolyh_ArrayOfTriangles &Other);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles & operator=(const IntPolyh_ArrayOfTriangles &Other);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void DumpFleches() const;
-
-};
-%feature("shadow") IntPolyh_ArrayOfTriangles::~IntPolyh_ArrayOfTriangles %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_ArrayOfTriangles {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -838,57 +857,6 @@ def __del__(self):
 %}
 
 %extend IntPolyh_SeqOfStartPoints {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPolyh_ArrayOfPoints;
-class IntPolyh_ArrayOfPoints {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfPoints();
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfPoints(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		const IntPolyh_Point & Value(const Standard_Integer nn) const;
-		%feature("autodoc", "1");
-		const IntPolyh_Point & operator[](const Standard_Integer nn) const;
-		%feature("autodoc", "1");
-		IntPolyh_Point & ChangeValue(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_Point & operator[](const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfPoints & Copy(const IntPolyh_ArrayOfPoints &Other);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfPoints & operator=(const IntPolyh_ArrayOfPoints &Other);
-		%feature("autodoc", "1");
-		Standard_Integer GetN() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		void IncNbPoints();
-		%feature("autodoc", "1");
-		void SetNbPoints(const Standard_Integer END);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%feature("shadow") IntPolyh_ArrayOfPoints::~IntPolyh_ArrayOfPoints %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_ArrayOfPoints {
 	void _kill_pointed() {
 		delete $self;
 	}

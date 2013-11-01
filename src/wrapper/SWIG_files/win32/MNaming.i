@@ -293,7 +293,7 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 };
 %extend MNaming_NamedShapeStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamedShapeStorageDriver::~MNaming_NamedShapeStorageDriver %{
@@ -336,7 +336,7 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 };
 %extend MNaming_NamedShapeRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamedShapeRetrievalDriver::~MNaming_NamedShapeRetrievalDriver %{
@@ -379,7 +379,7 @@ class MNaming_NamingStorageDriver : public MDF_ASDriver {
 };
 %extend MNaming_NamingStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamingStorageDriver::~MNaming_NamingStorageDriver %{
@@ -422,7 +422,7 @@ class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 };
 %extend MNaming_NamingRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamingRetrievalDriver::~MNaming_NamingRetrievalDriver %{
@@ -465,7 +465,7 @@ class MNaming_NamingRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MNaming_NamingRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamingRetrievalDriver_1::~MNaming_NamingRetrievalDriver_1 %{

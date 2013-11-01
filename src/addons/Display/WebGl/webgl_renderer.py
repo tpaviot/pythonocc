@@ -15,6 +15,7 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+import webbrowser
 from OCC.Visualization import *
 from html_file import *
 from time import time
@@ -42,7 +43,10 @@ class WebGlRenderer:
         self.GenerateHTMLFile()
         print "done."
         print "Opening html output in the default webbrowser ..."
-        os.system('open %s'%self._html_filename)
+        # previous version us a os.system call to the "open" command
+        # but this is a platform (osx) specific solution
+        _path = "file:///{0}".format(os.path.join(os.getcwd(), self._html_filename))
+        webbrowser.open_new_tab(_path)
         print "done."
         
     

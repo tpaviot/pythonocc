@@ -1,0 +1,161 @@
+-- Copyright (C) 2007-2011  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+-- Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+-- CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+-- This library is free software; you can redistribute it and/or
+-- modify it under the terms of the GNU Lesser General Public
+-- License as published by the Free Software Foundation; either
+-- version 2.1 of the License.
+--
+-- This library is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-- Lesser General Public License for more details.
+--
+-- You should have received a copy of the GNU Lesser General Public
+-- License along with this library; if not, write to the Free Software
+-- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+-- See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+
+-- File:	NMTTools_FaceInfo.cdl
+-- Created:	Tue Dec  9 12:11:48 2003
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class FaceInfo from NMTTools 
+
+	---Purpose: 
+
+uses  
+    MapOfInteger from TColStd,
+    MapOfPaveBlock from NMTTools
+--raises
+
+is 
+ 
+    Create 
+    	returns FaceInfo from NMTTools; 
+    ---C++: inline 	 
+    ---C++: alias "virtual ~NMTTools_FaceInfo();"  
+      	---Purpose:  
+    	--- Empty contructor  
+    	---   
+	
+    Clear(me:out); 
+    	---Purpose:   
+     	---  Clears the contents      
+    
+    SetIndex(me:out; 
+    	    theI: Integer from Standard); 
+    ---C++: inline 
+     	---Purpose: 
+    	--- Modifier   
+	--- Sets the index of the face <theI> 
+	
+    Index(me) 
+    	returns Integer from Standard; 
+    ---C++: inline  
+    	---Purpose: 
+    	--- Selector   
+	--- Returns the index of the face 
+    --  
+    -- In 
+    --  
+    PaveBlocksIn(me) 
+	returns MapOfPaveBlock from NMTTools; 
+    ---C++: return const &  
+    ---C++: inline 
+     	---Purpose: 
+    	--- Selector   
+	--- Returns the pave blocks of the face 
+	--- that  have state In 
+	 
+    ChangePaveBlocksIn(me:out) 
+    	returns MapOfPaveBlock from NMTTools;  
+    ---C++: return &  
+    ---C++: inline    
+      	---Purpose: 
+    	--- Selector/Modifier   
+	--- Returns the pave blocks  
+    	--  of the face 
+	--- that  have state In 
+	 
+    VerticesIn(me) 
+    	returns MapOfInteger from TColStd;  
+    ---C++: return const &  
+    ---C++: inline  
+     	---Purpose: 
+    	--- Selector   
+	--- Returns the list of indices for vertices  
+    	--  of the face
+	--- that have state In  
+	
+    ChangeVerticesIn(me:out) 
+    	returns MapOfInteger from TColStd;  
+    ---C++: return &  
+    ---C++: inline 
+    	---Purpose: 
+    	--- Selector/Modifier    
+	--- Returns the list of indices for vertices  
+    	--  of the face
+	--- that have state In   
+    --  
+    -- On 
+    --  
+    PaveBlocksOn(me) 
+	returns MapOfPaveBlock from NMTTools; 
+    ---C++: return const &  
+    ---C++: inline    
+    	---Purpose: 
+    	--- Selector   
+	--- Returns the pave blocks of the face 
+	--- that  have state On
+     
+    ChangePaveBlocksOn(me:out) 
+    	returns MapOfPaveBlock from NMTTools;  
+    ---C++: return &  
+    ---C++: inline    
+      	---Purpose: 
+    	--- Selector/Modifier   
+	--- Returns the pave blocks  
+    	--  of the face 
+	--- that  have state On 
+    VerticesOn(me) 
+    	returns MapOfInteger from TColStd;  
+    ---C++: return const &  
+    ---C++: inline  
+     	---Purpose: 
+    	--- Selector   
+	--- Returns the list of indices for vertices  
+    	--  of the face
+	--- that have state On 
+	 
+    ChangeVerticesOn(me:out) 
+    	returns MapOfInteger from TColStd;  
+    ---C++: return &  
+    ---C++: inline 
+    	---Purpose: 
+    	--- Selector/Modifier   
+	--- Returns the list of indices for vertices  
+    	--  of the face
+	--- that have state On   
+ 
+fields 
+    myIndex       : Integer from Standard is protected; 
+    myPaveBlocksIn: MapOfPaveBlock from NMTTools is protected;  
+    myVerticesIn  : MapOfInteger from TColStd is protected;  
+    myPaveBlocksOn: MapOfPaveBlock from NMTTools is protected;  
+    myVerticesOn  : MapOfInteger from TColStd is protected;
+     	    
+end FaceInfo;
+
+
+
+
+
+
+
+

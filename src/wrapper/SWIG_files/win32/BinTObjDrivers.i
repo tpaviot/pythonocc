@@ -340,7 +340,7 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_ReferenceDriver::~BinTObjDrivers_ReferenceDriver %{
@@ -381,7 +381,7 @@ class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ObjectDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_ObjectDriver::~BinTObjDrivers_ObjectDriver %{
@@ -422,7 +422,7 @@ class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_XYZDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_XYZDriver::~BinTObjDrivers_XYZDriver %{
@@ -459,7 +459,7 @@ class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrie
 };
 %extend BinTObjDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_DocumentRetrievalDriver::~BinTObjDrivers_DocumentRetrievalDriver %{
@@ -527,7 +527,7 @@ class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ModelDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_ModelDriver::~BinTObjDrivers_ModelDriver %{
@@ -564,7 +564,7 @@ class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageD
 };
 %extend BinTObjDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_DocumentStorageDriver::~BinTObjDrivers_DocumentStorageDriver %{
@@ -605,7 +605,7 @@ class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_IntSparseArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_IntSparseArrayDriver::~BinTObjDrivers_IntSparseArrayDriver %{

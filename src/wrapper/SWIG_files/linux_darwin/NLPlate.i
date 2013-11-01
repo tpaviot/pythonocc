@@ -557,7 +557,7 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 };
 %extend NLPlate_HGPPConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HGPPConstraint::~NLPlate_HGPPConstraint %{
@@ -590,7 +590,7 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 };
 %extend NLPlate_HPG0Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG0Constraint::~NLPlate_HPG0Constraint %{
@@ -623,7 +623,7 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 };
 %extend NLPlate_HPG0G1Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG0G1Constraint::~NLPlate_HPG0G1Constraint %{
@@ -656,7 +656,7 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 };
 %extend NLPlate_HPG0G2Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG0G2Constraint::~NLPlate_HPG0G2Constraint %{
@@ -793,7 +793,7 @@ class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 };
 %extend NLPlate_HPG1Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG1Constraint::~NLPlate_HPG1Constraint %{
@@ -828,7 +828,7 @@ class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 };
 %extend NLPlate_HPG2Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG2Constraint::~NLPlate_HPG2Constraint %{
@@ -867,7 +867,7 @@ class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 };
 %extend NLPlate_HPG3Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG3Constraint::~NLPlate_HPG3Constraint %{
@@ -904,7 +904,7 @@ class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNod
 };
 %extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::~NLPlate_SequenceNodeOfSequenceOfHGPPConstraint %{
@@ -943,7 +943,7 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 };
 %extend NLPlate_HPG0G3Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG0G3Constraint::~NLPlate_HPG0G3Constraint %{
@@ -980,7 +980,7 @@ class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 };
 %extend NLPlate_StackNodeOfStackOfPlate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_StackNodeOfStackOfPlate::~NLPlate_StackNodeOfStackOfPlate %{

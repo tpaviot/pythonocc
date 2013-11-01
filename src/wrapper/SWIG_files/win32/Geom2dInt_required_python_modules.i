@@ -29,8 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import Extrema
-import Bnd
-import gp
 import GeomAbs
+import gp
 import IntRes2d
 };

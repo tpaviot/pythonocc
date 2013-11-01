@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TopTools
 import TopoDS
 import Draft
-import TopTools
 import TColStd
 import BRepBuilderAPI
 import BRepOffset

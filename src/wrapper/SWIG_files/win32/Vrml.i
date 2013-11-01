@@ -887,7 +887,7 @@ class Vrml_AsciiText : public MMgt_TShared {
 };
 %extend Vrml_AsciiText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_AsciiText::~Vrml_AsciiText %{
@@ -948,7 +948,7 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedLineSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_IndexedLineSet::~Vrml_IndexedLineSet %{
@@ -1052,7 +1052,7 @@ class Vrml_SFImage : public MMgt_TShared {
 };
 %extend Vrml_SFImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_SFImage::~Vrml_SFImage %{
@@ -1101,7 +1101,7 @@ class Vrml_Normal : public MMgt_TShared {
 };
 %extend Vrml_Normal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_Normal::~Vrml_Normal %{
@@ -1203,7 +1203,7 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 };
 %extend Vrml_Coordinate3 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_Coordinate3::~Vrml_Coordinate3 %{
@@ -1444,7 +1444,7 @@ class Vrml_LOD : public MMgt_TShared {
 };
 %extend Vrml_LOD {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_LOD::~Vrml_LOD %{
@@ -1845,7 +1845,7 @@ class Vrml_Material : public MMgt_TShared {
 };
 %extend Vrml_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_Material::~Vrml_Material %{
@@ -2153,7 +2153,7 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 };
 %extend Vrml_TextureCoordinate2 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_TextureCoordinate2::~Vrml_TextureCoordinate2 %{
@@ -2257,7 +2257,7 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedFaceSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Vrml_IndexedFaceSet::~Vrml_IndexedFaceSet %{

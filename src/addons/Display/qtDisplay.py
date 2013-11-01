@@ -20,9 +20,8 @@
 import os
 
 import sys
-from PyQt4 import QtCore, QtGui
+from PyQt4 import QtCore, QtGui, QtOpenGL
 import OCCViewer
-
 
 class point(object):
    def __init__(self,obj=None):
@@ -35,60 +34,29 @@ class point(object):
        self.x = obj.x()
        self.y = obj.y()
 
-class qtBaseViewer(QtGui.QWidget):
+class qtBaseViewer(QtOpenGL.QGLWidget):
     ''' The base Qt Widget for an OCC viewer
     '''
     def __init__(self, parent = None):
-        QtGui.QWidget.__init__(self,parent)
+        QtOpenGL.QGLWidget.__init__(self,parent)
         self._display = None
         self._inited = False
         self.setMouseTracking(True) #enable Mouse Tracking
         self.setFocusPolicy(QtCore.Qt.WheelFocus)#Strong focus
+        # On X11, setting this attribute will disable all double buffering
         self.setAttribute(QtCore.Qt.WA_PaintOnScreen)
+        # setting this flag implicitly disables double buffering for the widget
         self.setAttribute(QtCore.Qt.WA_NoSystemBackground)
-    
+
     def GetHandle(self):
         return int(self.winId())
     
     def resizeEvent(self, event):
         if self._inited:
             self._display.OnResize()
+
     def paintEngine(self):
         return None
-     
-class qtViewer2d(qtBaseViewer):    
-    def __init__(self, *kargs):
-        qtBaseViewer.__init__(self, *kargs)
-        print "qtViewer2d inited"
-    
-    def InitDriver(self):
-        self._display = OCCViewer.Viewer2d(self.GetHandle())
-        self._display.Create()
-        self._inited = True
-
-    def mouseMoveEvent(self, evt):
-        #print "Motion!!"
-        pt = point(evt.pos())
-        print pt.x, pt.y
-        self._display.MoveTo(pt.x,pt.y)
-
-class qtNISViewer3d(qtBaseViewer):
-    def __init__(self, *kargs):
-        qtBaseViewer.__init__(self, *kargs)
-        self._drawbox = False
-        self._zoom_area = False
-        self._select_area = False
-        self._inited = False
-        self._leftisdown = False
-        self._middleisdown = False
-        self._rightisdown = False
-        self._selection = None
-
-    def InitDriver(self):
-        self._display = OCCViewer.NISViewer3d(self.GetHandle())
-        self._display.Create()
-        self._inited = True
-        print "Inited!!"
 
 class qtViewer3d(qtBaseViewer):
     def __init__(self, *kargs):
@@ -116,6 +84,7 @@ class qtViewer3d(qtBaseViewer):
         def set_shade_mode():
             self._display.DisableAntiAliasing()
             self._display.SetModeShaded()
+
         self._key_map = {
                          ord('W'): self._display.SetModeWireFrame,
                          ord('S'): set_shade_mode,
@@ -124,9 +93,7 @@ class qtViewer3d(qtBaseViewer):
                          ord('Q'): self._display.SetModeQuickHLR,
                          ord('E'): self._display.SetModeExactHLR,
                          ord('F'): self._display.FitAll,
-                         #ord('F'): self._display.ExportToImage("essai.BMP"),
-                         #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-                         ord('G'): self._display.SetSelectionModeVertex
+                         ord('G'): self._display.SetSelectionMode
                          }
 
     def keyPressEvent(self,event):
@@ -281,28 +248,5 @@ def Test3d_bis():
     frame.runTests()
     sys.exit(app.exec_())
 
-def Test2d():
-    class AppFrame(QtGui.QWidget):
-        def __init__(self, parent=None):
-            QtGui.QWidget.__init__(self,parent)
-            self.setWindowTitle(self.tr("qtDisplay2d sample"))
-            self.resize(640, 480)
-            self.canva = qtViewer2d(self)
-            mainLayout = QtGui.QHBoxLayout()
-            mainLayout.addWidget(self.canva)
-            self.setLayout(mainLayout)
-
-        def runTests(self):
-            self.canva._display.Test()
-
-    app = QtGui.QApplication(sys.argv)
-    frame = AppFrame()
-    frame.show()
-    frame.canva.InitDriver()
-    frame.runTests()
-    sys.exit(app.exec_())
-
 if __name__=="__main__":
     Test3d()
-    #Test3d_bis()
-    #Test2d()

@@ -143,7 +143,7 @@ class GccIter_IsParallel : public Standard_DomainError {
 };
 %extend GccIter_IsParallel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccIter_IsParallel::~GccIter_IsParallel %{

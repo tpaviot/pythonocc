@@ -1,4 +1,4 @@
-LIST(APPEND OCC_MODULES
+LIST(APPEND OCE_MODULES
 	AIS
 	AIS2D
 	APIHeaderSection
@@ -94,6 +94,7 @@ LIST(APPEND OCC_MODULES
 	FEmTool
 	FairCurve
 	FilletSurf
+	Font
 	GC
 	GCE2d
 	GCPnts
@@ -269,6 +270,7 @@ LIST(APPEND OCC_MODULES
 	StdFail
 	StdLDrivers
 	StdPrs
+	StdSelect
 	StepAP203
 	StepAP214
 	StepBasic

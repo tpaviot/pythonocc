@@ -53,6 +53,7 @@ $HeaderURL$
 #include<Select3D_Macro.hxx>
 #include<Select3D_Pnt.hxx>
 #include<Select3D_Pnt2d.hxx>
+#include<Select3D_PointData.hxx>
 #include<Select3D_Projector.hxx>
 #include<Select3D_SensitiveBox.hxx>
 #include<Select3D_SensitiveCircle.hxx>
@@ -87,10 +88,10 @@ $HeaderURL$
 #include<Handle_V3d_View.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Trsf.hxx>
-#include<gp_Vec2d.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Vec2d.hxx>
 #include<Handle_TColgp_HArray1OfPnt.hxx>
 #include<gp_XY.hxx>
 #include<TColgp_Array1OfPnt.hxx>

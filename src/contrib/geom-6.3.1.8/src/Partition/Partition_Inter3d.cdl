@@ -1,0 +1,194 @@
+// Copyright (C) 2005  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+// CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+// 
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either 
+// version 2.1 of the License.
+// 
+// This library is distributed in the hope that it will be useful 
+// but WITHOUT ANY WARRANTY; without even the implied warranty of 
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public  
+// License along with this library; if not, write to the Free Software 
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+//
+-- See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+//
+--  GEOM PARTITION : partition algorithm
+--
+--  Copyright (C) 2003  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS 
+-- 
+--  This library is free software; you can redistribute it and/or 
+--  modify it under the terms of the GNU Lesser General Public 
+--  License as published by the Free Software Foundation; either 
+--  version 2.1 of the License. 
+-- 
+--  This library is distributed in the hope that it will be useful, 
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+--  Lesser General Public License for more details. 
+-- 
+--  You should have received a copy of the GNU Lesser General Public 
+--  License along with this library; if not, write to the Free Software 
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA 
+-- 
+-- See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+--
+--
+--  File   : Partition_Inter3d.cdl
+--  Author : Benedicte MARTIN
+--  Module : GEOM
+
+class Inter3d from Partition 
+
+        ---Purpose: Computes the intersection face face in a set of faces
+        --          Store the result in a SD as AsDes.
+
+uses
+    Edge from TopoDS,
+    Vertex from TopoDS,
+    DataMapOfShapeShape       from TopTools,
+    MapOfShape                from TopTools,
+    Boolean                   from Standard,
+    AsDes                     from BRepAlgo,
+    Image                     from BRepAlgo,
+    Shape                     from TopoDS,
+    Face                      from TopoDS,
+    ListOfShape               from TopTools,
+    Real                      from Standard,
+    State                     from TopAbs,
+    DataMapOfShapeListOfShape from TopTools 
+
+is
+    Create returns Inter3d from Partition;
+    
+    Create(AsDes : mutable AsDes from BRepAlgo);
+
+    CompletPart3d (me : in out; SetOfFaces1 : ListOfShape from TopTools;
+                                FaceShapeMap: DataMapOfShapeShape from TopTools)
+        is static;
+
+    FacesPartition (me : in out; F1, F2 : Face  from TopoDS)
+        is static;
+
+        ----------------------------
+        ---Category: Result Querying
+        ----------------------------
+
+    IsDone(me ; F1,F2 : Face from TopoDS) 
+        returns Boolean from Standard is static;
+        ---Purpose: return True if F1-F2 pair has been processed
+
+    TouchedFaces(me : in out) returns MapOfShape from TopTools
+        ---C++: return &
+        is static;
+        ---Purpose: return map of faces cut by new or section edges
+
+    NewEdges(me : in out) returns MapOfShape from TopTools
+        ---C++:  return &
+        is static;
+        ---Purpose: return new and section edges
+
+    AsDes(me) returns AsDes from BRepAlgo
+        is static;
+        ---Purpose: return an object containing info about
+        --             Ascendants     | Descendants
+        --          ------------------+---------------------
+        --          1. faces          | edges cutting them
+        --          2. sectoin edges  | new vertices on them
+
+
+        -------------------------------
+        ---Category: Same domain shapes
+        -------------------------------
+
+    HasSameDomainF(me; F : Shape from TopoDS)
+        returns Boolean from Standard;
+        ---Purpose: Return true if F has same domain faces
+    
+    IsSameDomainF(me; F1, F2 : Shape from TopoDS)
+        returns Boolean from Standard;
+        ---Purpose: Return true if F1 and F2 are same domain faces
+    
+    SameDomain(me; F : Face from TopoDS)
+        returns ListOfShape from TopTools;
+        ---C++:  return const &
+        ---Purpose: Return same domain faces of F
+    
+    ReplaceSameDomainV (me; V : Vertex from TopoDS;
+                            E : Edge   from TopoDS)
+        returns Vertex from TopoDS;
+        ---Purpose: return same domain vertex of  V if it was replaced
+        --          and make this vertex to be on E too, else return V
+
+        --------------------------
+        ---Category: Section edges
+        --------------------------
+
+    SectionEdgesAD (me) returns AsDes from BRepAlgo
+        is static;
+    
+    IsSectionEdge (me; E : Edge from TopoDS) 
+        returns Boolean from Standard;
+        ---Purpose: return True if E is an edge of an initial face and
+        --          E intersects aother face
+    
+    HasSectionEdge (me; F : Face from TopoDS)
+        returns Boolean from Standard;
+        ---Purpose: return True if  F  is  intersected  by  an edge of 
+        --          other face
+
+    IsSplitOn (me; NewE, OldE : Edge from TopoDS;
+                   F : Face from TopoDS)
+        returns Boolean from Standard;
+        ---Purpose: return True if NewE is split of OldE on F;
+        --          no check if NewE is split of OldE :)
+    
+    SectionEdgeFaces (me; SecE : Edge from TopoDS)
+        returns ListOfShape from TopTools;
+        ---C++:  return const&
+        ---Purpose: return faces cut by section edge
+    
+        --------------------
+        ---Category: Private
+        --------------------
+
+    Inter3D (me: in out; F1, F2 :        Face        from TopoDS;
+                         LInt   : in out ListOfShape from TopTools)
+        is static private;
+    
+    StorePart3d(me : in out; F1,F2 : Face        from TopoDS;
+                             LInt1 : ListOfShape from TopTools)
+        is static private;    
+    
+    SetDone(me : in out; F1,F2 : Face from TopoDS)
+        is static private;
+
+    Affiche (me; SetOfFaces : ListOfShape from TopTools)
+        is static private;
+    
+fields
+
+    myAsDes        : AsDes                     from BRepAlgo;
+    myDone         : DataMapOfShapeListOfShape from TopTools;    
+    myTouched      : MapOfShape                from TopTools;
+    myNewEdges     : MapOfShape                from TopTools;
+
+        -- section edges: existing edges  that are intersection lines,
+        -- may be partially. 
+        -- Store as 
+        -- FACE -> SECTION EDGES, SECTION EDGE -> OTHER SECTION EDGE
+    mySectionEdgesAD : AsDes                   from BRepAlgo;
+    
+    -- same domain shapes
+     -- faces
+    mySameDomainFM : DataMapOfShapeListOfShape from TopTools;
+     -- vertex -> vertex replacement
+    mySameDomainVM : DataMapOfShapeShape       from TopTools;
+
+end Inter3d;

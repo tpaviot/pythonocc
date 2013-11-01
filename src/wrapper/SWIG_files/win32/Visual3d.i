@@ -1288,7 +1288,7 @@ class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewMappingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewMappingDefinitionError::~Visual3d_ViewMappingDefinitionError %{
@@ -1331,7 +1331,7 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 };
 %extend Visual3d_TransformError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransformError::~Visual3d_TransformError %{
@@ -1485,7 +1485,7 @@ class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 };
 %extend Visual3d_HSetOfClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSetOfClipPlane::~Visual3d_HSetOfClipPlane %{
@@ -1528,7 +1528,7 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_LayerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_LayerDefinitionError::~Visual3d_LayerDefinitionError %{
@@ -1571,7 +1571,7 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_DepthCueingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_DepthCueingDefinitionError::~Visual3d_DepthCueingDefinitionError %{
@@ -1614,7 +1614,7 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_TransientDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransientDefinitionError::~Visual3d_TransientDefinitionError %{
@@ -1787,7 +1787,7 @@ class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ListNodeOfSetListOfSetOfLight::~Visual3d_ListNodeOfSetListOfSetOfLight %{
@@ -1830,7 +1830,7 @@ class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewOrientationDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewOrientationDefinitionError::~Visual3d_ViewOrientationDefinitionError %{
@@ -1873,7 +1873,7 @@ class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewManagerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewManagerDefinitionError::~Visual3d_ViewManagerDefinitionError %{
@@ -2032,7 +2032,7 @@ class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ListNodeOfSetListOfSetOfClipPlane::~Visual3d_ListNodeOfSetListOfSetOfClipPlane %{
@@ -2088,13 +2088,22 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 		%feature("autodoc", "1");
 		void UnIdentification(const Standard_Integer aViewId);
 		%feature("autodoc", "1");
-		Visual3d_PickDescriptor Pick(const Visual3d_ContextPick &CTX, const Handle_Aspect_Window &AWindow, const Standard_Integer AX, const Standard_Integer AY);
-		%feature("autodoc", "1");
 		virtual		Handle_Graphic3d_Structure Identification(const Standard_Integer AId) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Identification() const;
 		%feature("autodoc", "1");
 		virtual		void ChangeDisplayPriority(const Handle_Graphic3d_Structure &AStructure, const Standard_Integer OldPriority, const Standard_Integer NewPriority);
+		%feature("autodoc", "1");
+		virtual		void ChangeZLayer(const Handle_Graphic3d_Structure &theStructure, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetZLayer(const Handle_Graphic3d_Structure &theStructure) const;
+		%feature("autodoc","AddZLayer() -> Standard_Integer");
+
+		virtual		Standard_Boolean AddZLayer(Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean RemoveZLayer(const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		virtual		void GetAllZLayers(TColStd_SequenceOfInteger & theLayerSeq) const;
 		%feature("autodoc", "1");
 		virtual		void Clear(const Handle_Graphic3d_Structure &AStructure, const Standard_Boolean WithDestruction);
 		%feature("autodoc", "1");
@@ -2142,7 +2151,7 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 };
 %extend Visual3d_ViewManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewManager::~Visual3d_ViewManager %{
@@ -2212,7 +2221,7 @@ class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
 };
 %extend Visual3d_SequenceNodeOfSequenceOfPickPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_SequenceNodeOfSequenceOfPickPath::~Visual3d_SequenceNodeOfSequenceOfPickPath %{
@@ -2254,7 +2263,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 };
 %extend Visual3d_ClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ClipPlane::~Visual3d_ClipPlane %{
@@ -2297,7 +2306,7 @@ class Visual3d_LayerItem : public MMgt_TShared {
 };
 %extend Visual3d_LayerItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_LayerItem::~Visual3d_LayerItem %{
@@ -2340,7 +2349,7 @@ class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ClipDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ClipDefinitionError::~Visual3d_ClipDefinitionError %{
@@ -2383,7 +2392,7 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_LightDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_LightDefinitionError::~Visual3d_LightDefinitionError %{
@@ -2514,7 +2523,7 @@ class Visual3d_Layer : public MMgt_TShared {
 };
 %extend Visual3d_Layer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_Layer::~Visual3d_Layer %{
@@ -2557,7 +2566,7 @@ class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ZClippingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ZClippingDefinitionError::~Visual3d_ZClippingDefinitionError %{
@@ -2632,7 +2641,7 @@ class Visual3d_Light : public MMgt_TShared {
 };
 %extend Visual3d_Light {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_Light::~Visual3d_Light %{
@@ -2761,7 +2770,7 @@ class Visual3d_HSetOfLight : public MMgt_TShared {
 };
 %extend Visual3d_HSetOfLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSetOfLight::~Visual3d_HSetOfLight %{
@@ -2798,7 +2807,7 @@ class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ListNodeOfSetListOfSetOfView::~Visual3d_ListNodeOfSetListOfSetOfView %{
@@ -2928,7 +2937,7 @@ class Visual3d_TransientManager : public MMgt_TShared {
 };
 %extend Visual3d_TransientManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransientManager::~Visual3d_TransientManager %{
@@ -2991,7 +3000,7 @@ class Visual3d_HSetOfView : public MMgt_TShared {
 };
 %extend Visual3d_HSetOfView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSetOfView::~Visual3d_HSetOfView %{
@@ -3125,7 +3134,7 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		void TriedronEcho(const Aspect_TypeOfTriedronEcho AType=Aspect_TOTE_NONE);
 		%feature("autodoc", "1");
-		void GraduatedTrihedronDisplay(const char * xname, const char * yname, const char * zname, const Standard_Boolean xdrawname, const Standard_Boolean ydrawname, const Standard_Boolean zdrawname, const Standard_Boolean xdrawvalues, const Standard_Boolean ydrawvalues, const Standard_Boolean zdrawvalues, const Standard_Boolean drawgrid, const Standard_Boolean drawaxes, const Standard_Integer nbx, const Standard_Integer nby, const Standard_Integer nbz, const Standard_Integer xoffset, const Standard_Integer yoffset, const Standard_Integer zoffset, const Standard_Integer xaxisoffset, const Standard_Integer yaxisoffset, const Standard_Integer zaxisoffset, const Standard_Boolean xdrawtickmarks, const Standard_Boolean ydrawtickmarks, const Standard_Boolean zdrawtickmarks, const Standard_Integer xtickmarklength, const Standard_Integer ytickmarklength, const Standard_Integer ztickmarklength, const Quantity_Color &gridcolor, const Quantity_Color &xnamecolor, const Quantity_Color &ynamecolor, const Quantity_Color &znamecolor, const Quantity_Color &xcolor, const Quantity_Color &ycolor, const Quantity_Color &zcolor, const char * fontOfNames, const OSD_FontAspect styleOfNames, const Standard_Integer sizeOfNames, const char * fontOfValues, const OSD_FontAspect styleOfValues, const Standard_Integer sizeOfValues);
+		void GraduatedTrihedronDisplay(const TCollection_ExtendedString &xname, const TCollection_ExtendedString &yname, const TCollection_ExtendedString &zname, const Standard_Boolean xdrawname, const Standard_Boolean ydrawname, const Standard_Boolean zdrawname, const Standard_Boolean xdrawvalues, const Standard_Boolean ydrawvalues, const Standard_Boolean zdrawvalues, const Standard_Boolean drawgrid, const Standard_Boolean drawaxes, const Standard_Integer nbx, const Standard_Integer nby, const Standard_Integer nbz, const Standard_Integer xoffset, const Standard_Integer yoffset, const Standard_Integer zoffset, const Standard_Integer xaxisoffset, const Standard_Integer yaxisoffset, const Standard_Integer zaxisoffset, const Standard_Boolean xdrawtickmarks, const Standard_Boolean ydrawtickmarks, const Standard_Boolean zdrawtickmarks, const Standard_Integer xtickmarklength, const Standard_Integer ytickmarklength, const Standard_Integer ztickmarklength, const Quantity_Color &gridcolor, const Quantity_Color &xnamecolor, const Quantity_Color &ynamecolor, const Quantity_Color &znamecolor, const Quantity_Color &xcolor, const Quantity_Color &ycolor, const Quantity_Color &zcolor, const TCollection_AsciiString &fontOfNames, const Font_FontAspect styleOfNames, const Standard_Integer sizeOfNames, const TCollection_AsciiString &fontOfValues, const Font_FontAspect styleOfValues, const Standard_Integer sizeOfValues);
 		%feature("autodoc", "1");
 		void GraduatedTrihedronErase();
 		%feature("autodoc", "1");
@@ -3184,8 +3193,6 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		void ReCompute(const Handle_Graphic3d_Structure &AStructure);
 		%feature("autodoc", "1");
-		void Exploration() const;
-		%feature("autodoc", "1");
 		Standard_Integer Identification() const;
 		%feature("autodoc", "1");
 		const TColStd_Array2OfReal & MatrixOfMapping();
@@ -3198,9 +3205,9 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		void Plot(const Handle_Graphic3d_Plotter &APlotter) const;
 		%feature("autodoc", "1");
-		void Print(const Handle_Visual3d_Layer &AnUnderLayer, const Handle_Visual3d_Layer &AnOverLayer, const Aspect_Handle hPrnDC, const Standard_Boolean showBackground, const char * filename) const;
+		Standard_Boolean Print(const Handle_Visual3d_Layer &AnUnderLayer, const Handle_Visual3d_Layer &AnOverLayer, const Aspect_Handle hPrnDC, const Standard_Boolean showBackground, const char * filename, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH, const Standard_Real theScaleFactor=1.0e+0) const;
 		%feature("autodoc", "1");
-		void Print(const Aspect_Handle hPrnDC, const Standard_Boolean showBackground, const char * filename) const;
+		Standard_Boolean Print(const Aspect_Handle hPrnDC, const Standard_Boolean showBackground, const char * filename, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH, const Standard_Real theScaleFactor=1.0e+0) const;
 		%feature("autodoc", "1");
 		void SetTransparency(const Standard_Boolean AFlag);
 		%feature("autodoc", "1");
@@ -3227,13 +3234,13 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		void FBOChangeViewport(Graphic3d_PtrFrameBuffer & fboPtr, const Standard_Integer width, const Standard_Integer height);
 		%feature("autodoc", "1");
-		Standard_Boolean BufferDump(Image_CRawBufferData & buffer);
+		Standard_Boolean BufferDump(Image_PixMap & theImage, const Graphic3d_BufferType &theBufferType);
 		%feature("autodoc", "1");
 		void EnableGLLight(const Standard_Boolean enable) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsGLLightEnabled() const;
 		%feature("autodoc", "1");
-		void Export(const char * FileName, const Graphic3d_ExportFormat Format, const Graphic3d_SortType SortType=Graphic3d_ST_BSP_Tree, const Standard_Real Precision=5.00000000000000010408340855860842566471546888351e-3, const Standard_Address ProgressBarFunc=0, const Standard_Address ProgressObject=0) const;
+		Standard_Boolean Export(const char * theFileName, const Graphic3d_ExportFormat theFormat, const Graphic3d_SortType theSortType=Graphic3d_ST_BSP_Tree, const Standard_Real thePrecision=5.00000000000000010408340855860842566471546888351e-3, const Standard_Address theProgressBarFunc=0, const Standard_Address theProgressObject=0) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3245,7 +3252,7 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 };
 %extend Visual3d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_View::~Visual3d_View %{
@@ -3325,7 +3332,7 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewDefinitionError::~Visual3d_ViewDefinitionError %{
@@ -3368,7 +3375,7 @@ class Visual3d_PickError : public Standard_OutOfRange {
 };
 %extend Visual3d_PickError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_PickError::~Visual3d_PickError %{
@@ -3554,7 +3561,7 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ContextPickDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_ContextPickDefinitionError::~Visual3d_ContextPickDefinitionError %{
@@ -3633,7 +3640,7 @@ class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
 };
 %extend Visual3d_HSequenceOfPickPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSequenceOfPickPath::~Visual3d_HSequenceOfPickPath %{

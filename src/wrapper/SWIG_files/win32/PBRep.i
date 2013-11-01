@@ -938,7 +938,7 @@ class PBRep_CurveRepresentation : public Standard_Persistent {
 };
 %extend PBRep_CurveRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_CurveRepresentation::~PBRep_CurveRepresentation %{
@@ -992,7 +992,7 @@ class PBRep_GCurve : public PBRep_CurveRepresentation {
 };
 %extend PBRep_GCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_GCurve::~PBRep_GCurve %{
@@ -1054,7 +1054,7 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 };
 %extend PBRep_CurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_CurveOnSurface::~PBRep_CurveOnSurface %{
@@ -1113,7 +1113,7 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 };
 %extend PBRep_CurveOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_CurveOnClosedSurface::~PBRep_CurveOnClosedSurface %{
@@ -1166,7 +1166,7 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 };
 %extend PBRep_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PolygonOnTriangulation::~PBRep_PolygonOnTriangulation %{
@@ -1211,7 +1211,7 @@ class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 };
 %extend PBRep_PolygonOnClosedTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PolygonOnClosedTriangulation::~PBRep_PolygonOnClosedTriangulation %{
@@ -1274,7 +1274,7 @@ class PBRep_PointRepresentation : public Standard_Persistent {
 };
 %extend PBRep_PointRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PointRepresentation::~PBRep_PointRepresentation %{
@@ -1320,7 +1320,7 @@ class PBRep_PointOnCurve : public PBRep_PointRepresentation {
 };
 %extend PBRep_PointOnCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PointOnCurve::~PBRep_PointOnCurve %{
@@ -1379,7 +1379,7 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 };
 %extend PBRep_TVertex1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_TVertex1::~PBRep_TVertex1 %{
@@ -1448,7 +1448,7 @@ class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 };
 %extend PBRep_TEdge1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_TEdge1::~PBRep_TEdge1 %{
@@ -1517,7 +1517,7 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 };
 %extend PBRep_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_TEdge::~PBRep_TEdge %{
@@ -1560,7 +1560,7 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 };
 %extend PBRep_PointsOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PointsOnSurface::~PBRep_PointsOnSurface %{
@@ -1610,7 +1610,7 @@ class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 };
 %extend PBRep_PointOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PointOnSurface::~PBRep_PointOnSurface %{
@@ -1673,7 +1673,7 @@ class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
 };
 %extend PBRep_CurveOn2Surfaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_CurveOn2Surfaces::~PBRep_CurveOn2Surfaces %{
@@ -1720,7 +1720,7 @@ class PBRep_Curve3D : public PBRep_GCurve {
 };
 %extend PBRep_Curve3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_Curve3D::~PBRep_Curve3D %{
@@ -1767,7 +1767,7 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 };
 %extend PBRep_PointOnCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PointOnCurveOnSurface::~PBRep_PointOnCurveOnSurface %{
@@ -1826,7 +1826,7 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 };
 %extend PBRep_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_TVertex::~PBRep_TVertex %{
@@ -1879,7 +1879,7 @@ class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 };
 %extend PBRep_PolygonOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PolygonOnSurface::~PBRep_PolygonOnSurface %{
@@ -1924,7 +1924,7 @@ class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 };
 %extend PBRep_PolygonOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_PolygonOnClosedSurface::~PBRep_PolygonOnClosedSurface %{
@@ -1971,7 +1971,7 @@ class PBRep_Polygon3D : public PBRep_CurveRepresentation {
 };
 %extend PBRep_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_Polygon3D::~PBRep_Polygon3D %{
@@ -2046,7 +2046,7 @@ class PBRep_TFace1 : public PTopoDS_TFace1 {
 };
 %extend PBRep_TFace1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_TFace1::~PBRep_TFace1 %{
@@ -2121,7 +2121,7 @@ class PBRep_TFace : public PTopoDS_TFace {
 };
 %extend PBRep_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PBRep_TFace::~PBRep_TFace %{

@@ -27,8 +27,8 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import SMESHDS
 import TopoDS
+import SMESHDS
 import SMDS
 import gp
 import Standard

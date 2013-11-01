@@ -53,6 +53,7 @@ $HeaderURL$
 #include<Graphic3d_AspectMarker3d.hxx>
 #include<Graphic3d_AspectText3d.hxx>
 #include<Graphic3d_AspectTextDefinitionError.hxx>
+#include<Graphic3d_BufferType.hxx>
 #include<Graphic3d_CBitFields16.hxx>
 #include<Graphic3d_CBitFields20.hxx>
 #include<Graphic3d_CBitFields4.hxx>
@@ -262,11 +263,11 @@ $HeaderURL$
 #include<Handle_AlienImage_AlienImage.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
-#include<Aspect_Array1OfEdge.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_TColStd_HArray1OfByte.hxx>
+#include<TCollection_AsciiString.hxx>
+#include<Image_PixMap.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>
 %}

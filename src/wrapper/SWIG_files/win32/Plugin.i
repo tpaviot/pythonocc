@@ -175,7 +175,7 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 };
 %extend Plugin_DataMapNodeOfMapOfFunctions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Plugin_DataMapNodeOfMapOfFunctions::~Plugin_DataMapNodeOfMapOfFunctions %{
@@ -218,7 +218,7 @@ class Plugin_Failure : public Standard_Failure {
 };
 %extend Plugin_Failure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Plugin_Failure::~Plugin_Failure %{
@@ -254,6 +254,10 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") Plugin_MapOfFunctions::~Plugin_MapOfFunctions %{

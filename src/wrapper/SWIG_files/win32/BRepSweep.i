@@ -414,7 +414,7 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 };
 %extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep::~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep %{

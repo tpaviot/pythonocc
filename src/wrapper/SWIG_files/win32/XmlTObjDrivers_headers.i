@@ -56,6 +56,7 @@ $HeaderURL$
 #include<PCDM_SequenceOfDocument.hxx>
 #include<PCDM_SequenceOfReference.hxx>
 #include<PCDM_StorageDriver.hxx>
+#include<PCDM_StoreStatus.hxx>
 #include<PCDM_TypeOfFileDriver.hxx>
 #include<PCDM_Writer.hxx>
 #include<Storage.hxx>

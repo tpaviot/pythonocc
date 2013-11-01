@@ -1,4 +1,4 @@
-##Copyright (c) 2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright (c) 2011-2012 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -21,7 +21,9 @@ PROJECT(${PROJECT_NAME})
 
 # set pythonOCC version
 SET(${PROJECT_NAME}_VERSION_MAJOR 0)
-SET(${PROJECT_NAME}_VERSION_MINOR 6dev)
+SET(${PROJECT_NAME}_VERSION_MINOR 6)
+#  Empty for official releases, set to -dev, -rc1, etc for development releases
+SET(${PROJECT_NAME}_VERSION_DEVEL -rc1)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
@@ -40,47 +42,11 @@ ENDIF( NOT DEFINED ${OPTION_NAME} )
 	OPTION( ${OPTION_NAME} "${OPTION_STRING}" ${${OPTION_NAME}} )
 ENDMACRO( OPTION_WITH_DEFAULT OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 
-##################################
-# Set/Check GEOM and SMESH paths #
-##################################
-SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
-SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
-SET(SMESH_INCLUDE_PATH /usr/local/include/smesh CACHE PATH "smesh include path" )
-SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
-
-FIND_FILE(GEOM_hxx "BlockFix.hxx" PATHS ${GEOM_INCLUDE_PATH})
-IF(NOT GEOM_hxx)
-    MESSAGE(WARNING "Unable to find GEOM header files. You won't benefit from the GEOM wrapper.")
-ENDIF(NOT GEOM_hxx)
-
-FIND_FILE(SMESH_hxx "SMESH_Mesh.hxx" PATHS ${SMESH_INCLUDE_PATH})
-IF(NOT SMESH_hxx)
-    MESSAGE(WARNING "Unable to find SMESH header files. You won't benefit from the SMESH wrapper.")
-ENDIF(NOT SMESH_hxx)
-
 ###################
 # General options #
 ###################
-# By default, GEOM and SMESH wrappers are disabled
-IF(GEOM_hxx)
-    OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
-ENDIF(GEOM_hxx)
-IF(SMESH_hxx)
-    OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
-ENDIF(SMESH_hxx)
-
-#
-# Add geom and smesh paths to the list of include directories
-# If not, enabling/disabling GEOM causes the whole pythonocc
-# to be rebuilt
-#
-INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/geom/inc_pythonocc)
-INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
-
-###############################################
-# Boost headers are required to compile smesh #
-###############################################
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib)
+OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the GEOM library (enabling parametric modeling)" OFF)
+OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the SMESH library (enabling advanced meshing features" OFF)
 
 ##########
 # Python #
@@ -91,11 +57,23 @@ INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 ##############################################################
 # 32/64 bit detection
 ###############################################################
-IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+IF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 	# If in 64bit mode, we have to define the _OCC64 variable
 	ADD_DEFINITIONS(-D_OCC64)
 	SET(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -D_OCC64)
+	SET(BIT 64)
+ELSE(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+	SET(BIT 32)
 ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+MESSAGE(STATUS "Build ${BIT}bit")
+
+IF ((NOT MSVC) OR (CMAKE_BUILD_TOOL STREQUAL "nmake"))
+	IF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+		SET( ${PROJECT_NAME}_BUILD_TYPE "MinSizeRel" CACHE STRING "Build type" ) # By default set release build
+	ENDIF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+	SET( CMAKE_BUILD_TYPE ${${PROJECT_NAME}_BUILD_TYPE} CACHE INTERNAL "Build type,
+		immutable" FORCE )
+ENDIF((NOT MSVC) OR (CMAKE_BUILD_TOOL STREQUAL "nmake"))
 
 ########
 # SWIG #
@@ -103,27 +81,11 @@ ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 FIND_PACKAGE(SWIG)
 INCLUDE(${SWIG_USE_FILE})
 
-########################################
-# OpenCASCADE include and lib location #
-########################################
-# Find OpenCASCADE library, set include and lib path
-IF(UNIX)
-    FIND_PACKAGE(OCE)
-    IF(OCE_FOUND)
-        MESSAGE(STATUS "Found OCE version ${OCE_VERSION}")
-        # check OCE version =0.8.0
-        IF (NOT ${OCE_VERSION} MATCHES "0.8.0")
-            MESSAGE(FATAL_ERROR "OCE-0.8.0 is required.")
-        ENDIF(NOT ${OCE_VERSION} MATCHES "0.8.0")
-        SET(OCE_INCLUDE_PATH ${OCE_INCLUDE_DIRS})
-    ELSE(OCE_FOUND)
-        SET(OCE_INCLUDE_PATH "UNDEFINED" CACHE PATH "OCE include path" )
-        SET(OCE_LIB_PATH "UNDEFINED" CACHE PATH "OCE lib path" )
-    ENDIF(OCE_FOUND)
-ELSE(UNIX)
-SET(OCE_INCLUDE_PATH "UNDEFINED" CACHE PATH "OCE include path" )
-SET(OCE_LIB_PATH "UNDEFINED" CACHE PATH "OCE lib path" )
-ENDIF(UNIX)
+################################
+# OCE include and lib location #
+################################
+SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
+SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
 
 ##############################################
 # Installation directory                     #
@@ -132,8 +94,8 @@ ENDIF(UNIX)
 EXECUTE_PROCESS(COMMAND python -c "from distutils.sysconfig import get_python_lib; import os;print get_python_lib()" OUTPUT_VARIABLE python_lib OUTPUT_STRIP_TRAILING_WHITESPACE )
 SET(${PROJECT_NAME}_INSTALL_DIRECTORY ${python_lib}/OCC CACHE PATH "pythonOCC install directory" )
 
-# List of OpenCASCADE shared libraries to link with
-SET(OCC_LIBRARIES PTKernel
+# List of OCE shared libraries to link with
+SET(OCE_LIBRARIES PTKernel
                   TKAdvTools TKBin TKBinL TKBinTObj TKBinXCAF
                   TKBO TKBool TKBRep TKCAF TKCDF
                   TKernel
@@ -155,10 +117,10 @@ LINK_DIRECTORIES(${OCE_LIB_PATH})
 # salomegeom #
 ##############
 IF(${PROJECT_NAME}_WRAP_GEOM)
-	SET(GEOM_LIBRARIES Archimede Exchange3DS ExchangeBREP ExchangeCSFDB
-		ExchangeIGES ExchangeOBJ ExchangeSTEP ExchangeSTL ExchangeVRML
-		GEOM GEOMAlgo GEOMImpl NMTDS NMTTools Partition
-		ShHealOper Sketcher)
+	SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
+	SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
+	INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/contrib/geom-6.3.1.8/inc_pythonocc)
+	SET(GEOM_LIBRARIES GEOM)
 	LINK_DIRECTORIES(${GEOM_LIB_PATH})
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
@@ -166,7 +128,12 @@ ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 # salomesmesh #
 ##############
 IF(${PROJECT_NAME}_WRAP_SMESH)
-	SET(SMESH_LIBRARIES SMDS SMESHDS SMESH StdMeshers DriverDAT DriverSTL DriverUNV)
+	SET(SMESH_INCLUDE_PATH /usr/local/include/smesh CACHE PATH "smesh include path" )
+	SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
+	INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
+	# include boost
+	INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib/boost-1.52.0)
+	SET(SMESH_LIBRARIES SMESH)
 	LINK_DIRECTORIES(${SMESH_LIB_PATH})
 ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 
@@ -176,37 +143,60 @@ ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 IF(UNIX)
   IF(APPLE)
     ######### MacOSX ###########
-    MESSAGE(STATUS " -- MacOSX system detected")
 	INCLUDE_DIRECTORIES(/usr/X11R6/include)
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS)
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DCSFDB -DOCC_CONVERT_SIGNALS)
     SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
-		-DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS)
+		-DCSFDB -DHAVE_CONFIG_H -DOCC_CONVERT_SIGNALS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/linux_darwin)
+    SET(PLATFORM Darwin)
   ELSE(APPLE)
     ######### Unix/Linux ###########
-    MESSAGE(STATUS " -- Unix/Linux system detected")
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS)
-    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
-		-DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS -DLIN -DLIN_INTEL -D_GNU_SOURCE=1)
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DCSFDB -DOCC_CONVERT_SIGNALS)
+    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512 -DCSFDB -DHAVE_CONFIG_H -DOCC_CONVERT_SIGNALS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/linux_darwin)
+    SET(PLATFORM Unix)
   ENDIF(APPLE)
 ELSE(UNIX)
   IF(WIN32)
     ######### Windows ###########
-    MESSAGE(STATUS " -- Windows system detected")
-    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB)
+    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB -DHAVE_CONFIG_H)
 	# specific windows defines for python version >=2.6.0
 	EXECUTE_PROCESS(COMMAND python -c "import sys;print (2,6)>=sys.version_info[:2]" OUTPUT_VARIABLE PYTHON_26_OR_HIGHER OUTPUT_STRIP_TRAILING_WHITESPACE)
 	IF(${PYTHON_26_OR_HIGHER} MATCHES "True")
 	  ADD_DEFINITIONS(-DHAVE_ACOSH -DHAVE_ASINH -DHAVE_ATANH)
 	ENDIF(${PYTHON_26_OR_HIGHER} MATCHES "True")
-    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
-		-DCSFDB -DWIN32 -D_WINDOWS)
+    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512 -DCSFDB -DWIN32 -D_WINDOWS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/win32)
+    SET(PLATFORM win)
   ELSE(WIN32)
-    MESSAGE(STATUS " Unknown platform")
+    MESSAGE(STATUS "Unknown platform")
   ENDIF(WIN32)
 ENDIF(UNIX)
+MESSAGE(STATUS "Platform:" ${PLATFORM})
+
+################################################
+# Define output path for generated libraries:  #
+# platform/compiler-build_type-bits            #
+# for instance:                                #
+#     ./win32/bin/vc7.1-release-64             #
+#     ./win32/bin/vc9-debug-32                 #
+#     ./Unix/i386-debug-64                     #
+################################################
+IF(WIN32)
+  IF(MSVC) # The compiler used is MSVC
+    MESSAGE(STATUS "Found MSVC compiler: ${MSVC} ${MSVC_VERSION}")
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin/)
+  ELSEIF (BORLAND) # The compiler used is BORLAND
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ELSE()
+    SET(LIBRARY_OUTPUT_PATH win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ENDIF()
+  SET(EXECUTABLE_OUTPUT_PATH ${LIBRARY_OUTPUT_PATH})
+ELSE(WIN32)
+  SET(LIBRARY_OUTPUT_PATH ${PLATFORM}/${CMAKE_SYSTEM_PROCESSOR}-${CMAKE_BUILD_TYPE}-${BIT})
+ENDIF(WIN32)
+SET(CMAKE_SWIG_OUTDIR ${LIBRARY_OUTPUT_PATH})
+MESSAGE(STATUS "output_path: ${LIBRARY_OUTPUT_PATH}")
 
 ############################
 # OpenCASCADE Modules list #
@@ -217,9 +207,9 @@ ELSE(WIN32)
   INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules_Unix.cmake)
 ENDIF(WIN32)
 # add an option to choose modules to compile
-FOREACH(OCC_MODULE ${OCC_MODULES})
-	OPTION_WITH_DEFAULT(OCCMODULES_WRAP_${OCC_MODULE} "Compile ${OCC_MODULE}" TRUE)
-ENDFOREACH(OCC_MODULE ${OCC_MODULES})
+FOREACH(OCE_MODULE ${OCE_MODULES})
+	OPTION_WITH_DEFAULT(OCEMODULES_WRAP_${OCE_MODULE} "Compile ${OCE_MODULE}" TRUE)
+ENDFOREACH(OCE_MODULE ${OCE_MODULES})
 
 ###############################
 # salomegeometry Modules list #
@@ -245,37 +235,37 @@ ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 # Wrapper Modules #
 ###################
 
-# OpenCASCADE
+# OpenCASCADE Community Edition
 FILE(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/${SWIG_FILES_PATH})
-FOREACH(OCC_MODULE ${OCC_MODULES})
-	IF(OCCMODULES_WRAP_${OCC_MODULE})
-    	SET(FILE ${SWIG_FILES_PATH}/${OCC_MODULE}.i)
+FOREACH(OCE_MODULE ${OCE_MODULES})
+	IF(OCEMODULES_WRAP_${OCE_MODULE})
+    	SET(FILE ${SWIG_FILES_PATH}/${OCE_MODULE}.i)
 		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
-    	SWIG_ADD_MODULE(${OCC_MODULE} python ${FILE})
-    	SWIG_LINK_LIBRARIES(${OCC_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
-	ENDIF(OCCMODULES_WRAP_${OCC_MODULE})
-ENDFOREACH(OCC_MODULE)
+    	SWIG_ADD_MODULE(${OCE_MODULE} python ${FILE})
+    	SWIG_LINK_LIBRARIES(${OCE_MODULE} ${PYTHON_LIBRARIES} ${OCE_LIBRARIES})
+	ENDIF(OCEMODULES_WRAP_${OCE_MODULE})
+ENDFOREACH(OCE_MODULE)
 
-# salomegeometry
+# GEOM
 IF(${PROJECT_NAME}_WRAP_GEOM)
 	FOREACH(GEOM_MODULE ${GEOM_MODULES})
 		IF(GEOMMODULES_WRAP_${GEOM_MODULE})
 	    	SET(FILE ${SWIG_FILES_PATH}/${GEOM_MODULE}.i)
 			SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
 	    	SWIG_ADD_MODULE(${GEOM_MODULE} python ${FILE})
-	    	SWIG_LINK_LIBRARIES(${GEOM_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${GEOM_LIBRARIES})
+	    	SWIG_LINK_LIBRARIES(${GEOM_MODULE} ${PYTHON_LIBRARIES} ${OCE_LIBRARIES} ${GEOM_LIBRARIES})
 		ENDIF(GEOMMODULES_WRAP_${GEOM_MODULE})
 	ENDFOREACH(GEOM_MODULE)
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
-# salomesmesh
+# SMESH
 IF(${PROJECT_NAME}_WRAP_SMESH)
 	FOREACH(SMESH_MODULE ${SMESH_MODULES})
 	  IF(SMESHMODULES_WRAP_${SMESH_MODULE})
 	    SET(FILE ${SWIG_FILES_PATH}/${SMESH_MODULE}.i)
 		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
 	    SWIG_ADD_MODULE(${SMESH_MODULE} python ${FILE})
-	    SWIG_LINK_LIBRARIES(${SMESH_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${SMESH_LIBRARIES})
+	    SWIG_LINK_LIBRARIES(${SMESH_MODULE} ${PYTHON_LIBRARIES} ${OCE_LIBRARIES} ${SMESH_LIBRARIES})
       ENDIF(SMESHMODULES_WRAP_${SMESH_MODULE})
     ENDFOREACH(SMESH_MODULE)
 ENDIF(${PROJECT_NAME}_WRAP_SMESH)
@@ -288,62 +278,65 @@ INCLUDE_DIRECTORIES(src/wrapper/Visualization)
 SET(VISUALIZATION_SOURCE_FILES
 	src/wrapper/Visualization/Visualization.i
 	src/wrapper/Visualization/Display3d.cpp
-	src/wrapper/Visualization/Display2d.cpp
-	src/wrapper/Visualization/NISDisplay3d.cpp
 	src/wrapper/Visualization/Tesselator.cpp
 	)
 SWIG_ADD_MODULE(Visualization python ${VISUALIZATION_SOURCE_FILES})
-SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
-
-###########################
-# create __init__.py file #
-###########################
+IF(APPLE)
+# on OSX, always add /System/Library/Frameworks/Cocoa.framework, even
+# if GLX is enabled
+SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCE_LIBRARIES} /System/Library/Frameworks/Cocoa.framework)
+ELSE(APPLE)
+SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCE_LIBRARIES})
+ENDIF(APPLE)
 
 ################
 # Installation #
 ################
 IF(WIN32)
 	SET(EXTENSION "pyd")
+	SET(BUILD_DIR ${LIBRARY_OUTPUT_PATH})
 ELSE(WIN32)
 	SET(EXTENSION "so")
+	SET(BUILD_DIR ${CMAKE_BINARY_DIR}/${LIBRARY_OUTPUT_PATH})
 ENDIF(WIN32)
 
-# install pyOCC modules
-FOREACH(OCC_MODULE ${OCC_MODULES})
-	IF(OCCMODULES_WRAP_${OCC_MODULE})
-		INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${OCC_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
-		INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_${OCC_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
-	ENDIF(OCCMODULES_WRAP_${OCC_MODULE})
-ENDFOREACH(OCC_MODULE)
+# install pythonOCC modules
+FOREACH(OCE_MODULE ${OCE_MODULES})
+	IF(OCEMODULES_WRAP_${OCE_MODULE})
+		INSTALL(FILES ${BUILD_DIR}/${OCE_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+		INSTALL(FILES ${BUILD_DIR}/_${OCE_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+	ENDIF(OCEMODULES_WRAP_${OCE_MODULE})
+ENDFOREACH(OCE_MODULE)
 
-# install pyGEOM modules
+# install GEOM wrapper modules
 IF(${PROJECT_NAME}_WRAP_GEOM)
 	FOREACH(GEOM_MODULE ${GEOM_MODULES})
 		IF(GEOMMODULES_WRAP_${GEOM_MODULE})
-			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${GEOM_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
-			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_${GEOM_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+			INSTALL(FILES ${BUILD_DIR}/${GEOM_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+			INSTALL(FILES ${BUILD_DIR}/_${GEOM_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 		ENDIF(GEOMMODULES_WRAP_${GEOM_MODULE})
 	ENDFOREACH(GEOM_MODULE)
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
-# install pySMESH modules
+# install SMESH wrapper modules
 IF(${PROJECT_NAME}_WRAP_SMESH)
 	FOREACH(SMESH_MODULE ${SMESH_MODULES})
 		IF(SMESHMODULES_WRAP_${SMESH_MODULE})
-			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${SMESH_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
-			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_${SMESH_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+			INSTALL(FILES ${BUILD_DIR}/${SMESH_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+			INSTALL(FILES ${BUILD_DIR}/_${SMESH_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 		ENDIF(SMESHMODULES_WRAP_${SMESH_MODULE})
 	ENDFOREACH(SMESH_MODULE)
 ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 
 # install third part modules
-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/Visualization.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_Visualization.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(FILES ${BUILD_DIR}/Visualization.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(FILES ${BUILD_DIR}/_Visualization.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 # install GC
 INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/GarbageCollector.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 # install addons
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/Display DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/Utils DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/DataExchange DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/MSH DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/PAF DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/KBE DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )

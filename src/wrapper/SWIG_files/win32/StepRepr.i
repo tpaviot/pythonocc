@@ -2331,7 +2331,7 @@ class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
 };
 %extend StepRepr_ShapeAspectRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeAspectRelationship::~StepRepr_ShapeAspectRelationship %{
@@ -2364,7 +2364,7 @@ class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
 };
 %extend StepRepr_ShapeAspectTransition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeAspectTransition::~StepRepr_ShapeAspectTransition %{
@@ -2417,7 +2417,7 @@ class StepRepr_RepresentationRelationship : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationRelationship::~StepRepr_RepresentationRelationship %{
@@ -2450,7 +2450,7 @@ class StepRepr_ShapeRepresentationRelationship : public StepRepr_RepresentationR
 };
 %extend StepRepr_ShapeRepresentationRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeRepresentationRelationship::~StepRepr_ShapeRepresentationRelationship %{
@@ -2489,7 +2489,7 @@ class StepRepr_RepresentationRelationshipWithTransformation : public StepRepr_Sh
 };
 %extend StepRepr_RepresentationRelationshipWithTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationRelationshipWithTransformation::~StepRepr_RepresentationRelationshipWithTransformation %{
@@ -2522,7 +2522,7 @@ class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRe
 };
 %extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeRepresentationRelationshipWithTransformation::~StepRepr_ShapeRepresentationRelationshipWithTransformation %{
@@ -2601,7 +2601,7 @@ class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_HSequenceOfRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_HSequenceOfRepresentationItem::~StepRepr_HSequenceOfRepresentationItem %{
@@ -2654,7 +2654,7 @@ class StepRepr_Representation : public MMgt_TShared {
 };
 %extend StepRepr_Representation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_Representation::~StepRepr_Representation %{
@@ -2707,7 +2707,7 @@ class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinitionRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_PropertyDefinitionRelationship::~StepRepr_PropertyDefinitionRelationship %{
@@ -2762,7 +2762,7 @@ class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_HArray1OfMaterialPropertyRepresentation::~StepRepr_HArray1OfMaterialPropertyRepresentation %{
@@ -2848,7 +2848,7 @@ class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRela
 };
 %extend StepRepr_ShapeAspectDerivingRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeAspectDerivingRelationship::~StepRepr_ShapeAspectDerivingRelationship %{
@@ -2903,7 +2903,7 @@ class StepRepr_ProductConcept : public MMgt_TShared {
 };
 %extend StepRepr_ProductConcept {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ProductConcept::~StepRepr_ProductConcept %{
@@ -2973,7 +2973,7 @@ class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
 };
 %extend StepRepr_DefinitionalRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_DefinitionalRepresentation::~StepRepr_DefinitionalRepresentation %{
@@ -3026,7 +3026,7 @@ class StepRepr_ShapeAspect : public MMgt_TShared {
 };
 %extend StepRepr_ShapeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeAspect::~StepRepr_ShapeAspect %{
@@ -3059,7 +3059,7 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 };
 %extend StepRepr_DerivedShapeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_DerivedShapeAspect::~StepRepr_DerivedShapeAspect %{
@@ -3092,7 +3092,7 @@ class StepRepr_Extension : public StepRepr_DerivedShapeAspect {
 };
 %extend StepRepr_Extension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_Extension::~StepRepr_Extension %{
@@ -3129,7 +3129,7 @@ class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_S
 };
 %extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_SequenceNodeOfSequenceOfRepresentationItem::~StepRepr_SequenceNodeOfSequenceOfRepresentationItem %{
@@ -3180,7 +3180,7 @@ class StepRepr_PropertyDefinition : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_PropertyDefinition::~StepRepr_PropertyDefinition %{
@@ -3213,7 +3213,7 @@ class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_MaterialProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_MaterialProperty::~StepRepr_MaterialProperty %{
@@ -3248,7 +3248,7 @@ class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelati
 };
 %extend StepRepr_ProductDefinitionUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ProductDefinitionUsage::~StepRepr_ProductDefinitionUsage %{
@@ -3289,7 +3289,7 @@ class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
 };
 %extend StepRepr_AssemblyComponentUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_AssemblyComponentUsage::~StepRepr_AssemblyComponentUsage %{
@@ -3332,7 +3332,7 @@ class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponen
 };
 %extend StepRepr_SpecifiedHigherUsageOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_SpecifiedHigherUsageOccurrence::~StepRepr_SpecifiedHigherUsageOccurrence %{
@@ -3387,7 +3387,7 @@ class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_HArray1OfPropertyDefinitionRepresentation::~StepRepr_HArray1OfPropertyDefinitionRepresentation %{
@@ -3432,7 +3432,7 @@ class StepRepr_RepresentationContext : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationContext::~StepRepr_RepresentationContext %{
@@ -3465,7 +3465,7 @@ class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationC
 };
 %extend StepRepr_ParametricRepresentationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ParametricRepresentationContext::~StepRepr_ParametricRepresentationContext %{
@@ -3520,7 +3520,7 @@ class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_HArray1OfRepresentationItem::~StepRepr_HArray1OfRepresentationItem %{
@@ -3565,7 +3565,7 @@ class StepRepr_MaterialDesignation : public MMgt_TShared {
 };
 %extend StepRepr_MaterialDesignation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_MaterialDesignation::~StepRepr_MaterialDesignation %{
@@ -3612,7 +3612,7 @@ class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_Representation
 };
 %extend StepRepr_GlobalUncertaintyAssignedContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_GlobalUncertaintyAssignedContext::~StepRepr_GlobalUncertaintyAssignedContext %{
@@ -3657,7 +3657,7 @@ class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
 };
 %extend StepRepr_FunctionallyDefinedTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_FunctionallyDefinedTransformation::~StepRepr_FunctionallyDefinedTransformation %{
@@ -3698,7 +3698,7 @@ class StepRepr_RepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationItem::~StepRepr_RepresentationItem %{
@@ -3743,7 +3743,7 @@ class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_CompoundRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_CompoundRepresentationItem::~StepRepr_CompoundRepresentationItem %{
@@ -3778,7 +3778,7 @@ class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
 };
 %extend StepRepr_CompositeShapeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_CompositeShapeAspect::~StepRepr_CompositeShapeAspect %{
@@ -3819,7 +3819,7 @@ class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffe
 };
 %extend StepRepr_ConfigurationEffectivity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ConfigurationEffectivity::~StepRepr_ConfigurationEffectivity %{
@@ -3864,7 +3864,7 @@ class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_PropertyDefinitionRepresentation::~StepRepr_PropertyDefinitionRepresentation %{
@@ -3897,7 +3897,7 @@ class StepRepr_StructuralResponsePropertyDefinitionRepresentation : public StepR
 };
 %extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_StructuralResponsePropertyDefinitionRepresentation::~StepRepr_StructuralResponsePropertyDefinitionRepresentation %{
@@ -3938,7 +3938,7 @@ class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefiniti
 };
 %extend StepRepr_MaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_MaterialPropertyRepresentation::~StepRepr_MaterialPropertyRepresentation %{
@@ -3985,7 +3985,7 @@ class StepRepr_MappedItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_MappedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_MappedItem::~StepRepr_MappedItem %{
@@ -4034,7 +4034,7 @@ class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_Representation
 };
 %extend StepRepr_ReprItemAndLengthMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ReprItemAndLengthMeasureWithUnit::~StepRepr_ReprItemAndLengthMeasureWithUnit %{
@@ -4173,7 +4173,7 @@ class StepRepr_RepresentationMap : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationMap::~StepRepr_RepresentationMap %{
@@ -4259,7 +4259,7 @@ class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_ProductDefinitionShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ProductDefinitionShape::~StepRepr_ProductDefinitionShape %{
@@ -4294,7 +4294,7 @@ class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUs
 };
 %extend StepRepr_NextAssemblyUsageOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_NextAssemblyUsageOccurrence::~StepRepr_NextAssemblyUsageOccurrence %{
@@ -4331,7 +4331,7 @@ class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public T
 };
 %extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation::~StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation %{
@@ -4366,7 +4366,7 @@ class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRela
 };
 %extend StepRepr_SuppliedPartRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_SuppliedPartRelationship::~StepRepr_SuppliedPartRelationship %{
@@ -4401,7 +4401,7 @@ class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 };
 %extend StepRepr_ValueRange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ValueRange::~StepRepr_ValueRange %{
@@ -4454,7 +4454,7 @@ class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
 };
 %extend StepRepr_ItemDefinedTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ItemDefinedTransformation::~StepRepr_ItemDefinedTransformation %{
@@ -4489,7 +4489,7 @@ class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation 
 };
 %extend StepRepr_ExternallyDefinedRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ExternallyDefinedRepresentation::~StepRepr_ExternallyDefinedRepresentation %{
@@ -4534,7 +4534,7 @@ class StepRepr_ConfigurationDesign : public MMgt_TShared {
 };
 %extend StepRepr_ConfigurationDesign {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ConfigurationDesign::~StepRepr_ConfigurationDesign %{
@@ -4587,7 +4587,7 @@ class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
 };
 %extend StepRepr_AssemblyComponentUsageSubstitute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_AssemblyComponentUsageSubstitute::~StepRepr_AssemblyComponentUsageSubstitute %{
@@ -4628,7 +4628,7 @@ class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyCompon
 };
 %extend StepRepr_QuantifiedAssemblyComponentUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_QuantifiedAssemblyComponentUsage::~StepRepr_QuantifiedAssemblyComponentUsage %{
@@ -4702,7 +4702,7 @@ class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationIte
 };
 %extend StepRepr_DescriptiveRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_DescriptiveRepresentationItem::~StepRepr_DescriptiveRepresentationItem %{
@@ -4781,7 +4781,7 @@ class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_HSequenceOfMaterialPropertyRepresentation::~StepRepr_HSequenceOfMaterialPropertyRepresentation %{
@@ -4830,7 +4830,7 @@ class StepRepr_DataEnvironment : public MMgt_TShared {
 };
 %extend StepRepr_DataEnvironment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_DataEnvironment::~StepRepr_DataEnvironment %{
@@ -4951,7 +4951,7 @@ class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_MeasureRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_MeasureRepresentationItem::~StepRepr_MeasureRepresentationItem %{
@@ -4986,7 +4986,7 @@ class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsag
 };
 %extend StepRepr_PromissoryUsageOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_PromissoryUsageOccurrence::~StepRepr_PromissoryUsageOccurrence %{
@@ -5021,7 +5021,7 @@ class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_StructuralResponseProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_StructuralResponseProperty::~StepRepr_StructuralResponseProperty %{
@@ -5068,7 +5068,7 @@ class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext
 };
 %extend StepRepr_GlobalUnitAssignedContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_GlobalUnitAssignedContext::~StepRepr_GlobalUnitAssignedContext %{
@@ -5117,7 +5117,7 @@ class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
 };
 %extend StepRepr_MakeFromUsageOption {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_MakeFromUsageOption::~StepRepr_MakeFromUsageOption %{
@@ -5243,7 +5243,7 @@ class StepRepr_ConfigurationItem : public MMgt_TShared {
 };
 %extend StepRepr_ConfigurationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ConfigurationItem::~StepRepr_ConfigurationItem %{

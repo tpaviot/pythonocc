@@ -1437,7 +1437,7 @@ class Interface_GeneralModule : public MMgt_TShared {
 };
 %extend Interface_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_GeneralModule::~Interface_GeneralModule %{
@@ -1520,7 +1520,7 @@ class Interface_FileReaderData : public MMgt_TShared {
 };
 %extend Interface_FileReaderData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_FileReaderData::~Interface_FileReaderData %{
@@ -1563,7 +1563,7 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 };
 %extend Interface_GlobalNodeOfGeneralLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_GlobalNodeOfGeneralLib::~Interface_GlobalNodeOfGeneralLib %{
@@ -1655,7 +1655,7 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 };
 %extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_IndexedMapNodeOfIndexedMapOfAsciiString::~Interface_IndexedMapNodeOfIndexedMapOfAsciiString %{
@@ -1694,7 +1694,7 @@ class Interface_CopyControl : public MMgt_TShared {
 };
 %extend Interface_CopyControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_CopyControl::~Interface_CopyControl %{
@@ -1733,7 +1733,7 @@ class Interface_ReaderModule : public MMgt_TShared {
 };
 %extend Interface_ReaderModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_ReaderModule::~Interface_ReaderModule %{
@@ -1782,7 +1782,7 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 };
 %extend Interface_DataMapNodeOfDataMapOfTransientInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_DataMapNodeOfDataMapOfTransientInteger::~Interface_DataMapNodeOfDataMapOfTransientInteger %{
@@ -1884,7 +1884,7 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 };
 %extend Interface_GlobalNodeOfReaderLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_GlobalNodeOfReaderLib::~Interface_GlobalNodeOfReaderLib %{
@@ -1927,7 +1927,7 @@ class Interface_CopyMap : public Interface_CopyControl {
 };
 %extend Interface_CopyMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_CopyMap::~Interface_CopyMap %{
@@ -1977,9 +1977,15 @@ def __del__(self):
 class Interface_BitMap {
 	public:
 		%feature("autodoc", "1");
+		Interface_BitMap();
+		%feature("autodoc", "1");
 		Interface_BitMap(const Standard_Integer nbitems, const Standard_Integer resflags=0);
 		%feature("autodoc", "1");
+		void Initialize(const Standard_Integer nbitems, const Standard_Integer resflags=0);
+		%feature("autodoc", "1");
 		Interface_BitMap(const Interface_BitMap &other, const Standard_Boolean copied=0);
+		%feature("autodoc", "1");
+		void Initialize(const Interface_BitMap &other, const Standard_Boolean copied=0);
 		%feature("autodoc","Internals() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 
 		void Internals(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & flags, Handle_TColStd_HSequenceOfAsciiString & names) const;
@@ -2017,6 +2023,8 @@ class Interface_BitMap {
 		Standard_Boolean CFalse(const Standard_Integer item, const Standard_Integer flag=0) const;
 		%feature("autodoc", "1");
 		void Init(const Standard_Boolean val, const Standard_Integer flag=0) const;
+		%feature("autodoc", "1");
+		void Clear();
 
 };
 %feature("shadow") Interface_BitMap::~Interface_BitMap %{
@@ -2166,7 +2174,7 @@ class Interface_ParamList : public MMgt_TShared {
 };
 %extend Interface_ParamList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_ParamList::~Interface_ParamList %{
@@ -2258,7 +2266,7 @@ class Interface_TypedValue : public MoniTool_TypedValue {
 };
 %extend Interface_TypedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_TypedValue::~Interface_TypedValue %{
@@ -2339,8 +2347,6 @@ class Interface_ShareTool {
 		Interface_ShareTool(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
 		Interface_ShareTool(const Handle_Interface_HGraph &ahgraph);
-		%feature("autodoc", "1");
-		void AddImplied(const Handle_Interface_GTool &gtool);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
@@ -2439,7 +2445,7 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 };
 %extend Interface_HSequenceOfCheck {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_HSequenceOfCheck::~Interface_HSequenceOfCheck %{
@@ -2522,7 +2528,7 @@ class Interface_Static : public Interface_TypedValue {
 };
 %extend Interface_Static {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_Static::~Interface_Static %{
@@ -2607,7 +2613,7 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 };
 %extend Interface_NodeOfGeneralLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_NodeOfGeneralLib::~Interface_NodeOfGeneralLib %{
@@ -2644,7 +2650,7 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 };
 %extend Interface_SequenceNodeOfSequenceOfCheck {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_SequenceNodeOfSequenceOfCheck::~Interface_SequenceNodeOfSequenceOfCheck %{
@@ -2687,7 +2693,7 @@ class Interface_InterfaceError : public Standard_Failure {
 };
 %extend Interface_InterfaceError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceError::~Interface_InterfaceError %{
@@ -2754,7 +2760,7 @@ class Interface_UndefinedContent : public MMgt_TShared {
 };
 %extend Interface_UndefinedContent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_UndefinedContent::~Interface_UndefinedContent %{
@@ -2880,6 +2886,8 @@ class Interface_FileReaderTool {
 		virtual		void Destroy();
 		%feature("autodoc", "1");
 		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		void Clear();
 
 };
 %feature("shadow") Interface_FileReaderTool::~Interface_FileReaderTool %{
@@ -3016,7 +3024,7 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 };
 %extend Interface_HArray1OfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_HArray1OfHAsciiString::~Interface_HArray1OfHAsciiString %{
@@ -3039,23 +3047,23 @@ def __del__(self):
 class Interface_Graph {
 	public:
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel);
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
 		Interface_Graph(const Interface_Graph &agraph, const Standard_Boolean copied=0);
-		%feature("autodoc", "1");
-		void EvalSharings();
 		%feature("autodoc", "1");
 		void Reset();
 		%feature("autodoc", "1");
 		void ResetStatus();
 		%feature("autodoc", "1");
 		Standard_Integer Size() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbStatuses() const;
 		%feature("autodoc", "1");
 		Standard_Integer EntityNumber(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
@@ -3064,18 +3072,6 @@ class Interface_Graph {
 		Standard_Boolean IsPresent(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Entity(const Standard_Integer num) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetCStatus(const Standard_Integer num) {
-				return (Standard_Integer) $self->CStatus(num);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetCStatus(Standard_Integer value ,const Standard_Integer num) {
-				$self->CStatus(num)=value;
-				}
-		};
 		%feature("autodoc", "1");
 		void SetStatus(const Standard_Integer num, const Standard_Integer stat);
 		%feature("autodoc", "1");
@@ -3107,39 +3103,23 @@ class Interface_Graph {
 		%feature("autodoc", "1");
 		Standard_Boolean HasShareErrors(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasRedefinedShareds(const Handle_Standard_Transient &ent) const;
+		Handle_TColStd_HSequenceOfTransient GetShareds(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator Shareds(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		Interface_IntList SharedNums(const Standard_Integer num) const;
-		%feature("autodoc", "1");
 		Interface_EntityIterator Sharings(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		Interface_IntList SharingNums(const Standard_Integer num) const;
+		Handle_TColStd_HSequenceOfTransient GetSharings(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator TypedSharings(const Handle_Standard_Transient &ent, const Handle_Standard_Type &type) const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator RootEntities() const;
 		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent, const Interface_EntityIterator &list);
-		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent, const Interface_IntList &list);
-		%feature("autodoc", "1");
-		void SetNoShare(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void SetNoShare(const Interface_EntityIterator &list);
-		%feature("autodoc", "1");
-		void AddShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
-		%feature("autodoc", "1");
-		void RemoveShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
-		%feature("autodoc", "1");
-		void ResetShare(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void ResetAllShare();
-		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Name(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfListOfInteger & SharingTable() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ModeStat() const;
 
 };
 %feature("shadow") Interface_Graph::~Interface_Graph %{
@@ -3277,7 +3257,7 @@ class Interface_ReportEntity : public MMgt_TShared {
 };
 %extend Interface_ReportEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_ReportEntity::~Interface_ReportEntity %{
@@ -3316,7 +3296,7 @@ class Interface_SignLabel : public MoniTool_SignText {
 };
 %extend Interface_SignLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_SignLabel::~Interface_SignLabel %{
@@ -3365,7 +3345,7 @@ class Interface_IntVal : public MMgt_TShared {
 };
 %extend Interface_IntVal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_IntVal::~Interface_IntVal %{
@@ -3390,13 +3370,13 @@ class Interface_HGraph : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_HGraph(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel);
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Standard_Boolean theModeStats=1);
 		%feature("autodoc", "1");
 		const Interface_Graph & Graph() const;
 		%feature("autodoc", "1");
@@ -3412,7 +3392,7 @@ class Interface_HGraph : public MMgt_TShared {
 };
 %extend Interface_HGraph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_HGraph::~Interface_HGraph %{
@@ -3475,7 +3455,7 @@ class Interface_Protocol : public MMgt_TShared {
 };
 %extend Interface_Protocol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_Protocol::~Interface_Protocol %{
@@ -3659,7 +3639,7 @@ class Interface_Check : public MMgt_TShared {
 };
 %extend Interface_Check {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_Check::~Interface_Check %{
@@ -3717,7 +3697,7 @@ class Interface_GTool : public MMgt_TShared {
 };
 %extend Interface_GTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_GTool::~Interface_GTool %{
@@ -3893,7 +3873,7 @@ class Interface_SignType : public MoniTool_SignText {
 };
 %extend Interface_SignType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_SignType::~Interface_SignType %{
@@ -3949,6 +3929,10 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") Interface_DataMapOfTransientInteger::~Interface_DataMapOfTransientInteger %{
@@ -3991,7 +3975,7 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 };
 %extend Interface_CheckFailure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_CheckFailure::~Interface_CheckFailure %{
@@ -4109,7 +4093,7 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 };
 %extend Interface_NodeOfReaderLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_NodeOfReaderLib::~Interface_NodeOfReaderLib %{
@@ -4152,7 +4136,7 @@ class Interface_InterfaceMismatch : public Interface_InterfaceError {
 };
 %extend Interface_InterfaceMismatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceMismatch::~Interface_InterfaceMismatch %{
@@ -4256,7 +4240,7 @@ class Interface_ParamSet : public MMgt_TShared {
 };
 %extend Interface_ParamSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_ParamSet::~Interface_ParamSet %{
@@ -4419,7 +4403,7 @@ class Interface_InterfaceModel : public MMgt_TShared {
 };
 %extend Interface_InterfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceModel::~Interface_InterfaceModel %{
@@ -4474,7 +4458,7 @@ class Interface_EntityCluster : public MMgt_TShared {
 };
 %extend Interface_EntityCluster {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Interface_EntityCluster::~Interface_EntityCluster %{

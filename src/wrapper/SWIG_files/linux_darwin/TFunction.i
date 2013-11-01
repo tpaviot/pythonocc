@@ -429,6 +429,10 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 		TDF_LabelList & ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
 		TDF_LabelList & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
 
 };
 %feature("shadow") TFunction_DataMapOfLabelListOfLabel::~TFunction_DataMapOfLabelListOfLabel %{
@@ -483,7 +487,7 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 };
 %extend TFunction_HArray1OfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_HArray1OfDataMapOfGUIDDriver::~TFunction_HArray1OfDataMapOfGUIDDriver %{
@@ -577,7 +581,7 @@ class TFunction_Driver : public MMgt_TShared {
 };
 %extend TFunction_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_Driver::~TFunction_Driver %{
@@ -623,6 +627,10 @@ class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 		Handle_TFunction_Driver & ChangeFind(const Standard_GUID &K);
 		%feature("autodoc", "1");
 		Handle_TFunction_Driver & operator()(const Standard_GUID &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_GUID &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_GUID &K);
 
 };
 %feature("shadow") TFunction_DataMapOfGUIDDriver::~TFunction_DataMapOfGUIDDriver %{
@@ -691,7 +699,7 @@ class TFunction_Function : public TDF_Attribute {
 };
 %extend TFunction_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_Function::~TFunction_Function %{
@@ -818,7 +826,7 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_DataMapNodeOfDataMapOfGUIDDriver::~TFunction_DataMapNodeOfDataMapOfGUIDDriver %{
@@ -920,7 +928,7 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 };
 %extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
@@ -975,7 +983,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 };
 %extend TFunction_DriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_DriverTable::~TFunction_DriverTable %{
@@ -1065,7 +1073,7 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 };
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_DataMapNodeOfDataMapOfLabelListOfLabel::~TFunction_DataMapNodeOfDataMapOfLabelListOfLabel %{
@@ -1236,7 +1244,7 @@ class TFunction_GraphNode : public TDF_Attribute {
 };
 %extend TFunction_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_GraphNode::~TFunction_GraphNode %{
@@ -1348,7 +1356,7 @@ class TFunction_Scope : public TDF_Attribute {
 };
 %extend TFunction_Scope {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_Scope::~TFunction_Scope %{

@@ -885,7 +885,7 @@ class GEOMAlgo_Algo {
 class GEOMAlgo_BuilderArea : public GEOMAlgo_Algo {
 	public:
 		%feature("autodoc", "1");
-		void SetContext(const IntTools_Context &theContext);
+		void SetContext(const Handle_IntTools_Context &theContext);
 		%feature("autodoc", "1");
 		void SetShapes(const TopTools_ListOfShape &theLS);
 		%feature("autodoc", "1");
@@ -957,6 +957,10 @@ class GEOMAlgo_DataMapOfPassKeyInteger : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const GEOMAlgo_PassKey &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const GEOMAlgo_PassKey &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const GEOMAlgo_PassKey &K);
 
 };
 %feature("shadow") GEOMAlgo_DataMapOfPassKeyInteger::~GEOMAlgo_DataMapOfPassKeyInteger %{
@@ -1067,7 +1071,7 @@ class GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 };
 %extend GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_DataMapNodeOfDataMapOfShapeReal::~GEOMAlgo_DataMapNodeOfDataMapOfShapeReal %{
@@ -1120,7 +1124,7 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public TCollecti
 };
 %extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState::~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState %{
@@ -1204,7 +1208,7 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape : pub
 };
 %extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape::~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape %{
@@ -1326,6 +1330,10 @@ class GEOMAlgo_IndexedDataMapOfPassKeyListOfShape : public TCollection_BasicMap 
 		const TopTools_ListOfShape & FindFromKey(const GEOMAlgo_PassKey &K) const;
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & ChangeFromKey(const GEOMAlgo_PassKey &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const GEOMAlgo_PassKey &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const GEOMAlgo_PassKey &K);
 
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapOfPassKeyListOfShape::~GEOMAlgo_IndexedDataMapOfPassKeyListOfShape %{
@@ -1371,7 +1379,7 @@ class GEOMAlgo_HAlgo : public MMgt_TShared {
 };
 %extend GEOMAlgo_HAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 
@@ -1404,7 +1412,7 @@ class GEOMAlgo_Clsf : public GEOMAlgo_HAlgo {
 };
 %extend GEOMAlgo_Clsf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 
@@ -1426,7 +1434,7 @@ class GEOMAlgo_ClsfSolid : public GEOMAlgo_Clsf {
 };
 %extend GEOMAlgo_ClsfSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_ClsfSolid::~GEOMAlgo_ClsfSolid %{
@@ -1472,6 +1480,10 @@ class GEOMAlgo_DataMapOfOrientedShapeShape : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") GEOMAlgo_DataMapOfOrientedShapeShape::~GEOMAlgo_DataMapOfOrientedShapeShape %{
@@ -1517,6 +1529,10 @@ class GEOMAlgo_DataMapOfShapeShapeSet : public TCollection_BasicMap {
 		GEOMAlgo_ShapeSet & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		GEOMAlgo_ShapeSet & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") GEOMAlgo_DataMapOfShapeShapeSet::~GEOMAlgo_DataMapOfShapeShapeSet %{
@@ -1563,7 +1579,7 @@ class GEOMAlgo_ClsfSurf : public GEOMAlgo_Clsf {
 };
 %extend GEOMAlgo_ClsfSurf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_ClsfSurf::~GEOMAlgo_ClsfSurf %{
@@ -1610,7 +1626,7 @@ class GEOMAlgo_ClsfBox : public GEOMAlgo_Clsf {
 };
 %extend GEOMAlgo_ClsfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_ClsfBox::~GEOMAlgo_ClsfBox %{
@@ -1859,7 +1875,7 @@ class GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape : public TCollection_MapN
 };
 %extend GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape::~GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape %{
@@ -1909,6 +1925,65 @@ def __del__(self):
 %}
 
 %extend GEOMAlgo_WireEdgeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_Tools3D;
+class GEOMAlgo_Tools3D {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_Tools3D();
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Shape theSplit, const TopoDS_Shape theShape, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Face theSplit, const TopoDS_Face theShape, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Edge theEdge, const TopoDS_Edge theSplit, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		Standard_Integer Sense(const TopoDS_Face theF1, const TopoDS_Face theF2);
+		%feature("autodoc", "1");
+		static		void CopyFace(const TopoDS_Face theF1, TopoDS_Face & theF2);
+		%feature("autodoc", "1");
+		static		void MakeContainer(const TopAbs_ShapeEnum theType, TopoDS_Shape & theShape);
+		%feature("autodoc", "1");
+		static		void MakeConnexityBlock(const TopTools_ListOfShape &theLS, const TopTools_IndexedMapOfShape &theMapAvoid, TopTools_ListOfShape & theLSCB);
+		%feature("autodoc", "1");
+		static		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape theShape, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		TopAbs_State ComputeState(const gp_Pnt thePoint, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		TopAbs_State ComputeState(const TopoDS_Vertex theVertex, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		TopAbs_State ComputeState(const TopoDS_Edge theEdge, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		TopAbs_State ComputeState(const TopoDS_Face theFace, const TopoDS_Solid theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Edge theEdge, const TopoDS_Face theFace1, const TopoDS_Face theFace2, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Edge theEdge, const TopTools_ListOfShape &theLF, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Solid theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		static		void GetFaceOff(const TopoDS_Edge theEdge, const TopoDS_Face theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
+		%feature("autodoc", "1");
+		static		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge theEdge, const TopoDS_Face theFace, TopoDS_Edge & theEdgeOnF);
+		%feature("autodoc", "1");
+		static		Standard_Boolean GetEdgeOff(const TopoDS_Edge theEdge, const TopoDS_Face theFace, TopoDS_Edge & theEdgeOff);
+
+};
+%feature("shadow") GEOMAlgo_Tools3D::~GEOMAlgo_Tools3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMAlgo_Tools3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1983,6 +2058,10 @@ class GEOMAlgo_IndexedDataMapOfShapeState : public TCollection_BasicMap {
 		const TopAbs_State & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		TopAbs_State & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapOfShapeState::~GEOMAlgo_IndexedDataMapOfShapeState %{
@@ -2038,6 +2117,10 @@ class GEOMAlgo_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 		const TopoDS_Shape  FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape  ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K);
 
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapOfIntegerShape::~GEOMAlgo_IndexedDataMapOfIntegerShape %{
@@ -2050,65 +2133,6 @@ def __del__(self):
 %}
 
 %extend GEOMAlgo_IndexedDataMapOfIntegerShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_Tools3D;
-class GEOMAlgo_Tools3D {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_Tools3D();
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitToReverse(const TopoDS_Shape theSplit, const TopoDS_Shape theShape, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitToReverse(const TopoDS_Face theSplit, const TopoDS_Face theShape, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitToReverse(const TopoDS_Edge theEdge, const TopoDS_Edge theSplit, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		Standard_Integer Sense(const TopoDS_Face theF1, const TopoDS_Face theF2);
-		%feature("autodoc", "1");
-		static		void CopyFace(const TopoDS_Face theF1, TopoDS_Face & theF2);
-		%feature("autodoc", "1");
-		static		void MakeContainer(const TopAbs_ShapeEnum theType, TopoDS_Shape & theShape);
-		%feature("autodoc", "1");
-		static		void MakeConnexityBlock(const TopTools_ListOfShape &theLS, const TopTools_IndexedMapOfShape &theMapAvoid, TopTools_ListOfShape & theLSCB);
-		%feature("autodoc", "1");
-		static		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape theShape, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const gp_Pnt thePoint, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const TopoDS_Vertex theVertex, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const TopoDS_Edge theEdge, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const TopoDS_Face theFace, const TopoDS_Solid theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Edge theEdge, const TopoDS_Face theFace1, const TopoDS_Face theFace2, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Edge theEdge, const TopTools_ListOfShape &theLF, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Solid theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		static		void GetFaceOff(const TopoDS_Edge theEdge, const TopoDS_Face theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge theEdge, const TopoDS_Face theFace, TopoDS_Edge & theEdgeOnF);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetEdgeOff(const TopoDS_Edge theEdge, const TopoDS_Face theFace, TopoDS_Edge & theEdgeOff);
-
-};
-%feature("shadow") GEOMAlgo_Tools3D::~GEOMAlgo_Tools3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMAlgo_Tools3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2245,6 +2269,10 @@ class GEOMAlgo_DataMapOfPassKeyShapeShape : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const GEOMAlgo_PassKeyShape &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const GEOMAlgo_PassKeyShape &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const GEOMAlgo_PassKeyShape &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const GEOMAlgo_PassKeyShape &K);
 
 };
 %feature("shadow") GEOMAlgo_DataMapOfPassKeyShapeShape::~GEOMAlgo_DataMapOfPassKeyShapeShape %{
@@ -2332,7 +2360,7 @@ class GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape : public TCollection_MapNod
 };
 %extend GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape::~GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape %{
@@ -2395,7 +2423,7 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollec
 };
 %extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{
@@ -2575,6 +2603,10 @@ class GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape : public TCollection_Basi
 		const TopTools_ListOfShape & FindFromKey(const GEOMAlgo_PassKeyShape &K) const;
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & ChangeFromKey(const GEOMAlgo_PassKeyShape &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const GEOMAlgo_PassKeyShape &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const GEOMAlgo_PassKeyShape &K);
 
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape::~GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape %{
@@ -2837,6 +2869,10 @@ class GEOMAlgo_IndexedDataMapOfShapeShapeInfo : public TCollection_BasicMap {
 		const GEOMAlgo_ShapeInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		GEOMAlgo_ShapeInfo & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapOfShapeShapeInfo::~GEOMAlgo_IndexedDataMapOfShapeShapeInfo %{
@@ -3371,7 +3407,7 @@ class GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger : public TCollection_MapNode
 };
 %extend GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger::~GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger %{
@@ -3458,6 +3494,10 @@ class GEOMAlgo_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		const Bnd_Box & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		Bnd_Box & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapOfShapeBox::~GEOMAlgo_IndexedDataMapOfShapeBox %{
@@ -3573,7 +3613,7 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape : public T
 };
 %extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape::~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape %{
@@ -3629,6 +3669,10 @@ class GEOMAlgo_DataMapOfShapeReal : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") GEOMAlgo_DataMapOfShapeReal::~GEOMAlgo_DataMapOfShapeReal %{
@@ -3665,7 +3709,7 @@ class GEOMAlgo_ListNodeOfListOfCoupleOfShapes : public TCollection_MapNode {
 };
 %extend GEOMAlgo_ListNodeOfListOfCoupleOfShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_ListNodeOfListOfCoupleOfShapes::~GEOMAlgo_ListNodeOfListOfCoupleOfShapes %{
@@ -3704,7 +3748,7 @@ class GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape : public TCollection_Map
 };
 %extend GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape::~GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape %{
@@ -3757,7 +3801,7 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection
 };
 %extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
@@ -3803,6 +3847,10 @@ class GEOMAlgo_DataMapOfRealListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & ChangeFind(const Standard_Real &K);
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & operator()(const Standard_Real &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Real &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Real &K);
 
 };
 %feature("shadow") GEOMAlgo_DataMapOfRealListOfShape::~GEOMAlgo_DataMapOfRealListOfShape %{
@@ -3896,7 +3944,7 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public TColl
 };
 %extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo::~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo %{
@@ -3935,7 +3983,7 @@ class GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet : public TCollection_MapNode 
 };
 %extend GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet::~GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet %{
@@ -3972,7 +4020,7 @@ class GEOMAlgo_ListNodeOfListOfPnt : public TCollection_MapNode {
 };
 %extend GEOMAlgo_ListNodeOfListOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMAlgo_ListNodeOfListOfPnt::~GEOMAlgo_ListNodeOfListOfPnt %{

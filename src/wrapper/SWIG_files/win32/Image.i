@@ -49,18 +49,11 @@ $HeaderURL$
 
 %include Image_headers.i
 
-typedef TRawBufferData Image_CRawBufferData;
-typedef NCollection_Handle<fipImage> Image_HPrivateImage;
 typedef Aspect_Pixel * Image_PixelAddress;
 
 enum Image_TypeOfImage {
 	Image_TOI_ColorImage,
 	Image_TOI_PseudoColorImage,
-	Image_TOI_RGB,
-	Image_TOI_RGBA,
-	Image_TOI_RGBF,
-	Image_TOI_RGBAF,
-	Image_TOI_FLOAT,
 	};
 
 enum Image_FlipType {
@@ -79,6 +72,82 @@ enum Image_DitheringMethod {
 	Image_DM_ErrorDiffusion,
 	};
 
+
+
+%nodefaultctor Handle_Image_PixMap;
+class Handle_Image_PixMap : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_PixMap();
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_PixMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_PixMap {
+	Image_PixMap* GetObject() {
+	return (Image_PixMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_PixMap::~Handle_Image_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Image_AlienPixMap;
+class Handle_Image_AlienPixMap : public Handle_Image_PixMap {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_AlienPixMap();
+		%feature("autodoc", "1");
+		Handle_Image_AlienPixMap(const Handle_Image_AlienPixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_AlienPixMap(const Image_AlienPixMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_AlienPixMap & operator=(const Handle_Image_AlienPixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_AlienPixMap & operator=(const Image_AlienPixMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_AlienPixMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_AlienPixMap {
+	Image_AlienPixMap* GetObject() {
+	return (Image_AlienPixMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_AlienPixMap::~Handle_Image_AlienPixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_AlienPixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_Image;
@@ -233,44 +302,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Image_PixMap;
-class Handle_Image_PixMap : public Handle_Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		Handle_Image_PixMap();
-		%feature("autodoc", "1");
-		Handle_Image_PixMap(const Handle_Image_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap(const Image_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap & operator=(const Handle_Image_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap & operator=(const Image_PixMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Image_PixMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Image_PixMap {
-	Image_PixMap* GetObject() {
-	return (Image_PixMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Image_PixMap::~Handle_Image_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Image_PixMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Image_DColorImage;
 class Handle_Image_DColorImage : public Handle_Image_Image {
 	public:
@@ -347,6 +378,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Image_Diff;
+class Handle_Image_Diff : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_Diff();
+		%feature("autodoc", "1");
+		Handle_Image_Diff(const Handle_Image_Diff &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_Diff(const Image_Diff *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_Diff & operator=(const Handle_Image_Diff &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_Diff & operator=(const Image_Diff *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_Diff DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_Diff {
+	Image_Diff* GetObject() {
+	return (Image_Diff*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_Diff::~Handle_Image_Diff %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_Diff {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
 class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_MapNode {
 	public:
@@ -406,6 +475,189 @@ def __del__(self):
 %}
 
 %extend Image_ColorPixelMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorBGRAF;
+class Image_ColorBGRAF {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorBGRAF();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_ShortReal r() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal g() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal b() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal a() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & r();
+		%feature("autodoc", "1");
+		Standard_ShortReal & g();
+		%feature("autodoc", "1");
+		Standard_ShortReal & b();
+		%feature("autodoc", "1");
+		Standard_ShortReal & a();
+
+};
+%feature("shadow") Image_ColorBGRAF::~Image_ColorBGRAF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorBGRAF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_PixMap;
+class Image_PixMap : public Standard_Transient {
+	public:
+		enum tagFormat {
+			ImgUNKNOWN,
+			ImgGray,
+			ImgRGB,
+			ImgBGR,
+			ImgRGB32,
+			ImgBGR32,
+			ImgRGBA,
+			ImgBGRA,
+			ImgGrayF,
+			ImgRGBF,
+			ImgBGRF,
+			ImgRGBAF,
+			ImgBGRAF,
+		};
+		%feature("autodoc", "1");
+		static		bool IsBigEndianHost();
+		%feature("autodoc", "1");
+		Image_PixMap::tagFormat Format() const;
+		%feature("autodoc", "1");
+		Standard_Size Width() const;
+		%feature("autodoc", "1");
+		Standard_Size Height() const;
+		%feature("autodoc", "1");
+		Standard_Size SizeX() const;
+		%feature("autodoc", "1");
+		Standard_Size SizeY() const;
+		%feature("autodoc", "1");
+		Standard_Real Ratio() const;
+		%feature("autodoc", "1");
+		bool IsEmpty() const;
+		%feature("autodoc", "1");
+		Image_PixMap();
+		%feature("autodoc", "1");
+		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
+		%feature("autodoc","PixelColor(Standard_Integer theX, Standard_Integer theY) -> Standard_Real");
+
+		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		bool InitWrapper(Image_PixMap::tagFormat , Standard_Byte* theDataPtr, const Standard_Size theSizeX, const Standard_Size theSizeY, const Standard_Size theSizeRowBytes=0);
+		%feature("autodoc", "1");
+		virtual		bool InitTrash(Image_PixMap::tagFormat , const Standard_Size theSizeX, const Standard_Size theSizeY, const Standard_Size theSizeRowBytes=0);
+		%feature("autodoc", "1");
+		virtual		bool InitCopy(const Image_PixMap &theCopy);
+		%feature("autodoc", "1");
+		bool InitZero(Image_PixMap::tagFormat , const Standard_Size theSizeX, const Standard_Size theSizeY, const Standard_Size theSizeRowBytes=0, const Standard_Byte theValue=0);
+		%feature("autodoc", "1");
+		virtual		void Clear(Image_PixMap::tagFormat =Image_PixMap::ImgGray);
+		%feature("autodoc", "1");
+		bool IsTopDown() const;
+		%feature("autodoc", "1");
+		void SetTopDown(bool );
+		%feature("autodoc", "1");
+		Standard_Size TopDownInc() const;
+		%feature("autodoc", "1");
+		const Standard_Byte * Data() const;
+		%feature("autodoc", "1");
+		Standard_Byte * ChangeData();
+		%feature("autodoc", "1");
+		const Standard_Byte * Row(const Standard_Size theRow) const;
+		%feature("autodoc", "1");
+		Standard_Byte * ChangeRow(const Standard_Size theRow);
+		%feature("autodoc", "1");
+		Standard_Size SizeRowBytes() const;
+		%feature("autodoc", "1");
+		Standard_Size RowExtraBytes() const;
+		%feature("autodoc", "1");
+		Standard_Size MaxRowAligmentBytes() const;
+		%feature("autodoc", "1");
+		Standard_Size SizeBytes() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Image_PixMap {
+	Handle_Image_PixMap GetHandle() {
+	return *(Handle_Image_PixMap*) &$self;
+	}
+};
+%extend Image_PixMap {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Image_PixMap::~Image_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_AlienPixMap;
+class Image_AlienPixMap : public Image_PixMap {
+	public:
+		%feature("autodoc", "1");
+		Image_AlienPixMap();
+		%feature("autodoc", "1");
+		bool Load(const TCollection_AsciiString &theFileName);
+		%feature("autodoc", "1");
+		bool Save(const TCollection_AsciiString &theFileName);
+		%feature("autodoc", "1");
+		bool AdjustGamma(const Standard_Real theGammaCorr);
+
+};
+%extend Image_AlienPixMap {
+	Handle_Image_AlienPixMap GetHandle() {
+	return *(Handle_Image_AlienPixMap*) &$self;
+	}
+};
+%extend Image_AlienPixMap {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Image_AlienPixMap::~Image_AlienPixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_AlienPixMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -506,6 +758,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor Image_ColorRGBA;
+class Image_ColorRGBA {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorRGBA();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_Byte r() const;
+		%feature("autodoc", "1");
+		Standard_Byte g() const;
+		%feature("autodoc", "1");
+		Standard_Byte b() const;
+		%feature("autodoc", "1");
+		Standard_Byte a() const;
+		%feature("autodoc", "1");
+		Standard_Byte & r();
+		%feature("autodoc", "1");
+		Standard_Byte & g();
+		%feature("autodoc", "1");
+		Standard_Byte & b();
+		%feature("autodoc", "1");
+		Standard_Byte & a();
+
+};
+%feature("shadow") Image_ColorRGBA::~Image_ColorRGBA %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorRGBA {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Image_IndexPixelMapHasher;
 class Image_IndexPixelMapHasher {
 	public:
@@ -589,6 +882,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor Image_PixMapData<unsigned char>;
+class Image_PixMapData<unsigned char> {
+	public:
+		%feature("autodoc", "1");
+		unsigned char const * Data() const;
+		%feature("autodoc", "1");
+		char unsigned * ChangeData();
+		%feature("autodoc", "1");
+		unsigned char const * Row(const Standard_Size theRow) const;
+		%feature("autodoc", "1");
+		char unsigned * ChangeRow(const Standard_Size theRow);
+		%feature("autodoc", "1");
+		unsigned char const & Value(const Standard_Size theRow, const Standard_Size theCol) const;
+		%feature("autodoc", "1");
+		char unsigned & ChangeValue(const Standard_Size theRow, const Standard_Size theCol);
+		%feature("autodoc", "1");
+		Standard_Size MaxRowAligmentBytes() const;
+		%feature("autodoc", "1");
+		Standard_Size SizeBytes() const;
+		%feature("autodoc", "1");
+		Standard_Size SizeX() const;
+		%feature("autodoc", "1");
+		Standard_Size SizeY() const;
+
+};
+%feature("shadow") Image_PixMapData<unsigned char>::~Image_PixMapData<unsigned char> %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_PixMapData<unsigned char> {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Image_Image;
 class Image_Image : public MMgt_TShared {
 	public:
@@ -661,7 +995,7 @@ class Image_Image : public MMgt_TShared {
 };
 %extend Image_Image {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_Image::~Image_Image %{
@@ -732,7 +1066,7 @@ class Image_DColorImage : public Image_Image {
 };
 %extend Image_DColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DColorImage::~Image_DColorImage %{
@@ -769,7 +1103,7 @@ class Image_ColorImage : public Image_DColorImage {
 };
 %extend Image_ColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_ColorImage::~Image_ColorImage %{
@@ -886,7 +1220,7 @@ class Image_DIndexedImage : public Image_Image {
 };
 %extend Image_DIndexedImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DIndexedImage::~Image_DIndexedImage %{
@@ -899,6 +1233,47 @@ def __del__(self):
 %}
 
 %extend Image_DIndexedImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorRGB32;
+class Image_ColorRGB32 {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorRGB32();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_Byte r() const;
+		%feature("autodoc", "1");
+		Standard_Byte g() const;
+		%feature("autodoc", "1");
+		Standard_Byte b() const;
+		%feature("autodoc", "1");
+		Standard_Byte a_() const;
+		%feature("autodoc", "1");
+		Standard_Byte & r();
+		%feature("autodoc", "1");
+		Standard_Byte & g();
+		%feature("autodoc", "1");
+		Standard_Byte & b();
+		%feature("autodoc", "1");
+		Standard_Byte & a_();
+
+};
+%feature("shadow") Image_ColorRGB32::~Image_ColorRGB32 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorRGB32 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -936,6 +1311,84 @@ def __del__(self):
 };
 
 
+%nodefaultctor Image_ColorRGBAF;
+class Image_ColorRGBAF {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorRGBAF();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_ShortReal r() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal g() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal b() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal a() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & r();
+		%feature("autodoc", "1");
+		Standard_ShortReal & g();
+		%feature("autodoc", "1");
+		Standard_ShortReal & b();
+		%feature("autodoc", "1");
+		Standard_ShortReal & a();
+
+};
+%feature("shadow") Image_ColorRGBAF::~Image_ColorRGBAF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorRGBAF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorRGBF;
+class Image_ColorRGBF {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorRGBF();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_ShortReal r() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal g() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal b() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & r();
+		%feature("autodoc", "1");
+		Standard_ShortReal & g();
+		%feature("autodoc", "1");
+		Standard_ShortReal & b();
+
+};
+%feature("shadow") Image_ColorRGBF::~Image_ColorRGBF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorRGBF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Image_LookupTable;
 class Image_LookupTable : public TCollection_BasicMap {
 	public:
@@ -963,6 +1416,10 @@ class Image_LookupTable : public TCollection_BasicMap {
 		Aspect_IndexPixel & ChangeFind(const Aspect_IndexPixel &K);
 		%feature("autodoc", "1");
 		Aspect_IndexPixel & operator()(const Aspect_IndexPixel &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Aspect_IndexPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Aspect_IndexPixel &K);
 
 };
 %feature("shadow") Image_LookupTable::~Image_LookupTable %{
@@ -975,6 +1432,47 @@ def __del__(self):
 %}
 
 %extend Image_LookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorBGRA;
+class Image_ColorBGRA {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorBGRA();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_Byte r() const;
+		%feature("autodoc", "1");
+		Standard_Byte g() const;
+		%feature("autodoc", "1");
+		Standard_Byte b() const;
+		%feature("autodoc", "1");
+		Standard_Byte a() const;
+		%feature("autodoc", "1");
+		Standard_Byte & r();
+		%feature("autodoc", "1");
+		Standard_Byte & g();
+		%feature("autodoc", "1");
+		Standard_Byte & b();
+		%feature("autodoc", "1");
+		Standard_Byte & a();
+
+};
+%feature("shadow") Image_ColorBGRA::~Image_ColorBGRA %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorBGRA {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1001,7 +1499,7 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfLookupTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DataMapNodeOfLookupTable::~Image_DataMapNodeOfLookupTable %{
@@ -1043,6 +1541,59 @@ def __del__(self):
 %}
 
 %extend Image_BilinearPixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_Diff;
+class Image_Diff : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Image_Diff();
+		%feature("autodoc", "1");
+		Standard_Boolean Init(const Handle_Image_PixMap &theImageRef, const Handle_Image_PixMap &theImageNew, const Standard_Boolean theToBlackWhite=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Init(const TCollection_AsciiString &theImgPathRef, const TCollection_AsciiString &theImgPathNew, const Standard_Boolean theToBlackWhite=0);
+		%feature("autodoc", "1");
+		void SetColorTolerance(const Standard_Real theTolerance);
+		%feature("autodoc", "1");
+		Standard_Real ColorTolerance() const;
+		%feature("autodoc", "1");
+		void SetBorderFilterOn(const Standard_Boolean theToIgnore);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBorderFilterOn() const;
+		%feature("autodoc", "1");
+		Standard_Integer Compare();
+		%feature("autodoc", "1");
+		Standard_Boolean SaveDiffImage(Image_PixMap & theDiffImage) const;
+		%feature("autodoc", "1");
+		Standard_Boolean SaveDiffImage(const TCollection_AsciiString &theDiffPath) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Image_Diff {
+	Handle_Image_Diff GetHandle() {
+	return *(Handle_Image_Diff*) &$self;
+	}
+};
+%extend Image_Diff {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Image_Diff::~Image_Diff %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_Diff {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1168,6 +1719,10 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Aspect_ColorPixel &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Aspect_ColorPixel &K);
 
 };
 %feature("shadow") Image_ColorPixelDataMap::~Image_ColorPixelDataMap %{
@@ -1215,6 +1770,121 @@ def __del__(self):
 };
 
 
+%nodefaultctor Image_ColorBGR;
+class Image_ColorBGR {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorBGR();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_Byte r() const;
+		%feature("autodoc", "1");
+		Standard_Byte g() const;
+		%feature("autodoc", "1");
+		Standard_Byte b() const;
+		%feature("autodoc", "1");
+		Standard_Byte & r();
+		%feature("autodoc", "1");
+		Standard_Byte & g();
+		%feature("autodoc", "1");
+		Standard_Byte & b();
+
+};
+%feature("shadow") Image_ColorBGR::~Image_ColorBGR %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorBGR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorBGR32;
+class Image_ColorBGR32 {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorBGR32();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_Byte r() const;
+		%feature("autodoc", "1");
+		Standard_Byte g() const;
+		%feature("autodoc", "1");
+		Standard_Byte b() const;
+		%feature("autodoc", "1");
+		Standard_Byte a_() const;
+		%feature("autodoc", "1");
+		Standard_Byte & r();
+		%feature("autodoc", "1");
+		Standard_Byte & g();
+		%feature("autodoc", "1");
+		Standard_Byte & b();
+		%feature("autodoc", "1");
+		Standard_Byte & a_();
+
+};
+%feature("shadow") Image_ColorBGR32::~Image_ColorBGR32 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorBGR32 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorBGRF;
+class Image_ColorBGRF {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorBGRF();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_ShortReal r() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal g() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal b() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & r();
+		%feature("autodoc", "1");
+		Standard_ShortReal & g();
+		%feature("autodoc", "1");
+		Standard_ShortReal & b();
+
+};
+%feature("shadow") Image_ColorBGRF::~Image_ColorBGRF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorBGRF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Image_AveragePixelInterpolation;
 class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 	public:
@@ -1238,53 +1908,6 @@ def __del__(self):
 %}
 
 %extend Image_AveragePixelInterpolation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_PixMap;
-class Image_PixMap : public Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		Image_PixMap(const Standard_Integer theWidth, const Standard_Integer theHeight, const Image_TypeOfImage theType);
-		%feature("autodoc", "1");
-		Image_PixMap(const Standard_PByte theDataPtr, const Standard_Integer theWidth, const Standard_Integer theHeight, const Standard_Integer thePitch, const Standard_Integer theBitsPerPixel, const Standard_Boolean theIsTopDown);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * theFilename, const Standard_Real theGammaCorr=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc", "1");
-		void AccessBuffer(Image_CRawBufferData & theBufferInfo) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Image_PixMap {
-	Handle_Image_PixMap GetHandle() {
-	return *(Handle_Image_PixMap*) &$self;
-	}
-};
-%extend Image_PixMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Image_PixMap::~Image_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_PixMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1364,7 +1987,7 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 };
 %extend Image_PseudoColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_PseudoColorImage::~Image_PseudoColorImage %{
@@ -1377,6 +2000,43 @@ def __del__(self):
 %}
 
 %extend Image_PseudoColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorRGB;
+class Image_ColorRGB {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorRGB();
+		%feature("autodoc", "1");
+		static		Standard_Integer Length();
+		%feature("autodoc", "1");
+		Standard_Byte r() const;
+		%feature("autodoc", "1");
+		Standard_Byte g() const;
+		%feature("autodoc", "1");
+		Standard_Byte b() const;
+		%feature("autodoc", "1");
+		Standard_Byte & r();
+		%feature("autodoc", "1");
+		Standard_Byte & g();
+		%feature("autodoc", "1");
+		Standard_Byte & b();
+
+};
+%feature("shadow") Image_ColorRGB::~Image_ColorRGB %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorRGB {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1413,7 +2073,7 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfColorPixelDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DataMapNodeOfColorPixelDataMap::~Image_DataMapNodeOfColorPixelDataMap %{

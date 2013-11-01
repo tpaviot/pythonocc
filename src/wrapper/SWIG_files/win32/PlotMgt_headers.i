@@ -94,8 +94,6 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
-#include<OSD_FontAspect.hxx>
-#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
@@ -105,7 +103,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
-#include<OSD_NListOfSystemFont.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
@@ -131,12 +129,10 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
-#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
 #include<OSD_WNT.hxx>
-#include<OSD_WNT_1.hxx>
 #include<OSD_WNT_BREAK.hxx>
 #include<OSD_WhoAmI.hxx>
 

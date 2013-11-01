@@ -34,6 +34,7 @@ import TopTools
 import BOPTColStd
 import BooleanOperations
 import TopAbs
+import IntTools
 import gp
 import BOPTools
 };

@@ -516,7 +516,7 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Convert_SequenceNodeOfSequenceOfArray1OfPoles::~Convert_SequenceNodeOfSequenceOfArray1OfPoles %{
