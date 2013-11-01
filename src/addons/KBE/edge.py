@@ -16,7 +16,7 @@ from OCC.BRep import *
 from OCC.Utils.Common import vertex2pnt, minimum_distance
 from OCC.Utils.Construct import make_edge, fix_continuity
 from OCC.Utils.Context import assert_isdone
-from OCC.KBE.vertex import Vertex
+# from OCC.KBE.vertex import Vertex
 from OCC.KBE.types_lut import geom_lut
 from OCC.KBE.base import KbeObject
 
@@ -253,7 +253,7 @@ class Edge(KbeObject, TopoDS_Edge):
         self._lprops_curve_tool = GeomLProp_CurveTool()
         self._local_properties_init = True
 
-    def domain(self):
+    def domain(self, trimmed_domain=False):
         '''returns the u,v domain of the curve'''
         return self.adaptor.FirstParameter(), self.adaptor.LastParameter()
 

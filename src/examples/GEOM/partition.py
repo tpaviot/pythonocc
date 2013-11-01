@@ -3,7 +3,7 @@ __author__ = 'jelle'
 import functools
 
 from OCC.Utils.Construct import *
-from OCC.Partition import *
+from OCC import Partition
 from OCC.TopAbs import *
 from OCC.TopoDS import *
 from OCC.Utils.Topology import Topo
@@ -30,16 +30,22 @@ pl2 = make_closed_polygon(gp_Pnt(0,-10,-10),
 
 f1 = make_face(pl1)
 f2 = make_face(pl2)
+disp = Display()
+disp.display.DisplayShape([f1,f2])
+disp.display.FitAll()
+disp.start_display()
 
-spl = Partition_Spliter()
+import ipdb; ipdb.set_trace()
+
+
+spl = Partition.Partition_Spliter()
 spl.AddShape(f1)
 spl.AddTool(f2)
-spl.Compute(TopAbs_SHAPE)
+spl.Compute()
 shp = spl.Shape()
 
 shp = translate_topods_from_vector(shp, gp_Vec(30,0,0))
 
-disp = Display()
 
 tp = Topo(shp)
 

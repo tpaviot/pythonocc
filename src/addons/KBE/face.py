@@ -255,8 +255,7 @@ class Face(KbeObject, TopoDS_Face):
         :return: the parameter at the mid point of the face, and its corresponding gp_Pnt
         """
         u_min, u_max, v_min, v_max = self.domain()
-        u_mid = (u_min + u_max) / 2.
-        v_mid = (v_min + v_max) / 2.
+        u_mid, v_mid = u_min + (u_max - u_min) / 2., v_min + (v_max - v_min) / 2.
         pnt = self.parameter_to_point(u_mid, v_mid)
         return ( (u_mid, v_mid),  self.adaptor.Value(u_mid, v_mid) )
 

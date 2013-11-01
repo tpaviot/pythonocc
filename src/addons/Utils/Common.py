@@ -402,6 +402,38 @@ def intersection_from_three_planes( planeA, planeB, planeC):
     pnt = intersection_planes.Value()
     return pnt
 
+def intersect_plane_line(pln, li):
+
+    """
+
+    :param pln: gp_Pln or Geom_Plane
+    :param li: gp_Lin
+    """
+
+    from OCC.Geom import Geom_Plane, Geom_Line
+    _li = Geom_Line(li)
+
+    if isinstance(pln, gp_Pln):
+        _pln = Geom_Plane(pln)
+    elif isinstance(pln, Geom_Plane):
+        _pln = pln
+    else:
+        raise ValueError("the `pln` argument either is a gp_Pln or a Geom_Plane, but a {0}\
+         argument was supplied".format(pln.__class__))
+
+    intersect_ = GeomAPI_IntCS()
+    intersect_.Perform(_li.GetHandle(), _pln.GetHandle())
+    if intersect_.IsDone():
+        if intersect_.NbPoints() == 0:
+            return  None
+        elif intersect_.NbPoints() ==1:
+            return intersect_.Point(1)
+        else:
+            raise ValueError("found more than one intersection of a line and a plane...\
+             expected just a single intersection")
+    else:
+        return None
+
 def intersect_shape_by_line(topods_shape, line, low_parameter=0.0, hi_parameter=float("+inf")):
     """
     finds the intersection of a shape and a line

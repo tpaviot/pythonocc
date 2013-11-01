@@ -120,15 +120,21 @@ SMESH_MeshVSLink::SMESH_MeshVSLink(const SMESH_Mesh *aMesh)
 	const SMDS_MeshFace* anElem = aFaceIter->next();
 	myElements.Add( anElem->GetID() );
   }
-  //add the volumes
-  SMDS_VolumeIteratorPtr aVolumeIter = myMesh->GetMeshDS()->volumesIterator();
-  for(;aVolumeIter->more();) {
+
+  //add the volumes
+
+  SMDS_VolumeIteratorPtr aVolumeIter = myMesh->GetMeshDS()->volumesIterator();
+
+  for(;aVolumeIter->more();) {
 	const SMDS_MeshVolume* anElem = aVolumeIter->next();
 	myElements.Add( anElem->GetID() );
   }
-  //add the groups
-  const std::set<SMESHDS_GroupBase*>& groups = myMesh->GetMeshDS()->GetGroups();
-  if (!groups.empty()) {
+
+  //add the groups
+
+  const std::set<SMESHDS_GroupBase*>& groups = myMesh->GetMeshDS()->GetGroups();
+
+  if (!groups.empty()) {
 	std::set<SMESHDS_GroupBase*>::const_iterator GrIt = groups.begin();
 	for (; GrIt != groups.end(); GrIt++) {
 	  SMESHDS_Group* grp = dynamic_cast<SMESHDS_Group*>(*GrIt);
@@ -136,7 +142,8 @@ SMESH_MeshVSLink::SMESH_MeshVSLink(const SMESH_Mesh *aMesh)
 	  myGroups.Add(grp->GetID());
 	}
   }
-}
+
+}
 
 //================================================================
 // Function : GetGeom
@@ -267,6 +274,21 @@ Standard_Address SMESH_MeshVSLink::GetAddr
   return NULL;
 }
 
+// patches from Mark Blome
+
+//Standard_Boolean SMESH_MeshVSLink::GetNodeNormal( const Standard_Integer ranknode, const Standard_Integer Id, Standard_Real &nx, Standard_Real &ny, Standard_Real &nz) const
+//{
+//    return myElements.GetNodeNormal(ranknode-1, Id, nx, ny, nz);
+//}
+//
+//Standard_Boolean SMESH_MeshVSLink::GetNormal( const Standard_Integer Id, const Standard_Integer Max,
+//                                             Standard_Real& nx, Standard_Real& ny,Standard_Real& nz ) const
+//{
+//    if(Max<3) return Standard_False;
+//    return myElements.GetNormal(Id, nx, ny, nz);
+//}
+
+
 //================================================================
 // Function : GetNodesByElement
 // Purpose  :
@@ -311,6 +333,7 @@ void SMESH_MeshVSLink::GetAllGroups(TColStd_PackedMapOfInteger& Ids) const
 {
   Ids = myGroups;
 }
+
 
 //================================================================
 // Function : GetNormal

@@ -7,7 +7,7 @@ from OCC.TopoDS import TopoDS_Vertex
 from OCC.BRepTools import  BRepTools_TrsfModification
 from OCC.ShapeBuild import ShapeBuild_ReShape
 
-from base import KbeObject
+from OCC.KBE.base import KbeObject
 
 class Vertex(KbeObject, TopoDS_Vertex):
     """

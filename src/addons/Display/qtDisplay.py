@@ -17,9 +17,7 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-import os
-
-import sys
+import os,sys
 from PyQt4 import QtCore, QtGui, QtOpenGL
 import OCCViewer
 
@@ -39,6 +37,8 @@ class qtBaseViewer(QtOpenGL.QGLWidget):
     '''
     def __init__(self, parent = None):
         QtOpenGL.QGLWidget.__init__(self,parent)
+        # self.initializeGL()
+        # self.initializeOverlayGL()
         self._display = None
         self._inited = False
         self.setMouseTracking(True) #enable Mouse Tracking
@@ -157,7 +157,12 @@ class qtViewer3d(qtBaseViewer):
                 selected_shapes = self._display.SelectArea(Xmin,Ymin,Xmin+dx,Ymin+dy)
                 self._select_area = False
             else:
-                self._display.Select(pt.x,pt.y)
+                # multiple select if shift is pressed
+                if QtCore.Qt.ShiftModifier:
+                    self._display.ShiftSelect(pt.x,pt.y)
+                else:
+                # single select otherwise
+                    self._display.Select(pt.x, pt.y)
         elif event.button() == QtCore.Qt.RightButton:
             if self._zoom_area:
                 [Xmin, Ymin, dx, dy] = self._drawbox

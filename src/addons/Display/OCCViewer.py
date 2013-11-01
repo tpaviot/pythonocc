@@ -77,7 +77,8 @@ class BaseDriver(object):
         self._window_handle = window_handle
         
     def Create(self, create_default_lights = True):
-        if sys.platform!='win32':
+        # applies merely for X11
+        if sys.platform!='win32' and sys.platform != "darwin":
             try:
                 os.environ['DISPLAY']
             except KeyError:
@@ -308,13 +309,15 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                           'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
                           'BLACK':OCC.Quantity.Quantity_NOC_BLACK,
                           'ORANGE':OCC.Quantity.Quantity_NOC_ORANGE, }
+
             clr = Quantity_Color( dict_color[color] )
         elif isinstance(color, Quantity_Color):
             clr = color
         else:
-            raise ValueError('color should either be a string ( "BLUE" ) or a Quantity_Color(0.1, 0.8, 0.1) got %s' % color)
+            msg = 'color should either be a string ( "BLUE" ) or a Quantity_Color(0.1, 0.8, 0.1) got %s' % color
+            raise ValueError(msg)
 
-        return  self.DisplayShape(shapes, color=clr, update=update)
+        return self.DisplayShape(shapes, color=clr, update=update)
 
 
     def DisplayTriedron(self):

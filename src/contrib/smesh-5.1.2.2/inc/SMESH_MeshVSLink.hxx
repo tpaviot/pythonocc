@@ -75,11 +75,14 @@ class SMESH_MeshVSLink : public MeshVS_DataSource3D {
 
 	//! Constructor <br>
 	Standard_EXPORT SMESH_MeshVSLink(const SMESH_Mesh *aMesh);
+	Standard_EXPORT   Standard_Boolean GetNodeNormal(const Standard_Integer ranknode,const Standard_Integer ElementId,Standard_Real& nx,Standard_Real& ny,Standard_Real& nz) const;
 
 	//Not implemented yet
 	/*
 
-	Standard_EXPORT   Standard_Boolean GetNodeNormal(const Standard_Integer ranknode,const Standard_Integer ElementId,Standard_Real& nx,Standard_Real& ny,Standard_Real& nz) const;
+     
+     
+     
 	Standard_EXPORT   Standard_Boolean GetNormalsByElement(const Standard_Integer Id,const Standard_Boolean IsNodal,const Standard_Integer MaxNodes,Handle(TColStd_HArray1OfReal)& Normals) const;
 	Standard_EXPORT   void GetAllGroups(TColStd_PackedMapOfInteger& Ids) const;
 	Standard_EXPORT   Standard_Boolean GetGroup(const Standard_Integer Id,MeshVS_EntityType& Type,TColStd_PackedMapOfInteger& Ids) const;

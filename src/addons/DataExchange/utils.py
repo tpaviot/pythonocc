@@ -71,7 +71,7 @@ def file_to_shape(pth):
         stl_reader = StlAPI.StlAPI_Reader()
         stl_reader.Read(shape,pth)
         return shape    
-        
+
     reader.ReadFile(pth)
     n_translated = reader.TransferRoots()
     shape = reader.OneShape()

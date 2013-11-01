@@ -311,7 +311,8 @@ def hinge(event=None):
     display.EraseAll()
     # Create the dynamic context
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display, safe_yield)
+    dyn_context.set_display(display, None)
+    # dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # create the table
@@ -386,7 +387,8 @@ def adhesion(event=None):
     display.EraseAll()
     # Create the dynamic context
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display, safe_yield)
+    # dyn_context.set_display(display, safe_yield)
+    dyn_context.set_display(display, None)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # create the table
@@ -464,5 +466,5 @@ if __name__=='__main__':
     add_function_to_menu('rigid body simulation sample', collisions)
     add_function_to_menu('rigid body simulation sample', hinge)
     add_function_to_menu('rigid body simulation sample', adhesion)
-    adhesion()
+    # adhesion()
     start_display()
