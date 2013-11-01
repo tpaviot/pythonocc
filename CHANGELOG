@@ -1,3 +1,18 @@
+CHANGES FROM 0.6-beta to 0.6-rc1
+==================================================================
+- wxPython/OpenGl fix on Windows
+
+==================================================================
+CHANGES FROM 0.6-alpha2 to 0.6-beta
+- massive examples clean-up and fixes
+- improvements to the KBE subpackage
+- fixes and improvements to the viewer
+- updated trait support tu 4.3
+- removed outdated 3d graphic
+- webgl renderer fixes and improvements
+- DYN additions and fixes
+- fixes/improvements to the Utils subpackage
+
 ==================================================================
 CHANGES FROM 0.6-alpha to 0.6-alpha2
 - fixed GEOM Sketecher wrapper

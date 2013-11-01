@@ -26,6 +26,15 @@
 
 %include ../SWIG_files/ExceptionCatcher.i
 
+%typemap(out) float [ANY] {
+  int i;
+  $result = PyList_New($1_dim0);
+  for (i = 0; i < $1_dim0; i++) {
+    PyObject *o = PyFloat_FromFloat((float) $1[i]);
+    PyList_SetItem($result,i,o);
+  }
+}
+
 enum theTextureMappingRule {
 	atCube,
 	atNormal,
@@ -46,11 +55,13 @@ class Tesselator {
                float aScaleU,
                float aScaleV,
                float aRotationAngle);
+    Tesselator(TopoDS_Shape aShape);
 	float* VerticesList();
 	int ObjGetTriangleCount();
 	int ObjGetVertexCount();
 	int ObjGetNormalCount();
 	void ExportShapeToJSON(char *filename);
+	void ExportShapeToX3D(char *filename, int diffR=1, int diffG=0, int diffB=0);
 	void SetDeviation(float aDeviation);
 };
 

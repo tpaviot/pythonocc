@@ -62,9 +62,13 @@ def faircurve(event=None):
         display.DisplayShape(make_edge(bc, pl.GetHandle()), update=True)
         time.sleep(0.21)
 
+def exit(event=None):
+    sys.exit(0)
+
 if __name__ == "__main__":
     add_menu('fair curve')
     add_function_to_menu('fair curve', faircurve)
+    add_function_to_menu('fair curve', exit)
     start_display()
 
 

@@ -19,7 +19,7 @@ from OCC.DataExchange.STL import STLImporter
 from OCC.Display.SimpleGui import *
 
 # open/parse STL file and get the resulting TopoDS_Shape instance
-my_stl_importer = STLImporter("../../data/STL/venus.stl")
+my_stl_importer = STLImporter("../data/STL/aube_pleine.stl")
 my_stl_importer.read_file()
 the_shape = my_stl_importer.get_shape()
 
