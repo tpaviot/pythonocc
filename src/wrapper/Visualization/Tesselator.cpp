@@ -347,7 +347,7 @@ void Tesselator::ComputeDefaultDeviation()
     Standard_Real yDim = abs((long)aYmax - (long)aYmin);
     Standard_Real zDim = abs((long)aZmax - (long)aZmin);
 
-    Standard_Real adeviation = sqrt(xDim*xDim+yDim*yDim+zDim*zDim)/100.;
+    Standard_Real adeviation = std::max(aXmax-aXmin, std::max(aYmax-aYmin, aZmax-aZmin)) * 1e-2 ;
     myDeviation = adeviation;
 }
 
