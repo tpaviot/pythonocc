@@ -1,4 +1,6 @@
-##Copyright 2010 Thomas Paviot (tpaviot@gmail.com)
+#!/usr/bin/env python
+
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -14,11 +16,6 @@
 ##
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
-##
-## $Revision$
-## $Date$
-## $Author$
-## $HeadURL$
 
 import unittest
 

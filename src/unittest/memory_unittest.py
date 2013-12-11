@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -19,10 +19,12 @@
 
 import unittest
 import sys
+
 from OCC.Standard import *
 from OCC.gp import *
 
 GarbageCollector.set_debug()
+
 
 class TestMemory(unittest.TestCase):
     ''' Testing OC memory management
@@ -33,79 +35,80 @@ class TestMemory(unittest.TestCase):
         # Check that ref is incremented
         s2 = s1
         number_of_references_to_s1 = sys.getrefcount(s1)-1
-        self.assertEqual(number_of_references_to_s1,2)
+        self.assertEqual(number_of_references_to_s1, 2)
         # Check that ref is decremented after s2 is deleted
         del s2
         number_of_references_to_s1 = sys.getrefcount(s1)-1
-        self.assertEqual(number_of_references_to_s1,1)
-    
+        self.assertEqual(number_of_references_to_s1, 1)
+
     def testNullifyHandle(self):
         s = Standard_Transient()
-        self.assertEqual(s.GetRefCount(),0)
+        self.assertEqual(s.GetRefCount(), 0)
         # create an hanle from this transient. RefCount is incremented
         h = s.GetHandle()
-        self.assertEqual(h.IsNull(),False)
-        self.assertEqual(s.GetRefCount(),1)
+        self.assertEqual(h.IsNull(), False)
+        self.assertEqual(s.GetRefCount(), 1)
         # if this handle is nullified, refcount is decremented
         h.Nullify()
-        self.assertEqual(h.IsNull(),True)
-        self.assertEqual(s.GetRefCount(),0)
-    
+        self.assertEqual(h.IsNull(), True)
+        self.assertEqual(s.GetRefCount(), 0)
+
     def testPurgeMemory(self):
         # Check that after the smart_purge, list of collected objects ar empty
         GarbageCollector.garbage.smart_purge()
-        self.assertEqual(len(GarbageCollector.garbage._handles),0)
-        self.assertEqual(len(GarbageCollector.garbage._transients),0)
-        self.assertEqual(len(GarbageCollector.garbage._misc),0)
-        
+        self.assertEqual(len(GarbageCollector.garbage._handles), 0)
+        self.assertEqual(len(GarbageCollector.garbage._transients), 0)
+        self.assertEqual(len(GarbageCollector.garbage._misc), 0)
+
     def testCollector(self):
         GarbageCollector.garbage.smart_purge()
         # Check that pythonOCC objects are collected in the correct garbage
         s = Standard_Transient()
         h = Handle_Standard_Transient()
-        P = gp_Pnt(1,2,3)
+        P = gp_Pnt(1, 2, 3)
         del s
         del h
         del P
-        self.assertEqual(len(GarbageCollector.garbage._handles),1)
-        self.assertEqual(len(GarbageCollector.garbage._transients),1)
-        self.assertEqual(len(GarbageCollector.garbage._misc),1)
-    
+        self.assertEqual(len(GarbageCollector.garbage._handles), 1)
+        self.assertEqual(len(GarbageCollector.garbage._transients), 1)
+        self.assertEqual(len(GarbageCollector.garbage._misc), 1)
+
     def testGC(self):
         GarbageCollector.garbage.smart_purge()
         h = Handle_Standard_Transient()
-        h2 = h # adds a reference
+        h2 = h  # adds a reference
         del h
         # this object is not collected since there is another reference to it
-        self.assertEqual(len(GarbageCollector.garbage._handles),0)
+        self.assertEqual(len(GarbageCollector.garbage._handles), 0)
         del h2
         # now, the handle should be collected
-        self.assertEqual(len(GarbageCollector.garbage._handles),1)
-    
+        self.assertEqual(len(GarbageCollector.garbage._handles), 1)
+
     def testTransients(self):
         GarbageCollector.garbage.smart_purge()
         s = Standard_Transient()
-        h = s.GetHandle() #refcount of s is incremented
+        h = s.GetHandle()  # refcount of s is incremented
         del s
         # s has been collected
-        self.assertEqual(len(GarbageCollector.garbage._transients),1)
-        # if the memory is purged, s should not be deleted since an handle still refers to it
+        self.assertEqual(len(GarbageCollector.garbage._transients), 1)
+        # if the memory is purged, s should not be deleted since
+        # an handle still refers to it
         GarbageCollector.garbage.smart_purge()
-        self.assertEqual(len(GarbageCollector.garbage._transients),1)
+        self.assertEqual(len(GarbageCollector.garbage._transients), 1)
         # then we delete the handle
         del h
-        self.assertEqual(len(GarbageCollector.garbage._handles),1)
-        self.assertEqual(len(GarbageCollector.garbage._transients),1)
+        self.assertEqual(len(GarbageCollector.garbage._handles), 1)
+        self.assertEqual(len(GarbageCollector.garbage._transients), 1)
         # and repurge the garbage
         GarbageCollector.garbage.smart_purge()
-        self.assertEqual(len(GarbageCollector.garbage._handles),0)
-        self.assertEqual(len(GarbageCollector.garbage._transients),0)
+        self.assertEqual(len(GarbageCollector.garbage._handles), 0)
+        self.assertEqual(len(GarbageCollector.garbage._transients), 0)
+
 
 def suite():
-   suite = unittest.TestSuite()
-   suite.addTest(unittest.makeSuite(TestMemory))
-   return suite
+    suite = unittest.TestSuite()
+    suite.addTest(unittest.makeSuite(TestMemory))
+    return suite
 
 if __name__ == "__main__":
     unittest.main()
-    
