@@ -1,3 +1,20 @@
+##Copyright 2012-2013 Jelle Feringa (jelleferinga@gmail.com)
+##
+##This file is part of pythonOCC.
+##
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU Lesser General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU Lesser General Public License for more details.
+##
+##You should have received a copy of the GNU Lesser General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 import os
 from OCC.RWStl import RWStl
 from OCC.OSD import OSD_Path
@@ -64,9 +81,9 @@ def get_fast_stl_mesh_from_path(_path):
         raise ValueError("stl file {0} contains no geometry".format(_path))
     aDS = SMESH_MeshVSLink(mesh)
     aMeshVS = MeshVS_Mesh(True)
-    DMF = 2 # to wrap; 1 is wireframe
-    MeshVS_BP_Mesh       =  5 # To wrap!
-    aPrsBuilder = MeshVS_MeshPrsBuilder(aMeshVS.GetHandle(),DMF,aDS.GetHandle()) #,0,MeshVS_BP_Mesh)
+    DMF = 2  # to wrap; 1 is wireframe
+    MeshVS_BP_Mesh = 5  # To wrap!
+    aPrsBuilder = MeshVS_MeshPrsBuilder(aMeshVS.GetHandle(), DMF, aDS.GetHandle()) #,0,MeshVS_BP_Mesh)
 
     aMeshVS.SetDataSource(aDS.GetHandle())
     aMeshVS.AddBuilder(aPrsBuilder.GetHandle(),False)
@@ -85,9 +102,9 @@ def get_fast_stl_mesh_from_path(_path):
     # Markers in green
     #    mesh_drawer.SetColor(13,Quantity_Color(Quantity_NOC_GREEN))
     mesh_drawer.SetMaterial(MeshVS_DA_FrontMaterial, Graphic3d_MaterialAspect(Graphic3d_NOM_SATIN))
-    mesh_drawer.SetBoolean( MeshVS_DA_DisplayNodes, False)
-    mesh_drawer.SetBoolean( MeshVS_DA_ShowEdges, False)
-    mesh_drawer.SetBoolean( MeshVS_DA_SmoothShading, True)
+    mesh_drawer.SetBoolean(MeshVS_DA_DisplayNodes, False)
+    mesh_drawer.SetBoolean(MeshVS_DA_ShowEdges, False)
+    mesh_drawer.SetBoolean(MeshVS_DA_SmoothShading, True)
     mesh_drawer.SetBoolean( MeshVS_DA_Reflection, True)
     #    mesh_drawer.SetColor( MeshVS_DA_InteriorColor, Quantity_Color(Quantity_NOC_AZURE))
     #    mesh_drawer.SetBoolean(MeshVS_DA_ColorReflection, True)
