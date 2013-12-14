@@ -1,3 +1,20 @@
+##Copyright 2008-2013 Jelle Feringa (jelleferinga@gmail.com)
+##
+##This file is part of pythonOCC.
+##
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU Lesser General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU Lesser General Public License for more details.
+##
+##You should have received a copy of the GNU Lesser General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>
+
 '''
 Sketch for a high-level API for pythonOCC
 
@@ -6,13 +23,15 @@ Please note the following;
 means that the decorated method is a readonly descriptor
 @property
 means that the decorated method can be set / get using the descriptor
-( irony is that just using @property *would* result in a readonly descriptor :")
+( irony is that just using @property *would*
+    result in a readonly descriptor :")
 
-Sometimes a set of methods should be contained in another module or class, or simply grouped.
+Sometimes a set of methods should be contained in another module or class,
+or simply grouped.
 For instance the set of methods after:
-#===============================================================================
+#===========================================================================
 #    Curve.local_properties
-#===============================================================================
+#===========================================================================
 
 Can be a module, class or namespace.
 
@@ -30,10 +49,11 @@ from types_lut import shape_lut, topo_lut, orient_lut, state_lut, curve_lut, sur
 import functools
 
 
-#===============================================================================
+#===========================================================================
 # DISPLAY
-#===============================================================================
+#===========================================================================
 global display
+
 
 class singleton(object):
     def __init__(self, cls):
@@ -45,21 +65,23 @@ class singleton(object):
             cls = functools.partial(self.cls, *args, **kwargs)
             self.instance_container.append(cls())
         return self.instance_container[0]
-        
+
+
 @singleton
 class Display(object):
     def __init__(self):
         self.display, self.start_display, self.add_menu, self.add_function_to_menu = init_display()
+    
     def __call__(self, *args, **kwargs):
         return self.display.DisplayShape(*args, **kwargs)
 
 #============
-# base class 
+# base class
 #============
-    """base class for all KBE objects"""
+
 
 class KbeObject(object):
-
+    """base class for all KBE objects"""
     def __init__(self, name=None):
         """Constructor for KbeObject"""
         self.GlobalProperties = GlobalProperties(self)
@@ -70,7 +92,8 @@ class KbeObject(object):
 
     @property
     def is_dirty(self):
-        '''when an object is dirty, its topology will be rebuild when update is called'''
+        '''when an object is dirty, its topology will be
+        rebuild when update is called'''
         return self._dirty
 
     @is_dirty.setter
@@ -100,15 +123,14 @@ class KbeObject(object):
     def check(self):
         """
         """
-
-        _check = dict(vertex=BRepCheck_Vertex, edge=BRepCheck_Edge, wire=BRepCheck_Wire, face=BRepCheck_Face,
-            shell=BRepCheck_Shell, solid=BRepCheck_Solid)
-        _test = _check[self.topo_type]
+        _check = dict(vertex=BRepCheck_Vertex, edge=BRepCheck_Edge,
+                      wire=BRepCheck_Wire, face=BRepCheck_Face,
+                      shell=BRepCheck_Shell, solid=BRepCheck_Solid)
+        _check[self.topo_type]
         # TODO: BRepCheck will be able to inform *what* actually is the matter,
         # though implementing this still is a bit of work...
         raise NotImplementedError
 
-        
     def is_valid(self):
         analyse = BRepCheck_Analyzer(self)
         ok = analyse.IsValid()
@@ -126,7 +148,7 @@ class KbeObject(object):
         cp.Perform(self)
         # get the class, construct a new instance
         # cast the cp.Shape() to its specific TopoDS topology
-        _copy = self.__class__( shape_lut(cp.Shape()) )
+        _copy = self.__class__(shape_lut(cp.Shape()))
         return _copy
 
     def distance(self, other):
@@ -139,7 +161,7 @@ class KbeObject(object):
         '''
         return minimum_distance(self, other)
 
-    def show( self, *args, **kwargs):
+    def show(self, *args, **kwargs):
         """
         renders the topological entity in the viewer
 

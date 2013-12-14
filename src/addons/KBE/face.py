@@ -1,3 +1,20 @@
+##Copyright 2008-2013 Jelle Feringa (jelleferinga@gmail.com)
+##
+##This file is part of pythonOCC.
+##
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU Lesser General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU Lesser General Public License for more details.
+##
+##You should have received a copy of the GNU Lesser General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>
+
 from OCC.BRep import BRep_Tool_Surface, BRep_Tool
 from OCC.BRepIntCurveSurface import BRepIntCurveSurface_Inter
 from OCC.BRepTopAdaptor import BRepTopAdaptor_FClass2d
@@ -6,7 +23,7 @@ from OCC.GeomAPI import GeomAPI_ProjectPointOnSurf
 from OCC.GeomLib import GeomLib_IsPlanarSurface
 from OCC.TopAbs import TopAbs_IN
 from OCC.TopExp import TopExp
-from OCC.TopoDS import  *
+from OCC.TopoDS import *
 from OCC.GeomLProp import GeomLProp_SLProps
 from OCC.BRepCheck import BRepCheck_Face
 from OCC.BRepTools import BRepTools, BRepTools_UVBounds
@@ -37,15 +54,17 @@ frenet frame
 
 '''
 
+
 class DiffGeomSurface(object):
     def __init__(self, instance):
         self.instance = instance
         self._curvature = None
         self._curvature_initiated = False
 
-    def curvature(self, u,v):
+    def curvature(self, u, v):
         '''returns the curvature at the u parameter
-        the curvature object can be returned too using curvatureType == curvatureType
+        the curvature object can be returned too using
+        curvatureType == curvatureType
         curvatureTypes are:
             gaussian
             minimum
@@ -76,76 +95,76 @@ class DiffGeomSurface(object):
                 else:
                     v = v + delta_v
 
-
-        self._curvature.SetParameters(u,v)
+        self._curvature.SetParameters(u, v)
         self._curvature_initiated = True
 
         return self._curvature
 
-    def gaussian_curvature(self,u,v):
-        return self.curvature(u,v).GaussianCurvature()
+    def gaussian_curvature(self, u, v):
+        return self.curvature(u, v).GaussianCurvature()
 
-    def min_curvature(self,u,v):
-        return self.curvature(u,v).MinCurvature()
+    def min_curvature(self, u, v):
+        return self.curvature(u, v).MinCurvature()
 
-    def mean_curvature(self,u,v):
-        return self.curvature(u,v).MeanCurvature()
+    def mean_curvature(self, u, v):
+        return self.curvature(u, v).MeanCurvature()
 
-    def max_curvature(self,u,v):
-        return self.curvature(u,v).MaxCurvature()
+    def max_curvature(self, u, v):
+        return self.curvature(u, v).MaxCurvature()
 
-    def normal(self,u,v):
+    def normal(self, u, v):
         # TODO: should make this return a gp_Vec
-        curv = self.curvature(u,v)
+        curv = self.curvature(u, v)
         if curv.IsNormalDefined():
             return curv.Normal()
         else:
-            raise ValueError('normal is not defined at u,v: {0}, {1}'.format(u,v))
+            raise ValueError('normal is not defined at u,v: {0}, {1}'.format(u, v))
 
-    def tangent(self,u,v):
+    def tangent(self, u, v):
         dU, dV = gp_Dir(), gp_Dir()
-        curv = self.curvature(u,v)
+        curv = self.curvature(u, v)
         if curv.IsTangentUDefined() and curv.IsTangentVDefined():
             curv.TangentU(dU), curv.TangentV(dV)
             return dU, dV
         else:
             return None, None
 
-    def radius(self, u, v ):
+    def radius(self, u, v):
         '''returns the radius at u
         '''
         # TODO: SHOULD WE RETURN A SIGNED RADIUS? ( get rid of abs() )?
         try:
-            _crv_min = 1./self.min_curvature(u,v)
+            _crv_min = 1./self.min_curvature(u, v)
         except ZeroDivisionError:
             _crv_min = 0.
 
         try:
-            _crv_max = 1./self.max_curvature(u,v)
+            _crv_max = 1./self.max_curvature(u, v)
         except ZeroDivisionError:
             _crv_max = 0.
         return abs((_crv_min+_crv_max)/2.)
 
     def frenet_frame(self, u, v):
-        '''returns the frenet frame ( the 2 tangency directions + normal ) syntax sugar
+        '''returns the frenet frame ( the 2 tangency directions + normal )
+        syntax sugar
         '''
-        pass
+        raise NotImplementedError
 
     def derivative_u(self, u, n):
         '''return n derivatives of u
         '''
-        pass
+        raise NotImplementedError
 
     def derivative_v(self, v, n):
         '''return n derivatives of v
         '''
-        pass
+        raise NotImplementedError
 
     def torsion(self, u, v):
         '''returns the torsion at the parameter
         http://en.wikipedia.org/wiki/Frenet-Serret_formulas
         '''
-        pass
+        raise NotImplementedError
 
     def continuity(self, face):
         '''returns continuity between self and another surface
@@ -160,11 +179,12 @@ class DiffGeomSurface(object):
 
         returns None if no inflection parameters are found
         """
-        pass
+        raise NotImplementedError
 
-#===============================================================================
+#===========================================================================
 #    Surface.intersect
-#===============================================================================
+#===========================================================================
+
 class IntersectSurface(object):
     def __init__(self, instance):
         self.instance = instance
@@ -203,15 +223,15 @@ class Face(KbeObject, TopoDS_Face):
         self._curvature_initiated = False
         self._geometry_lookup_init = False
 
-        #===============================================================================
+        #===================================================================
         # properties
-        #===============================================================================
-        self._h_srf           = None
-        self._srf             = None
-        self._adaptor         = None
-        self._adaptor_handle  = None
-        self._classify_uv     = None # cache the u,v classifier, no need to rebuild for every sample
-        self._topo            = None
+        #===================================================================
+        self._h_srf = None
+        self._srf = None
+        self._adaptor = None
+        self._adaptor_handle = None
+        self._classify_uv = None  # cache the u,v classifier, no need to rebuild for every sample
+        self._topo = None
 
         # aliasing of useful methods
         def is_u_periodic(self):
@@ -241,7 +261,7 @@ class Face(KbeObject, TopoDS_Face):
         def u_continuity(self):
             return self.adaptor.UContinuity()
 
-        def v_continuity  (self):
+        def v_continuity(self):
             return self.adaptor.VContinuity()
 
     def domain(self):
@@ -252,13 +272,14 @@ class Face(KbeObject, TopoDS_Face):
 
     def mid_point(self):
         """
-        :return: the parameter at the mid point of the face, and its corresponding gp_Pnt
+        :return: the parameter at the mid point of the face,
+        and its corresponding gp_Pnt
         """
         u_min, u_max, v_min, v_max = self.domain()
         u_mid = (u_min + u_max) / 2.
         v_mid = (v_min + v_max) / 2.
         pnt = self.parameter_to_point(u_mid, v_mid)
-        return ( (u_mid, v_mid),  self.adaptor.Value(u_mid, v_mid) )
+        return ((u_mid, v_mid),  self.adaptor.Value(u_mid, v_mid))
 
     @property
     def topo(self):
@@ -330,28 +351,29 @@ class Face(KbeObject, TopoDS_Face):
 
     def is_trimmed(self):
         """
-        :return: True if the Wire delimiting the Face lies on the bounds of the surface
-        if this is not the case, the wire represents a contour that delimits the face [ think cookie cutter ]
+        :return: True if the Wire delimiting the Face lies on the bounds
+        of the surface
+        if this is not the case, the wire represents a contour that delimits
+        the face [ think cookie cutter ]
         and implies that the surface is trimmed
         """
-        _round = lambda x: round(x,3)
+        _round = lambda x: round(x, 3)
         a = map(_round, BRepTools_UVBounds(self))
         b = map(_round, self.adaptor.Surface().Surface().GetObject().Bounds())
         if a != b:
-            print 'a,b',a,b
+            print 'a,b', a, b
             return True
         return False
 
     def is_overlapping(self, other):
         overlap = IntTools_FaceFace()
 
-
     def on_trimmed(self, u, v):
         '''tests whether the surface at the u,v parameter has been trimmed
         '''
         if self._classify_uv is None:
-            self._classify_uv  = BRepTopAdaptor_FClass2d(self, 1e-9)
-        uv  = gp_Pnt2d(u,v)
+            self._classify_uv = BRepTopAdaptor_FClass2d(self, 1e-9)
+        uv = gp_Pnt2d(u, v)
         if self._classify_uv.Perform(uv) == TopAbs_IN:
             return True
         else:
@@ -360,7 +382,7 @@ class Face(KbeObject, TopoDS_Face):
     def parameter_to_point(self, u, v):
         '''returns the coordinate at u,v
         '''
-        return self.surface.Value(u,v)
+        return self.surface.Value(u, v)
 
     def point_to_parameter(self, pt):
         '''
@@ -368,7 +390,7 @@ class Face(KbeObject, TopoDS_Face):
         @param pt:
         '''
         sas = ShapeAnalysis_Surface(self.surface_handle)
-        uv  = sas.ValueOfUV(pt, self.tolerance)
+        uv = sas.ValueOfUV(pt, self.tolerance)
         return uv.Coord()
 
     def transform(self, transform):
@@ -392,12 +414,12 @@ class Face(KbeObject, TopoDS_Face):
         else:
             return False, None
 
-#===============================================================================
+#===========================================================================
 #    Surface.project
 #    project curve, point on face
-#===============================================================================
+#===========================================================================
 
-    def project_vertex( self, pnt, tol=TOLERANCE):
+    def project_vertex(self, pnt, tol=TOLERANCE):
         '''projects self with a point, curve, edge, face, solid
         method wraps dealing with the various topologies
 
@@ -416,13 +438,13 @@ class Face(KbeObject, TopoDS_Face):
 
     def project_curve(self, other):
         # this way Geom_Circle and alike are valid too
-        if isinstance(other, TopoDS_Edge) or\
-             isinstance(other, Geom_Curve)  or\
-             issubclass(other, Geom_Curve):
+        if (isinstance(other, TopoDS_Edge) or
+            isinstance(other, Geom_Curve) or
+           issubclass(other, Geom_Curve)):
                 if isinstance(other, TopoDS_Edge):
                     # convert edge to curve
                     first, last = TopExp.FirstVertex(other), TopExp.LastVertex(other)
-                    lbound, ubound  = BRep_Tool().Parameter(first, other), BRep_Tool().Parameter(last, other)
+                    lbound, ubound = BRep_Tool().Parameter(first, other), BRep_Tool().Parameter(last, other)
                     other = BRep_Tool.Curve(other, lbound, ubound).GetObject()
 
                 return GeomProjLib().Project(other, self.surface_handle)
@@ -455,5 +477,5 @@ class Face(KbeObject, TopoDS_Face):
 
 if __name__ == "__main__":
     from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
-    sph = BRepPrimAPI_MakeSphere(1,1).Face()
+    sph = BRepPrimAPI_MakeSphere(1, 1).Face()
     fc = Face(sph)
