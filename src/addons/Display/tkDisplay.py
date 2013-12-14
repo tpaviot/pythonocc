@@ -2,6 +2,10 @@
 
 ##Copyright 2008-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
+#!/usr/bin/env python
+
+##Copyright 2009-2014 Thomas Paviot (tpaviot@gmail.com)
+##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
@@ -17,16 +21,13 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-import os
-
-import sys
-import Tkinter
 import OCCViewer
+
 
 class tkViewer3d:
     def __init__(self, window):
         self.window = window
-        
+
     def InitDriver(self):
         self._display = OCCViewer.Viewer3d(self.window.winfo_id())
         self._display.Create()
