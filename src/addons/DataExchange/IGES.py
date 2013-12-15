@@ -1,4 +1,4 @@
-##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -22,26 +22,27 @@ from OCC.TopoDS import *
 from OCC.BRep import *
 import os
 
+
 class IGESExporter(object):
-    def __init__(self, filename=None,format="5.1"):
+    def __init__(self, filename=None, format="5.1"):
         # Format should be "5.1" or "5.3"
         self._shapes = []
         self._filename = filename
-        if format=="5.3":
+        if format == "5.3":
             self._brepmode = True
         else:
             self._brepmode = False
-   
+
     def add_shape(self, aShape):
         # First check the shape
         if aShape.IsNull():
             raise Assertion("IGESExporter Error: the shape is NULL")
-        else: 
+        else:
             self._shapes.append(aShape)
-   
+
     def write_file(self):
         IGESControl_Controller().Init()
-        iges_writer = IGESControl_Writer("write.iges.unit",self._brepmode)
+        iges_writer = IGESControl_Writer("write.iges.unit", self._brepmode)
         for shape in self._shapes:
             iges_writer.AddShape(shape)
         iges_writer.ComputeModel()
@@ -50,52 +51,52 @@ class IGESExporter(object):
         else:
             return False
 
+
 class IGESImporter(object):
-    def __init__(self,filename=None):
+    def __init__(self, filename=None):
         self._shapes = []
         self.nbs = 0
         if not os.path.isfile(filename):
-            raise AssertionError, "IGESImporter initialization Error: file %s not found." % (filename)
+            raise AssertionError("IGESImporter initialization Error: file %s not found." % filename)
         self.set_filename(filename)
 
     def set_filename(self, filename):
         if not os.path.isfile(filename):
-            raise AssertionError, "IGESImporter initialization Error: file %s not found." % (filename)
+            raise AssertionError("IGESImporter initialization Error: file %s not found." % filename)
         else:
             self._filename = filename
-        
+
     def read_file(self):
         """
         Read the IGES file and stores the result in a list of TopoDS_Shape
         """
         aReader = IGESControl_Reader()
         status = aReader.ReadFile(self._filename)
-        if status==IFSelect_RetDone:
+        if status == IFSelect_RetDone:
             failsonly = False
             aReader.PrintCheckLoad(failsonly, IFSelect_ItemsByEntity)
             nbr = aReader.NbRootsForTransfer()
             aReader.PrintCheckTransfer(failsonly, IFSelect_ItemsByEntity)
             ok = aReader.TransferRoots()
-            for n in range(1,nbr+1):
+            for n in range(1, nbr+1):
                 self.nbs = aReader.NbShapes()
                 if self.nbs == 0:
                     print "At least one shape in IGES cannot be transfered"
-                elif (nbr==1 and self.nbs==1):
+                elif (nbr == 1 and self.nbs == 1):
                     aResShape = aReader.Shape(1)
                     if aResShape.IsNull():
                         print "At least one shape in IGES cannot be transferred"
                     self._shapes.append(aResShape)
                 else:                    
-                    for i in range(1,self.nbs+1):
+                    for i in range(1, self.nbs+1):
                         aShape = aReader.Shape(i)
                         if aShape.IsNull():
                             print "At least one shape in STEP cannot be transferred"
                         else:
                             self._shapes.append(aShape)
-                            #B.Add(compound,aShape)
             return True
         else:
-            print "Error: can't read file %s"%self._filename
+            print "Error: can't read file %s" % self._filename
             return False
         return False
 
@@ -108,9 +109,8 @@ class IGESImporter(object):
         B.MakeCompound(compound)
         # Populate the compound
         for shape in self._shapes:
-            B.Add(compound,shape)
+            B.Add(compound, shape)
         return compound
-    
+
     def get_shapes(self):
         return self._shapes
-    
