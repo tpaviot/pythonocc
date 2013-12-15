@@ -1,31 +1,46 @@
+#!/usr/bin/env python
+
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
+##
+##This file is part of pythonOCC.
+##
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU Lesser General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU Lesser General Public License for more details.
+##
+##You should have received a copy of the GNU Lesser General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
+import unittest
+
 from OCC.Utils.Construct import *
 from OCC.KBE.vertex import Vertex
 from OCC.KBE.edge import Edge
 from OCC.KBE.face import Face
 
-import unittest
 
 class TestEdge_Line(unittest.TestCase):
-    '''
-    this test case would be much better if the methods would run on a number of test cases
-    [ line, arc, closed polygon, bspline with lots of points... stuff like that... ]
-    so for the moment its mostly about asserting the KBE API makes sense...
-    '''
-    line = make_line(gp_Pnt(), gp_Pnt(1,0,0))
+    line = make_line(gp_Pnt(), gp_Pnt(1., 0., 0))
     edg = Edge(line)
-        
+
     def test_domain(self):
         domain = self.edg.domain()
-        self.assertEqual((0.0, 1.0),domain)
+        self.assertEqual((0.0, 1.0), domain)
 
     def test_param2pnt(self):
         pnt = self.edg.parameter_to_point(0.0)
-        self.assertEqual(pnt.Coord(),(0,0,0))
+        self.assertEqual(pnt.Coord(), (0., 0., 0.))
 
     def test_pnt2param(self):
         param, pnt = self.edg.project_vertex(gp_Pnt())
-        self.assertEqual(param,0.)
-        self.assertEqual( gp_Pnt().IsEqual(pnt, 0.000001), 1)
+        self.assertEqual(param, 0.)
+        self.assertEqual(gp_Pnt().IsEqual(pnt, 0.000001), 1)
 
     def test_length(self):
         _len = self.edg.length()
@@ -33,8 +48,8 @@ class TestEdge_Line(unittest.TestCase):
 
     def test_divide_by_n_pnts(self):
         pnts = self.edg.divide_by_number_of_points(4)
-        xx = [round(i[0],2) for i in pnts]
-        self.assertEqual(xx,[0.0, 0.33000000000000002, 0.67000000000000004, 1.0])
+        xx = [round(i[0], 2) for i in pnts]
+        self.assertEqual(xx, [0.0, 0.33000000000000002, 0.67000000000000004, 1.0])
 
     def test_trim(self):
         pnts = self.edg.divide_by_number_of_points(4)
@@ -52,49 +67,44 @@ class TestEdge_Line(unittest.TestCase):
         self.assertEqual(self.edg.is_rational(), 0)
         self.assertEqual(self.edg.is_closed(), 0)
 
+
 class TestFace_Sphere(unittest.TestCase):
-    '''
-    this test case would be much better if the methods would run on a number of test cases
-    [ line, arc, closed polygon, bspline with lots of points... stuff like that... ]
-    so for the moment its mostly about asserting the KBE API makes sense...
-    '''
-    face = Face(BRepPrimAPI_MakeSphere(1,1).Face())
+    face = Face(BRepPrimAPI_MakeSphere(1., 1.).Face())
 
     def test_domain(self):
         domain = self.face.domain()
         self.assertEqual(domain, (0.0, 1.0, -1.5707963267948966, 1.5707963267948966))
-    
+
     def test_distance(self):
         v = make_vertex(gp_Pnt())
         self.assertEqual(self.face.distance(v)[0], 1.0)
 
     def test_trimmed(self):
         # test_domain show that this u,v point lies on the face
-        trimmed= self.face.on_trimmed(0.1,0.1)
+        trimmed = self.face.on_trimmed(0.1, 0.1)
         self.assertEqual(trimmed, True)
         # u,v does not lie on face
-        trimmed= self.face.on_trimmed(10,10)
+        trimmed = self.face.on_trimmed(10, 10)
         self.assertEqual(trimmed, False)
 
     def test_planar(self):
         self.assertEqual(self.face.is_planar(), False)
 
+
 class TestVertex_Point(unittest.TestCase):
     def test_pnt(self):
-        v1 = Vertex(1,1,1)
-        v1.x = 12
-        pnt = gp_Pnt(12, 1, 1)
-        v2 = make_vertex(pnt)
-        self.assertEqual(v1,pnt)
-        
+        v1 = Vertex(1., 1., 1.)
+        v1.x = 12.
+        pnt = gp_Pnt(12., 1., 1.)
+        self.assertEqual(v1, pnt)
+
+
 def suite():
-   suite = unittest.TestSuite()
-   suite.addTest(unittest.makeSuite(TestEdge_Line))
-   suite.addTest(unittest.makeSuite(TestFace_Sphere))
-   suite.addTest(unittest.makeSuite(TestVertex_Point))
-   return suite
-  
+    suite = unittest.TestSuite()
+    suite.addTest(unittest.makeSuite(TestEdge_Line))
+    suite.addTest(unittest.makeSuite(TestFace_Sphere))
+    suite.addTest(unittest.makeSuite(TestVertex_Point))
+    return suite
 
 if __name__ == '__main__':
     unittest.main()
-
