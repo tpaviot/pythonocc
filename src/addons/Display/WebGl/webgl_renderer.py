@@ -1,4 +1,4 @@
-##Copyright 2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2011-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -19,26 +19,28 @@ import webbrowser
 from OCC.Visualization import *
 from html_file import *
 from time import time
-import sys, os
+import sys
+import os
+
 
 class WebGlRenderer:
-    def __init__(self, background_color = "#000000"):
+    def __init__(self, background_color="#000000"):
         self._js_filename = "shape.js"
         self._html_filename = "webgl_topods_shape.html"
         self._background_color = background_color
-        
-    def DisplayShape(self,shape):
+
+    def DisplayShape(self, shape):
         self._shape = shape
         print "Tesselate shape ...",
         t0 = time()
-        tess = Tesselator(self._shape, atNormal,1.0,1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.)
+        tess = Tesselator(self._shape, atNormal, 1.0, 1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.)
         t1 = time()
-        print "done in %f s."%(t1-t0)
+        print "done in %f s." % (t1-t0)
         print "Exporting tesselation to JSON ...",
         t2 = time()
         tess.ExportShapeToJSON(self._js_filename)
         t3 = time()
-        print "done in %f s."%(t3-t2)
+        print "done in %f s." % (t3-t2)
         print "Generating HTML stream ...",
         self.GenerateHTMLFile()
         print "done."
@@ -48,12 +50,11 @@ class WebGlRenderer:
         _path = "file:///{0}".format(os.path.join(os.getcwd(), self._html_filename))
         webbrowser.open_new_tab(_path)
         print "done."
-        
-    
+
     def GenerateHTMLFile(self):
         """ Generate the HTML file to be rendered wy the web browser
         """
-        fp = open(self._html_filename,"w")
+        fp = open(self._html_filename, "w")
         fp.write("<!DOCTYPE HTML>")
         fp.write('<html lang="en">')
         # header
@@ -62,7 +63,3 @@ class WebGlRenderer:
         fp.write(HTMLBody().get_str())
         fp.write("</html>\n")
         fp.close()
-
-        
-        
-

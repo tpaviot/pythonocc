@@ -1,4 +1,4 @@
-##Copyright 2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2011-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -209,19 +209,21 @@ BODY = """
 </body>
 """
 
+
 class HTMLHeader:
-    def __init__(self,background_color = '#000000'):
+    def __init__(self, background_color='#000000'):
         self._background_color = background_color
-    
+
     def get_str(self):
         header_str = HEADER.replace('@background-color@','%s'%self._background_color)
         header_str = header_str.replace('@VERSION@',OCC.VERSION)
         return header_str
-        
+
+
 class HTMLBody:
     def __init__(self):
-        pass#
-    
+        pass
+
     def get_str(self):
         # get the location where pythonocc is running from
         import OCC
