@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -17,13 +17,12 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Display.SimpleGui import *
+from OCC.Display.SimpleGui import init_display
 display, start_display, add_menu, add_function_to_menu = init_display()
 
-from OCC.Graphic3d import *
-from OCC.BRepPrimAPI import *
+from OCC.Graphic3d import Graphic3d_NOM_SILVER, Graphic3d_MaterialAspect
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
 from OCC.Utils.Image import Texture
-import os, os.path
 #
 # First create texture and a material
 #
@@ -34,11 +33,10 @@ m = Graphic3d_MaterialAspect(Graphic3d_NOM_SILVER)
 # Displays a cylinder with a material and a texture
 #
 s = BRepPrimAPI_MakeCylinder(60, 200)
-display.DisplayShape(s.Shape(),material = m,texture=t)
+display.DisplayShape(s.Shape(), material=m, texture=t)
 #
 # Display settings
 #
 display.View_Iso()
 display.FitAll()
 start_display()
-

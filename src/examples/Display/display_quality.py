@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -21,11 +21,11 @@
 # This sample shows howto set display quality (higher or lower).
 # Be carful that improving quality results in higher memory consumption
 #
-from OCC.Display.SimpleGui import *
+
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
+from OCC.Display.SimpleGui import init_display
 display, start_display, add_menu, add_function_to_menu = init_display()
 
-from OCC.AIS import *
-from OCC.BRepPrimAPI import *
 
 #
 # Get Context
@@ -38,10 +38,10 @@ dc_hlr = ais_context.HLRDeviationCoefficient()
 da = ais_context.DeviationAngle()
 da_hlr = ais_context.HLRAngle()
 print "Default display quality settings:"
-print "Deviation Coefficient: %f"%dc
-print "Deviation Coefficient Hidden Line Removal: %f"%dc_hlr
-print "Deviation Angle: %f"%da
-print "Deviation Angle Hidden Line Removal: %f"%da_hlr
+print "Deviation Coefficient: %f" % dc
+print "Deviation Coefficient Hidden Line Removal: %f" % dc_hlr
+print "Deviation Angle: %f" % da
+print "Deviation Angle Hidden Line Removal: %f" % da_hlr
 #
 # Improve quality by a factor 10
 #
@@ -54,7 +54,7 @@ print "Quality display improved by a factor {0}".format(factor)
 #
 # Displays a cylinder
 #
-s = BRepPrimAPI_MakeCylinder(50, 50).Shape()
+s = BRepPrimAPI_MakeCylinder(50., 50.).Shape()
 display.DisplayShape(s)
 #
 # Display settings and display loop
@@ -62,4 +62,3 @@ display.DisplayShape(s)
 display.View_Iso()
 display.FitAll()
 start_display()
-

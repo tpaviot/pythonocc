@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com) & Jelle Feringa (jelleferinga@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com) & Jelle Feringa (jelleferinga@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -24,34 +24,29 @@ http://www.opencascade.org/org/forum/thread_17520/
 
 '''
 
-from OCC.BRepPrimAPI import *
-from OCC.Display.SimpleGui import *
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeTorus
+from OCC.Graphic3d import *
+from OCC.Aspect import Aspect_TOFM_FRONT_SIDE
+from OCC.Display.SimpleGui import init_display
+
 display, start_display, add_menu, add_function_to_menu = init_display()
 
-from OCC.AIS import *
-from OCC.Visual3d import *
-from OCC.Graphic3d import *
-from OCC.Aspect import *
 
-# construct a primitive
-box = BRepPrimAPI_MakeBox(1,1,1).Shape()
-#===============================================================================
+box = BRepPrimAPI_MakeTorus(10., 3.).Shape()
+#
 # This is how to set the spherical dynamic texcoord generation in the view
-#===============================================================================
+#
 view = display.View.View().GetObject()
 vw_mng = view.ViewManager()
 
 # build enviroment texture
-texture = Graphic3d_TextureEnv(vw_mng,
-                               Graphic3d_NOT_ENV_CLOUDS
-                               )
+texture = Graphic3d_TextureEnv(vw_mng, Graphic3d_NOT_ENV_CLOUDS)
 
 display.View.SetTextureEnv(texture.GetHandle())
 display.View.Redraw()
-#===============================================================================
-# And this is hot to enable spherical dynamic texture to an object 
-#===============================================================================
-
+#
+# And this is hot to enable spherical dynamic texture to an object
+#
 mat_asp = Graphic3d_MaterialAspect(Graphic3d_NOM_SILVER)
 mat_asp.SetEnvReflexion(1)
 mat_asp.SetReflectionModeOn(True)

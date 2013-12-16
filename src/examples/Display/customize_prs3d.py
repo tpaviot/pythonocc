@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -21,12 +21,10 @@
 # This sample shows howto set display quality (higher or lower).
 # Be carful that improving quality results in higher memory consumption
 #
-from OCC.Display.SimpleGui import *
-display, start_display, add_menu, add_function_to_menu = init_display()
 
-from OCC.AIS import *
-from OCC.Prs3d import *
-from OCC.BRepPrimAPI import *
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 #
 # Get Context
@@ -37,9 +35,9 @@ ais_context = display.GetContext().GetObject()
 #
 drawer_handle = ais_context.DefaultDrawer()
 drawer = drawer_handle.GetObject()
-print drawer.IsoOnPlane()
+# print drawer.IsoOnPlane()
 drawer.SetIsoOnPlane(True)
-# 
+
 la = drawer.LineAspect().GetObject()
 la.SetWidth(4)
 # increase line width in the current viewer
@@ -52,7 +50,7 @@ drawer.SetWireAspect(line_aspect.GetHandle())
 #
 # Displays a cylinder
 #
-s = BRepPrimAPI_MakeCylinder(50, 50).Shape()
+s = BRepPrimAPI_MakeCylinder(50., 50.).Shape()
 display.DisplayShape(s)
 #
 # Display settings and display loop
@@ -60,4 +58,3 @@ display.DisplayShape(s)
 display.View_Iso()
 display.FitAll()
 start_display()
-
