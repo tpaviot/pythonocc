@@ -19,7 +19,10 @@
 
 import os
 import sys
-import wx
+try:
+    import wx
+except ImportError:
+    raise ImportError('Please install wxPython.')
 import OCCViewer
 
 

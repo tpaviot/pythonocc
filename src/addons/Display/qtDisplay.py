@@ -19,9 +19,15 @@
 
 
 import os
-
 import sys
-from PySide import QtCore, QtGui, QtOpenGL
+
+try:
+    from PySide import QtCore, QtGui, QtOpenGL
+except:
+    try:
+        from PyQt4 import QtCore, QtGui, QtOpenGL
+    except:
+        raise Exception('None of PySide or PyQt4 installed')
 import OCCViewer
 
 

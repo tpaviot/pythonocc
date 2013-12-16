@@ -30,15 +30,14 @@ def get_backend():
     since python comes with Tk included, but that PySide or PyQt4
     is much preferred
     """
-    # Check PyQt
     try:
-        from PyQt4 import QtCore, QtGui
-        return 'pyqt4'
+        from PySide import QtCore, QtGui
+        return 'qt'
     except:
         pass
     try:
-        from PySide import QtCore, QtGui
-        return 'pyside'
+        from PyQt4 import QtCore, QtGui
+        return 'qt'
     except:
         pass
     # Check wxPython
@@ -47,15 +46,13 @@ def get_backend():
         return 'wx'
     except:
         pass
-
     # use Tk backend as a fall back...
-    else:
-        try:
-            import Tkinter
-            return 'tkinter'
-        except:
-            raise ValueError("No compliant GUI library found. You must have either PySide, PyQt4, wxPython or Tkinter installed.")
-            sys.exit(1)
+    try:
+        import Tkinter
+        return 'tkinter'
+    except:
+        raise ImportError("No compliant GUI library found. You must have either PySide, PyQt4, wxPython or Tkinter installed.")
+        sys.exit(1)
 
 
 def get_bg_abs_filename():
@@ -74,14 +71,17 @@ def init_display(backend_str=None):
 
     if not backend_str:
         USED_BACKEND = get_backend()
-    elif backend_str in ['wx', 'pyqt4', 'pyside', 'tkinter']:
+    elif backend_str in ['wx', 'qt', 'tkinter']:
         USED_BACKEND = backend_str
     else:
-        raise ValueError("You should pass either 'wx','pyqt4','pyside' or 'tkinter' to the init_display function.")
+        raise ValueError("You should pass either 'wx','qt' or 'tkinter' to the init_display function.")
         sys.exit(1)
     # wxPython based simple GUI
     if USED_BACKEND == 'wx':
-        import wx
+        try:
+            import wx
+        except:
+            raise ImportError("Please install wxPython.")
         from wxDisplay import wxViewer3d
 
         class AppFrame(wx.Frame):
@@ -108,7 +108,6 @@ def init_display(backend_str=None):
                     raise ValueError('the menu item %s does not exist' % menu_name)
                 self.Bind(wx.EVT_MENU, _callable, id=_id)
         app = wx.PySimpleApp()
-        wx.InitAllImageHandlers()
         win = AppFrame(None)
         win.Show(True)
         wx.SafeYield()
@@ -126,16 +125,17 @@ def init_display(backend_str=None):
         def start_display():
             app.MainLoop()
 
-    # PyQt based simple GUI
-    elif USED_BACKEND == 'pyqt4' or USED_BACKEND == 'pyside':
-
-        # dont really get why its nessecary to import yet again... sigh...
-        if USED_BACKEND == 'pyqt4':
-            from PyQt4 import QtGui, QtCore
-        else:
-            from PySide import QtGui, QtCore
-
+    # Qt based simple GUI
+    elif USED_BACKEND == 'qt':
+        try:
+            from PySide import QtCore, QtGui
+        except:
+            try:
+                from PyQt4 import QtCore, QtGui
+            except:
+                raise ImportError('None of PySide or PyQt4 installed.')
         from qtDisplay import qtViewer3d
+
         class MainWindow(QtGui.QMainWindow):
             def __init__(self, *args):
                 apply(QtGui.QMainWindow.__init__, (self,)+args)
