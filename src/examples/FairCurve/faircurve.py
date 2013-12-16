@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2011 Jelle Feringa (jelleferinga@gmail.com)
+##Copyright 2009-2013 Jelle Feringa (jelleferinga@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -17,25 +17,28 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.gp import *
-from OCC.Geom import *
-from OCC.FairCurve import *
+from OCC.gp import gp_Pnt2d, gp_Pln
+from OCC.Geom import Geom_Plane
+from OCC.FairCurve import FairCurve_MinimalVariation
 
-from OCC.Display.SimpleGui import *
-display, start_display, add_menu, add_function_to_menu = init_display()
 from OCC.Utils.Construct import make_edge
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
-import math, time
+import math
+import time
+
 
 def error_code(n):
-    errors = {0:"FairCurve_OK",
-              1:"FairCurve_NotConverged",
-              2:"FairCurve_InfiniteSliding",
-              3:"FairCurve_NullHeight",
+    errors = {0: "FairCurve_OK",
+              1: "FairCurve_NotConverged",
+              2: "FairCurve_InfiniteSliding",
+              3: "FairCurve_NullHeight",
               }
     return errors[n]
 
-def batten_curve( pt1, pt2, height, slope, angle1, angle2):
+
+def batten_curve(pt1, pt2, height, slope, angle1, angle2):
     fc = FairCurve_MinimalVariation(pt1, pt2, height, slope)
     fc.SetConstraintOrder1(2)
     fc.SetConstraintOrder2(2)
@@ -46,21 +49,24 @@ def batten_curve( pt1, pt2, height, slope, angle1, angle2):
     fc.SetFreeSliding(True)
     print fc.DumpToString()
     status = fc.Compute()
-    print (error_code(status[0]), error_code(status[1]))
+    print error_code(status[0]), error_code(status[1])
     return fc.Curve()
 
+
 def faircurve(event=None):
-    pt1 = gp_Pnt2d(0,0)
-    pt2 = gp_Pnt2d(0,120)
+    pt1 = gp_Pnt2d(0., 0.)
+    pt2 = gp_Pnt2d(0., 120.)
     height = 100.
     slope = 0.3
     pl = Geom_Plane(gp_Pln())
-    for i in range(0, 40, 1):
+    for i in range(0, 40):
         # TODO: the parameter slope needs to be visualized
-        bc = batten_curve(pt1, pt2, height, i/100., math.radians(i), math.radians(-i))
+        bc = batten_curve(pt1, pt2, height, i/100.,
+                          math.radians(i), math.radians(-i))
         display.EraseAll()
         display.DisplayShape(make_edge(bc, pl.GetHandle()), update=True)
         time.sleep(0.21)
+
 
 def exit(event=None):
     sys.exit(0)
@@ -70,15 +76,3 @@ if __name__ == "__main__":
     add_function_to_menu('fair curve', faircurve)
     add_function_to_menu('fair curve', exit)
     start_display()
-
-
-
-
-
-
-
-
-
-
-
-

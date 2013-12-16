@@ -3,7 +3,7 @@
 # TODO:
 # * need examples where the tangency to constraining faces is respected
 
-##Copyright 2009-2011 Jelle Ferina (jelleferinga@gmail.com)
+##Copyright 2009-2013 Jelle Ferina (jelleferinga@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -21,23 +21,25 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
-from OCC.Utils.Construct import make_closed_polygon, make_n_sided, make_vertex, make_face, make_wire
+import types
+import sys
+import time
 
-from OCC.gp import *
-from OCC.BRepBuilderAPI import *
-
+from OCC.gp import gp_Pnt
 from OCC.Utils.Topology import WireExplorer, Topo
-from OCC.BRepAdaptor import *
-from OCC.BRep import *
+from OCC.BRepAdaptor import BRepAdaptor_HCurve
+from OCC.BRep import BRep_Tool
 from OCC.ShapeAnalysis import *
 from OCC.GeomLProp import *
-
-import types, sys, time
-
-from OCC.Display.SimpleGui import init_display
 from OCC.DataExchange.IGES import IGESImporter
-from OCC.BRepFill import *
+from OCC.BRepFill import BRepFill_CurveConstraint
 from OCC.GeomPlate import *
+
+
+from OCC.Utils.Construct import make_closed_polygon, make_n_sided,\
+    make_vertex, make_face, make_wire
+from OCC.Display.SimpleGui import init_display
+
 
 display, start_display, add_menu, add_function_to_menu = init_display()
 
@@ -45,32 +47,37 @@ try:
     from scipy import arange
     from scipy.optimize import fsolve
 except ImportError:
-    print 'scipy not installed, will not be able to run the solve radius example'
+    print 'scipy not installed, will not be able to run the geomplate example'
 
 
 def geom_plate(event=None):
     display.EraseAll()
-    p1,p2,p3,p4,p5 = gp_Pnt(0,0,0),gp_Pnt(0,10,0),gp_Pnt(0,10,10),gp_Pnt(0,0,10),gp_Pnt(5,5,5)
-    poly = make_closed_polygon([p1,p2,p3,p4])
+    p1 = gp_Pnt(0, 0, 0)
+    p2 = gp_Pnt(0, 10, 0)
+    p3 = gp_Pnt(0, 10, 10)
+    p4 = gp_Pnt(0, 0, 10)
+    p5 = gp_Pnt(5, 5, 5)
+    poly = make_closed_polygon([p1, p2, p3, p4])
     edges = [i for i in Topo(poly).edges()]
     face = make_n_sided(edges, [p5])
     display.DisplayShape(edges)
     display.DisplayShape(make_vertex(p5))
     display.DisplayShape(face, update=True)
 
-#===============================================================================
+#============================================================================
 # Find a surface such that the radius at the vertex is n
-#===============================================================================
+#============================================================================
+
 
 def build_plate(polygon, points):
     '''
     build a surface from a constraining polygon(s) and point(s)
     @param polygon:     list of polygons ( TopoDS_Shape)
-    @param points:      list of points ( gp_Pnt ) 
+    @param points:      list of points ( gp_Pnt )
     '''
     # plate surface
-    bpSrf = GeomPlate_BuildPlateSurface(3,15,2)
-    
+    bpSrf = GeomPlate_BuildPlateSurface(3, 15, 2)
+
     # add curve constraints
     for poly in polygon:
         for edg in WireExplorer(poly).ordered_edges():
@@ -78,22 +85,22 @@ def build_plate(polygon, points):
             c.ChangeCurve().Initialize(edg)
             constraint = BRepFill_CurveConstraint(c.GetHandle(), 0)
             bpSrf.Add(constraint.GetHandle())
-        
+
     # add point constraint
     for pt in points:
         bpSrf.Add(GeomPlate_PointConstraint(pt, 0).GetHandle())
         bpSrf.Perform()
-    
-    maxSeg, maxDeg, critOrder = 9,8,0
-    tol  = 1e-4
-    dmax = max([tol,10*bpSrf.G0Error()])
-    
+
+    maxSeg, maxDeg, critOrder = 9, 8, 0
+    tol = 1e-4
+    dmax = max([tol, 10*bpSrf.G0Error()])
+
     srf = bpSrf.Surface()
     plate = GeomPlate_MakeApprox(srf, tol, maxSeg, maxDeg, dmax, critOrder)
-    
     uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
-    
+
     return make_face(plate.Surface(), uMin, uMax, vMin, vMax, 1e-4)
+
 
 def radius_at_uv(face, u, v):
     '''
@@ -108,12 +115,13 @@ def radius_at_uv(face, u, v):
         _crv_min = 1./curvature.MinCurvature()
     except ZeroDivisionError:
         _crv_min = 0.
-    
+
     try:
         _crv_max = 1./curvature.MaxCurvature()
     except ZeroDivisionError:
         _crv_max = 0.
     return abs((_crv_min+_crv_max)/2.)
+
 
 def uv_from_projected_point_on_face(face, pt):
     '''
@@ -121,8 +129,8 @@ def uv_from_projected_point_on_face(face, pt):
     '''
     srf = BRep_Tool().Surface(face)
     sas = ShapeAnalysis_Surface(srf)
-    uv  = sas.ValueOfUV(pt, 1e-2)
-    print 'distance',sas.Value(uv).Distance(pt)    
+    uv = sas.ValueOfUV(pt, 1e-2)
+    print 'distance', sas.Value(uv).Distance(pt)
     return uv.Coord()
 
 
@@ -136,7 +144,7 @@ class RadiusConstrainedSurface():
         self.poly = poly
         self.pnt = pnt
         self.plate = self.build_surface()
-        
+
     def build_surface(self):
         '''
         builds and renders the plate
@@ -146,10 +154,11 @@ class RadiusConstrainedSurface():
         self.display.DisplayShape(self.plate)
         vert = make_vertex(self.pnt)
         self.display.DisplayShape(vert, update=True)
-    
+
     def radius(self, z):
         '''
-        sets the height of the point constraining the plate, returns the radius at this point
+        sets the height of the point constraining the plate, returns
+        the radius at this point
         '''
         if isinstance(z, types.FloatType):
             self.pnt.SetX(z)
@@ -158,7 +167,7 @@ class RadiusConstrainedSurface():
         self.build_surface()
         uv = uv_from_projected_point_on_face(self.plate, self.pnt)
         radius = radius_at_uv(self.plate, uv[0], uv[1])
-        print 'z:',z, 'radius:', radius
+        print 'z:', z, 'radius:', radius
         self.curr_radius = radius
         return self.targetRadius-abs(radius)
 
@@ -169,39 +178,43 @@ class RadiusConstrainedSurface():
 
 def solve_radius(event=None):
     display.EraseAll()
-    p1,p2,p3,p4,p5 = gp_Pnt(0,0,0),gp_Pnt(0,10,0),gp_Pnt(0,10,10),gp_Pnt(0,0,10),gp_Pnt(5,5,5)
-    poly = make_closed_polygon([p1,p2,p3,p4])
-    for i in arange(0.1,3.,0.2).tolist():
-        rcs = RadiusConstrainedSurface(display, poly, p5, i )
+    p1 = gp_Pnt(0, 0, 0)
+    p2 = gp_Pnt(0, 10, 0)
+    p3 = gp_Pnt(0, 10, 10)
+    p4 = gp_Pnt(0, 0, 10)
+    p5 = gp_Pnt(5, 5, 5)
+    poly = make_closed_polygon([p1, p2, p3, p4])
+    for i in arange(0.1, 3., 0.2).tolist():
+        rcs = RadiusConstrainedSurface(display, poly, p5, i)
         face = rcs.solve()
-        print 'Goal: %s radius: %s' % ( i, rcs.curr_radius )
+        print 'Goal: %s radius: %s' % (i, rcs.curr_radius)
         time.sleep(0.5)
 
 
 def build_geom_plate(edges):
-    bpSrf = GeomPlate_BuildPlateSurface(3,9,12)
-    
+    bpSrf = GeomPlate_BuildPlateSurface(3, 9, 12)
+
     # add curve constraints
     for edg in edges:
         c = BRepAdaptor_HCurve()
-        print 'edge:',edg
+        print 'edge:', edg
         c.ChangeCurve().Initialize(edg)
         constraint = BRepFill_CurveConstraint(c.GetHandle(), 0)
         bpSrf.Add(constraint.GetHandle())
-    
+
     # add point constraint
     try:
         bpSrf.Perform()
     except RuntimeError:
         print 'failed to build the geom plate surface '
-    
-    maxSeg, maxDeg, critOrder = 9,8,0
-    tol  = 1e-4
-    dmax = max([tol,10*bpSrf.G0Error()])
-    
+
+    maxSeg, maxDeg, critOrder = 9, 8, 0
+    tol = 1e-4
+    dmax = max([tol, 10*bpSrf.G0Error()])
+
     srf = bpSrf.Surface()
     plate = GeomPlate_MakeApprox(srf, 1e-04, 100, 9, 1e-03, 0)
-    
+
     uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
     face = make_face(plate.Surface(), uMin, uMax, vMin, vMax, 1e-6)
     return face
@@ -217,7 +230,7 @@ def build_curve_network(event=None):
     iges = IGESImporter(pth)
     iges.read_file()
     print 'done.'
-    
+
     print 'Building geomplate...',
     topo = Topo(iges.get_compound())
     edges_list = list(topo.edges())
@@ -237,7 +250,6 @@ def exit(event=None):
     sys.exit()
 
 if __name__ == "__main__":
-    build_curve_network()
     add_menu('geom plate')
     add_function_to_menu('geom plate', geom_plate)
     add_function_to_menu('geom plate', solve_radius)
