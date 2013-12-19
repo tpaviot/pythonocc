@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -18,11 +18,10 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from OCC.Display.SimpleGui import *
-display, start_display, add_menu, add_function_to_menu = init_display()
-
-from OCC.AIS import *
+from OCC.AIS import AIS_Shape
 from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 #
 # Create a box
@@ -45,4 +44,3 @@ ais_context.Display(ais_shp.GetHandle())
 display.View_Iso()
 display.FitAll()
 start_display()
-
