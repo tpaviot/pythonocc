@@ -1,9 +1,5 @@
-#!C:/Python24/Python.exe
 # -*- coding: utf-8 -*-
 ## (c) Copyright 2008 Andrew Haywood
-## 
-## Released into the Public Domain
-##
 
 '''
 Wireframe functionality
@@ -11,11 +7,6 @@ Wireframe functionality
 
 __author__ = "Andrew Haywood"
 __date__ = "15 November 2007"
-
-# --------------------------------------------------
-import os
-import os.path
-import math
 
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
@@ -26,20 +17,18 @@ from OCC.TopoDS import *
 from OCC.GeomAPI import *
 from OCC.Geom import *
 
-# --------------------------------------------------
 
 display.EraseAll()
 
-# --------------------------------------------------
 
-def MakePoint(x=0,y=0,z=0):
+def MakePoint(x=0, y=0, z=0):
     p = gp_Pnt(x, y, z)
     v = TopoDS_Vertex()
     bb = BRep_Builder()
     bb.MakeVertex(v, p, 0.001)
     return v
 display.DisplayShape(MakePoint())
-    
+
 # --------------------------------------------------
 
 # --------------------------------------------------

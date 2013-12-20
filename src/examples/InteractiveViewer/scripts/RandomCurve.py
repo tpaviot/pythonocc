@@ -1,9 +1,5 @@
-#!C:/Python24/Python.exe
 # -*- coding: utf-8 -*-
 ## (c) Copyright 2008 Andrew Haywood
-## 
-## Released into the Public Domain
-##
 
 '''
 Simple script that creates a random curve
@@ -12,7 +8,6 @@ Simple script that creates a random curve
 __author__ = "Andrew Haywood"
 __date__ = "14 November 2007"
 
-# --------------------------------------------------
 import os
 import os.path
 import random
@@ -26,9 +21,9 @@ from OCC.BRep import *
 from OCC.gp import *
 
 random.seed()
-# --------------------------------------------------
 
 display.EraseAll()
+
 
 def MakeCurve(coordlist, interpolate=False):
     """Takes a list of 3d coords as input."""
@@ -45,13 +40,14 @@ def MakeCurve(coordlist, interpolate=False):
         return
         #~ a = Handle_TColgp_HArray1OfPnt(a)
         #~ c = GeomAPI_Interpolate(a, False, Precision().Approximation())
-        #~ c.Perform();                                                              
+        #~ c.Perform();                                                             
     else:
         c = GeomAPI_PointsToBSpline(a)
     bc = BRepBuilderAPI_MakeEdge(c.Curve())
     display.DisplayShape(bc.Shape())
 
-def MakePoint(x=0,y=0,z=0):
+
+def MakePoint(x=0, y=0, z=0):
     p = gp_Pnt(x, y, z)
     v = TopoDS_Vertex()
     bb = BRep_Builder()

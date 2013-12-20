@@ -1,22 +1,16 @@
-#!C:/Python24/Python.exe
 # -*- coding: utf-8 -*-
 ## (c) Copyright 2008 Andrew Haywood
-## 
-## Released into the Public Domain
-##
 
 '''
-Simple script that can be used to show some 
+Simple script that can be used to show some
 basic geometry creation in the InteractiveViewer
 '''
 
 __author__ = "Andrew Haywood"
 __date__ = "13 November 2007"
 
-# --------------------------------------------------
 import os
 import os.path
-import math
 
 from OCC.gp import *
 from OCC.BRepPrimAPI import *
@@ -28,17 +22,19 @@ from OCC.TColgp import *
 from OCC.GeomAPI import *
 from OCC.BRepBuilderAPI import *
 from OCC.Geom import *
+import math
 
 display.EraseAll()
+
 
 def GetFacesOnShape(s):
     te = TopExp_Explorer()
     te.Init(s, TopAbs_FACE)
     numFaces = 0
     while te.More():
-        numFaces+= 1
+        numFaces += 1
         te.Next()
-    print "%i faces."%numFaces
+    print "%i faces." % numFaces
 
 # --------------------------------------------------
 # BOXES
@@ -56,7 +52,6 @@ ax = gp_Ax2(gp_Pnt(1500, 0, 0), gp_Dir(100, 50, 0))
 s = BRepPrimAPI_MakeBox(ax, 100, 125, 150)
 display.DisplayShape(s.Shape())
 GetFacesOnShape(s.Shape())
-# --------------------------------------------------
 
 # --------------------------------------------------
 # CONES
@@ -75,7 +70,6 @@ ax = gp_Ax2(gp_Pnt(1000, 500, 0), gp_Dir(100, 50, 0))
 s = BRepPrimAPI_MakeCone(ax, 50, 30, 200, 1)
 display.DisplayShape(s.Shape())
 GetFacesOnShape(s.Shape())
-# --------------------------------------------------
 
 # --------------------------------------------------
 # CYLINDERS
@@ -94,8 +88,7 @@ ax = gp_Ax2(gp_Pnt(1000, 1000, 0), gp_Dir(100, 50, 0))
 s = BRepPrimAPI_MakeCylinder(ax, 20, 100, 1)
 display.DisplayShape(s.Shape())
 GetFacesOnShape(s.Shape())
-# --------------------------------------------------
-
+#
 # --------------------------------------------------
 # SPHERES
 # --------------------------------------------------
@@ -140,8 +133,6 @@ s = BRepPrimAPI_MakeSphere(ax, 100, math.radians(-60), math.radians(-10), math.r
 display.DisplayShape(s.Shape())
 
 # --------------------------------------------------
-
-# --------------------------------------------------
 # UNITED SOLID
 # --------------------------------------------------
 ax = gp_Ax2(gp_Pnt(0, 2000, 0), gp_Dir(100, 50, 0))
@@ -161,7 +152,6 @@ ax = gp_Ax2(gp_Pnt(510, 2000, -10), gp_Dir(100, 50, 0))
 sol2 = BRepPrimAPI_MakeBox(ax, 50, 50, 300)
 s = BRepAlgo_Cut(sol1.Shape(), sol2.Shape())
 display.DisplayShape(s.Shape())
-# --------------------------------------------------
 
 # --------------------------------------------------
 # INTERSECTED SOLID
@@ -172,11 +162,12 @@ ax = gp_Ax2(gp_Pnt(1010, 2000, -10), gp_Dir(100, 50, 0))
 sol2 = BRepPrimAPI_MakeBox(ax, 50, 50, 300)
 s = BRepAlgo_Common(sol1.Shape(), sol2.Shape())
 display.DisplayShape(s.Shape())
-#~ # --------------------------------------------------
 
 # --------------------------------------------------
 # LOFTED SOLID
 # --------------------------------------------------
+
+
 def MakeCurve(coordlist):
     a = TColgp_Array1OfPnt(1, len(coordlist))
     for i in range(len(coordlist)):
@@ -196,31 +187,6 @@ s.AddWire(wire.Wire())
 s.Build()
 print "IsDone: ", s.IsDone()
 display.DisplayShape(s.Shape())
-# --------------------------------------------------
-
-#~ if 1:
-    #~ c = MakeCurve([(500,2500,200), (600,2600,200), (650,2600,200), (500,2500,200)])
-    #~ s = BRepPrimAPI_MakePrism(c.Edge(), gp_Vec())
-    #~ display.DisplayShape(s.Shape())
-
-
-def MakePoint(x=0,y=0,z=0):
-    p = gp_Pnt(x, y, z)
-    v = TopoDS_Vertex()
-    bb = BRep_Builder()
-    bb.MakeVertex(v, p, 0.001)
-    display.DisplayShape(v)
-    
-#~ for x in range(0, 100, 10): MakePoint(x, 500, 500)
-
-
-# Load an iges file...
-p = os.path.dirname(os.path.abspath(__file__))
-#~ self.LoadFile(os.path.join(p, "scripts", "test.iges"))
-# --------------------------------------------------
 
 display.View_Iso()
 display.FitAll()
-
-# --------------------------------------------------
-
