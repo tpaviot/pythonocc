@@ -1,4 +1,4 @@
-##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -15,67 +15,60 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.BRep import *
-from OCC.BRepPrimAPI import *
-from OCC.BRepAlgoAPI import *
-from OCC.BRepBuilderAPI import *
-from OCC.BRepMesh import *
-from OCC.TopExp import *
-from OCC.TopoDS import *
-from OCC.TopAbs import *
-from OCC.TopLoc import *
-from OCC.Poly import *
-from OCC.TColgp import *
-from OCC.gp import *
-from OCC.Display.SimpleGui import *
+from OCC.BRep import BRep_Builder, BRep_Tool_Triangulation
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeTorus
+from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeEdge
+from OCC.BRepMesh import BRepMesh_Mesh
+from OCC.TopExp import TopExp_Explorer
+from OCC.TopoDS import TopoDS_Compound, TopoDS_face
+from OCC.TopAbs import TopAbs_FACE
+from OCC.TopLoc import TopLoc_Location
+from OCC.Display.SimpleGui import init_display
 display, start_display, add_menu, add_function_to_menu = init_display()
 display.SetSelectionModeVertex()
 
-def simple_mesh(event=None):    
+
+def simple_mesh(event=None):
     #
     # Create the shape
     #
-    shape = BRepPrimAPI_MakeBox(200, 200, 200).Shape()
-    theBox = BRepPrimAPI_MakeBox(200,60,60).Shape()
-    theSphere = BRepPrimAPI_MakeSphere(gp_Pnt(100,20,20),80).Shape()
-    shape = theSphere#BRepAlgoAPI_Fuse(theSphere,theBox).Shape()
+    shape = BRepPrimAPI_MakeTorus(10., 4.).Shape()
     #
     # Mesh the shape
     #
-    BRepMesh_Mesh(shape,0.8)
+    BRepMesh_Mesh(shape, 0.8)
     builder = BRep_Builder()
     Comp = TopoDS_Compound()
     builder.MakeCompound(Comp)
-    
-    ex = TopExp_Explorer(shape,TopAbs_FACE)
+
+    ex = TopExp_Explorer(shape, TopAbs_FACE)
     while ex.More():
         F = TopoDS_face(ex.Current())
-        L = TopLoc_Location()       
-        facing = (BRep_Tool_Triangulation(F,L)).GetObject()
+        L = TopLoc_Location()
+        facing = (BRep_Tool_Triangulation(F, L)).GetObject()
         tab = facing.Nodes()
         tri = facing.Triangles()
-        for i in range(1,facing.NbTriangles()+1):
+        for i in range(1, facing.NbTriangles()+1):
             trian = tri.Value(i)
             index1, index2, index3 = trian.Get()
-            for j in range(1,4):
-                if j==1:    
+            for j in range(1, 4):
+                if j == 1:
                     M = index1
                     N = index2
-                elif j==2:    
+                elif j == 2:
                     N = index3
                 elif j==3:
-                    M = index2  
-                ME = BRepBuilderAPI_MakeEdge(tab.Value(M),tab.Value(N))
+                    M = index2
+                ME = BRepBuilderAPI_MakeEdge(tab.Value(M), tab.Value(N))
                 if ME.IsDone():
-                    builder.Add(Comp,ME.Edge())
+                    builder.Add(Comp, ME.Edge())
         ex.Next()
     display.EraseAll()
     display.DisplayShape(shape)
-    display.DisplayShape(Comp, update=True )
-    
+    display.DisplayShape(Comp, update=True)
+
 if __name__ == '__main__':
     add_menu('mesh')
     add_function_to_menu('mesh', simple_mesh)
     start_display()
-
 

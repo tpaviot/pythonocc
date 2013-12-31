@@ -1,4 +1,4 @@
-##Copyright 2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2010-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -15,11 +15,11 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Display.SimpleGui import *
-from OCC.BRepPrimAPI import *
+from OCC.Display.SimpleGui import init_display
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
 
 display, start_display, add_menu, add_function_to_menu = init_display()
-my_box = BRepPrimAPI_MakeBox(10.,20.,30.).Shape()
+my_box = BRepPrimAPI_MakeBox(10., 20., 30.).Shape()
 
-display.DisplayShape(my_box, update=True )
+display.DisplayShape(my_box, update=True)
 start_display()
