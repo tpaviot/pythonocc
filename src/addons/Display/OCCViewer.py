@@ -49,6 +49,9 @@ if not (sys.platform == 'win32'):
 modes = itertools.cycle([TopAbs.TopAbs_FACE, TopAbs.TopAbs_EDGE, TopAbs.TopAbs_VERTEX,
                          TopAbs.TopAbs_SHELL, TopAbs.TopAbs_SOLID, ])
 
+def get_color_name(color):
+    return color.Name(color.Red(), color.Green(), color.Blue())
+
 class BaseDriver(object):
     """
     The base driver class
@@ -180,10 +183,12 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_NONE, True )
 
-    def DisplayVector(self, vec, pnt, update=False):
+    def DisplayVector(self, vec, pnt, update=False, veccolor=None):
         if self._inited:
             aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
             arrow = Prs3d_Arrow()
+            if veccolor is not None:
+                aPresentation.Color(get_color_name(veccolor))
             arrow.Draw(
                 aPresentation.GetHandle(),
                 (pnt.as_vec() + vec).as_pnt(),
@@ -207,7 +212,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         text_aspect = Prs3d.Prs3d_TextAspect()
 
         if message_color is not None:
-            text_aspect.SetColor(color(*message_color))
+            aPresentation.Color(get_color_name(message_color))
 
         text = Prs3d.Prs3d_Text()
         text.Draw(aPresentation.GetHandle(),
@@ -354,6 +359,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             self.Context.ActivateStandardMode(mode)
         self.Context.UpdateSelected()
+        return topo_lut[topo_level]
     
     def SetSelectionModeShape(self):
         self.Context.CloseAllContexts()
@@ -384,9 +390,12 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def Select(self,X,Y):
         self.Context.Select()
         self.Context.InitSelected()
+
+        self.selected_shapes = []
         if self.Context.MoreSelected():
             if self.Context.HasSelectedShape():
                 self.selected_shape = self.Context.SelectedShape()
+                self.selected_shapes.append(self.selected_shape)
                 print "Current selection (single):",self.selected_shape
         else:
             self.selected_shape = None
