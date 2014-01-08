@@ -1,6 +1,5 @@
 LIST(APPEND OCE_MODULES
 	AIS
-	AIS2D
 	APIHeaderSection
 	Adaptor2d
 	Adaptor3d
@@ -16,6 +15,8 @@ LIST(APPEND OCE_MODULES
 	ApproxInt
 	Aspect
 	BOP
+	BOPAlgo
+	BOPDS
 	BOPTColStd
 	BOPTools
 	BRep
@@ -97,7 +98,6 @@ LIST(APPEND OCE_MODULES
 	GC
 	GCE2d
 	GCPnts
-	GGraphic2d
 	GProp
 	GccAna
 	GccEnt
@@ -128,7 +128,6 @@ LIST(APPEND OCE_MODULES
 	GeomTools
 	GraphDS
 	GraphTools
-	Graphic2d
 	Graphic3d
 	HLRAlgo
 	HLRBRep
@@ -196,7 +195,6 @@ LIST(APPEND OCE_MODULES
 	MoniTool
 	NCollection
 	NIS
-	NLPlate
 	OSD
 	ObjMgt
 	PBRep
@@ -229,7 +227,6 @@ LIST(APPEND OCE_MODULES
 	Precision
 	Primitives
 	ProjLib
-	Prs2d
 	Prs3d
 	PrsMgr
 	Quantity
@@ -250,7 +247,6 @@ LIST(APPEND OCE_MODULES
 	STEPControl
 	STEPEdit
 	STEPSelections
-	Select2D
 	Select3D
 	SelectBasics
 	SelectMgr
@@ -321,7 +317,6 @@ LIST(APPEND OCE_MODULES
 	TransferBRep
 	Units
 	UnitsAPI
-	V2d
 	V3d
 	Viewer
 	Visual3d
