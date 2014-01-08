@@ -59,13 +59,12 @@ from OCC.Quantity import *
 from OCC.GeomConvert import *
 from OCC.TColGeom import *
 from OCC.BRepBuilderAPI import *
-from OCC.Graphic2d import *
 from OCC.TCollection import *
 from OCC.Graphic3d import *
 from OCC.BRepPrimAPI import *
 from OCC.AIS import *
 from OCC.Prs3d import *
-from OCC.TColgp import * 
+from OCC.TColgp import *
 from OCC.GeomFill import *
 
 from OCC.Display.SimpleGui import init_display
