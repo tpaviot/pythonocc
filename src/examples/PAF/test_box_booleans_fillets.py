@@ -51,16 +51,17 @@ fillet_box = my_context.local_operations.MakeFilletAll( booled_box, p.RADIUS, na
 
 li1 = make_line(gp_Pnt(-10,0,0), gp_Pnt(10,0,0))
 li2 = make_line(gp_Pnt(0,-10,0), gp_Pnt(0,10,0))
+
+# geometry that are subclassed form TopoDS_Shape ( like TopoDS_Vertex )
+# can be transformed to SGEOM.GEOM_Object
+# which is required to work in a parametric context
 li1_geom = geomobject_from_topods(my_context, li1)
 li2_geom = geomobject_from_topods(my_context, li2)
 
-yy1 = TColStd_HSequenceOfTransient()
-yy2 = TColStd_HSequenceOfTransient()
-yy1.Append(li1_geom.GetHandle())
-yy2.Append(li2_geom.GetHandle())
-
 my_context.boolean_operations.MakeBoolean(li1_geom.GetHandle(),li2_geom.GetHandle(),3, show=True)
-pres1, pres2, pres_fillet = my_context.get_presentation(box1), my_context.get_presentation(box2), my_context.get_presentation(fillet_box)
+pres1 = my_context.get_presentation(box1)
+pres2 = my_context.get_presentation(box2)
+pres_fillet = my_context.get_presentation(fillet_box)
 pres1.SetTransparency(.8); pres1.SetColor(12)
 pres2.SetTransparency(.8); pres1.SetColor(12)
 pres_fillet.SetColor(1)

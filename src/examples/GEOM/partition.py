@@ -1,15 +1,8 @@
 from OCC.Display.SimpleGui import init_display
-
-__author__ = 'jelle'
-
-import functools
-
 from OCC.Utils.Construct import *
 from OCC.Partition import *
 from OCC.TopAbs import *
-from OCC.TopoDS import *
 from OCC.Utils.Topology import Topo
-from OCC.KBE.base import Display
 
 liX = make_line(gp_Pnt(-10,0,0), gp_Pnt(10,0,0))
 liY = make_line(gp_Pnt(0,-10,0), gp_Pnt(0,10,0))
