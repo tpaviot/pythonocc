@@ -22,10 +22,8 @@ display, start_display, add_menu, add_function_to_menu = init_display()
 
 from OCC.Graphic3d import *
 from OCC.BRepPrimAPI import *
-from OCC.BRepBuilderAPI import *
 from OCC.V3d import *
 from OCC.Quantity import *
-from OCC.gp import *
 
 
 #
