@@ -329,9 +329,6 @@ COMMON_MODULES = [
             {'Aspect_GradientBackground': ['SetBgGradientFillMethod']}),
            ('SelectBasics', [], []),
            ('Viewer', [], []),
-           ('V3d', ['Handle_TCollection', 'Aspect', 'Quantity',
-                    'Xw', 'Graphic3d', 'MFT', 'OSD', 'Image'], [],
-            {'V3d_View': ['GetGraduatedTrihedron']}),
            ('Dynamic', ['TCollection'], []),
            ('Materials', ['TCollection_AsciiString'], []),
            ('PS', ['Aspect', 'TCollection', 'MFT', 'OSD'], []),
@@ -517,6 +514,10 @@ COMMON_MODULES = [
 # Visualization part is OS specific #
 #####################################
 WIN_MODULES = [
+           ('V3d', ['Handle_TCollection', 'Aspect', 'Quantity',
+                    'Graphic3d', 'MFT', 'OSD', 'Image'], [],
+            {'V3d_View': ['GetGraduatedTrihedron']}),
+
            ('Graphic3d', ['gp'], ['Graphic3d_GraphicDevice',
             'Handle_Graphic3d_GraphicDevice'],
             {'Graphic3d_Group': ['SetGroupPrimitivesAspect'],
@@ -553,8 +554,62 @@ WIN_MODULES = [
            ('Image', [], [], {'Image_PixMap': ['SizePixelBytes']}),
            ('MeshVS', ['Aspect', 'Graphic3d', 'PrsMgr', 'Prs3d', 'Image',
                        'OSD', 'Font', 'StdSelect'], [])]
+# OSX modules are the same than UNIX except that they does not
+# depend upon Xw
 
+OSX_MODULES = [
+           ('V3d', ['Handle_TCollection', 'Aspect', 'Quantity',
+                    'Graphic3d', 'MFT', 'OSD', 'Image'], [],
+            {'V3d_View': ['GetGraduatedTrihedron']}),
+
+           ('Graphic3d', ['OSD', 'MFT', 'gp'], [],
+            {'Graphic3d_Group': ['SetGroupPrimitivesAspect'],
+             'Graphic3d_GraphicDriver': ['GetGraduatedTrihedron'],
+             'Graphic3d_AspectText3d': ['Values']}),
+           ('Prs3d', ['OSD', 'Font', 'MFT', 'Graphic3d', 'Bnd_Box',
+                      'Aspect', 'Handle_TCollection', 'Image',
+                      'TopoDS_Edge', 'TopoDS_Vertex', 'TopoDS_Face'], []),
+           ('PrsMgr', ['OSD', 'Font', 'MFT', 'Graphic3d', 'gp',
+                       'Aspect', 'Handle_TCollection', 'Image'], []),
+           ('SelectMgr', ['OSD', 'Font', 'MFT', 'TCollection',
+                          'Graphic3d', 'Aspect', 'Quantity', 'Image',
+                          'Prs3d'], [],
+            {'SelectMgr_SelectionManager': ['Status'],
+             'SelectMgr_ViewerSelector': ['Status']}),
+           ('StdSelect', ['OSD', 'Font', 'MFT', 'TCollection',
+                          'Graphic3d', 'Aspect', 'Quantity', 'Image',
+                          'Prs3d', 'SelectBasics', 'Image', 'OSD'], [],
+            {'StdSelect_Shape': ['Shape'], 'StdSelect_BRepOwner': ['Set']}),
+           ('DsgPrs', ['Image'], [], {'DsgPrs_RadiusPresentation': ['Add']}),
+           ('AIS', ['OSD', 'Font', 'MFT', 'Graphic3d', 'TopoDS_Vertex',
+                    'Aspect', 'SelectBasics', 'PrsMgr', 'Image',
+                    'Select2D'], [],
+            {"AIS_LocalContext": ["Reactivate"],
+             'AIS_InteractiveContext': ['Status']}),
+           ('Voxel', ['OSD', 'Font', 'MFT', 'Quantity', 'gp',
+                      'Graphic3d', 'Aspect', 'Handle_TCollection', 'Prs3d',
+                      'PrsMgr', 'SelectMgr', 'SelectBasics', 'Image',
+                      'StdSelect', 'Handle_StdSelect'], []),
+           ('Visual3d', ['OSD', 'MFT', 'Image'], [],
+            {'Visual3d_View': ['GetGraduatedTrihedron']}),
+           ('TPrsStd', ['OSD', 'Font', 'MFT', 'Aspect', 'Image'], []),
+           ('XCAFPrs', ['Aspect', 'MFT', 'TDF', 'OSD', 'Font', 'Graphic3d',
+                        'SelectBasics', 'SelectMgr', 'Quantity',
+                        'Prs3d', 'PrsMgr', 'Image', 'StdSelect',
+                        'Handle_StdSelect'], []),
+           ('NIS', ['Aspect', 'TColStd', 'TCollection', 'Quantity', 'Viewer',
+                    'Graphic3d', 'OSD', 'Font', 'Visual3d',
+                    'Image', 'MFT'], ['NIS_Triangulated'],
+            {'NIS_InteractiveContext': ['GetDrawers']}),
+           ('MeshVS', ['OSD', 'Font', 'MFT', 'Graphic3d', 'Aspect',
+                       'Prs3d', 'Quantity', 'PrsMgr', 'Image',
+                       'StdSelect', 'Handle_StdSelect'], []),
+           ('Image', [], []),
+           ('AlienImage', ['Quantity', 'TCollection', 'Aspect'], [])]
 UNIX_MODULES = [
+           ('V3d', ['Handle_TCollection', 'Aspect', 'Quantity',
+                    'Xw', 'Graphic3d', 'MFT', 'OSD', 'Image'], [],
+            {'V3d_View': ['GetGraduatedTrihedron']}),
            ('Xw', ['OSD', 'TCollection'], []),
            ('Graphic3d', ['OSD', 'MFT', 'gp'], [],
             {'Graphic3d_Group': ['SetGroupPrimitivesAspect'],
@@ -750,7 +805,9 @@ def PythonOCCStats():
 def get_all_modules():
     if sys.platform == 'win32':
         ALL_MODULES = COMMON_MODULES+WIN_MODULES+SALOME_GEOM_MODULES+SALOME_SMESH_MODULES
-    else:
+    if sys.platform == 'darwin':  # Apple OSX
+        ALL_MODULES = COMMON_MODULES+OSX_MODULES+SALOME_GEOM_MODULES+SALOME_SMESH_MODULES
+    else:  # Linux
         ALL_MODULES = COMMON_MODULES+UNIX_MODULES+SALOME_GEOM_MODULES+SALOME_SMESH_MODULES
     return ALL_MODULES
 
