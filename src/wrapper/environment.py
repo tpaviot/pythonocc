@@ -140,7 +140,7 @@ if sys.platform == 'win32':
 
 elif sys.platform == 'linux2':
 
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(), 'wrapper', 'SWIG_files', 'linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(), 'wrapper', 'SWIG_files', 'linux')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     OCC_INC = '/usr/local/include/oce'
@@ -168,7 +168,7 @@ elif sys.platform == 'linux2':
     EXTRA_LIBS = ['m', 'stc++', lib_python]
 
 elif sys.platform == 'darwin':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(), 'wrapper', 'SWIG_files', 'linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(), 'wrapper', 'SWIG_files', 'darwin')
     SWIG_OPTS = ['-O', '-c++', '-DHAVE_LIMITS_H', '-DHAVE_CONFIG_H',
                  '-DCSFDB', '-w302,401,314,509,512', '-DOCC_CONVERT_SIGNALS',
                  '-outdir', '%s' % SWIG_OUT_DIR]
