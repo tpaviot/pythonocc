@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
-##Copyright 2008-2013 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2014 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -59,7 +59,7 @@ def CaseSensitiveGlob(wildcard):
 def WriteLicenseHeader(fp):
     header = """/*
 
-Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2014 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -75,11 +75,6 @@ GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
-
-$Revision$
-$Date$
-$Author$
-$HeaderURL$
 
 */
 """
@@ -1147,8 +1142,8 @@ class ModularBuilder(object):
 
     def OSFilterHeaders(self, HXX_FILES):
         """
-        Under Linux/MacOS, remove all WNT*headers
-        Under Windows, remove all X11/Xfw headers
+        Under Linux, remove all WNT*headers
+        Under Windows and OSX, remove all X11/Xw headers
         """
         # First define all headers that raise a gccxml/pygccxml exception
         HXX_TO_EXCLUDE = ['TCollection_AVLNode.hxx',
