@@ -1,0 +1,29 @@
+To Install
+==========
+
+  tar xvzf ccad-ver.tar.gz (where ver is the version number)
+  cd ccad-ver (where ver is the version number)
+  python setup.py install --prefix=/usr/local (as root)
+
+Change the prefix argument to install in a different directory.
+
+To Operate
+==========
+
+Consult the documentation at prefix/usr/local/html/contents.html
+
+To Build (only for developers)
+==============================
+
+Update components with modifications to MANIFEST.in and setup.py.  Then,
+
+  python setup.py sdist
+
+To Build the Documentation (only for developers)
+================================================
+
+  cd ccad-ver
+  python generate_images.py
+  sphinx-build . _build/html
+
+Then, direct your browser to ccad-ver/rst/_build/html/contents.html

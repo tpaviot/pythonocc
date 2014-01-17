@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="next" title="Details" href="details.html" />
+    <link rel="prev" title="Contents" href="contents.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="details.html" title="Details"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contents.html" title="Contents"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="contents.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Introduction</a><ul>
+<li><a class="reference external" href="#this-document">This Document</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="contents.html"
+                                  title="previous chapter">Contents</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="details.html"
+                                  title="next chapter">Details</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/intro.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>ccad is a text-based mechanical CAD (computer aided design) tool.  It
+is a python module you import within a python file or from the python
+prompt.  Once imported, you can create and view mechanical objects.</p>
+<p>A simple example may help.  From the ipython prompt, I can type the
+following:</p>
+<div class="highlight-python"><pre>In [1]: import ccad
+In [2]: s1 = ccad.sphere(2.0)
+In [3]: v1 = ccad.view()
+In [4]: v1.display(s1)</pre>
+</div>
+<p>After the third command, a window appears, and after the last command,
+it looks like this:</p>
+<img alt="_images/sphere_example.png" src="_images/sphere_example.png" />
+<p>I&#8217;ve created and displayed a sphere of radius 2.0.  Now, suppose I
+want to 3D print this sphere.  From the prompt, I can type:</p>
+<div class="highlight-python"><pre>In [5]: s1.to_stl('sphere.stl')</pre>
+</div>
+<p>And, I have my sphere in .stl format, ready to ship to a 3D printer.
+ccad lets you do much more than creating a sphere.  To learn more,
+read on.</p>
+<div class="section" id="this-document">
+<h2>This Document<a class="headerlink" href="#this-document" title="Permalink to this headline">¶</a></h2>
+<p>This document and the examples shown provide an overview of what&#8217;s
+available in ccad.  Consult the API (easily available with pydoc) for
+more options and better descriptions of the passed parameters.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="details.html" title="Details"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contents.html" title="Contents"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

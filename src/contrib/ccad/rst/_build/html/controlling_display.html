@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Controlling Display &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="up" title="Displaying" href="displaying.html" />
+    <link rel="prev" title="Using Display" href="using_display.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="using_display.html" title="Using Display"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" accesskey="U">Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="contents.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Controlling Display</a><ul>
+<li><a class="reference external" href="#viewstandard">viewstandard</a></li>
+<li><a class="reference external" href="#set-projection">set_projection</a></li>
+<li><a class="reference external" href="#set-scale">set_scale</a></li>
+<li><a class="reference external" href="#set-size">set_size</a></li>
+<li><a class="reference external" href="#set-background">set_background</a></li>
+<li><a class="reference external" href="#set-foreground">set_foreground</a></li>
+<li><a class="reference external" href="#set-triedron">set_triedron</a></li>
+<li><a class="reference external" href="#display">display</a></li>
+<li><a class="reference external" href="#fit">fit</a></li>
+<li><a class="reference external" href="#clear">clear</a></li>
+<li><a class="reference external" href="#save">save</a></li>
+<li><a class="reference external" href="#mode-wireframe">mode_wireframe</a></li>
+<li><a class="reference external" href="#mode-shaded">mode_shaded</a></li>
+<li><a class="reference external" href="#mode-hlr">mode_hlr</a></li>
+<li><a class="reference external" href="#mode-drawing">mode_drawing</a></li>
+<li><a class="reference external" href="#quit">quit</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="using_display.html"
+                                  title="previous chapter">Using Display</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/controlling_display.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="controlling-display">
+<h1>Controlling Display<a class="headerlink" href="#controlling-display" title="Permalink to this headline">¶</a></h1>
+<p>The viewer has a number of function pass options that help.</p>
+<div class="section" id="viewstandard">
+<h2>viewstandard<a class="headerlink" href="#viewstandard" title="Permalink to this headline">¶</a></h2>
+<p>The viewing projection can be set to a standard projection with
+viewstandard.  The following example sets the view to front:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">viewstandard</span><span class="p">(</span><span class="n">viewtype</span> <span class="o">=</span> <span class="s">&#39;front&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-projection">
+<h2>set_projection<a class="headerlink" href="#set-projection" title="Permalink to this headline">¶</a></h2>
+<p>The viewing projection can be set to any arbitrary projection with
+set_projection.  To look at the point (0.0, 0.0, 0.0) from the z-direction with the y-direction up, I could call:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">set_projection</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-scale">
+<h2>set_scale<a class="headerlink" href="#set-scale" title="Permalink to this headline">¶</a></h2>
+<p>set_scale scales the viewing window so the entire screen spans a
+certain number of scene units.  The following example sets the scale
+such that a shape 8.0 long would span the screen:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">set_scale</span><span class="p">(</span><span class="mf">8.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-size">
+<h2>set_size<a class="headerlink" href="#set-size" title="Permalink to this headline">¶</a></h2>
+<p>set_size sets the size of the viewing window in pixels.  The following example sets the viewing window to be 600 by 800 pixels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">set_size</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span> <span class="mi">800</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-background">
+<h2>set_background<a class="headerlink" href="#set-background" title="Permalink to this headline">¶</a></h2>
+<p>set_background sets the background color.  The following example sets
+the background color to white:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">set_background</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-foreground">
+<h2>set_foreground<a class="headerlink" href="#set-foreground" title="Permalink to this headline">¶</a></h2>
+<p>set_foreground sets the default shape color.  The following example
+sets the foreground color to red:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">set_foreground</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-triedron">
+<h2>set_triedron<a class="headerlink" href="#set-triedron" title="Permalink to this headline">¶</a></h2>
+<p>set_triedron sets how the triedron (the little x, y, z coordinate
+sprite) is displayed.</p>
+</div>
+<div class="section" id="display">
+<h2>display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h2>
+<p>The examples have already used display extensively.  However, there
+are options to control color, material, transparency, line type, and
+line width.  The following example draws s1 red, in a metallized
+material, halfway transparent:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">sphere</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="n">v1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">material</span> <span class="o">=</span> <span class="s">&#39;metallized&#39;</span><span class="p">,</span> <span class="n">transparency</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/display_display.png" src="_images/display_display.png" />
+</div>
+<div class="section" id="fit">
+<h2>fit<a class="headerlink" href="#fit" title="Permalink to this headline">¶</a></h2>
+<p>fits the scene to the window.</p>
+</div>
+<div class="section" id="clear">
+<h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
+<p>clear clears the window.</p>
+</div>
+<div class="section" id="save">
+<h2>save<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h2>
+<p>save saves a screenshot.  The following example saves the screen to
+the file, &#8216;screendump.png&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;screendump.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mode-wireframe">
+<h2>mode_wireframe<a class="headerlink" href="#mode-wireframe" title="Permalink to this headline">¶</a></h2>
+<p>mode_wireframe sets the window to wireframe display.</p>
+</div>
+<div class="section" id="mode-shaded">
+<h2>mode_shaded<a class="headerlink" href="#mode-shaded" title="Permalink to this headline">¶</a></h2>
+<p>mode_shaded sets the window to shaded display.</p>
+</div>
+<div class="section" id="mode-hlr">
+<h2>mode_hlr<a class="headerlink" href="#mode-hlr" title="Permalink to this headline">¶</a></h2>
+<p>mode_hlr sets the window to hidden line removal display.</p>
+</div>
+<div class="section" id="mode-drawing">
+<h2>mode_drawing<a class="headerlink" href="#mode-drawing" title="Permalink to this headline">¶</a></h2>
+<p>mode_drawing sets the window to a drafting-like drawing display by
+using a custom hidden line removal mode.  After calling it, call the
+<em>reset_mode_drawing</em> method to restore regular control.</p>
+</div>
+<div class="section" id="quit">
+<h2>quit<a class="headerlink" href="#quit" title="Permalink to this headline">¶</a></h2>
+<p>quit closes the window.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="using_display.html" title="Using Display"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" >Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

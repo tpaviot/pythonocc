@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: ccad
+Version: 0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: occe
+Requires: pythonocc
+Requires: pygtk
+Requires: gtkglext
