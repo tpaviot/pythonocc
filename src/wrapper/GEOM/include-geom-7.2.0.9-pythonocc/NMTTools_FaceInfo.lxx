@@ -1,0 +1,136 @@
+// Copyright (C) 2007-2013  CEA/DEN, EDF R&D, OPEN CASCADE
+//
+// Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+// CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License.
+//
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+//
+// See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+//
+// File:        NMTTools_FaceInfo.lxx
+// Created:     Tue Dec  9 12:23:29 2003
+// Author:      Peter KURNEV
+//              <pkv@irinox>
+//
+
+//=======================================================================
+//function :
+//purpose  :
+//=======================================================================
+inline NMTTools_FaceInfo::NMTTools_FaceInfo()
+:
+  myIndex(-1)
+{
+}
+//=======================================================================
+//function : ~
+//purpose  :
+//=======================================================================
+inline NMTTools_FaceInfo::~NMTTools_FaceInfo()
+{
+  Clear();
+}
+//=======================================================================
+//function : Clear
+//purpose  :
+//=======================================================================
+inline void NMTTools_FaceInfo::Clear()
+{
+  myIndex=-1;
+  myPaveBlocksIn.Clear();
+  myVerticesIn.Clear();
+  myPaveBlocksOn.Clear();
+  myVerticesOn.Clear();
+}
+//=======================================================================
+//function : SetIndex
+//purpose  :
+//=======================================================================
+  inline void NMTTools_FaceInfo::SetIndex(const Standard_Integer theI)
+{
+  myIndex=theI;
+}
+//=======================================================================
+//function : Index
+//purpose  :
+//=======================================================================
+  inline Standard_Integer NMTTools_FaceInfo::Index()const
+{
+  return myIndex;
+}
+//=======================================================================
+//function : PaveBlockIn
+//purpose  :
+//=======================================================================
+  inline const NMTTools_MapOfPaveBlock& NMTTools_FaceInfo::PaveBlocksIn()const
+{
+  return myPaveBlocksIn;
+}
+//=======================================================================
+//function : ChangePaveBlocksIn
+//purpose  :
+//=======================================================================
+  inline NMTTools_MapOfPaveBlock& NMTTools_FaceInfo::ChangePaveBlocksIn()
+{
+  return myPaveBlocksIn;
+}
+//=======================================================================
+//function : VerticesIn
+//purpose  :
+//=======================================================================
+  inline const TColStd_MapOfInteger& NMTTools_FaceInfo::VerticesIn()const
+{
+  return myVerticesIn;
+}
+//=======================================================================
+//function : ChangeVerticesIn
+//purpose  :
+//=======================================================================
+  inline  TColStd_MapOfInteger& NMTTools_FaceInfo::ChangeVerticesIn()
+{
+  return myVerticesIn;
+}
+//=======================================================================
+//function : PaveBlockOn
+//purpose  :
+//=======================================================================
+  inline const NMTTools_MapOfPaveBlock& NMTTools_FaceInfo::PaveBlocksOn()const
+{
+  return myPaveBlocksOn;
+}
+//=======================================================================
+//function : ChangePaveBlocksOn
+//purpose  :
+//=======================================================================
+  inline NMTTools_MapOfPaveBlock& NMTTools_FaceInfo::ChangePaveBlocksOn()
+{
+  return myPaveBlocksOn;
+}
+//=======================================================================
+//function : VerticesOn
+//purpose  :
+//=======================================================================
+  inline const TColStd_MapOfInteger& NMTTools_FaceInfo::VerticesOn()const
+{
+  return myVerticesOn;
+}
+//=======================================================================
+//function : ChangeVerticesOn
+//purpose  :
+//=======================================================================
+  inline  TColStd_MapOfInteger& NMTTools_FaceInfo::ChangeVerticesOn()
+{
+  return myVerticesOn;
+}

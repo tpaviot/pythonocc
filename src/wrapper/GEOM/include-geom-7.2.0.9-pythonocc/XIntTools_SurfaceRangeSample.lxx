@@ -1,0 +1,146 @@
+// Created on: 2005-10-05
+// Created by: Mikhail KLOKOV
+// Copyright (c) 2005-2012 OPEN CASCADE SAS
+//
+// The content of this file is subject to the Open CASCADE Technology Public
+// License Version 6.5 (the "License"). You may not use the content of this file
+// except in compliance with the License. Please obtain a copy of the License
+// at http://www.opencascade.org and read it completely before using this file.
+//
+// The Initial Developer of the Original Code is Open CASCADE S.A.S., having its
+// main offices at: 1, place des Freres Montgolfier, 78280 Guyancourt, France.
+//
+// The Original Code and all software distributed under the License is
+// distributed on an "AS IS" basis, without warranty of any kind, and the
+// Initial Developer hereby disclaims all such warranties, including without
+// limitation, any warranties of merchantability, fitness for a particular
+// purpose or non-infringement. Please see the License for the specific terms
+// and conditions governing the rights and limitations under the License.
+
+
+
+inline void XIntTools_SurfaceRangeSample::SetRanges(const XIntTools_CurveRangeSample& theRangeU,
+						   const XIntTools_CurveRangeSample& theRangeV) 
+{
+  myRangeU = theRangeU;
+  myRangeV = theRangeV;
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::GetRanges(XIntTools_CurveRangeSample& theRangeU,
+					     XIntTools_CurveRangeSample& theRangeV) const
+{
+  theRangeU = myRangeU;
+  theRangeV = myRangeV;
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::SetIndexes(const Standard_Integer theIndexU,
+						    const Standard_Integer theIndexV) 
+{
+  myRangeU.SetRangeIndex(theIndexU);
+  myRangeV.SetRangeIndex(theIndexV);
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::GetIndexes(Standard_Integer& theIndexU,Standard_Integer& theIndexV) const
+{
+  theIndexU = myRangeU.GetRangeIndex();
+  theIndexV = myRangeV.GetRangeIndex();
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::GetDepths(Standard_Integer& theDepthU,Standard_Integer& theDepthV) const
+{
+  theDepthU = myRangeU.GetDepth();
+  theDepthV = myRangeV.GetDepth();
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::SetSampleRangeU(const XIntTools_CurveRangeSample& theRangeSampleU) 
+{
+  myRangeU = theRangeSampleU;
+}
+
+ 
+inline const XIntTools_CurveRangeSample& XIntTools_SurfaceRangeSample::GetSampleRangeU() const
+{
+  return myRangeU;
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::SetSampleRangeV(const XIntTools_CurveRangeSample& theRangeSampleV) 
+{
+  myRangeV = theRangeSampleV;
+}
+
+ 
+inline const XIntTools_CurveRangeSample& XIntTools_SurfaceRangeSample::GetSampleRangeV() const
+{
+  return myRangeV;
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::SetIndexU(const Standard_Integer theIndexU) 
+{
+  myRangeU.SetRangeIndex(theIndexU);
+}
+
+ 
+inline Standard_Integer XIntTools_SurfaceRangeSample::GetIndexU() const
+{
+  return myRangeU.GetRangeIndex();
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::SetIndexV(const Standard_Integer theIndexV) 
+{
+  myRangeV.SetRangeIndex(theIndexV);
+}
+
+ 
+inline Standard_Integer XIntTools_SurfaceRangeSample::GetIndexV() const
+{
+  return myRangeV.GetRangeIndex();
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::SetDepthU(const Standard_Integer theDepthU) 
+{
+  myRangeU.SetDepth(theDepthU);
+}
+
+ 
+inline Standard_Integer XIntTools_SurfaceRangeSample::GetDepthU() const
+{
+  return myRangeU.GetDepth();
+}
+
+ 
+inline void XIntTools_SurfaceRangeSample::SetDepthV(const Standard_Integer theDepthV) 
+{
+  myRangeV.SetDepth(theDepthV);
+}
+
+ 
+inline Standard_Integer XIntTools_SurfaceRangeSample::GetDepthV() const
+{
+  return myRangeV.GetDepth();
+}
+
+inline Standard_Boolean XIntTools_SurfaceRangeSample::IsEqual(const XIntTools_SurfaceRangeSample& Other) const
+{
+  return (myRangeU.IsEqual(Other.myRangeU) && myRangeV.IsEqual(Other.myRangeV));
+}
+
+ 
+inline Standard_Integer XIntTools_SurfaceRangeSample::GetRangeIndexUDeeper(const Standard_Integer theNbSampleU) const
+{
+  return myRangeU.GetRangeIndexDeeper(theNbSampleU);
+}
+
+ 
+inline Standard_Integer XIntTools_SurfaceRangeSample::GetRangeIndexVDeeper(const Standard_Integer theNbSampleV) const
+{
+  return myRangeV.GetRangeIndexDeeper(theNbSampleV);
+}

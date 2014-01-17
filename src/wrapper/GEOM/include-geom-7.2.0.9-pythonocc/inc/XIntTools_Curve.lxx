@@ -1,0 +1,70 @@
+// Copyright (c) 1999-2012 OPEN CASCADE SAS
+//
+// The content of this file is subject to the Open CASCADE Technology Public
+// License Version 6.5 (the "License"). You may not use the content of this file
+// except in compliance with the License. Please obtain a copy of the License
+// at http://www.opencascade.org and read it completely before using this file.
+//
+// The Initial Developer of the Original Code is Open CASCADE S.A.S., having its
+// main offices at: 1, place des Freres Montgolfier, 78280 Guyancourt, France.
+//
+// The Original Code and all software distributed under the License is
+// distributed on an "AS IS" basis, without warranty of any kind, and the
+// Initial Developer hereby disclaims all such warranties, including without
+// limitation, any warranties of merchantability, fitness for a particular
+// purpose or non-infringement. Please see the License for the specific terms
+// and conditions governing the rights and limitations under the License.
+
+//=======================================================================
+//function : SetCurve
+//purpose  : 
+//=======================================================================
+inline void XIntTools_Curve::SetCurve(const Handle(Geom_Curve)& Curve3d) 
+{
+  my3dCurve = Curve3d;
+}
+
+//=======================================================================
+//function : SetFirstCurve2d
+//purpose  : 
+//=======================================================================
+  inline void XIntTools_Curve::SetFirstCurve2d(const Handle(Geom2d_Curve)& FirstCurve2d) 
+{
+  my2dCurve1 = FirstCurve2d;
+}
+//=======================================================================
+//function : SetSecondCurve2d
+//purpose  : 
+//=======================================================================
+  inline void XIntTools_Curve::SetSecondCurve2d(const Handle(Geom2d_Curve)& SecondCurve2d) 
+{
+  my2dCurve2 = SecondCurve2d;
+}
+
+//=======================================================================
+//function : Curve
+//purpose  : 
+//=======================================================================
+  inline const Handle(Geom_Curve)& XIntTools_Curve::Curve() const
+{
+  return my3dCurve;
+}
+
+//=======================================================================
+//function : FirstCurve2d
+//purpose  : 
+//=======================================================================
+  inline const Handle(Geom2d_Curve)& XIntTools_Curve::FirstCurve2d() const
+{
+  return my2dCurve1;
+}
+//=======================================================================
+//function : SecondCurve2d
+//purpose  : 
+//=======================================================================
+  inline const Handle(Geom2d_Curve)& XIntTools_Curve::SecondCurve2d() const
+{
+  return my2dCurve2;
+}
+
+

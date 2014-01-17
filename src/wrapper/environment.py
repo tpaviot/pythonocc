@@ -113,18 +113,10 @@ if sys.platform == 'win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(), 'wrapper', 'SWIG_files', 'win32')
     # Try to find OCC paths from environment analysis
 
-    if sys.version_info[0] == 2 and sys.version_info[1] == 5:
-        # Python2.5 on Windows needs msvc71 GEOM and SMESH librariesprint "Python2.5"
-        SALOME_GEOM_LIB = os.path.join(os.getcwd(), 'contrib', '%s' % GEOM_RELEASE, 'win32', 'msvc71', 'lib')
-        SALOME_GEOM_DLL = os.path.join(os.getcwd(), 'contrib', '%s' % GEOM_RELEASE, 'win32', 'msvc71', 'bin')
-        SALOME_SMESH_LIB = os.path.join(os.getcwd(), 'contrib', '%s' % SMESH_RELEASE, 'win32', 'msvc71', 'lib')
-        SALOME_SMESH_DLL = os.path.join(os.getcwd(), 'contrib', '%s' % SMESH_RELEASE, 'win32', 'msvc71', 'bin')
-    elif sys.version_info[0] == 2 and sys.version_info[1] == 6:
-        # Python 2.6 and higher needs msvc8 or higher
-        SALOME_GEOM_LIB = os.path.join(os.getcwd(), 'contrib', '%s' % GEOM_RELEASE, 'win32', 'msvc8-9-10', 'lib')
-        SALOME_GEOM_DLL = os.path.join(os.getcwd(), 'contrib', '%s' % GEOM_RELEASE, 'win32', 'msvc8-9-10', 'bin')
-        SALOME_SMESH_LIB = os.path.join(os.getcwd(), 'contrib', '%s' % SMESH_RELEASE, 'win32', 'msvc8-9-10', 'lib')
-        SALOME_SMESH_DLL = os.path.join(os.getcwd(), 'contrib', '%s' % SMESH_RELEASE, 'win32', 'msvc8-9-10', 'bin')
+    SALOME_GEOM_LIB = os.path.join(os.getcwd(), 'contrib', '%s' % GEOM_RELEASE, 'win32', 'msvc8-9-10', 'lib')
+    SALOME_GEOM_DLL = os.path.join(os.getcwd(), 'contrib', '%s' % GEOM_RELEASE, 'win32', 'msvc8-9-10', 'bin')
+    SALOME_SMESH_LIB = os.path.join(os.getcwd(), 'contrib', '%s' % SMESH_RELEASE, 'win32', 'msvc8-9-10', 'lib')
+    SALOME_SMESH_DLL = os.path.join(os.getcwd(), 'contrib', '%s' % SMESH_RELEASE, 'win32', 'msvc8-9-10', 'bin')
     GCC_XML_PATH = os.path.join(os.getcwd(), '..', '..', '..', 'pygccxml', 'gccxml_bin', 'v09', 'win32', 'bin')
     PYGCCXML_DEFINES = ['WNT', '__SWIG_GENERATION__', 'CSFDB', 'WIN32', '_WINDOWS']
     DEFINE_MACROS = [('WNT', None), ('WIN32', None),
@@ -206,5 +198,5 @@ VISUALIZATION_PATH = os.path.join(os.getcwd(), 'Visualization')
 MISC_PATH = os.path.join(os.getcwd(), 'Misc')
 CONFIG_H_PATH = OCC_ROOT
 BOOST_INC = os.path.join(os.getcwd(), 'contrib', 'boost-1.52.0')
-SALOME_GEOM_INC = os.path.join(os.getcwd(), 'contrib', 'geom-6.3.1.8', 'inc_pythonocc')
+SALOME_GEOM_INC = os.path.join(os.getcwd(), 'wrapper', 'GEOM', 'include-geom-7.2.0.9-pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(), 'contrib', '%s' % SMESH_RELEASE, 'inc')
