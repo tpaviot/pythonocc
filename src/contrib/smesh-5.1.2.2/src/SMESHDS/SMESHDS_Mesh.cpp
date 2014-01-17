@@ -1023,10 +1023,12 @@ void SMESHDS_Mesh::UnSetMeshElementOnShape(const SMDS_MeshElement * elem,
 
   map<int,SMESHDS_SubMesh*>::iterator it = myShapeIndexToSubMesh.find( Index );
   if ( it != myShapeIndexToSubMesh.end() )
+  {
     if ( elem->GetType() == SMDSAbs_Node )
       it->second->RemoveNode( static_cast<const SMDS_MeshNode* >( elem ), /*deleted=*/false );
     else
       it->second->RemoveElement( elem, /*deleted=*/false );
+  }
 }
 
 //=======================================================================

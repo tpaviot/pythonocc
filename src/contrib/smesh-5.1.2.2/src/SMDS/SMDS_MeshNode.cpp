@@ -150,6 +150,8 @@ class SMDS_MeshNode_MyIterator:public SMDS_ElemIterator
       case SMDSAbs_Edge: toInsert=true; break;
       case SMDSAbs_Face: toInsert=(e->GetType()!=SMDSAbs_Edge); break;
       case SMDSAbs_Volume: toInsert=(e->GetType()==SMDSAbs_Volume); break;
+      default:
+        break;
       }
       if(toInsert) mySet.Append(e);
     }

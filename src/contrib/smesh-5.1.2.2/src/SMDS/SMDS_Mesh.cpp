@@ -2271,6 +2271,8 @@ void SMDS_Mesh::addChildrenWithNodes(set<const SMDS_MeshElement*>&	setOfChildren
 				addChildrenWithNodes(setOfChildren, ite->next(), nodes);
 		}
 	}
+  default:
+    break;
 	}
 }
 
@@ -2299,9 +2301,9 @@ void SMDS_Mesh::RemoveElement(const SMDS_MeshElement *        elem,
 {
   // get finite elements built on elem
   set<const SMDS_MeshElement*> * s1;
-  if (!hasConstructionEdges() && elem->GetType() == SMDSAbs_Edge ||
-      !hasConstructionFaces() && elem->GetType() == SMDSAbs_Face ||
-      elem->GetType() == SMDSAbs_Volume)
+  if ((!hasConstructionEdges() && (elem->GetType() == SMDSAbs_Edge)) ||
+      (!hasConstructionFaces() && (elem->GetType() == SMDSAbs_Face)) ||
+      (elem->GetType() == SMDSAbs_Volume))
   {
     s1 = new set<const SMDS_MeshElement*>();
     s1->insert(elem);
@@ -2364,6 +2366,8 @@ void SMDS_Mesh::RemoveElement(const SMDS_MeshElement *        elem,
       myVolumes.Remove(static_cast<SMDS_MeshVolume*>
                       (const_cast<SMDS_MeshElement*>(*it)));
       myInfo.RemoveVolume(*it);
+      break;
+    default:
       break;
     }
     //MESSAGE( "SMDS: RM elem " << (*it)->GetID() );
