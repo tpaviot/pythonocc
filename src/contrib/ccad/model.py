@@ -2528,13 +2528,15 @@ def bezier_cone(rad1, rad2, height, angle=None):
     coefficients to make a bezier a cone instead of revolving it.
     Surfaces of revolution have their own problems.
     """
+    if angle == None:
+        angle = 2.0 * sysmath.pi
     e1 = bezier([(rad1, 0.0, 0.0), (rad2, 0.0, height)])
     w1 = polygon([(rad2, 0.0, height),
                   (0.0, 0.0, height),
                   (0.0, 0.0, 0.0),
                   (rad1, 0.0, 0.0)])
     w1 = wire([e1, w1])
-    return revol(plane(w1), (0.0, 0.0, 0.0), (0.0, 0.0, 1.0), 2*sysmath.pi)
+    return revol(plane(w1), (0.0, 0.0, 0.0), (0.0, 0.0, 1.0), angle)
 
 
 def torus(rad1, rad2, angle1=None, angle2=None, angle3=None):
