@@ -119,7 +119,7 @@ def edge_spline():
 def edge_bezier():
     e1 = ccad.bezier([(1.0, 0.0, 0.0),
                       (1.0, 1.0, 0.0), 
-                      (0.0, 1.0, 0.0), [1.0, 1.0/math.sqrt(2.0), 1.0]])
+                      (0.0, 1.0, 0.0)], [1.0, 1.0/math.sqrt(2.0), 1.0])
     save_top(e1, 'edge_bezier.png', (0.0, 0.0, 0.0))
 
 def edge_circle():

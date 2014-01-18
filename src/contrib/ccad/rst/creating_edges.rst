@@ -62,7 +62,7 @@ bezier that is the same as a quarter circle::
 
   e1 = ccad.bezier([(1.0, 0.0, 0.0),
                     (1.0, 1.0, 0.0), 
-		    (0.0, 1.0, 0.0), [1.0, 1.0/math.sqrt(2.0), 1.0]])
+		    (0.0, 1.0, 0.0)], [1.0, 1.0/math.sqrt(2.0), 1.0])
 
 .. image:: edge_bezier.png
 
