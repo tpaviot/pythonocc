@@ -23,17 +23,43 @@ Revision History
 12/17/11: Began
 01/09/12: Merged shapes and primitives into model.py
 to 1/11/14: Various Updates
+1/20/14: Replaced == None with is None
+
+Philosophy
+----------
+
+1. Edges are continuous lines in 3D space.  There should be no reason
+   to distinguish between them and OCC curves.  Wires are collections
+   of edge connections.  Faces are continuous surfaces in 3D space.
+   There should be no reason to distinguish between them and OCC
+   surfaces.  Shells are collections of face connections.
+
+2. The end-user should not ever have to call pythonOCC directly.  ccad
+   should handle all things someone might want to do in CAD.
 
 To Do
 -----
+
 1. Allow shells (and 2D curves?) in the boolean operations.
+
 2. Allow shell returns from cylinder, sphere, box, wedge, cone, torus.
-3. More robust error handling--usually shows a buried SWIG issue, which isn't helpful.
-4. Enhance the options to various routines to more encompass OCC's capabilities.
+
+3. More robust error handling--usually shows a buried SWIG issue,
+   which isn't helpful.
+
+4. Enhance the options to various routines to more encompass OCC's
+   capabilities.
+
 5. Add parabola, hyperbola edges
+
 6. Add edge intersection
-7. I never got OCC's concept of orientation in 3d.  That caused a liberal use of .fix statements.  It would be nice to get this right.
-8. Distinction between face, wire, solid, etc. can get muddled after certain operations, particularly boolean.  Ought to be more careful about this.
+
+7. I never got OCC's concept of orientation in 3d.  That caused a
+   liberal use of .fix statements.  It would be nice to get this right.
+
+8. Distinction between face, wire, solid, etc. can get muddled after
+   certain operations, particularly boolean.  Ought to be more careful
+   about this.
 """
 
 import os
@@ -83,20 +109,6 @@ from OCC.TopExp import *
 from OCC.TopOpeBRep import *
 from OCC.TopOpeBRepTool import *
 from OCC.TopTools import *
-
-"""
-Shapes
-------
-
-Philosophy
-----------
-Edges are continuous lines in 3D space.  There should be no reason to
-distinguish between them and OCC curves.  Wires are collections of
-edge connections.  Faces are continuous surfaces in 3D space.  There
-should be no reason to distinguish between them and OCC surfaces.
-Shells are collections of face connections.
-"""
-
 
 # Generic Functions
 def _explode_args(args):
@@ -1870,7 +1882,7 @@ class solid(shape):
         raw_edges = self._raw('edge')
         if isinstance(rad, float):
             # Make real edge_indices
-            if edge_indices == None:
+            if edge_indices is None:
                 edge_indices = range(len(raw_edges))
             if len(edge_indices) <= 0:
                 return
@@ -1906,7 +1918,7 @@ class solid(shape):
             TopExp_MapShapesAndAncestors(self.shape, TopAbs_EDGE, TopAbs_FACE, edge_map)
             b = BRepFilletAPI_MakeChamfer(self.shape)
             raw_edges = self._raw('edge')
-            if edge_indices == None:
+            if edge_indices is None:
                 edge_indices = range(len(raw_edges))
             if len(edge_indices) <= 0:
                 return
@@ -2528,7 +2540,7 @@ def bezier_cone(rad1, rad2, height, angle=None):
     coefficients to make a bezier a cone instead of revolving it.
     Surfaces of revolution have their own problems.
     """
-    if angle == None:
+    if angle is None:
         angle = 2.0 * sysmath.pi
     e1 = bezier([(rad1, 0.0, 0.0), (rad2, 0.0, height)])
     w1 = polygon([(rad2, 0.0, height),
