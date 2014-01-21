@@ -1128,15 +1128,26 @@ class shape(object):
             ex.Next()
         return retval
 
+    def _valid_subshape(self, stype):
+        types = ['vertex', 'edge', 'wire', 'face', 'shell', 'solid']
+        self_index = types.index(self.stype)
+        sub_index = types.index(stype)
+        if sub_index < self_index:
+            return True
+        else:
+            print 'Warning: ' + stype + ' is not a subshape of ' + self.stype
+            return False
+
     def subshapes(self, stype):
         """
         Returns a list of all the vertices, edges, wires, faces,
         shells, or solids (dependent on stype) in the shape.
         """
-        raw_shapes = self._raw(stype)
         retval = []
-        for raw_shape in raw_shapes:
-            retval.append(eval(stype + '(raw_shape)'))
+        if self._valid_subshape(stype):
+            raw_shapes = self._raw(stype)
+            for raw_shape in raw_shapes:
+                retval.append(eval(stype + '(raw_shape)'))
         return retval
 
     def copy(self):
@@ -1174,11 +1185,12 @@ class shape(object):
         s.subcenters('face') finds the centers of the faces of the
         shape.
         """
-        ss = self._raw(stype)
         centers = []
-        for s in ss:
-            sshape = eval(stype + '(s)')
-            centers.append(sshape.center())
+        if self._valid_subshape(stype):
+            ss = self._raw(stype)
+            for s in ss:
+                sshape = eval(stype + '(s)')
+                centers.append(sshape.center())
         return centers
 
     def check(self):
@@ -1476,7 +1488,7 @@ class face(shape):
         raw_vertices = self._raw('vertex')
         if type(rad) == type(0.0):
             # Make real vertex_indices
-            if vertex_indices is not None:
+            if vertex_indices is None:
                 vertex_indices = range(len(raw_vertices))
             if len(vertex_indices) <= 0:
                 return
