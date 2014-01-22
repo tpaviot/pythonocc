@@ -22,35 +22,28 @@ Revision History
 to 1/11/14: Various Updates
 """
 
-import os
-import time
-import sys
-import math as sysmath  # import * on OCC redefines math
+import os as _os
+import sys as _sys
+import math as _math
 
 try:
     import pygtk, gtk, gtk.gtkgl, gobject
 except ImportError:
     print "Please install (see http://www.pygtk.org)."
-    sys.exit(0)
+    _sys.exit(0)
 
-from OCC.AIS import *
-from OCC.Aspect import *
-from OCC.BRepTools import *
-from OCC.gp import *
-from OCC.Graphic3d import *
-from OCC.HLRAlgo import *
-from OCC.HLRBRep import *
-from OCC.Image import *
-from OCC.Prs3d import *
-from OCC.Quantity import *
-from OCC.TCollection import *
-from OCC.TopAbs import *
-from OCC.TopExp import *
-from OCC.V3d import *
-from OCC.Visual3d import *
-from OCC.Xw import *
-
-import ccad.model as cm
+from OCC import (AIS as _AIS, Aspect as _Aspect, gp as _gp,
+                 Graphic3d as _Graphic3d, Prs3d as _Prs3d,
+                 Quantity as _Quantity, TopAbs as _TopAbs, V3d as _V3d)
+from OCC.BRepTools import BRepTools_WireExplorer as _BRepTools_WireExplorer
+from OCC.HLRAlgo import HLRAlgo_Projector as _HLRAlgo_Projector
+from OCC.HLRBRep import (HLRBRep_Algo as _HLRBRep_Algo,
+                         HLRBRep_HLRToShape as _HLRBRep_HLRToShape)
+from OCC.TCollection import (TCollection_ExtendedString as 
+                             _TCollection_ExtendedString)
+from OCC.TopExp import TopExp_Explorer as _TopExp_Explorer
+from OCC.Visual3d import Visual3d_ViewOrientation as _Visual3d_ViewOrientation
+from OCC.Xw import Xw_Window as _Xw_Window, Xw_WQ_3DQUALITY as _Xw_WQ_3DQUALITY
 
 # Globals
 version = '0.1'
@@ -421,9 +414,9 @@ class view_gtk(object):
         # faults!)
         window_handle = self.glarea.window.xid
 
-        gd = Graphic3d_GraphicDevice(os.environ['DISPLAY'])
-        window = Xw_Window(gd.GetHandle(), window_handle >> 16, window_handle & 0xffff, Xw_WQ_3DQUALITY)
-        self.occ_viewer = V3d_Viewer(gd.GetHandle(), TCollection_ExtendedString('Viewer').ToExtString())
+        gd = _Graphic3d.Graphic3d_GraphicDevice(_os.environ['DISPLAY'])
+        window = _Xw_Window(gd.GetHandle(), window_handle >> 16, window_handle & 0xffff, _Xw_WQ_3DQUALITY)
+        self.occ_viewer = _V3d.V3d_Viewer(gd.GetHandle(), _TCollection_ExtendedString('Viewer').ToExtString())
 
         # This works now, by reading the handle first.  Go figure . . .
         #print 'Viewer created'
@@ -443,19 +436,19 @@ class view_gtk(object):
 
         if not window.IsMapped():
             window.Map()
-        self.occ_context = AIS_InteractiveContext(handle_occ_viewer)
+        self.occ_context = _AIS.AIS_InteractiveContext(handle_occ_viewer)
         handle_occ_context = self.occ_context.GetHandle()
 
         # Some Initial Values
         self.occ_view.SetComputedMode(False)
         self.mode_shaded()
-        self.occ_view.SetBackgroundColor(Quantity_TOC_RGB, 0.0, 0.0, 0.0)
+        self.occ_view.SetBackgroundColor(_Quantity.Quantity_TOC_RGB, 0.0, 0.0, 0.0)
         self.set_triedron(1)
         
         self.occ_view.MustBeResized()
 
         # Set up some initial states
-        self.morbit = sysmath.pi/12.0
+        self.morbit = _math.pi/12.0
         self.set_scale(10.0)
 
     # Event Functions
@@ -578,21 +571,21 @@ class view_gtk(object):
         Sets up the viewing projection according to a standard set of views
         """
         if viewtype == 'front':
-            self.occ_view.SetProj(V3d_Yneg)
+            self.occ_view.SetProj(_V3d.V3d_Yneg)
         elif viewtype == 'back':
-            self.occ_view.SetProj(V3d_Ypos)
+            self.occ_view.SetProj(_V3d.V3d_Ypos)
         elif viewtype == 'top':
-            self.occ_view.SetProj(V3d_Zpos)
+            self.occ_view.SetProj(_V3d.V3d_Zpos)
         elif viewtype == 'bottom':
-            self.occ_view.SetProj(V3d_Zneg)
+            self.occ_view.SetProj(_V3d.V3d_Zneg)
         elif viewtype == 'right':
-            self.occ_view.SetProj(V3d_Xpos)
+            self.occ_view.SetProj(_V3d.V3d_Xpos)
         elif viewtype == 'left':
-            self.occ_view.SetProj(V3d_Xneg)
+            self.occ_view.SetProj(_V3d.V3d_Xneg)
         elif viewtype == 'iso':
-            self.occ_view.SetProj(V3d_XposYnegZpos)
+            self.occ_view.SetProj(_V3d.V3d_XposYnegZpos)
         elif viewtype == 'iso_back':
-            self.occ_view.SetProj(V3d_XnegYposZneg)
+            self.occ_view.SetProj(_V3d.V3d_XnegYposZneg)
         else:
             self.status_bar.set_text('Unknown view' + viewtype)
 
@@ -657,13 +650,13 @@ class view_gtk(object):
         """
         Zoom in
         """
-        self.occ_view.SetZoom(sysmath.sqrt(2.0))
+        self.occ_view.SetZoom(_math.sqrt(2.0))
 
     def zoomout(self, widget=None, rapid=False):
         """
         Zoom out
         """
-        self.occ_view.SetZoom(sysmath.sqrt(0.5))
+        self.occ_view.SetZoom(_math.sqrt(0.5))
 
     def rotateccw(self, widget=None, rapid=False):
         """
@@ -716,7 +709,7 @@ class view_gtk(object):
         vup, the vector from vcenter in scene coordinates that show straight up
         """
 
-        projection = Visual3d_ViewOrientation(Graphic3d_Vertex(vcenter[0], vcenter[1], vcenter[2]), Graphic3d_Vector(vout[0], vout[1], vout[2]), Graphic3d_Vector(vup[0], vup[1], vup[2]))
+        projection = _Visual3d_ViewOrientation(_Graphic3d.Graphic3d_Vertex(vcenter[0], vcenter[1], vcenter[2]), _Graphic3d.Graphic3d_Vector(vout[0], vout[1], vout[2]), _Graphic3d.Graphic3d_Vector(vup[0], vup[1], vup[2]))
         self.occ_view.SetViewOrientation(projection)
 
     def set_scale(self, scale):
@@ -741,7 +734,7 @@ class view_gtk(object):
         Sets the background color.
         color is a 3-tuple with each value from 0.0 to 1.0
         """
-        self.occ_view.SetBackgroundColor(Quantity_TOC_RGB, color[0], color[1], color[2])
+        self.occ_view.SetBackgroundColor(_Quantity.Quantity_TOC_RGB, color[0], color[1], color[2])
 
     def set_foreground(self, color):
         """
@@ -762,17 +755,17 @@ class view_gtk(object):
         if not state:
             self.occ_view.TriedronErase()
         else:
-            local_position = {'down_right': Aspect_TOTP_RIGHT_LOWER,
-                              'down_left': Aspect_TOTP_LEFT_LOWER,
-                              'up_right': Aspect_TOTP_RIGHT_UPPER,
-                              'up_left': Aspect_TOTP_LEFT_UPPER}[position]
+            local_position = {'down_right': _Aspect.Aspect_TOTP_RIGHT_LOWER,
+                              'down_left': _Aspect.Aspect_TOTP_LEFT_LOWER,
+                              'up_right': _Aspect.Aspect_TOTP_RIGHT_UPPER,
+                              'up_left': _Aspect.Aspect_TOTP_LEFT_UPPER}[position]
             # Can't set Triedron color RGB-wise!
             #qcolor = Quantity_Color(color[0], color[1], color[2], Quantity_TOC_RGB)
             if color == (1.0, 1.0, 1.0):
-                qcolor = Quantity_NOC_WHITE
+                qcolor = _Quantity.Quantity_NOC_WHITE
             else:
-                qcolor = Quantity_NOC_BLACK
-            self.occ_view.TriedronDisplay(local_position, qcolor, size, V3d_WIREFRAME)
+                qcolor = _Quantity.Quantity_NOC_BLACK
+            self.occ_view.TriedronDisplay(local_position, qcolor, size, _V3d.V3d_WIREFRAME)
 
     # Things to Show Functions
     def display(self, shape, color=None, material='default', transparency=0.0, line_type='solid', line_width=1, logging=True):
@@ -828,7 +821,7 @@ class view_gtk(object):
                          'line_width': line_width}
         if logging:
             self.display_shapes.append(display_shape)
-        aisshape = AIS_Shape(s)
+        aisshape = _AIS.AIS_Shape(s)
         handle_aisshape = aisshape.GetHandle()
 
         # Set Color
@@ -842,48 +835,48 @@ class view_gtk(object):
         handle_drawer = aisshape.Attributes()
         drawer = handle_drawer.GetObject()
 
-        qcolor = Quantity_Color(color[0], color[1], color[2], Quantity_TOC_RGB)
+        qcolor = _Quantity.Quantity_Color(color[0], color[1], color[2], _Quantity.Quantity_TOC_RGB)
 
         # Set Point Type
-        aspect_point = Prs3d_PointAspect(Aspect_TOM_PLUS, qcolor, 1.0)
+        aspect_point = _Prs3d.Prs3d_PointAspect(_Aspect.Aspect_TOM_PLUS, qcolor, 1.0)
         handle_aspect_point = aspect_point.GetHandle()
         drawer.SetPointAspect(handle_aspect_point)
 
         # Set Line Type
-        local_line_type = {'solid': Aspect_TOL_SOLID,
-                           'dash': Aspect_TOL_DASH,
-                           'dot': Aspect_TOL_DOT}[line_type]
-        aspect_line = Prs3d_LineAspect(qcolor, local_line_type, line_width)
+        local_line_type = {'solid': _Aspect.Aspect_TOL_SOLID,
+                           'dash': _Aspect.Aspect_TOL_DASH,
+                           'dot': _Aspect.Aspect_TOL_DOT}[line_type]
+        aspect_line = _Prs3d.Prs3d_LineAspect(qcolor, local_line_type, line_width)
         handle_aspect_line = aspect_line.GetHandle()
         #drawer = self.occ_context.DefaultDrawer().GetObject()
         drawer.SetSeenLineAspect(handle_aspect_line)
         drawer.SetWireAspect(handle_aspect_line)
 
         # Set Shading Type
-        aspect_shading = Prs3d_ShadingAspect()
+        aspect_shading = _Prs3d.Prs3d_ShadingAspect()
         handle_aspect_shading = aspect_shading.GetHandle()
         #print 'shading color', color
-        aspect_shading.SetColor(qcolor, Aspect_TOFM_BOTH_SIDE)
-        local_material = {'brass': Graphic3d_NOM_BRASS,
-                          'bronze': Graphic3d_NOM_BRONZE,
-                          'copper': Graphic3d_NOM_COPPER,
-                          'gold': Graphic3d_NOM_GOLD,
-                          'pewter': Graphic3d_NOM_PEWTER,
-                          'plaster': Graphic3d_NOM_PLASTER,
-                          'plastic': Graphic3d_NOM_PLASTIC,
-                          'silver': Graphic3d_NOM_SILVER,
-                          'steel': Graphic3d_NOM_STEEL,
-                          'stone': Graphic3d_NOM_STONE,
-                          'shiny_plastic': Graphic3d_NOM_SHINY_PLASTIC,
-                          'satin': Graphic3d_NOM_SATIN,
-                          'metallized': Graphic3d_NOM_METALIZED,
-                          'neon_gnc': Graphic3d_NOM_NEON_GNC,
-                          'chrome': Graphic3d_NOM_CHROME,
-                          'aluminum': Graphic3d_NOM_ALUMINIUM,
-                          'obsidian': Graphic3d_NOM_OBSIDIAN,
-                          'neon_phc': Graphic3d_NOM_NEON_PHC,
-                          'jade': Graphic3d_NOM_JADE,
-                          'default': Graphic3d_NOM_DEFAULT}[material]
+        aspect_shading.SetColor(qcolor, _Aspect.Aspect_TOFM_BOTH_SIDE)
+        local_material = {'brass': _Graphic3d.Graphic3d_NOM_BRASS,
+                          'bronze': _Graphic3d.Graphic3d_NOM_BRONZE,
+                          'copper': _Graphic3d.Graphic3d_NOM_COPPER,
+                          'gold': _Graphic3d.Graphic3d_NOM_GOLD,
+                          'pewter': _Graphic3d.Graphic3d_NOM_PEWTER,
+                          'plaster': _Graphic3d.Graphic3d_NOM_PLASTER,
+                          'plastic': _Graphic3d.Graphic3d_NOM_PLASTIC,
+                          'silver': _Graphic3d.Graphic3d_NOM_SILVER,
+                          'steel': _Graphic3d.Graphic3d_NOM_STEEL,
+                          'stone': _Graphic3d.Graphic3d_NOM_STONE,
+                          'shiny_plastic': _Graphic3d.Graphic3d_NOM_SHINY_PLASTIC,
+                          'satin': _Graphic3d.Graphic3d_NOM_SATIN,
+                          'metallized': _Graphic3d.Graphic3d_NOM_METALIZED,
+                          'neon_gnc': _Graphic3d.Graphic3d_NOM_NEON_GNC,
+                          'chrome': _Graphic3d.Graphic3d_NOM_CHROME,
+                          'aluminum': _Graphic3d.Graphic3d_NOM_ALUMINIUM,
+                          'obsidian': _Graphic3d.Graphic3d_NOM_OBSIDIAN,
+                          'neon_phc': _Graphic3d.Graphic3d_NOM_NEON_PHC,
+                          'jade': _Graphic3d.Graphic3d_NOM_JADE,
+                          'default': _Graphic3d.Graphic3d_NOM_DEFAULT}[material]
         aspect_shading.SetMaterial(local_material)
         aspect_shading.SetTransparency(transparency)
         drawer.SetShadingAspect(handle_aspect_shading)
@@ -903,19 +896,19 @@ class view_gtk(object):
     # Selection Functions
     def _build_hashes(self, htype):
         if htype == 'face':
-            ex_type = TopAbs_FACE
+            ex_type = _TopAbs.TopAbs_FACE
         elif htype == 'wire':
-            ex_type = TopAbs_WIRE
+            ex_type = _TopAbs.TopAbs_WIRE
         elif htype == 'edge':
-            ex_type = TopAbs_EDGE
+            ex_type = _TopAbs.TopAbs_EDGE
         elif htype == 'vertex':
-            ex_type = TopAbs_VERTEX
+            ex_type = _TopAbs.TopAbs_VERTEX
         else:
             print 'Error: Unknown hash type', htype
-        if self.selected_shape.ShapeType == TopAbs_WIRE and htype == 'edge':
-            ex = BRepTools_WireExplorer(selected_shape)  # Ordered this way
+        if self.selected_shape.ShapeType == _TopAbs.TopAbs_WIRE and htype == 'edge':
+            ex = _BRepTools_WireExplorer(selected_shape)  # Ordered this way
         else:
-            ex = TopExp_Explorer(self.selected_shape, ex_type)
+            ex = _TopExp_Explorer(self.selected_shape, ex_type)
         self.hashes = []
         self.positions = []
         while ex.More():
@@ -967,7 +960,7 @@ class view_gtk(object):
         self.glarea.window.set_cursor(self.WAIT_CURSOR)
         self.occ_context.CloseAllContexts()
         self.occ_context.OpenLocalContext()
-        self.occ_context.ActivateStandardMode(TopAbs_VERTEX)
+        self.occ_context.ActivateStandardMode(_TopAbs.TopAbs_VERTEX)
         self._build_hashes('vertex')
         self.selection_type = 'vertex'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
@@ -979,7 +972,7 @@ class view_gtk(object):
         self.glarea.window.set_cursor(self.WAIT_CURSOR)
         self.occ_context.CloseAllContexts()
         self.occ_context.OpenLocalContext()
-        self.occ_context.ActivateStandardMode(TopAbs_EDGE)
+        self.occ_context.ActivateStandardMode(_TopAbs.TopAbs_EDGE)
         self._build_hashes('edge')
         self.selection_type = 'edge'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
@@ -991,7 +984,7 @@ class view_gtk(object):
         self.glarea.window.set_cursor(self.WAIT_CURSOR)
         self.occ_context.CloseAllContexts()
         self.occ_context.OpenLocalContext()
-        self.occ_context.ActivateStandardMode(TopAbs_WIRE)
+        self.occ_context.ActivateStandardMode(_TopAbs.TopAbs_WIRE)
         self._build_hashes('wire')
         self.selection_type = 'wire'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
@@ -1003,7 +996,7 @@ class view_gtk(object):
         self.glarea.window.set_cursor(self.WAIT_CURSOR)
         self.occ_context.CloseAllContexts()
         self.occ_context.OpenLocalContext()
-        self.occ_context.ActivateStandardMode(TopAbs_FACE)
+        self.occ_context.ActivateStandardMode(_TopAbs.TopAbs_FACE)
         self._build_hashes('face')
         self.selection_type = 'face'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
@@ -1024,7 +1017,7 @@ class view_gtk(object):
         """
         if not widget or (widget and widget.get_active()):
             self.occ_view.SetComputedMode(False)
-            self.occ_context.SetDisplayMode(AIS_WireFrame)
+            self.occ_context.SetDisplayMode(_AIS.AIS_WireFrame)
 
     def mode_shaded(self, widget=None):
         """
@@ -1032,7 +1025,7 @@ class view_gtk(object):
         """
         if not widget or (widget and widget.get_active()):
             self.occ_view.SetComputedMode(False)
-            self.occ_context.SetDisplayMode(AIS_Shaded)
+            self.occ_context.SetDisplayMode(_AIS.AIS_Shaded)
 
     def mode_hlr(self, widget=None):
         """
@@ -1042,7 +1035,7 @@ class view_gtk(object):
         """
         if not widget or (widget and widget.get_active()):
             self.occ_view.SetComputedMode(True)
-            self.occ_context.SetDisplayMode(AIS_ExactHLR)
+            self.occ_context.SetDisplayMode(_AIS.AIS_ExactHLR)
 
         # Draws hidden lines
         #presentation = Prs3d_LineAspect(Quantity_NOC_BLACK, Aspect_TOL_DASH, 3)
@@ -1070,18 +1063,18 @@ class view_gtk(object):
         vcenter = self.saved_projection.ViewReferencePoint()  # Graphic3d_Vertex
         vout = self.saved_projection.ViewReferencePlane()  # Graphic3d_Vector
         vup = self.saved_projection.ViewReferenceUp()  # Graphic3d_Vector
-        vout_gp = gp_Vec(vout.X(), vout.Y(), vout.Z())
-        vright = gp_Vec(vup.X(), vup.Y(), vup.Z())
+        vout_gp = _gp.gp_Vec(vout.X(), vout.Y(), vout.Z())
+        vright = _gp.gp_Vec(vup.X(), vup.Y(), vup.Z())
         vright.Cross(vout_gp)
-        projection = HLRAlgo_Projector(gp_Ax2(gp_Pnt(vcenter.X(), vcenter.Y(), vcenter.Z()), gp_Dir(vout.X(), vout.Y(), vout.Z()), gp_Dir(vright.X(), vright.Y(), vright.Z())))
-        hlr_algo = HLRBRep_Algo()
+        projection = _HLRAlgo_Projector(_gp.gp_Ax2(_gp.gp_Pnt(vcenter.X(), vcenter.Y(), vcenter.Z()), _gp.gp_Dir(vout.X(), vout.Y(), vout.Z()), _gp.gp_Dir(vright.X(), vright.Y(), vright.Z())))
+        hlr_algo = _HLRBRep_Algo()
         handle_hlr_algo = hlr_algo.GetHandle()
         for display_shape in self.display_shapes:
             hlr_algo.Add(display_shape['shape'])
         hlr_algo.Projector(projection)
         hlr_algo.Update()
         hlr_algo.Hide()
-        hlr_toshape = HLRBRep_HLRToShape(handle_hlr_algo)
+        hlr_toshape = _HLRBRep_HLRToShape(handle_hlr_algo)
         vcompound = hlr_toshape.VCompound()
         outlinevcompound = hlr_toshape.OutLineVCompound()
         self.clear(0)
@@ -1173,7 +1166,7 @@ def view(manager='gtk', perspective=False):
         return v1
     else:
         print 'Error: Manager', manager, 'not supported'
-        sys.exit()
+        _sys.exit()
 
 
 def start():  # For non-interactive sessions (don't run in ipython)
