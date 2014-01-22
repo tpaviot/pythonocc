@@ -53,7 +53,7 @@ from OCC.Xw import *
 import ccad.model as cm
 
 # Globals
-version = 0.1
+version = '0.1'
 interactive = True
 
 
