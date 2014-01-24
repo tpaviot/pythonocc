@@ -1300,29 +1300,28 @@ class shape(object):
         ttype limits the tolerance type to 'min', 'average', or 'max'.
         """
 
-        b1 = _BRep_Tool()
         tolerances = []
 
         # Vertices
         if stype == 'vertex' or stype == 'all':
             raw_shapes = self._raw('vertex')
             for raw_shape in raw_shapes:
-                tolerances.append(b1.Tolerance(_TopoDS_vertex(raw_shape)))
+                tolerances.append(_BRep_Tool.Tolerance(_TopoDS_vertex(raw_shape)))
 
         # Edges
         if stype == 'edge' or stype == 'all':
             raw_shapes = self._raw('edge')
             for raw_shape in raw_shapes:
-                tolerances.append(b1.Tolerance(_TopoDS_edge(raw_shape)))
+                tolerances.append(_BRep_Tool.Tolerance(_TopoDS_edge(raw_shape)))
 
         # Faces
         if stype == 'face' or stype == 'all':
             raw_shapes = self._raw('face')
             for raw_shape in raw_shapes:
-                tolerances.append(b1.Tolerance(_TopoDS_face(raw_shape)))
+                tolerances.append(_BRep_Tool.Tolerance(_TopoDS_face(raw_shape)))
 
         min_tol = min(tolerances)
-        ave_tol = reduce(lambda x, y: x + y, tolerances) / len(tolerances)
+        ave_tol = sum(tolerances) / len(tolerances)
         max_tol = max(tolerances)
 
         retval = (min_tol, ave_tol, max_tol)
@@ -1349,13 +1348,11 @@ class vertex(shape):
             self.shape = s
 
     def center(self):
-        b = _BRep_Tool()
-        p = b.Pnt(_TopoDS_vertex(self.shape))
+        p = _BRep_Tool.Pnt(_TopoDS_vertex(self.shape))
         return (p.X(), p.Y(), p.Z())
 
     def tolerance(self):
-        b = _BRep_Tool()
-        return b.Tolerance(_TopoDS_vertex(self.shape))
+        return _BRep_Tool.Tolerance(_TopoDS_vertex(self.shape))
 
 
 class edge(shape):
@@ -1382,8 +1379,7 @@ class edge(shape):
         return g1.Mass()
 
     def tolerance(self):
-        b = _BRep_Tool()
-        return b.Tolerance(_TopoDS_edge(self.shape))
+        return _BRep_Tool.Tolerance(_TopoDS_edge(self.shape))
 
     def type(self):
         """
@@ -1407,8 +1403,7 @@ class edge(shape):
         """
         Returns a polyline approximation to the edge
         """
-        brt = _BRep_Tool()
-        c1 = brt.Curve(_TopoDS_edge(self.shape))
+        c1 = _BRep_Tool.Curve(_TopoDS_edge(self.shape))
         gac1 = _GeomAdaptor_Curve(c1[0], c1[1], c1[2])
         ud = _GCPnts_QuasiUniformDeflection(gac1, deflection)
         retval = []
@@ -1571,15 +1566,14 @@ class face(shape):
         return g1.Mass()
 
     def tolerance(self):
-        b = _BRep_Tool()
-        return b.Tolerance(_TopoDS_face(self.shape))
+        return _BRep_Tool.Tolerance(_TopoDS_face(self.shape))
 
     def type(self):
         """
         Returns the type of surface the face is part of
         """
-        b1 = _BRep_Tool()
-        t1 = _GeomAdaptor_Surface(b1.Surface(_TopoDS_face(self.shape))).GetType()
+        t1 = _GeomAdaptor_Surface(
+                _BRep_Tool.Surface(_TopoDS_face(self.shape))).GetType()
         return {_GeomAbs.GeomAbs_Plane: 'plane',
                 _GeomAbs.GeomAbs_Cylinder: 'cylinder',
                 _GeomAbs.GeomAbs_Cone: 'cone',
@@ -2396,8 +2390,7 @@ def surface(f1, w1):
     Returns a face which has a surface defined by a face f1 bounded by
     the closed wire w1.
     """
-    brt = _BRep_Tool()
-    s = brt.Surface(_TopoDS_face(f1.shape))
+    s = _BRep_Tool.Surface(_TopoDS_face(f1.shape))
     b = _BRepBuilderAPI.BRepBuilderAPI_MakeFace(s, _TopoDS_wire(w1.shape))
     return face(b.Face())
 
