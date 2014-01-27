@@ -173,7 +173,6 @@ def _scale(s1, sx=1.0, sy=1.0, sz=1.0):
     m = _gp.gp_GTrsf()
     m.SetVectorialPart(_gp.gp_Mat(sx, 0, 0, 0, sy, 0, 0, 0, sz))
     trf = _BRepBuilderAPI.BRepBuilderAPI_GTransform(s1.shape, m, False)
-    trf.Build()
     return trf.Shape()
 
 
@@ -428,12 +427,10 @@ def _raw_faces_merge(f1, f2):
                 while count2 not in c2s:
                     b2.Add(e2s[count2])
                     count2 = (count2 + 1) % len(e2s)
-                b2.Build()
                 b.Add(_TopoDS_wire(b2.Wire()))
         else:
             b.Add(e1s[count])
             ds.append(edge(e1s[count]))
-    b.Build()
     w = b.Wire()
     b = _ShapeFix_Shape(w)
     b.Perform()
@@ -1021,9 +1018,6 @@ class shape(object):
     A base class for all shapes: edge, wire, face, shell, solid.
     """
 
-    def __init__(self, s):
-        self.shape = s
-
     def _raw_type(self):
         return _raw_type(self.shape)
 
@@ -1340,19 +1334,23 @@ class vertex(shape):
     stype = 'vertex'
 
     def __init__(self, s):
-        if type(s) in [type([]), type(())]:
-            b = _BRepBuilderAPI.BRepBuilderAPI_MakeVertex(_gp.gp_Pnt(s[0], s[1], s[2]))
-            b.Build()
+        if isinstance(s, (list, tuple)):
+            b = _BRepBuilderAPI.BRepBuilderAPI_MakeVertex(
+                        _gp.gp_Pnt(s[0], s[1], s[2]))
             self.shape = b.Vertex()
-        else:
+        elif isinstance(s, _TopoDS.TopoDS_Vertex):
             self.shape = s
+        elif isinstance(s, _TopoDS.TopoDS_Shape):
+            self.shape = _TopoDS_vertex(s)
+        else:
+            raise TypeError
 
     def center(self):
-        p = _BRep_Tool.Pnt(_TopoDS_vertex(self.shape))
+        p = _BRep_Tool.Pnt(self.shape)
         return (p.X(), p.Y(), p.Z())
 
     def tolerance(self):
-        return _BRep_Tool.Tolerance(_TopoDS_vertex(self.shape))
+        return _BRep_Tool.Tolerance(self.shape)
 
 
 class edge(shape):
@@ -1361,6 +1359,14 @@ class edge(shape):
     """
 
     stype = 'edge'
+
+    def __init__(self, s):
+        if isinstance(s, _TopoDS.TopoDS_Edge):
+            self.shape = s
+        elif isinstance(s, _TopoDS.TopoDS_Shape):
+            self.shape = _TopoDS_edge(s)
+        else:
+            raise TypeError
 
     def center(self):
         g1 = _GProp_GProps()
@@ -1422,7 +1428,7 @@ class wire(shape):
     stype = 'wire'
 
     def __init__(self, es):
-        if type(es) in [type([]), type(())]:
+        if isinstance(es, (list, tuple)):
             b = _BRepBuilderAPI.BRepBuilderAPI_MakeWire()
             for e in es:
                 if e.stype == 'edge':
@@ -1431,10 +1437,13 @@ class wire(shape):
                     b.Add(_TopoDS_wire(e.shape))
                 else:
                     print 'Error: Cannot add', e.stype, 'to wire.'
-            b.Build()
             self.shape = b.Wire()
-        else:
+        elif isinstance(es, _TopoDS.TopoDS_Wire):
             self.shape = es
+        elif isinstance(es, _TopoDS.TopoDS_Shape):
+            self.shape = _TopoDS_wire(es)
+        else:
+            raise TypeError
 
     def center(self):
         subs = self.subshapes('edge')
@@ -1483,6 +1492,14 @@ class face(shape):
     """
 
     stype = 'face'
+
+    def __init__(self, s):
+        if isinstance(s, _TopoDS.TopoDS_Face):
+            self.shape = s
+        elif isinstance(s, _TopoDS.TopoDS_Shape):
+            self.shape = _TopoDS_face(s)
+        else:
+            raise TypeError
 
     def fillet(self, rad, vertex_indices=None):
         """
@@ -1596,15 +1613,19 @@ class shell(shape):
     stype = 'shell'
 
     def __init__(self, fs, tolerance=1e-6):
-        if type(fs) in [type([]), type(())]:
+        if isinstance(fs, (list, tuple)):
             b = _BRepBuilderAPI.BRepBuilderAPI_Sewing(tolerance)
             for f in fs:
                 b.Add(f.shape)
             b.Perform()
             self.shape = b.SewedShape()
             print 'sewing type:', self._raw_type()
-        else:
+        elif isinstance(fs, _TopoDS.TopoDS_Shell):
             self.shape = fs
+        elif isinstance(fs, _TopoDS.TopoDS_Shape):
+            self.shape = _TopoDS_shell(fs)
+        else:
+            raise TypeError
 
     def center(self):
         subs = self.subshapes('face')
@@ -1648,8 +1669,12 @@ class solid(shape):
             for s in ss:
                 b.Add(_TopoDS_shell(s.shape))
             self.shape = b.Solid()
-        else:
+        elif isinstance(ss, _TopoDS.TopoDS_Solid):
             self.shape = ss
+        elif isinstance(ss, _TopoDS.TopoDS_Shape):
+            self.shape = _TopoDS.TopoDS_solid(ss)
+        else:
+            raise TypeError
 
     def __add__(self, other):
         return fuse(self, other)
