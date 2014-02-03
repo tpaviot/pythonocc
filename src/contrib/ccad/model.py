@@ -1940,7 +1940,7 @@ class solid(shape):
                 edge_indices = range(len(raw_edges))
             if len(edge_indices) <= 0:
                 return
-            if isinstance(edge_indices[0], int):  # coordinate positions
+            if not isinstance(edge_indices[0], int):  # coordinate positions
                 edge_indices = self.nearest('edge', edge_indices)
                 #print 'edge_indices', edge_indices
             fillet_rads = [(rad, edge_indices)]
