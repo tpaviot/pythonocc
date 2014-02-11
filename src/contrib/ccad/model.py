@@ -2878,7 +2878,7 @@ def offset(s1, dist, tolerance=1e-3, join='arc'):
         raw_shape = b.Shape()
         ss = []
         if _raw_type(raw_shape) == 'compound':
-            ex = _TopExp_Explorer(s, _TopAbs.TopAbs_SOLID)
+            ex = _TopExp_Explorer(raw_shape, _TopAbs.TopAbs_SOLID)
             while ex.More():
                 ss.append(solid(ex.Current()))
                 ex.Next()
