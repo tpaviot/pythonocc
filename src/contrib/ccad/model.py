@@ -18,13 +18,6 @@ License
 Distributed under the GNU LESSER GENERAL PUBLIC LICENSE Version 3.
 View LICENSE for details.
 
-Revision History
-----------------
-12/17/11: Began
-01/09/12: Merged shapes and primitives into model.py
-to 1/11/14: Various Updates
-1/20/14: Replaced == None with is None
-
 Philosophy
 ----------
 
@@ -60,11 +53,13 @@ To Do
 8. Distinction between face, wire, solid, etc. can get muddled after
    certain operations, particularly boolean.  Ought to be more careful
    about this.
+
+9. Separate compound, compsolid from solid.
 """
 
 from os import path as _path
 import sys as _sys
-import re  as _re# Needed for svg
+import re  as _re # Needed for svg
 import math as _math
 
 #from OCC.ChFi3d import *
@@ -123,23 +118,6 @@ from OCC.TopOpeBRep import (TopOpeBRep_FacesIntersector as
 from OCC.TopOpeBRepTool import (TopOpeBRepTool_FuseEdges as
                                 _TopOpeBRepTool_FuseEdges)
 from OCC import TopTools as _TopTools
-
-# Generic Functions
-def _explode_args(args):
-    """
-    Takes a list of arguments with multiple depths and flattens it.
-    """
-    retval = []
-    for arg in args:
-        try:
-            a = len(arg)
-        except TypeError:
-            a = -1
-        if a >= 0 and type(a) != type(''):
-            retval = retval + _explode_args(arg)
-        else:
-            retval.append(arg)
-    return retval
 
 
 # Shape Functions
@@ -1009,8 +987,10 @@ def _raw_type(raw_shape):
                  _TopAbs.TopAbs_EDGE: 'edge',
                  _TopAbs.TopAbs_VERTEX: 'vertex',
                  _TopAbs.TopAbs_SHAPE: 'shape'}
-    return raw_types[raw_shape.ShapeType()]
-
+    try:
+        return raw_types[raw_shape.ShapeType()]
+    except:
+        return 'unknown'
 
 # Classes
 class shape(object):
@@ -1340,7 +1320,7 @@ class vertex(shape):
             self.shape = b.Vertex()
         elif isinstance(s, _TopoDS.TopoDS_Vertex):
             self.shape = s
-        elif isinstance(s, _TopoDS.TopoDS_Shape):
+        elif isinstance(s, _TopoDS.TopoDS_Shape) and _raw_type(s) == 'vertex':
             self.shape = _TopoDS_vertex(s)
         else:
             raise TypeError
@@ -1363,7 +1343,7 @@ class edge(shape):
     def __init__(self, s):
         if isinstance(s, _TopoDS.TopoDS_Edge):
             self.shape = s
-        elif isinstance(s, _TopoDS.TopoDS_Shape):
+        elif isinstance(s, _TopoDS.TopoDS_Shape) and _raw_type(s) == 'edge':
             self.shape = _TopoDS_edge(s)
         else:
             raise TypeError
@@ -1440,7 +1420,7 @@ class wire(shape):
             self.shape = b.Wire()
         elif isinstance(es, _TopoDS.TopoDS_Wire):
             self.shape = es
-        elif isinstance(es, _TopoDS.TopoDS_Shape):
+        elif isinstance(es, _TopoDS.TopoDS_Shape) and _raw_type(es) == 'wire':
             self.shape = _TopoDS_wire(es)
         else:
             raise TypeError
@@ -1496,7 +1476,7 @@ class face(shape):
     def __init__(self, s):
         if isinstance(s, _TopoDS.TopoDS_Face):
             self.shape = s
-        elif isinstance(s, _TopoDS.TopoDS_Shape):
+        elif isinstance(s, _TopoDS.TopoDS_Shape) and _raw_type(s) == 'face':
             self.shape = _TopoDS_face(s)
         else:
             raise TypeError
@@ -1519,7 +1499,7 @@ class face(shape):
         """
 
         raw_vertices = self._raw('vertex')
-        if type(rad) == type(0.0):
+        if isinstance(rad, float):
             # Make real vertex_indices
             if vertex_indices is None:
                 vertex_indices = range(len(raw_vertices))
@@ -1622,7 +1602,7 @@ class shell(shape):
             print 'sewing type:', self._raw_type()
         elif isinstance(fs, _TopoDS.TopoDS_Shell):
             self.shape = fs
-        elif isinstance(fs, _TopoDS.TopoDS_Shape):
+        elif isinstance(fs, _TopoDS.TopoDS_Shape) and _raw_type(fs) == 'shell':
             self.shape = _TopoDS_shell(fs)
         else:
             raise TypeError
@@ -1659,12 +1639,16 @@ class solid(shape):
     """
     A closed and filled shell.  Can be instantiated with a list of
     shells to connect.
+
+    Currently OCC compund and compsolid are also handled by solid.
+    That isn't right.  Ultimately, should make them their own classes
+    and type check more carefully ***.
     """
 
     stype = 'solid'
 
     def __init__(self, ss):
-        if isinstance(ss, list):
+        if isinstance(ss, (list, tuple)):
             b = _BRepBuilderAPI.BRepBuilderAPI_MakeSolid()
             for s in ss:
                 b.Add(_TopoDS_shell(s.shape))
@@ -1672,7 +1656,14 @@ class solid(shape):
         elif isinstance(ss, _TopoDS.TopoDS_Solid):
             self.shape = ss
         elif isinstance(ss, _TopoDS.TopoDS_Shape):
-            self.shape = _TopoDS.TopoDS_solid(ss)
+            if _raw_type(ss) == 'solid':
+                self.shape = _TopoDS.TopoDS_solid(ss)
+            elif _raw_type(ss) == 'compound':
+                self.shape = _TopoDS.TopoDS_compound(ss)
+            elif _raw_type(ss) == 'compsolid':
+                self.shape = _TopoDS.TopoDS_compsolid(ss)
+            else:
+                raise TypeError
         else:
             raise TypeError
 
