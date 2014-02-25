@@ -1173,6 +1173,7 @@ class ModularBuilder(object):
                           'NCollection_Vec2.hxx', 'NCollection_Vec3.hxx',
                           'NCollection_Vec4.hxx',
                           'Font_FTFont.hxx', 'Font_FTLibrary.hxx',
+                          'AIS_ExclusionFilter'
                           ]
         if sys.platform != 'win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx')  # error with gccxml under Linux
