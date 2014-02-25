@@ -664,14 +664,15 @@ SALOME_GEOM_MODULES = [
            ('SGEOM', ['TDataStd', 'TColStd', 'TDF', 'CDM', 'CDF', 'Quantity',
                       'Storage', 'PCDM'], [],
             {'GEOM_SubShapeDriver': ['GetID'],
+             'GEOM_BaseDriver': ['GetCreationInformation'],
              'GEOM_Engine': ['GetTextureGUID', 'DumpPython']}),
            ('GEOMAlgo', ['gp', 'TopoDS', 'Handle_TCollection',
-                         'BooleanOperations'], ['GEOMAlgo_GetInPlaceIterator'],
+                         'XBooleanOperations'], ['GEOMAlgo_GetInPlaceIterator'],
             {'GEOMAlgo_Gluer2': ['KeepNonSolids'],
              'GEOMAlgo_Gluer': ['KeepNonSolids']}),
            ('GEOMImpl', ['gp', 'TopoDS', 'TDataStd', 'TDocStd', 'CDM', 'TDF',
                          'Handle_TCollection', 'CDF', 'Aspect', 'Quantity',
-                         'Handle_Storage', 'PCDM', 'BooleanOperations'],
+                         'Handle_Storage', 'PCDM', 'XBooleanOperations'],
             ['GEOMImpl_Block6Explorer', 'GEOMImpl_Template',
              'Handle_GEOMImpl_Template'],
             {'GEOMImpl_IShapesOperations': ['GetShapesOnCylinderOld',
@@ -679,22 +680,25 @@ SALOME_GEOM_MODULES = [
                                             'GetShapeProperties'],
              'GEOMImpl_ITransformOperations': ['ScaleShapeAlongAxes'],
              'GEOMImpl_IInsertOperations': ['GetAllTextures'],
-             'GEOMImpl_Fillet1dPoint': ['RemoveSolution']}),
+             'GEOMImpl_Fillet1dPoint': ['RemoveSolution'],
+             'GEOMImpl_SketcherDriver': ['GetCreationInformation']}),
            ('BlockFix', ['TopTools', 'Handle_TCollection'], [],
-            {'BlockFix_SphereSpaceModifier': ['ForRotation']}),
+            {'BlockFix_SphereSpaceModifier': ['ForRotation'],
+             'BlockFix': ['RefillProblemFaces']}),
            ('NMTDS', ['gp', 'TopoDS'], []),
            ('NMTTools', ['gp', 'TopoDS'], [],
             {'NMTTools_IteratorOfCoupleOfShape': ['DS']}),
            ('Partition', ['TopoDS', 'gp'], []),
            ('ShHealOper', ['Geom', 'Handle_TCollection',
                            'Handle_Message', 'Handle_ShapeExtend'], []),
+           ('XBooleanOperations', [], [])
     ]
 
 #
 # SalomeSMESH modules
 #
 SALOME_SMESH_MODULES = [('SMDSAbs', [], []),
-           ('SMDS', [], ['SMDS_PolyhedralVolumeOfNodes',
+          ('SMDS', [], ['SMDS_PolyhedralVolumeOfNodes',
                          'SMDS_IteratorOfElements'],
             {'SMDS_Mesh': ['AddVolumeWithID', 'AddVolume', 'AddFaceWithID',
                            'AddFace', 'AddPolygonalFace',
@@ -728,9 +732,9 @@ SALOME_SMESH_MODULES = [('SMDSAbs', [], []),
                       'TColStd',
                       'AIS', 'SelectMgr', 'StdSelect', 'MeshVS',
                       'PrsMgr', 'Graphic3d',
-                      'Xw', 'MFT', 'Aspect', 'Quantity', 'Prs3d',
+                      'MFT', 'Aspect', 'Quantity', 'Prs3d',
                       'Handle_TCollection',
-                      'OSD', 'Font', 'Standard', 'Handle_Image',
+                      'OSD', 'Handle_Font', 'Standard', 'Image',
                       'Handle_math'],
             ['SMESH_Comment', 'SMESH_OctreeNode',
              'SMESH_MeshEditor', 'SMESH_0D_Algo', 'SMESH_1D_Algo',
@@ -746,12 +750,13 @@ SALOME_SMESH_MODULES = [('SMDSAbs', [], []),
              'SMESH_Hypothesis': ['SMESH_Hypothesis']})]
 
 if sys.platform != 'win32':
-    SALOME_SMESH_MODULES.append(('StdMeshers', ['SMDS'], [],
+    SALOME_SMESH_MODULES.append(('StdMeshers', ['SMDS', 'Image'], [],
                                 {'StdMeshers_Hexa_3D': ['OppositeVertex'],
                                  'StdMeshers_MEFISTO_2D': ['LoadPoints']}),)
     SALOME_GEOM_MODULES.append(('Sketcher', ['TColStd', 'Visual3d',
-                               'Graphic3d', 'OSD', 'Xw', 'MFT', 'Aspect',
-                               'Font', 'Handle_TCollection', 'Viewer'], []))
+                               'Graphic3d', 'OSD', 'MFT', 'Aspect',
+                               'Handle_TCollection', 'Viewer', 'Image',
+                               'Font_SystemFont', 'Font_FontMgr'], []))
 else:
     SALOME_SMESH_MODULES.append(('StdMeshers', ['SMDS'],
                                 ['StdMeshers_ProjectionUtils'],

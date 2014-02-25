@@ -237,7 +237,7 @@ class ModularBuilder(object):
                            'TNodeNodeMap', 'EventListener',
                            'EventListenerData', 'TLinkNodeMap',
                            'MapShapeNbElems', 'size', 'locale',
-                           'TEL', 'BOPCol']:
+                           'TEL', 'BOPCol', 'TangentType']:
             return True
         if module_name == 'GEOM':
             module_name = 'SGEOM'
@@ -1153,6 +1153,7 @@ class ModularBuilder(object):
                           'WNT_FontTable.hxx',
                           'AlienImage_GIFLZWDict.hxx',
                           'Image_PixelFieldOfDIndexedImage.hxx',
+                          'Image_PixelFieldOfDColorImage.hxx',
                           'Standard_Transient_proto.hxx',
                           'TopOpeBRepBuild_Builder.hxx',
                           'TopOpeBRepBuild_Fill.hxx',
@@ -1169,10 +1170,9 @@ class ModularBuilder(object):
                           'NCollection_EBTree.hxx',
                           'NCollection_CellFilter.hxx',
                           'Standard_StdAllocator.hxx',
-                          'Image_PixelFieldOfDIndexedImage.hxx',
                           'NCollection_Vec2.hxx', 'NCollection_Vec3.hxx',
                           'NCollection_Vec4.hxx',
-                          'Font_FTFont.hxx', 'Font_FTLibrary.hxx'
+                          'Font_FTFont.hxx', 'Font_FTLibrary.hxx',
                           ]
         if sys.platform != 'win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx')  # error with gccxml under Linux
