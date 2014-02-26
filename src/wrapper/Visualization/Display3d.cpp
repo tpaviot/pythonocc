@@ -51,12 +51,14 @@ void Display3d::Init(long window_handle)
       myWindow = new Cocoa_Window (reinterpret_cast<NSView *>(window_handle));
       printf("Cocoa window created.\n");
   #else
-      gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
-      printf("Unix/Linux - Graphic device created.\n");
-      myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_3DQUALITY);
+      Handle(OpenGl_GraphicDriver) gd;
+      gd = new OpenGl_GraphicDriver ();
+      printf("Unix/Linux - OpenGl Graphic driver created.\n");
+      myWindow =new Xw_Window(gd->GetDisplayConnection(), static_cast<Standard_Integer>(hi),
+                              static_cast<Standard_Integer>(lo),Xw_WQ_3DQUALITY);
       printf("Xw_Window created.\n");
-    #endif
-    // Create graphic driver
+  #endif
+  // Create graphic driver
     Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection();
     if (GetGraphicDriver().IsNull())
     {
