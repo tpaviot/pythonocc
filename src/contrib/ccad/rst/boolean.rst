@@ -13,7 +13,7 @@ Fuse
 ----
 
 fuse fuses two solids together.  Either one of the two lines below
-fuses s1 and s2::
+fuses **s1** and **s2**::
 
   s3 = s1 + s2
 
@@ -27,7 +27,7 @@ Cut
 ---
 
 cut cuts one solid from the other.  Either one of the two lines below
-cuts s2 from s1::
+cuts **s2** from **s1**::
 
   s3 = s1 - s2
 
@@ -41,7 +41,7 @@ Common
 ------
 
 common finds the common portions of each solid.  Either one of the two
-lines below finds the common portions of s1 and s2::
+lines below finds the common portions of **s1** and **s2**::
 
   s3 = s1 & s2
 

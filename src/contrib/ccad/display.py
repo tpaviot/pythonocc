@@ -15,11 +15,6 @@ License
 -------
 Distributed under the GNU LESSER GENERAL PUBLIC LICENSE Version 3.
 View LICENSE for details.
-
-Revision History
-----------------
-12/17/11: Began
-to 1/11/14: Various Updates
 """
 
 import os as _os
@@ -44,6 +39,9 @@ from OCC.TCollection import (TCollection_ExtendedString as
 from OCC.TopExp import TopExp_Explorer as _TopExp_Explorer
 from OCC.Visual3d import Visual3d_ViewOrientation as _Visual3d_ViewOrientation
 from OCC.Xw import Xw_Window as _Xw_Window, Xw_WQ_3DQUALITY as _Xw_WQ_3DQUALITY
+
+import ccad.model as _cm
+
 
 # Globals
 version = '0.1'
@@ -105,6 +103,7 @@ class view_gtk(object):
         self.win.show()
         #window_handle = self.win.window.xid
         #print 'window_handle', window_handle
+        self.menus = {}
 
         # Vertical Container
         vbox1 = gtk.VBox()
@@ -119,9 +118,9 @@ class view_gtk(object):
         accel_group = gtk.AccelGroup()
         self.win.add_accel_group(accel_group)
 
-        menubar = gtk.MenuBar()
-        hbox1.pack_start(menubar, False)
-        menubar.show()
+        self.menubar = gtk.MenuBar()
+        hbox1.pack_start(self.menubar, False)
+        self.menubar.show()
 
         ### File
 
@@ -141,7 +140,7 @@ class view_gtk(object):
         file_menu = gtk.MenuItem('_File')
         file_menu.set_submenu(file_container)
         file_menu.show()
-        menubar.append(file_menu)
+        self.menubar.append(file_menu)
 
         ### view
         view_container = gtk.Menu()
@@ -324,7 +323,7 @@ class view_gtk(object):
         view_menu = gtk.MenuItem('_View')
         view_menu.set_submenu(view_container)
         view_menu.show()
-        menubar.append(view_menu)
+        self.menubar.append(view_menu)
 
         ### select
         select_container = gtk.Menu()
@@ -360,7 +359,7 @@ class view_gtk(object):
         select_menu = gtk.MenuItem('_Select')
         select_menu.set_submenu(select_container)
         select_menu.show()
-        menubar.append(select_menu)
+        self.menubar.append(select_menu)
 
         ### help
         help_container = gtk.Menu()
@@ -377,9 +376,9 @@ class view_gtk(object):
         help_menu = gtk.MenuItem('_Help')
         help_menu.set_submenu(help_container)
         help_menu.show()
-        menubar.append(help_menu)
+        self.menubar.append(help_menu)
 
-        menubar.show_all()
+        self.menubar.show_all()
 
         # OpenGL Space
         glconfig = gtk.gdkgl.Config(mode=gtk.gdkgl.MODE_RGBA | gtk.gdkgl.MODE_DEPTH | gtk.gdkgl.MODE_DOUBLE)
@@ -450,6 +449,42 @@ class view_gtk(object):
         # Set up some initial states
         self.morbit = _math.pi/12.0
         self.set_scale(10.0)
+
+    def add_menu(self, hierarchy):
+        """
+        Add a menu.  Used internally.  Used externally for those who
+        know the window manager well, and want to add fancy menu items
+        (radio buttons, check boxes, items with graphics, etc.)
+        manually.  For text-only menu items, use add_menuitem.
+        """
+        last_menu = (None, self.menubar)
+        for sub_menu in hierarchy:
+            if sub_menu not in self.menus:
+                menu = gtk.MenuItem(sub_menu)
+                menu_container = gtk.Menu()
+                menu.set_submenu(menu_container)
+                menu.show()
+                last_menu[1].append(menu)
+                self.menus[sub_menu] = (menu, menu_container)
+            last_menu = self.menus[sub_menu]
+        return last_menu
+
+    def add_menuitem(self, hierarchy, func, *args):
+        """
+        Add a menu item.  hierarchy is a tuple.  The first element in
+        the tuple is the main menu at the menubar level, and the last
+        item is the menu item.  Intermediate items may be specified,
+        if there are submenus.  func is the function to call when the
+        menu is selected.  args are any pass parameters to pass to the
+        function.
+
+        Generates all needed menus to create the passed hierarchy.
+        """
+        last_menu = self.add_menu(hierarchy[:-1])
+        menuitem = gtk.MenuItem(hierarchy[-1])
+        menuitem.connect('activate', func, *args)
+        menuitem.show()
+        last_menu[1].append(menuitem)
 
     # Event Functions
     def realize(self, widget):
@@ -684,16 +719,16 @@ class view_gtk(object):
         """
         if self.selected is not None:
             if self.selection_type == 'vertex':
-                s = cm.vertex(self.selected)
+                s = _cm.vertex(self.selected)
                 retval = 'center' + s.center() + '\ntolerance' + s.tolerance()
             elif self.selection_type == 'edge':
-                s = cm.vertex(self.selected)
+                s = _cm.vertex(self.selected)
                 retval = 'center' + s.center() + '\ntolerance', + s.tolerance() + 'length' + s.length()
             elif self.selection_type == 'wire':
-                s = cm.face(self.selected)
+                s = _cm.face(self.selected)
                 retval = 'center' + s.center() + 'length' + s.length()
             elif self.selection_type == 'face':
-                s = cm.face(self.selected)
+                s = _cm.face(self.selected)
                 retval = 'center' + s.center() + '\ntolerance', + s.tolerance() + '\ntype', + s.type() + 'area' + s.area()
             else:
                 retval = 'No properties for type ' + self.selection_type
@@ -919,16 +954,16 @@ class view_gtk(object):
                 self.hashes.append(s1_hash)
                 # Calculate position
                 if htype == 'face':
-                    f = cm.face(s1)
+                    f = _cm.face(s1)
                     c = (' type ' + f.type(), f.center())
                 elif htype == 'wire':
-                    w = cm.wire(s1)
+                    w = _cm.wire(s1)
                     c = ('', w.center())
                 elif htype == 'edge':
-                    e = cm.edge(s1)
+                    e = _cm.edge(s1)
                     c = ('', e.center())
                 elif htype == 'vertex':
-                    c = ('', cm.vertex(s1).center())
+                    c = ('', _cm.vertex(s1).center())
                 self.positions.append(c)
             ex.Next()
 

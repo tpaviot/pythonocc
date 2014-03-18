@@ -21,17 +21,17 @@ Try this::
   In [5]: v1 = ccad.view()
 
 After the last line, you should see a window appear with nothing in
-it.  *v1* is an instance of a viewing window.  Now type::
+it.  **v1** is an instance of a viewing window.  Now type::
 
   In [6]: v1.display(s1)
 
-You should see *s1* in your window.  Move to the window, hold on the
+You should see **s1** in your window.  Move to the window, hold on the
 middle mouse button and pan.  You should see the shape moving.  Now,
 go back to the ipython prompt and type::
 
   In [7]: v1.display(s2)
 
-You'll see s2 appear in the viewer.
+You'll see **s2** appear in the viewer.
 
 To clear the window, use::
 
@@ -43,16 +43,10 @@ Now, start a second window with::
 
   In [9]: v2 = ccad.view()
 
-v2 is an instance of the second displayed window.  Add something
+**v2** is an instance of the second displayed window.  Add something
 different to it::
 
   In [10]: v2.display(ccad.cone(4.0, 2.0, 2.0))
 
 Note that each viewer is independent.  You may create as many view
 windows as you like.
-
-
-
-
-
-

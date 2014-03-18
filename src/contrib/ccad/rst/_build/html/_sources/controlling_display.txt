@@ -1,7 +1,8 @@
 Controlling Display
 ===================
 
-The viewer has a number of function pass options that help.
+The viewer has a number of methods that help control the display from
+within your programs.
 
 viewstandard
 ------------

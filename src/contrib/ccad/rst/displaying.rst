@@ -7,6 +7,7 @@ Displaying
    interactive
    using_display
    controlling_display
+   configuring_display
 
 You have your model in text.  Now you want to see it.  The ccad viewer
 can be run stand-alone or interactively.

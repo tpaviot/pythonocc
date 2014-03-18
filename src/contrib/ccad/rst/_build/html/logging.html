@@ -138,7 +138,7 @@ categories before.  They&#8217;re below.</p>
 <div class="section" id="copy">
 <h3>copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
 <p>All shapes offer a copy method.  copy returns a copy of the shape.
-The following example makes s2 a new copy of s1:</p>
+The following example makes <strong>s2</strong> a new copy of <strong>s1</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
@@ -147,11 +147,12 @@ The following example makes s2 a new copy of s1:</p>
 <div class="section" id="subshapes">
 <h3>subshapes<a class="headerlink" href="#subshapes" title="Permalink to this headline">¶</a></h3>
 <p>subshapes reports the shapes of a specific type that make up a shape.
-The following example sets <em>edges</em> to a list of the edges in s1:</p>
+The following example sets <strong>edges</strong> to a list of the edges in <strong>s1</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="n">edges</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">subshapes</span><span class="p">(</span><span class="s">&#39;edge&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The passed parameter may be <em>vertex</em>, <em>edge</em>, <em>wire</em>, <em>face</em>, or <em>shell</em>.</p>
 </div>
 <div class="section" id="bounds">
 <h3>bounds<a class="headerlink" href="#bounds" title="Permalink to this headline">¶</a></h3>
@@ -176,7 +177,7 @@ box:</p>
 </div>
 <div class="section" id="subcenters">
 <h3>subcenters<a class="headerlink" href="#subcenters" title="Permalink to this headline">¶</a></h3>
-<p>subcenters returns the centers of the subshapes of a shape:</p>
+<p>subcenters returns a list of the centers of the subshapes of a shape:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="n">s1</span><span class="o">.</span><span class="n">subcenters</span><span class="p">(</span><span class="s">&#39;edge&#39;</span><span class="p">)</span>
 <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
@@ -453,7 +454,7 @@ so I fixed it, although my implementation won&#8217;t fix all cases:</p>
 </pre></div>
 </div>
 <img alt="_images/logging_solid_simplify1.png" src="_images/logging_solid_simplify1.png" />
-<p>Note s3 has an extra face.  (I&#8217;ve only drawn edges, but you get the
+<p>Note <strong>s3</strong> has an extra face.  (I&#8217;ve only drawn edges, but you get the
 point).  Now, let&#8217;s simplify it:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">s3</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">s3</span><span class="o">.</span><span class="n">subshapes</span><span class="p">(</span><span class="s">&#39;face&#39;</span><span class="p">))</span>

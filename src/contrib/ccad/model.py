@@ -98,7 +98,7 @@ from OCC.Interface import (
             Interface_Static_SetIVal as _Interface_Static_SetIVal,
             Interface_Static_SetRVal as _Interface_Static_SetRVal)
 from OCC.LocOpe import LocOpe_FindEdges as _LocOpe_FindEdges
-from OCC.ShapeFix import ShapeFix_Face as _ShapeFix_Shape
+from OCC.ShapeFix import ShapeFix_Shape as _ShapeFix_Shape
 from OCC import STEPControl as _STEPControl
 from OCC.StlAPI import StlAPI_Writer as _StlAPI_Writer
 from OCC.TColgp import TColgp_Array1OfPnt as _TColgp_Array1OfPnt
@@ -2403,8 +2403,8 @@ def plane(w1, inner_wires=[]):
 
 def surface(f1, w1):
     """
-    Returns a face which has a surface defined by a face f1 bounded by
-    the closed wire w1.
+    Returns a face whose underlying geometry is the same underlying
+    geometry of f1 but is bounded by the closed wire w1.
     """
     s = _BRep_Tool.Surface(_TopoDS_face(f1.shape))
     b = _BRepBuilderAPI.BRepBuilderAPI_MakeFace(s, _TopoDS_wire(w1.shape))

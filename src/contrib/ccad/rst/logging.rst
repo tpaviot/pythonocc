@@ -15,7 +15,7 @@ copy
 ^^^^
 
 All shapes offer a copy method.  copy returns a copy of the shape.
-The following example makes s2 a new copy of s1::
+The following example makes **s2** a new copy of **s1**::
 
   s1 = ccad.box(1.0, 2.0, 3.0)
   s2 = s1.copy()
@@ -24,10 +24,12 @@ subshapes
 ^^^^^^^^^
 
 subshapes reports the shapes of a specific type that make up a shape.
-The following example sets *edges* to a list of the edges in s1::
+The following example sets **edges** to a list of the edges in **s1**::
 
   s1 = ccad.box(1.0, 2.0, 3.0)
   edges = s1.subshapes('edge')
+
+The passed parameter may be *vertex*, *edge*, *wire*, *face*, or *shell*.
 
 bounds
 ^^^^^^
@@ -53,7 +55,7 @@ center returns the center of the shape::
 subcenters
 ^^^^^^^^^^
 
-subcenters returns the centers of the subshapes of a shape::
+subcenters returns a list of the centers of the subshapes of a shape::
 
   s1 = ccad.box(1.0, 2.0, 3.0)
   s1.subcenters('edge')
@@ -350,7 +352,7 @@ so I fixed it, although my implementation won't fix all cases::
 
 .. image:: logging_solid_simplify1.png
 
-Note s3 has an extra face.  (I've only drawn edges, but you get the
+Note **s3** has an extra face.  (I've only drawn edges, but you get the
 point).  Now, let's simplify it::
 
   s3.simplify()

@@ -6,12 +6,14 @@ class method.  For example::
 
   s1.translate((1.0, 0.0, 0.0))
 
-However, ccad comes with a function call form too.  For example::
+This translates *s1* in-place.  ccad comes with a function call form
+too.  For example::
 
   s2 = ccad.translate(s1, (1.0, 0.0, 0.0))
 
-The function form returns a new shape.  It can be useful when you want
-to save the old shape or write code with fewer lines.
+The function form returns a new shape.  *s2* is *s1* translated.  *s1*
+is unchanged.  It can be useful when you want to save the old shape or
+write code with fewer lines.
 
 In each of the following examples, **s1** describes the old object
 drawn in **red**, and **s2** describes the new object drawn in **blue**.

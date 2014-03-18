@@ -1,3 +1,12 @@
+"""
+Generates the images for ccad documentation.  The screen shots must be
+generated manually.  Do so with:
+
+xwd -frame -out name.xwd
+
+where name is the filename.  Convert the image to .png with gimp.
+"""
+
 
 import sys
 import math
@@ -8,7 +17,7 @@ import ccad
 v = ccad.view()
 
 # Helper Functions
-def save_iso(shape, name, color = None):
+def save_iso(shape, name, color=None):
     v.viewstandard(viewtype = 'iso')
     v.display(shape, color)
     if shape.stype == 'solid':
@@ -19,7 +28,7 @@ def save_iso(shape, name, color = None):
     v.save(name)
     v.clear()
 
-def save_top(shape, name, color = None):
+def save_top(shape, name, color=None):
     v.viewstandard(viewtype = 'top')
     v.display(shape, color)
     v.fit()
@@ -432,12 +441,136 @@ def display_display():
     v.save('display_display.png')
     v.clear()
 
+def solidbrick(xsize, ysize, wall_offset, unit, height, draft, knob_rad, knob_height, knob_draft, save_images = 0):
+    
+    dx = height * math.tan(math.radians(draft))
+    wbottom = ccad.rectangle(unit * xsize - 2*wall_offset, unit * ysize - 2*wall_offset)
+    wtop = ccad.rectangle(unit * xsize - 2*dx - 2*wall_offset, unit * ysize - 2*dx - 2*wall_offset)
+    wtop.translate((dx, dx, height))
+    brick = ccad.loft([wbottom, wtop], True)
+    brick.translate((wall_offset, wall_offset, 0.0))
+
+    if save_images:
+        v.display(brick)
+        v.fit()
+        v.save('example1_box.png')
+
+    drad = knob_height * math.tan(math.radians(knob_draft))
+    knob_top_rad = knob_rad - drad
+    knob_base_rad = knob_rad + drad
+    knob = ccad.cone(knob_base_rad, knob_top_rad, 2 * knob_height)
+    knob.translate((0.5 * unit, 0.5 * unit, height - knob_height))
+
+    if save_images:
+        v.display(knob, color = (1.0, 0.0, 0.0))
+        v.fit()
+        v.save('example1_boxwknob.png')
+
+    for x in range(xsize):
+        for y in range(ysize):
+            brick = brick + ccad.translate(knob, (x * unit, y * unit, 0.0))
+
+    if save_images:
+        v.clear()
+        v.display(brick)
+        v.save('example1_boxwknobs.png')
+
+    return brick
+
+def example1():
+    import numpy as np
+
+    unit = 5.0
+    height = 10.0
+    draft = 1.0 # degrees of draft on faces for plastic ejection
+    knob_rad = 1.8 # radius of the brick knob for mating with other bricks
+    knob_height = 2.0
+    knob_draft = 5.0 # degrees of draft for the knob
+    wall_thickness = 1.0 # plastic wall thickness
+    fillet_rad = 0.4 # the default radius to use for rounded edges
+
+    xsize = 4
+    ysize = 2
+
+    outerbrick = solidbrick(xsize, ysize, 0.0, unit, height, draft, knob_rad, knob_height, knob_draft, save_images = 1)
+    
+    to_fillet = []
+    for count, edge_center in enumerate(outerbrick.subcenters('edge')):
+        if (abs(edge_center[2]) < 0.1 or
+            (abs(edge_center[2] - height) < 0.1 and
+             abs(edge_center[0] - 0.5*unit) % unit < 0.1 and
+             abs(edge_center[1] - 0.5*unit) % unit < 0.1)):
+            pass
+        else:
+            to_fillet.append(count)
+    outerbrick.fillet(fillet_rad, to_fillet)
+    
+    v.clear()
+    v.display(outerbrick)
+    v.fit()
+    v.save('example1_outerbrick.png')
+
+    innerbrick = solidbrick(xsize, ysize, wall_thickness, unit, height - wall_thickness, draft, knob_rad - wall_thickness, knob_height, knob_draft)
+    base = ccad.box(2*unit*xsize, 2*unit*ysize, 1.0)
+    base.translate((-0.5*unit*xsize, -0.5*unit*ysize, -1.0))
+    innerbrick = innerbrick + base
+
+    v.clear()
+    v.display(innerbrick)
+    v.fit()
+    v.save('example1_innerbrick.png')
+
+    to_fillet = []
+    for count, edge_center in enumerate(innerbrick.subcenters('edge')):
+        if (abs(edge_center[2]) < 0.1 or
+            (abs(edge_center[2] - (height - wall_thickness)) < 0.1 and
+             abs(edge_center[0] - 0.5*unit) % unit < 0.1 and
+             abs(edge_center[1] - 0.5*unit) % unit < 0.1)):
+            to_fillet.append(count)
+    innerbrick.fillet(fillet_rad, to_fillet)
+
+    v.clear()
+    v.display(innerbrick)
+    v.fit()
+    v.save('example1_innerbrickfillet.png')
+
+    brick = outerbrick - innerbrick
+    
+    v.clear()
+    v.display(brick)
+    v.set_projection((0.0, 0.0, 0.0), (math.sqrt(0.45), -math.sqrt(0.1), -math.sqrt(0.45)), (0.0, -1.0, 0.0))
+    v.fit()
+    v.save('example1_brick.png')
+
+    post_rad = (math.sqrt(2.0)*unit - 2*knob_rad)/2.0
+    drad = (height - 0.5*wall_thickness) * math.tan(math.radians(draft))
+    post_base_rad = post_rad + drad
+    post = ccad.cone(post_rad, post_base_rad, height - 0.5*wall_thickness)
+    post.fillet(fillet_rad, [(0.0, 0.0, 0.0)])
+
+    v.clear()
+    v.display(post)
+    v.viewstandard(viewtype = 'iso')
+    v.fit()
+    v.save('example1_post.png')
+
+    post.translate((unit, unit, 0.0))
+    for x in range(xsize - 1):
+        for y in range(ysize - 1):
+            brick = brick + ccad.translate(post, (x * unit, y * unit, 0.0))
+
+    v.clear()
+    v.display(brick)
+    v.viewstandard(viewtype = 'bottom')
+    v.fit()
+    v.save('example1_brickpost.png')
+
 def main():
     v.set_background((1.0, 1.0, 1.0))
     v.set_triedron(1, color = (0.0, 0.0, 0.0))
 
     # Quick code for a single one
-    wire_rectangle()
+    example1()
     sys.exit()
 
     # intro
@@ -515,7 +648,8 @@ def main():
     # display
     display_display()
 
+    # examples
+    example1()
+
 if __name__ == '__main__':
     main()
-
-    
