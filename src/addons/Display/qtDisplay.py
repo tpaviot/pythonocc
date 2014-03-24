@@ -18,7 +18,7 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import os,sys
-from PyQt4 import QtCore, QtGui, QtOpenGL
+from PyQt4 import Qt, QtCore, QtGui, QtOpenGL
 import OCCViewer
 
 class point(object):
@@ -32,21 +32,25 @@ class point(object):
        self.x = obj.x()
        self.y = obj.y()
 
+
 class qtBaseViewer(QtOpenGL.QGLWidget):
     ''' The base Qt Widget for an OCC viewer
     '''
     def __init__(self, parent = None):
-        QtOpenGL.QGLWidget.__init__(self,parent)
-        # self.initializeGL()
-        # self.initializeOverlayGL()
+        super(qtBaseViewer, self).__init__(parent)
+        self.initializeGL()
+        self.initializeOverlayGL()
+
+        # both required for drawing boxes over the OpenGL image
+        self.setAutoFillBackground(False)
+        self.setAutoBufferSwap(True)
+
         self._display = None
         self._inited = False
         self.setMouseTracking(True) #enable Mouse Tracking
         self.setFocusPolicy(QtCore.Qt.WheelFocus)#Strong focus
         # On X11, setting this attribute will disable all double buffering
-        self.setAttribute(QtCore.Qt.WA_PaintOnScreen)
-        # setting this flag implicitly disables double buffering for the widget
-        self.setAttribute(QtCore.Qt.WA_NoSystemBackground)
+        # self.setAttribute(QtCore.Qt.WA_PaintOnScreen)
 
     def GetHandle(self):
         return int(self.winId())
@@ -54,9 +58,6 @@ class qtBaseViewer(QtOpenGL.QGLWidget):
     def resizeEvent(self, event):
         if self._inited:
             self._display.OnResize()
-
-    def paintEngine(self):
-        return None
 
 class qtViewer3d(qtBaseViewer):
     def __init__(self, *kargs):
@@ -118,10 +119,20 @@ class qtViewer3d(qtBaseViewer):
             self._display.Repaint()
             #print 'repainted'
 
+    def resizeGL(self, width, height):
+        self.setupViewport(width, height)
+
     def paintEvent(self, event):
         if self._inited:
-            self._display.Repaint()
+            # the jitteriness is because of the many
+            # and quite likely unnessecary updates of the viewer
+            # if you skip the update, redrawing will be much faster
+            # problem is that all previous rectangles will be still there too...
+            self._display.Context.UpdateCurrentViewer()
+            self.swapBuffers()
+
         if self._drawbox:
+            self.makeCurrent()
             painter = QtGui.QPainter(self)
             painter.setPen(QtGui.QPen(QtGui.QColor(0,0,0), 1))
             rect = QtCore.QRect(*self._drawbox)
@@ -140,7 +151,8 @@ class qtViewer3d(qtBaseViewer):
         self._display.ZoomFactor(zoom_factor)
              
     def dragMoveEvent(self,event):
-        pass#print 'dragmove event'
+        #print 'dragmove event'
+        pass
         
     def mousePressEvent(self, event):
         #print 'mouse press event'
@@ -176,9 +188,9 @@ class qtViewer3d(qtBaseViewer):
         dy = pt.y - self.dragStartPos.y
         if abs( dx ) <= tolerance and abs( dy ) <= tolerance:
             return
-        self.repaint()
         self._drawbox = [self.dragStartPos.x, self.dragStartPos.y , dx, dy]
-        
+        self.update()
+
     def mouseMoveEvent(self, evt):
         pt = point(evt.pos())
         buttons = int(evt.buttons())
