@@ -138,6 +138,7 @@ class qtViewer3d(qtBaseViewer):
             rect = QtCore.QRect(*self._drawbox)
             painter.drawRect(rect)
             painter.end()
+            self.doneCurrent()
 
     def ZoomAll(self, evt):
         self._display.Zoom_FitAll()
