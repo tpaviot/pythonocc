@@ -326,7 +326,13 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
 
     def DisplayTriedron(self):
-        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
+        R,G,B = OCC.Quantity.Quantity_NOC_RED,OCC.Quantity.Quantity_NOC_GREEN,OCC.Quantity.Quantity_NOC_BLUE1
+        size_ratio = 0.8
+        axis_diameter = 0.05
+        n_facettes = 18
+        scale = 0.08
+        self.View.ZBufferTriedronSetup(R,G,B ,size_ratio,axis_diameter,n_facettes)
+        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER,OCC.Quantity.Quantity_NOC_WHITE,scale,OCC.V3d.V3d_ZBUFFER);
         self.Repaint()
     
     def EnableAntiAliasing(self):
