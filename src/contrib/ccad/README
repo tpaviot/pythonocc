@@ -15,15 +15,19 @@ Consult the documentation at prefix/usr/local/html/contents.html
 To Build (only for developers)
 ==============================
 
-Update components with modifications to MANIFEST.in and setup.py.  Then,
+Update components with modifications to MANIFEST.in and setup.py.
+Then,
 
   python setup.py sdist
+
+**Make sure you verify changes with unittest/test_all.py before
+committing.**
 
 To Build the Documentation (only for developers)
 ================================================
 
-  cd ccad-ver
+  cd ccad-ver/rst
   python generate_images.py
-  sphinx-build . _build/html
+  sphinx-build . html
 
-Then, direct your browser to ccad-ver/rst/_build/html/contents.html
+Then, direct your browser to ccad-ver/doc/html/contents.html

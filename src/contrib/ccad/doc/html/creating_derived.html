@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creating Derived Shapes &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="up" title="Modelling" href="modelling.html" />
+    <link rel="next" title="Moving, Rotating, Mirroring, and Scaling" href="trms.html" />
+    <link rel="prev" title="Creating Solids" href="creating_solids.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="trms.html" title="Moving, Rotating, Mirroring, and Scaling"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="creating_solids.html" title="Creating Solids"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="modelling.html" accesskey="U">Modelling</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="contents.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Creating Derived Shapes</a><ul>
+<li><a class="reference external" href="#prism">prism</a></li>
+<li><a class="reference external" href="#revol">revol</a></li>
+<li><a class="reference external" href="#loft">loft</a></li>
+<li><a class="reference external" href="#pipe">pipe</a></li>
+<li><a class="reference external" href="#helical-solid">helical_solid</a></li>
+<li><a class="reference external" href="#offset">offset</a></li>
+<li><a class="reference external" href="#slice">slice</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="creating_solids.html"
+                                  title="previous chapter">Creating Solids</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="trms.html"
+                                  title="next chapter">Moving, Rotating, Mirroring, and Scaling</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/creating_derived.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="creating-derived-shapes">
+<h1>Creating Derived Shapes<a class="headerlink" href="#creating-derived-shapes" title="Permalink to this headline">¶</a></h1>
+<p>Some shapes are derived from others and create arbitrary shapes,
+depending on what&#8217;s passed to them.  They follow.</p>
+<div class="section" id="prism">
+<h2>prism<a class="headerlink" href="#prism" title="Permalink to this headline">¶</a></h2>
+<p>A prism extrudes a shape in a given linear direction.  A vertex is
+extruded as an edge; an edge is extruded as a face; a wire is extruded
+as a shell; and a face is extruded as a solid.  The following example
+creates an extrusion of a hexagon:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="n">ccad</span><span class="o">.</span><span class="n">ngon</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">prism</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="_images/derived_prism.png" src="_images/derived_prism.png" />
+</div>
+<div class="section" id="revol">
+<h2>revol<a class="headerlink" href="#revol" title="Permalink to this headline">¶</a></h2>
+<p>A revol extrudes a shape in a circle.  A vertex is extruded as an
+edge; an edge is extruded as a face; a wire is extruded as a shell;
+and a face is extruded as a solid.  The following example extrudes a
+squared circle about (0.0, 0.0, 0.0):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">e1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">e1</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">w1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">polygon</span><span class="p">([(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                   <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                   <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                   <span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)])</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="n">ccad</span><span class="o">.</span><span class="n">wire</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span> <span class="n">w1</span><span class="p">]))</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">revol</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/derived_revol.png" src="_images/derived_revol.png" />
+</div>
+<div class="section" id="loft">
+<h2>loft<a class="headerlink" href="#loft" title="Permalink to this headline">¶</a></h2>
+<p>A loft returns a solid or shell that fits a list of closed wires.  The
+following example fits a changing-diameter circle:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">w1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">wire</span><span class="p">([</span><span class="n">ccad</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)])</span>
+<span class="n">w2</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">wire</span><span class="p">([</span><span class="n">ccad</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)])</span>
+<span class="n">w2</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="n">w3</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">wire</span><span class="p">([</span><span class="n">ccad</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)])</span>
+<span class="n">w3</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">loft</span><span class="p">([</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">w3</span><span class="p">],</span> <span class="n">stype</span> <span class="o">=</span> <span class="s">&#39;solid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/derived_loft.png" src="_images/derived_loft.png" />
+</div>
+<div class="section" id="pipe">
+<h2>pipe<a class="headerlink" href="#pipe" title="Permalink to this headline">¶</a></h2>
+<p>A pipe returns a solid or shell that is an extrusion of a closed wire
+profile along a wire spine.  The following example extrudes a hexagon
+along an arching and then straight spine:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">profile</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">ngon</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">spine</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">wire</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">])</span>
+<span class="n">spine</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="o">-</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">spine</span><span class="o">.</span><span class="n">rotatex</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">spine</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/derived_pipe.png" src="_images/derived_pipe.png" />
+</div>
+<div class="section" id="helical-solid">
+<h2>helical_solid<a class="headerlink" href="#helical-solid" title="Permalink to this headline">¶</a></h2>
+<p>A helical_solid is a pipe spun on a helical spine.  Unfortunately,
+pipe had trouble with the profile&#8217;s orientation on a helix, so
+helical_solid was needed.  The following example extrudes a triangle
+along a helix:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">profile</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">ngon</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">helical_solid</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/derived_helical_solid.png" src="_images/derived_helical_solid.png" />
+</div>
+<div class="section" id="offset">
+<h2>offset<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h2>
+<p>offset offsets a face or solid by a given distance and returns a list
+of faces or solids.  Why doesn&#8217;t it return a single face or solid?
+Depending on the distance, offsetting can create multiple shapes from
+one.  For example, consider a 2D version of an octopus.  As offset
+gets larger and larger, parts of the face merge and can create holes.
+The following example offsets a hexagon by 1.0.  In this example, the
+returned list is only one item long:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">w1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">ngon</span><span class="p">(</span><span class="mf">8.0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">w2</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">offset</span><span class="p">(</span><span class="n">ccad</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="n">w1</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/derived_offset_face.png" src="_images/derived_offset_face.png" />
+<p>The following example offsets a box with a hole by 1.0.  In this
+example, the returned list is only one item long:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">b1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">cylinder</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">))</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">-</span> <span class="n">c1</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">offset</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/derived_offset_solid.png" src="_images/derived_offset_solid.png" />
+<p>Note the offset shape has edges rounded.  Currently, this is the only
+option OCC provides.</p>
+<p>A positive value for offset makes the new face or solid outside the
+original.  A negative value makes the new face or solid inside the
+original.</p>
+</div>
+<div class="section" id="slice">
+<h2>slice<a class="headerlink" href="#slice" title="Permalink to this headline">¶</a></h2>
+<p>slice slices a solid with a plane and returns a list of faces at the
+intersection of the solid and plane.  The plane can be passed or a
+value for x, y, or z can be given which generates the plane.  The
+following example slices a box with a hole at z = 1.0:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">b1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">cylinder</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">))</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">-</span> <span class="n">c1</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/derived_slice.png" src="_images/derived_slice.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="trms.html" title="Moving, Rotating, Mirroring, and Scaling"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="creating_solids.html" title="Creating Solids"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="modelling.html" >Modelling</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

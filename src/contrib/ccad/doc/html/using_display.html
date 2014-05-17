@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Display &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="up" title="Displaying" href="displaying.html" />
+    <link rel="next" title="Controlling Display" href="controlling_display.html" />
+    <link rel="prev" title="Interactive Viewing" href="interactive.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="controlling_display.html" title="Controlling Display"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="interactive.html" title="Interactive Viewing"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" accesskey="U">Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="contents.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Using Display</a><ul>
+<li><a class="reference external" href="#view-mode">View -&gt; Mode</a></li>
+<li><a class="reference external" href="#view-side">View -&gt; Side</a></li>
+<li><a class="reference external" href="#view-orbit">View -&gt; Orbit</a></li>
+<li><a class="reference external" href="#view-pan">View -&gt; Pan</a></li>
+<li><a class="reference external" href="#view-zoom">View -&gt; Zoom</a></li>
+<li><a class="reference external" href="#select-shape">Select -&gt; Shape</a></li>
+<li><a class="reference external" href="#select-face">Select -&gt; Face</a></li>
+<li><a class="reference external" href="#select-edge">Select -&gt; Edge</a></li>
+<li><a class="reference external" href="#select-vertex">Select -&gt; Vertex</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="interactive.html"
+                                  title="previous chapter">Interactive Viewing</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="controlling_display.html"
+                                  title="next chapter">Controlling Display</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/using_display.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="using-display">
+<h1>Using Display<a class="headerlink" href="#using-display" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="view-mode">
+<h2>View -&gt; Mode<a class="headerlink" href="#view-mode" title="Permalink to this headline">¶</a></h2>
+<p>ccad offers three forms of viewing: wireframe, shaded (filled solids),
+and hidden line removal.</p>
+<img alt="_images/display_wireframe.png" src="_images/display_wireframe.png" />
+<img alt="_images/display_shaded.png" src="_images/display_shaded.png" />
+<img alt="_images/display_hlr.png" src="_images/display_hlr.png" />
+</div>
+<div class="section" id="view-side">
+<h2>View -&gt; Side<a class="headerlink" href="#view-side" title="Permalink to this headline">¶</a></h2>
+<p>Various standard views can be selected from the View -&gt; Side menu, or
+you can use Blender hotkeys:</p>
+<blockquote>
+<ul class="simple">
+<li>keypad 7 for top view</li>
+<li>keypad 1 for front view</li>
+<li>keypad 3 for right view</li>
+<li>hold shift with those keys to see the opposite view</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="view-orbit">
+<h2>View -&gt; Orbit<a class="headerlink" href="#view-orbit" title="Permalink to this headline">¶</a></h2>
+<p>Orbiting allows you to orbit around the scene, keeping the scene the
+same distance from you.  You can use the menus, you can press the
+middle mouse button and move the mouse, or you can use Blender hotkeys:</p>
+<blockquote>
+<ul class="simple">
+<li>keypad 8 to orbit up</li>
+<li>keypad 2 to orbit down</li>
+<li>keypad 4 to orbit left</li>
+<li>keypad 6 to orbit right</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="view-pan">
+<h2>View -&gt; Pan<a class="headerlink" href="#view-pan" title="Permalink to this headline">¶</a></h2>
+<p>Pan allows you to move the center of the scene.  You can use the
+menus, you can hold shift while pressing the middle mouse button and
+moving the mouse, or you can use Blender hotkeys:</p>
+<blockquote>
+<ul class="simple">
+<li>shift keypad 8 to pan up</li>
+<li>shift keypad 2 to pan down</li>
+<li>shift keypad 4 to pan left</li>
+<li>shift keypad 6 to pan right</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="view-zoom">
+<h2>View -&gt; Zoom<a class="headerlink" href="#view-zoom" title="Permalink to this headline">¶</a></h2>
+<p>You can zoom in or out by using the menus, or using the Blender hotkeys:</p>
+<blockquote>
+<ul class="simple">
+<li>keypad + to zoom in</li>
+<li>keypad - to zoom out</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="select-shape">
+<h2>Select -&gt; Shape<a class="headerlink" href="#select-shape" title="Permalink to this headline">¶</a></h2>
+<p>In Select -&gt; Shape mode, you select shapes.  Move to the shape you are
+interested in, and right click on it.  The shape is selected.  In this
+case, shape refers to something you passed to the display function,
+not any arbitrary shape.  If you only passed one shape to the display
+function, there is only one shape to select.</p>
+</div>
+<div class="section" id="select-face">
+<h2>Select -&gt; Face<a class="headerlink" href="#select-face" title="Permalink to this headline">¶</a></h2>
+<p>In Select -&gt; Face mode, you can select a face on a shape you selected.
+Right click on the face of interest, and you&#8217;ll see the face index,
+type, and center on the status line.</p>
+<img alt="_images/select_face.png" src="_images/select_face.png" />
+</div>
+<div class="section" id="select-edge">
+<h2>Select -&gt; Edge<a class="headerlink" href="#select-edge" title="Permalink to this headline">¶</a></h2>
+<p>In Select -&gt; Edge mode, you can select an edge on a shape you
+selected.  Right click on the edge of interest, and you&#8217;ll see the
+edge index and center on the status line.</p>
+<img alt="_images/select_edge.png" src="_images/select_edge.png" />
+<p>Edge selection can be very handy when trying to fillet specific edges.
+Once you know the edge&#8217;s coordinates (or even index if the shape won&#8217;t
+change), you can pass those coordinates to the fillet function.</p>
+</div>
+<div class="section" id="select-vertex">
+<h2>Select -&gt; Vertex<a class="headerlink" href="#select-vertex" title="Permalink to this headline">¶</a></h2>
+<p>In Select -&gt; Vertex mode, you can select a vertex on a shape you
+selected.  Right click on the vertex of interest, and you&#8217;ll see the
+vertex index and center on the status line.</p>
+<img alt="_images/select_vertex.png" src="_images/select_vertex.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="controlling_display.html" title="Controlling Display"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="interactive.html" title="Interactive Viewing"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" >Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>A Single Brick &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="up" title="Example - Building Toy" href="example1.html" />
+    <link rel="next" title="brick.py" href="example1_brickpy.html" />
+    <link rel="prev" title="Example - Building Toy" href="example1.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="example1_brickpy.html" title="brick.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="example1.html" title="Example - Building Toy"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="example1.html" accesskey="U">Example - Building Toy</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="example1.html"
+                                  title="previous chapter">Example - Building Toy</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="example1_brickpy.html"
+                                  title="next chapter">brick.py</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/example1_singlebrick.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="a-single-brick">
+<h1>A Single Brick<a class="headerlink" href="#a-single-brick" title="Permalink to this headline">¶</a></h1>
+<p>First, I&#8217;ll start by importing the required packages:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">ccad</span>
+</pre></div>
+</div>
+<p>Now, I&#8217;ll define some dimensions for all bricks:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">unit</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">knob_rad</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="c"># radius of the brick knob for mating with other bricks</span>
+<span class="n">knob_draft</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="c"># degrees of draft for the knob</span>
+<span class="n">knob_height</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">wall_thickness</span> <span class="o">=</span> <span class="mf">1.6</span> <span class="c"># plastic wall thickness</span>
+<span class="n">draft</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c"># degrees of draft on faces for plastic ejection</span>
+<span class="n">fillet_rad</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="c"># the default radius to use for rounded edges</span>
+</pre></div>
+</div>
+<p>In ipython, I set up the specific brick&#8217;s dimensions.  Later, these
+will be pass parameters in a function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">xsize</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">ysize</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Now, I begin making the outer shape.  I could use <strong>box</strong>, but most
+injection molders want you to draft the walls to make machining and
+ejection easier.  <strong>loft* tends to be more robust than **draft</strong> on
+arbitrary shapes, so I&#8217;ll use that:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">dx</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">draft</span><span class="p">))</span>
+<span class="n">wbottom</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">unit</span> <span class="o">*</span> <span class="n">xsize</span><span class="p">,</span> <span class="n">unit</span> <span class="o">*</span> <span class="n">ysize</span><span class="p">)</span>
+<span class="n">wtop</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">unit</span> <span class="o">*</span> <span class="n">xsize</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">unit</span> <span class="o">*</span> <span class="n">ysize</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span>
+<span class="n">wtop</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="n">dx</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+<span class="n">brick</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">loft</span><span class="p">([</span><span class="n">wbottom</span><span class="p">,</span> <span class="n">wtop</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="n">view1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+<span class="n">view1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">brick</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/example1_box.png" src="_images/example1_box.png" />
+<p>Here, the brick bottom is defined by the wire, <strong>wbottom</strong>, and the
+brick top is defined by the wire, <strong>wtop</strong>.  The <strong>loft</strong> with ruled set
+to <em>True</em> converts the wires to a ruled solid:</p>
+<p>I need a knob on top for mating with bricks above, and I want that
+knob to aid in alignment by tapering it.  A cone would do nicely:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">drad</span> <span class="o">=</span> <span class="n">knob_height</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">knob_draft</span><span class="p">))</span>
+<span class="n">knob_top_rad</span> <span class="o">=</span> <span class="n">knob_rad</span> <span class="o">-</span> <span class="n">drad</span>
+<span class="n">knob_base_rad</span> <span class="o">=</span> <span class="n">knob_rad</span> <span class="o">+</span> <span class="n">drad</span>
+<span class="n">knob</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">cone</span><span class="p">(</span><span class="n">knob_base_rad</span><span class="p">,</span> <span class="n">knob_top_rad</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">knob_height</span><span class="p">)</span>
+<span class="n">knob</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="n">knob_height</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Notice the knob is higher than it needed to be, then offset.  Usually,
+boolean operations are less buggy when surfaces don&#8217;t coincide on
+their faces.  That is, make the knob penetrate into the brick for more
+robust boolean operations.</p>
+<p>Now, I add the knob to the view to make sure I like the position.
+It&#8217;s added in red:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">view1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">knob</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="_images/example1_boxwknob.png" src="_images/example1_boxwknob.png" />
+<p>Now, I&#8217;ll replicate the knob and fuse it with the brick:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xsize</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ysize</span><span class="p">):</span>
+        <span class="n">brick</span> <span class="o">=</span> <span class="n">brick</span> <span class="o">+</span> <span class="n">ccad</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">knob</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+
+<span class="n">view1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">view1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">brick</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/example1_boxwknobs.png" src="_images/example1_boxwknobs.png" />
+<p>Note the use of the <em>function</em> form of translate here:
+<strong>ccad.translated</strong> versus the <em>method</em> form for wtop: <strong>wtop.translate</strong>.
+I use the function form when I want to <em>copy</em> a shape.  I use the
+method form when I want to <em>change</em> a shape.</p>
+<p>Injection molders like same-thickness walls, so I need to core-out the
+brick.  At this point, it looks like most of my code can be replicated
+for the core, so I&#8217;ll place the solid brick in its own function and
+add a <strong>wall_offset</strong> to its pass parameters and place it in a file
+called <strong>brick.py</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">ccad</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">solidbrick</span><span class="p">(</span><span class="n">xsize</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="n">wall_offset</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">draft</span><span class="p">,</span>
+               <span class="n">knob_rad</span><span class="p">,</span> <span class="n">knob_height</span><span class="p">,</span> <span class="n">knob_draft</span><span class="p">):</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">draft</span><span class="p">))</span>
+    <span class="n">wbottom</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">unit</span><span class="o">*</span><span class="n">xsize</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">wall_offset</span><span class="p">,</span>
+                             <span class="n">unit</span><span class="o">*</span><span class="n">ysize</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">wall_offset</span><span class="p">)</span>
+    <span class="n">wtop</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">unit</span><span class="o">*</span><span class="n">xsize</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">dx</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">wall_offset</span><span class="p">,</span>
+                          <span class="n">unit</span><span class="o">*</span><span class="n">ysize</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">dx</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">wall_offset</span><span class="p">)</span>
+    <span class="n">wtop</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="n">dx</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+    <span class="n">brick</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">loft</span><span class="p">([</span><span class="n">wbottom</span><span class="p">,</span> <span class="n">wtop</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">brick</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="n">wall_offset</span><span class="p">,</span> <span class="n">wall_offset</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+
+    <span class="n">drad</span> <span class="o">=</span> <span class="n">knob_height</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">knob_draft</span><span class="p">))</span>
+    <span class="n">knob_top_rad</span> <span class="o">=</span> <span class="n">knob_rad</span> <span class="o">-</span> <span class="n">drad</span>
+    <span class="n">knob_base_rad</span> <span class="o">=</span> <span class="n">knob_rad</span> <span class="o">+</span> <span class="n">drad</span>
+    <span class="n">knob</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">cone</span><span class="p">(</span><span class="n">knob_base_rad</span><span class="p">,</span> <span class="n">knob_top_rad</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">knob_height</span><span class="p">)</span>
+    <span class="n">knob</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="n">knob_height</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xsize</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ysize</span><span class="p">):</span>
+            <span class="n">brick</span> <span class="o">=</span> <span class="n">brick</span> <span class="o">+</span> <span class="n">ccad</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">knob</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">brick</span>
+</pre></div>
+</div>
+<p>And, I can import it in ipython:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">brick</span>
+
+<span class="n">outerbrick</span> <span class="o">=</span> <span class="n">brick</span><span class="o">.</span><span class="n">solidbrick</span><span class="p">(</span><span class="n">xsize</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">draft</span><span class="p">,</span>
+                              <span class="n">knob_rad</span><span class="p">,</span> <span class="n">knob_height</span><span class="p">,</span> <span class="n">knob_draft</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>outerbrick</strong> is now the outside of the brick.</p>
+<p>Before I create the inside of the brick, I ought to add fillets to
+<strong>outerbrick</strong>.  Many injection molders use milling to form the mold.
+Milling requires fillets wherever the ball endmill can&#8217;t make a sharp
+corner.  For the cavity, it&#8217;s the convex edges.  For the core, it&#8217;s
+the concave edges.  To make things simple, I usually fillet every
+edge.  However, to show off some of ccad&#8217;s features, I&#8217;ll fillet only
+the edges I must fillet.</p>
+<p>In outerbrick, I want to fillet the tip of every knob, the side walls,
+and the top walls:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">to_fillet</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">edge_center</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">outerbrick</span><span class="o">.</span><span class="n">subcenters</span><span class="p">(</span><span class="s">&#39;edge&#39;</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.1</span> <span class="ow">or</span>
+        <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">height</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span> <span class="ow">and</span>
+         <span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">unit</span><span class="p">)</span> <span class="o">%</span> <span class="n">unit</span> <span class="o">&lt;</span> <span class="mf">0.1</span> <span class="ow">and</span>
+         <span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">unit</span><span class="p">)</span> <span class="o">%</span> <span class="n">unit</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)):</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">to_fillet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+<span class="n">outerbrick</span><span class="o">.</span><span class="n">fillet</span><span class="p">(</span><span class="n">fillet_rad</span><span class="p">,</span> <span class="n">to_fillet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The loop goes through every edge in <strong>outerbrick</strong>, analyzing the edge&#8217;s
+center.  Edges whose z-component is near zero are not filleted.
+Additionally, edges with z-component equal to <strong>height</strong> and
+xy-components near the knob positions are not filleted.  All other
+edges are filleted.  Here&#8217;s what I get:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">v</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">outerbrick</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/example1_outerbrick.png" src="_images/example1_outerbrick.png" />
+<p>With the <strong>solidbrick</strong> function, I can now define the inside of the brick:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">innerbrick</span> <span class="o">=</span> <span class="n">brick</span><span class="o">.</span><span class="n">solidbrick</span><span class="p">(</span><span class="n">xsize</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="n">wall_thickness</span><span class="p">,</span>
+                              <span class="n">unit</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="n">wall_thickness</span><span class="p">,</span> <span class="n">draft</span><span class="p">,</span>
+                              <span class="n">knob_rad</span> <span class="o">-</span> <span class="n">wall_thickness</span><span class="p">,</span> <span class="n">knob_height</span><span class="p">,</span>
+                              <span class="n">knob_draft</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">unit</span><span class="o">*</span><span class="n">xsize</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">unit</span><span class="o">*</span><span class="n">ysize</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">base</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">unit</span><span class="o">*</span><span class="n">xsize</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">unit</span><span class="o">*</span><span class="n">ysize</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="n">innerbrick</span> <span class="o">=</span> <span class="n">innerbrick</span> <span class="o">+</span> <span class="n">base</span>
+
+<span class="n">view1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">view1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">innerbrick</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/example1_innerbrick.png" src="_images/example1_innerbrick.png" />
+<p>Note, I have added a base to <strong>innerbrick</strong>.  It will be helpful when I
+perform the boolean cut.  Finally, I&#8217;ll fillet <strong>innerbrick</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">to_fillet</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">edge_center</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">innerbrick</span><span class="o">.</span><span class="n">subcenters</span><span class="p">(</span><span class="s">&#39;edge&#39;</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.1</span> <span class="ow">or</span>
+        <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">wall_thickness</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">0.1</span> <span class="ow">and</span>
+         <span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">unit</span><span class="p">)</span> <span class="o">%</span> <span class="n">unit</span> <span class="o">&lt;</span> <span class="mf">0.1</span> <span class="ow">and</span>
+         <span class="nb">abs</span><span class="p">(</span><span class="n">edge_center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">unit</span><span class="p">)</span> <span class="o">%</span> <span class="n">unit</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)):</span>
+        <span class="n">to_fillet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+<span class="n">innerbrick</span><span class="o">.</span><span class="n">fillet</span><span class="p">(</span><span class="n">fillet_rad</span><span class="p">,</span> <span class="n">to_fillet</span><span class="p">)</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">v</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">innerbrick</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/example1_innerbrickfillet.png" src="_images/example1_innerbrickfillet.png" />
+<p>You should recognize the fillet code.  It&#8217;s the opposite of the edges
+filleted for <strong>outerbrick</strong>, because it&#8217;s a core.</p>
+<p>Finally, I&#8217;ll perform the cut:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">brick</span> <span class="o">=</span> <span class="n">outerbrick</span> <span class="o">-</span> <span class="n">innerbrick</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">v</span><span class="o">.</span><span class="n">set_projection</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.45</span><span class="p">),</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.1</span><span class="p">),</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.45</span><span class="p">)),</span>
+                 <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">brick</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/example1_brick.png" src="_images/example1_brick.png" />
+<p>I&#8217;m almost there.  I now only need the posts that sit between the
+knobs to add more holding force.  Like the knobs, I&#8217;ll make the posts
+cones and fillet the tips:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">post_rad</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">unit</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">knob_rad</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+<span class="n">drad</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">wall_thickness</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">draft</span><span class="p">))</span>
+<span class="n">post_base_rad</span> <span class="o">=</span> <span class="n">post_rad</span> <span class="o">+</span> <span class="n">drad</span>
+<span class="n">post</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">cone</span><span class="p">(</span><span class="n">post_rad</span><span class="p">,</span> <span class="n">post_base_rad</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">wall_thickness</span><span class="p">)</span>
+<span class="n">post</span><span class="o">.</span><span class="n">fillet</span><span class="p">(</span><span class="n">fillet_rad</span><span class="p">,</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)])</span>
+</pre></div>
+</div>
+<img alt="_images/example1_post.png" src="_images/example1_post.png" />
+<p>Here, I&#8217;ve chosen to pass a list of the center positions of the edges
+to be filleted to the fillet method.  In this case, I&#8217;m only filleting
+one edge, the tip.</p>
+<p>Now, I translate it and add it to the brick:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">post</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xsize</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ysize</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">brick</span> <span class="o">=</span> <span class="n">brick</span> <span class="o">+</span> <span class="n">ccad</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">post</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="_images/example1_brickpost.png" src="_images/example1_brickpost.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="example1_brickpy.html" title="brick.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="example1.html" title="Example - Building Toy"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="example1.html" >Example - Building Toy</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

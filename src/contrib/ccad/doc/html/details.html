@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Details &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="next" title="Modelling" href="modelling.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modelling.html" title="Modelling"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="contents.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Details</a><ul>
+<li><a class="reference external" href="#internals">Internals</a></li>
+<li><a class="reference external" href="#user-requirements">User Requirements</a></li>
+<li><a class="reference external" href="#system-requirements">System Requirements</a></li>
+<li><a class="reference external" href="#installation">Installation</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="intro.html"
+                                  title="previous chapter">Introduction</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="modelling.html"
+                                  title="next chapter">Modelling</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/details.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="details">
+<h1>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="internals">
+<h2>Internals<a class="headerlink" href="#internals" title="Permalink to this headline">¶</a></h2>
+<p>ccad is a python wrapper of pythonocc, which is a python wrapper of
+OpenCascade, an open source mechanical CAD math engine.  So why wrap
+python with more python?  pythonocc is a SWIG wrapper of a C++
+project.  Because of that, the syntax is fairly cumbersome.  The
+sphere instance from the introduction page looks like this in
+pythonocc:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">OCC.BRepPrimAPI</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">BRepPrimAPI_Sphere</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>ccad syntax is simpler, and allows you to focus more on design and
+less on syntax.  Put simply, pythonocc is more for CAD developers;
+ccad is more for CAD users.</p>
+<p>Unfortunately, ccad use comes with a cost.  Not all of pythonocc&#8217;s
+abilities are yet wrapped.  Therefore, it lacks the power of
+pythonocc.</p>
+<p>However, extending ccad isn&#8217;t too hard.  You can extend ccad with
+python calls to pythoncc.  No C or C++ coding is necessary.  We&#8217;re
+always looking for pythonocc-skilled people to extend ccad&#8217;s
+abilities.</p>
+</div>
+<div class="section" id="user-requirements">
+<h2>User Requirements<a class="headerlink" href="#user-requirements" title="Permalink to this headline">¶</a></h2>
+<p>You&#8217;ll need to know python reasonably well to use ccad.  Additionally,
+the <em>pydoc</em> generated documentation adds further detail to this
+manual.  Keep it handly.</p>
+</div>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>You&#8217;ll need pythonocc, python-gtk, and python-gtkglext to run ccad.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To install ccad, follow the following procedure in Linux:</p>
+<div class="highlight-python"><pre>tar xvzf ccad-ver.tar.gz (where ver is the version number)
+cd ccad-ver (where ver is the version number)
+python setup.py install --prefix=/usr/local (as root)</pre>
+</div>
+<p>Change the prefix argument to install in a different directory.</p>
+<p>If you&#8217;re a Windows or Mac user, ccad should still work.  I just
+haven&#8217;t tried it.  If you successfully install ccad in Windows or Mac,
+let us know how you did it, and we&#8217;ll update the documentation.</p>
+<p>If you&#8217;re having trouble, simply extract the .tar.gz file.  Then, add
+that directory to your PYTHONPATH.  That, at least, will get you going.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modelling.html" title="Modelling"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Introduction"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

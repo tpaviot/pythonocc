@@ -18,7 +18,7 @@ Revision History
 1/11/14: Began
 """
 
-import os
+import os, sys
 
 import distutils.core
 import distutils.dir_util
@@ -29,24 +29,23 @@ name = 'ccad'
 from display import version
 
 # Install the module
-distutils.core.setup(name=name,
-                     version=str(version),
-                     url='UNKNOWN',
-                     py_modules=['ccad.model', 'ccad.display'],
-                     package_dir={'ccad': '.'},
-                     requires=['occe', 'pythonocc', 'pygtk', 'gtkglext']
+distutils.core.setup(name = name,
+                     version = version,
+                     url = 'UNKNOWN',
+                     py_modules = ['ccad.model', 'ccad.display'],
+                     package_dir = {'ccad': '.'},
+                     requires = ['occe', 'pythonocc', 'pygtk', 'gtkglext']
                      )
 
 # Install the documentation
 # This is probably not the *proper* way to do this. ***
 dist = distutils.core._setup_distribution
 if 'install' in dist.commands:
-    if 'prefix' in dist.command_options['install']:
+    if dist.command_options['install'].has_key('prefix'):
         prefix = dist.command_options['install']['prefix'][1]
-    elif 'home' in dist.command_options['install']:
+    elif dist.command_options['install'].has_key('home'):
         prefix = dist.command_options['install']['home'][1]
     else:
         prefix = distutils.PREFIX
     if prefix:
-        # Hard-coding share into this makes it a linux-only distribution ***
-        distutils.dir_util.copy_tree('rst/_build/html', os.path.join(prefix, 'share/doc/ccad/html'))
+        distutils.dir_util.copy_tree('doc/html', os.path.join(prefix, 'share/doc/ccad/doc/html')) # Hard-coding share into this makes it a linux-only distribution ***

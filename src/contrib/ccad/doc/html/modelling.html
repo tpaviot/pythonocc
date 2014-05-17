@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Modelling &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="next" title="Creating Edges" href="creating_edges.html" />
+    <link rel="prev" title="Details" href="details.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="creating_edges.html" title="Creating Edges"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="details.html" title="Details"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="details.html"
+                                  title="previous chapter">Details</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="creating_edges.html"
+                                  title="next chapter">Creating Edges</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/modelling.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="modelling">
+<h1>Modelling<a class="headerlink" href="#modelling" title="Permalink to this headline">¶</a></h1>
+<p>Modelling describes creating models in ccad.  To understand modelling
+well, it&#8217;s helpful to understand how a model is described in ccad.
+ccad models are defined by a sequence of simpler shapes and
+boundaries.  In CAD terminology, it&#8217;s called a Boundary Representation
+model, or BRep, for short.  Consider a cube.</p>
+<img alt="_images/cube_solid.png" src="_images/cube_solid.png" />
+<p>The entire cube is called a <strong>solid</strong>.  A solid is made of one or more
+outer layers called <strong>shells</strong>.  For example, if the cube had a hollow
+center, it would be made of two shells.  One shell would define the
+outside of the cube.  The other would define the inside.  Each shell
+is made of one or more <strong>faces</strong>.</p>
+<img alt="_images/cube_face.png" src="_images/cube_face.png" />
+<p>Each face has a single mathematical expression that defines the whole
+face.  Planes and spheres are examples of faces.  Each face is bounded
+by one or more <strong>wires</strong>.</p>
+<img alt="_images/cube_wire.png" src="_images/cube_wire.png" />
+<p>The wires define the boundary of the face.  Each wire is made of one or
+more <strong>edges</strong>.</p>
+<img alt="_images/cube_edge.png" src="_images/cube_edge.png" />
+<p>Edges, like faces, have a unique mathematical expression that defines
+the entire edge.  Each edge is bounded by two <strong>vertices</strong>.</p>
+<img alt="_images/cube_vertex.png" src="_images/cube_vertex.png" />
+<p>Put in a hierarchy, it looks like this</p>
+<blockquote>
+<dl class="docutils">
+<dt>solid</dt>
+<dd><dl class="first last docutils">
+<dt>shell</dt>
+<dd><dl class="first last docutils">
+<dt>face</dt>
+<dd><dl class="first last docutils">
+<dt>wire</dt>
+<dd><dl class="first last docutils">
+<dt>edge</dt>
+<dd>vertex</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</blockquote>
+<p>ccad calls all of these <strong>shapes</strong>.  Each shape has its own class in
+ccad.  During modelling, you may need to use all of these classes.  I
+use <tt class="docutils literal"><span class="pre">wire</span></tt> much.  I use the others rarely.  Usually, I&#8217;m calling a
+higher level function, like sphere, that instantiates a solid, or arc,
+that instantiates an edge.</p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="creating_edges.html">Creating Edges</a><ul>
+<li class="toctree-l2"><a class="reference external" href="creating_edges.html#segment">segment</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_edges.html#arc">arc</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_edges.html#arc-ellipse">arc_ellipse</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_edges.html#spline">spline</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_edges.html#bezier">bezier</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_edges.html#circle">circle</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_edges.html#ellipse">ellipse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="creating_wires.html">Creating Wires</a><ul>
+<li class="toctree-l2"><a class="reference external" href="creating_wires.html#connection-of-edges">Connection of Edges</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_wires.html#polygon">polygon</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_wires.html#rectangle">rectangle</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_wires.html#ngon">ngon</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_wires.html#helix">helix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="creating_faces.html">Creating Faces</a><ul>
+<li class="toctree-l2"><a class="reference external" href="creating_faces.html#plane">plane</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_faces.html#face-from">face_from</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_faces.html#filling">filling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="creating_solids.html">Creating Solids</a><ul>
+<li class="toctree-l2"><a class="reference external" href="creating_solids.html#box">box</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_solids.html#wedge">wedge</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_solids.html#cylinder">cylinder</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_solids.html#sphere">sphere</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_solids.html#cone">cone</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_solids.html#torus">torus</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_solids.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="creating_derived.html">Creating Derived Shapes</a><ul>
+<li class="toctree-l2"><a class="reference external" href="creating_derived.html#prism">prism</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_derived.html#revol">revol</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_derived.html#loft">loft</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_derived.html#pipe">pipe</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_derived.html#helical-solid">helical_solid</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_derived.html#offset">offset</a></li>
+<li class="toctree-l2"><a class="reference external" href="creating_derived.html#slice">slice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="trms.html">Moving, Rotating, Mirroring, and Scaling</a><ul>
+<li class="toctree-l2"><a class="reference external" href="trms.html#moving">Moving</a></li>
+<li class="toctree-l2"><a class="reference external" href="trms.html#rotation">Rotation</a></li>
+<li class="toctree-l2"><a class="reference external" href="trms.html#mirroring">Mirroring</a></li>
+<li class="toctree-l2"><a class="reference external" href="trms.html#scaling">Scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="boolean.html">Boolean Operations</a><ul>
+<li class="toctree-l2"><a class="reference external" href="boolean.html#fuse">Fuse</a></li>
+<li class="toctree-l2"><a class="reference external" href="boolean.html#cut">Cut</a></li>
+<li class="toctree-l2"><a class="reference external" href="boolean.html#common">Common</a></li>
+<li class="toctree-l2"><a class="reference external" href="boolean.html#glue">Glue</a></li>
+<li class="toctree-l2"><a class="reference external" href="boolean.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="logging.html">Gathering Information and Miscellaneous Methods</a><ul>
+<li class="toctree-l2"><a class="reference external" href="logging.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#vertex">vertex</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#edge">edge</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#wire">wire</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#face">face</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#shell">shell</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#solid">solid</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="file_transfer.html">File Transfer</a><ul>
+<li class="toctree-l2"><a class="reference external" href="file_transfer.html#to-brep-from-brep">to_brep / from_brep</a></li>
+<li class="toctree-l2"><a class="reference external" href="file_transfer.html#to-iges-from-iges">to_iges / from_iges</a></li>
+<li class="toctree-l2"><a class="reference external" href="file_transfer.html#to-step-from-step">to_step / from_step</a></li>
+<li class="toctree-l2"><a class="reference external" href="file_transfer.html#to-stl">to_stl</a></li>
+<li class="toctree-l2"><a class="reference external" href="file_transfer.html#from-svg">from_svg</a></li>
+<li class="toctree-l2"><a class="reference external" href="file_transfer.html#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="creating_edges.html" title="Creating Edges"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="details.html" title="Details"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

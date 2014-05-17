@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuring Display &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="up" title="Displaying" href="displaying.html" />
+    <link rel="next" title="Example - Building Toy" href="example1.html" />
+    <link rel="prev" title="Controlling Display" href="controlling_display.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="example1.html" title="Example - Building Toy"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="controlling_display.html" title="Controlling Display"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" accesskey="U">Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="contents.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Configuring Display</a><ul>
+<li><a class="reference external" href="#add-menuitem">add_menuitem</a></li>
+<li><a class="reference external" href="#add-menu">add_menu</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="controlling_display.html"
+                                  title="previous chapter">Controlling Display</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="example1.html"
+                                  title="next chapter">Example - Building Toy</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/configuring_display.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuring-display">
+<h1>Configuring Display<a class="headerlink" href="#configuring-display" title="Permalink to this headline">¶</a></h1>
+<p>The viewer has a few simple configuring options to customize it for
+your application.</p>
+<div class="section" id="add-menuitem">
+<h2>add_menuitem<a class="headerlink" href="#add-menuitem" title="Permalink to this headline">¶</a></h2>
+<p>You may add another pulldown menu item with <strong>add_menuitem</strong>.  The
+following example adds the item <em>Car1</em> under the <em>Model</em> menu:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">add_menuitem</span><span class="p">((</span><span class="s">&#39;Model&#39;</span><span class="p">,</span> <span class="s">&#39;Car1&#39;</span><span class="p">),</span> <span class="n">display_car</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">v1</span><span class="o">.</span><span class="n">add_menuitem</span><span class="p">((</span><span class="s">&#39;Model&#39;</span><span class="p">,</span> <span class="s">&#39;Car2&#39;</span><span class="p">),</span> <span class="n">display_car</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first argument is a tuple that defines the menu hierarchy.  The
+first item in the tuple is the pull-down menu title.  The last item is
+the menu item.  Intermediate items are submenus.  If a menu doesn&#8217;t
+exist, it is created.  <strong>display_car</strong> is the function to call when the
+item is selected.  Pass parameters follow the function call.
+<strong>display_car</strong> might look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">display_car</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-menu">
+<h2>add_menu<a class="headerlink" href="#add-menu" title="Permalink to this headline">¶</a></h2>
+<p>If you know gtk and you want menu items fancier than strings,
+<strong>add_menu</strong>, a lower-level menu manipulation method is available.  See
+the API for details.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="example1.html" title="Example - Building Toy"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="controlling_display.html" title="Controlling Display"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" >Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

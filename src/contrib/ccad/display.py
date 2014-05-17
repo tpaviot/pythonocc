@@ -24,7 +24,7 @@ import math as _math
 try:
     import pygtk, gtk, gtk.gtkgl, gobject
 except ImportError:
-    print "Please install (see http://www.pygtk.org)."
+    print "Please install python-gtk (see http://www.pygtk.org)."
     _sys.exit(0)
 
 from OCC import (AIS as _AIS, Aspect as _Aspect, gp as _gp,
@@ -450,6 +450,7 @@ class view_gtk(object):
         self.morbit = _math.pi/12.0
         self.set_scale(10.0)
 
+
     def add_menu(self, hierarchy):
         """
         Add a menu.  Used internally.  Used externally for those who
@@ -469,6 +470,7 @@ class view_gtk(object):
             last_menu = self.menus[sub_menu]
         return last_menu
 
+
     def add_menuitem(self, hierarchy, func, *args):
         """
         Add a menu item.  hierarchy is a tuple.  The first element in
@@ -486,12 +488,14 @@ class view_gtk(object):
         menuitem.show()
         last_menu[1].append(menuitem)
 
+
     # Event Functions
     def realize(self, widget):
         """
         Called on a window realize
         """
         pass  # Adding the glcontext checking here didn't help
+
 
     def resize(self, widget, event):
         """
@@ -516,6 +520,7 @@ class view_gtk(object):
 
         gldrawable.gl_end()
 
+
     def draw(self, widget, event):
         """
         Called on a window draw
@@ -533,11 +538,13 @@ class view_gtk(object):
 
         #gldrawable.gl_end()
 
+
     def redraw(self, widget=None):
         """
         Called from a user request
         """
         self.glarea.queue_draw()
+
 
     def key_lookup(self, func_call):
         """
@@ -550,6 +557,7 @@ class view_gtk(object):
             #del self.key_table[key]
             del self.key_table[func_call]
         return retval
+
 
     def keypress(self, widget, event):
         """
@@ -564,12 +572,14 @@ class view_gtk(object):
             except:
                 self.status_bar.set_text('Command unknown ' + cmd)
 
+
     def mousepress(self, widget, event):
         """
         Called when a mouse button is pressed
         """
         self.beginx, self.beginy = int(event.x), int(event.y)
         self.occ_view.StartRotation(self.beginx, self.beginy)
+
 
     def mouserelease(self, widget, event):
         """
@@ -587,18 +597,23 @@ class view_gtk(object):
                 self.selected = None
             self.make_selection()
 
+
     def mousemotion(self, widget, event):
         """
         Called when a mouse button is pressed and the mouse is moving
         """
         x, y = int(event.x), int(event.y)
-        if event.state & gtk.gdk.BUTTON2_MASK:  # Mouse-Controlled Projection
+        # Mouse-Controlled Projection
+        # ComputedModes are too slow to redraw, so disabled for them
+        if (event.state & gtk.gdk.BUTTON2_MASK) and \
+                not self.occ_view.ComputedMode():
             if event.state & gtk.gdk.SHIFT_MASK:  # Mouse-Controlled Pan
                 self.occ_view.Pan(x - self.beginx, -y + self.beginy)
                 self.beginx, self.beginy = x, y
             else:  # Mouse-Controlled Orbit
                 self.occ_view.Rotation(x, y)
         self.occ_context.MoveTo(x, y, self.handle_view)
+
 
     # View Functions
     def viewstandard(self, widget=None, viewtype='front'):
@@ -624,6 +639,7 @@ class view_gtk(object):
         else:
             self.status_bar.set_text('Unknown view' + viewtype)
 
+
     def orbitup(self, widget=None, rapid=False):
         """
         The observer has moved up
@@ -639,11 +655,13 @@ class view_gtk(object):
         #self.occ_view.Rotate(0.0, -self.morbit, 0.0, gravity[0], gravity[1], gravity[2])
         self.occ_view.Rotate(0.0, -self.morbit, 0.0)
 
+
     def panup(self, widget=None, rapid=False):
         """
         The scene is panned up
         """
         self.occ_view.Pan(0, -self.mpan)
+
 
     def orbitdown(self, widget=None, rapid=False):
         """
@@ -651,11 +669,13 @@ class view_gtk(object):
         """
         self.occ_view.Rotate(0.0, self.morbit, 0.0)
 
+
     def pandown(self, widget=None, rapid=False):
         """
         The scene is panned down
         """
         self.occ_view.Pan(0, self.mpan)
+
 
     def orbitright(self, widget = None, rapid=False):
         """
@@ -663,11 +683,13 @@ class view_gtk(object):
         """
         self.occ_view.Rotate(-self.morbit, 0.0, 0.0)
 
+
     def panright(self, widget=None, rapid=False):
         """
         The scene is panned right
         """
         self.occ_view.Pan(-self.mpan, 0)
+
 
     def orbitleft(self, widget=None, rapid=False):
         """
@@ -675,11 +697,13 @@ class view_gtk(object):
         """
         self.occ_view.Rotate(self.morbit, 0.0, 0.0)
 
+
     def panleft(self, widget=None, rapid=False):
         """
         The scene is panned to the left
         """
         self.occ_view.Pan(self.mpan, 0)
+
 
     def zoomin(self, widget=None, rapid=False):
         """
@@ -687,11 +711,13 @@ class view_gtk(object):
         """
         self.occ_view.SetZoom(_math.sqrt(2.0))
 
+
     def zoomout(self, widget=None, rapid=False):
         """
         Zoom out
         """
         self.occ_view.SetZoom(_math.sqrt(0.5))
+
 
     def rotateccw(self, widget=None, rapid=False):
         """
@@ -699,11 +725,13 @@ class view_gtk(object):
         """
         self.occ_view.Rotate(0.0, 0.0, -self.morbit)
 
+
     def rotatecw(self, widget=None, rapid=False):
         """
         The scene is rotated clockwise
         """
         self.occ_view.Rotate(0.0, 0.0, self.morbit)
+
 
     def fit(self, widget=None):
         """
@@ -711,6 +739,7 @@ class view_gtk(object):
         """
         self.occ_view.ZFitAll()
         self.occ_view.FitAll()
+
 
     def query(self, widget=None):
         """
@@ -734,6 +763,7 @@ class view_gtk(object):
                 retval = 'No properties for type ' + self.selection_type
             print retval
 
+
     # Direct Call (not from GUI) Functions
     def set_projection(self, vcenter, vout, vup):
         """
@@ -747,6 +777,7 @@ class view_gtk(object):
         projection = _Visual3d_ViewOrientation(_Graphic3d.Graphic3d_Vertex(vcenter[0], vcenter[1], vcenter[2]), _Graphic3d.Graphic3d_Vector(vout[0], vout[1], vout[2]), _Graphic3d.Graphic3d_Vector(vup[0], vup[1], vup[2]))
         self.occ_view.SetViewOrientation(projection)
 
+
     def set_scale(self, scale):
         """
         Set the screen scale.  I'm not certain, but it looks to me
@@ -757,12 +788,14 @@ class view_gtk(object):
         """
         self.occ_view.SetSize(scale)
 
+
     def set_size(self, size):
         """
         Sets the size of the window in pixels.  Size is a 2-tuple
         """
         self.win.resize(max(1, size[0]-1), max(1, size[1]-1))
         self.glarea.set_size_request(size[0], size[1])
+
 
     def set_background(self, color):
         """
@@ -771,12 +804,14 @@ class view_gtk(object):
         """
         self.occ_view.SetBackgroundColor(_Quantity.Quantity_TOC_RGB, color[0], color[1], color[2])
 
+
     def set_foreground(self, color):
         """
         Sets the default shape color.
         color is a 3-tuple with each value from 0.0 to 1.0
         """
         self.foreground = color
+
 
     def set_triedron(self, state, position='down_right', color=(1.0, 1.0, 1.0), size=0.08):
         """
@@ -801,6 +836,7 @@ class view_gtk(object):
             else:
                 qcolor = _Quantity.Quantity_NOC_BLACK
             self.occ_view.TriedronDisplay(local_position, qcolor, size, _V3d.V3d_WIREFRAME)
+
 
     # Things to Show Functions
     def display(self, shape, color=None, material='default', transparency=0.0, line_type='solid', line_width=1, logging=True):
@@ -918,6 +954,7 @@ class view_gtk(object):
 
         self.occ_context.Display(handle_aisshape, True)
 
+
     def clear(self, display_shapes=True):
         """
         Clears all shapes from the window
@@ -927,6 +964,7 @@ class view_gtk(object):
         self.occ_context.EraseAll()
         if display_shapes:
             self.display_shapes = []
+
 
     # Selection Functions
     def _build_hashes(self, htype):
@@ -967,6 +1005,7 @@ class view_gtk(object):
                 self.positions.append(c)
             ex.Next()
 
+
     def make_selection(self, event=None):
         """
         Called when a shape is selected
@@ -988,6 +1027,7 @@ class view_gtk(object):
                     self.status_bar.set_text(status)
                 self.selection_index = index
 
+
     def select_vertex(self, event=None):
         """
         Changes to a mode where only vertices can be selected
@@ -999,6 +1039,7 @@ class view_gtk(object):
         self._build_hashes('vertex')
         self.selection_type = 'vertex'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
+
 
     def select_edge(self, event=None):
         """
@@ -1012,6 +1053,7 @@ class view_gtk(object):
         self.selection_type = 'edge'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
 
+
     def select_wire(self, event=None):
         """
         Changes to a mode where only wires can be selected
@@ -1023,6 +1065,7 @@ class view_gtk(object):
         self._build_hashes('wire')
         self.selection_type = 'wire'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
+
 
     def select_face(self, event=None):
         """
@@ -1036,6 +1079,7 @@ class view_gtk(object):
         self.selection_type = 'face'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
 
+
     def select_shape(self, event=None):
         """
         Changes to a mode where only shapes can be selected
@@ -1044,6 +1088,7 @@ class view_gtk(object):
         self.occ_context.CloseAllContexts()
         self.selection_type = 'shape'
         self.glarea.window.set_cursor(self.REGULAR_CURSOR)
+
 
     # Viewing Mode Functions
     def mode_wireframe(self, widget=None):
@@ -1054,6 +1099,7 @@ class view_gtk(object):
             self.occ_view.SetComputedMode(False)
             self.occ_context.SetDisplayMode(_AIS.AIS_WireFrame)
 
+
     def mode_shaded(self, widget=None):
         """
         Changes the display to view shapes as shaded (filled) shapes.
@@ -1061,6 +1107,7 @@ class view_gtk(object):
         if not widget or (widget and widget.get_active()):
             self.occ_view.SetComputedMode(False)
             self.occ_context.SetDisplayMode(_AIS.AIS_Shaded)
+
 
     def mode_hlr(self, widget=None):
         """
@@ -1077,6 +1124,7 @@ class view_gtk(object):
         #self.occ_context.SetHiddenLineAspect(presentation.GetHandle())
         #self.occ_context.EnableDrawHiddenLine()
 
+
     def reset_mode_drawing(self):
         """
         Call this after mode_drawing to reset everything.
@@ -1087,7 +1135,8 @@ class view_gtk(object):
         for display_shape in self.display_shapes:
             self.display(display_shape['shape'], display_shape['color'], display_shape['material'], display_shape['transparency'], display_shape['line_type'], display_shape['line_width'], logging = 0)
 
-    def mode_drawing(self):
+
+    def mode_drawing(self, widget=None):
         """
         This is a stand-alone call to make a drafting-like drawing of
         the shape.  It's better than HLR, because HLR shows creases at
@@ -1117,9 +1166,11 @@ class view_gtk(object):
         self.display(outlinevcompound, color=display_shape['color'], line_type=display_shape['line_type'], line_width=display_shape['line_width'], logging=False)
         self.viewstandard(viewtype='top')
 
+
     # Helps
     def display_manual(self, widget):
         pass
+
 
     def about(self, widget):
         global version
@@ -1129,6 +1180,7 @@ class view_gtk(object):
         dialog.set_copyright('\302\251 Copyright 2013 Seven:Twelve Engineering, LLC')
         dialog.run()
         dialog.destroy()
+
 
     def save(self, name=''):
         """
@@ -1172,17 +1224,20 @@ class view_gtk(object):
             #self.occ_view.ToPixMap(pixmap, self.SCR[0], self.SCR[1])
             #pixmap.Save(TCollection_AsciiString(name)
 
+
     def perspective_length(self, distance):
         """
         Sets the focal length for perspective views
         """
         self.occ_view.SetFocale(distance)
 
+
     def perspective_angle(self, angle):
         """
         Sets the focal length for perspective views
         """
         self.occ_view.SetAngle(angle)
+
 
     def quit(self, widget=None):
         """
@@ -1208,6 +1263,7 @@ def start():  # For non-interactive sessions (don't run in ipython)
     global interactive
     interactive = False
     gtk.main()
+
 
 if __name__ == '__main__':
     import model as cm

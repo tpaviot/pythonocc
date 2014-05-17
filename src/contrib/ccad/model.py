@@ -4,11 +4,6 @@ Description
 CCAD is a python text-based solid modeller and displayer based on pythonocc.
 model.py contains classes and functions for modelling.
 
-To keep dependencies low, numpy is not used, but it sure would make
-things easier.  Well, from_svg got ridiculous without numpy, so it's a
-local import there.  Probably should make the transformation
-everywhere now.
-
 Author
 ------
 Charles Sharman
@@ -51,8 +46,13 @@ To Do
    liberal use of .fix statements.  It would be nice to get this right.
 
 8. Distinction between face, wire, solid, etc. can get muddled after
-   certain operations, particularly boolean.  Ought to be more careful
-   about this.
+   certain operations.  Boolean can naturally do so.  Even a basic
+   translate converts TopoDS_Vertex to TopoDS_Shape, for example.
+   It's currently fixed by converting at the point where the specific
+   type is needed.  May be better to correct immediately after the
+   loose operation.  Ought to be more careful about this, or maybe
+   should make a single class (shape) that is smart and handles all
+   types.  That seems harder but is more python-like.
 
 9. Separate compound, compsolid from solid.
 """
@@ -154,106 +154,138 @@ def _scale(s1, sx=1.0, sy=1.0, sz=1.0):
     return trf.Shape()
 
 
-def translate(s1, pdir):
+def translated(s1, pdir):
     """
-    moves the shape
+    Returns a new shape which is s1 translated (moved).
     """
-    return eval(s1.stype + '(_translate(s1, pdir))')
+    s2 = s1.copy()
+    s2.translate(pdir)
+    return s2
 
 
-def rotate(s1, pabout, pdir, angle):
+def rotated(s1, pabout, pdir, angle):
     """
-    rotates the shape
+    Returns a new shape which is s1 rotated.
     """
-    return eval(s1.stype + '(_rotate(s1, pabout, pdir, angle))')
+    s2 = s1.copy()
+    s2.rotate(pabout, pdir, angle)
+    return s2
 
 
-def rotatex(s1, angle):
+def rotatedx(s1, angle):
     """
-    rotates the shape about (0.0, 0.0, 0.0) around (1.0, 0.0, 0.0)
+    Returns a new shape which is s1 rotated about (0.0, 0.0, 0.0) and
+    around (1.0, 0.0, 0.0)
     """
-    return rotate(s1, (0.0, 0.0, 0.0), (1.0, 0.0, 0.0), angle)
+    s2 = s1.copy()
+    s2.rotatex(angle)
+    return s2
 
 
-def rotatey(s1, angle):
+def rotatedy(s1, angle):
     """
-    rotates the shape about (0.0, 0.0, 0.0) around (0.0, 1.0, 0.0)
+    Returns a new shape which is s1 rotated about (0.0, 0.0, 0.0) and
+    around (0.0, 1.0, 0.0)
     """
-    return rotate(s1, (0.0, 0.0, 0.0), (0.0, 1.0, 0.0), angle)
+    s2 = s1.copy()
+    s2.rotatey(angle)
+    return s2
 
 
-def rotatez(s1, angle):
+def rotatedz(s1, angle):
     """
-    rotates the shape about (0.0, 0.0, 0.0) around (0.0, 0.0, 1.0)
+    Returns a new shape which is s1 rotated about (0.0, 0.0, 0.0) and
+    around (0.0, 0.0, 1.0)
     """
-    return rotate(s1, (0.0, 0.0, 0.0), (0.0, 0.0, 1.0), angle)
+    s2 = s1.copy()
+    s2.rotatez(angle)
+    return s2
 
 
-def mirror(s1, pabout, pdir):
+def mirrored(s1, pabout, pdir):
     """
-    mirrors the shape
+    Returns a new shape which is s1 mirrored.
     """
-    return eval(s1.stype + '(_mirror(s1, pabout, pdir))')
+    s2 = s1.copy()
+    s2.mirror(pabout, pdir)
+    return s2
 
 
-def mirrorx(s1):
+def mirroredx(s1):
     """
-    mirrors s1 about (0.0, 0.0, 0.0) in the x-direction
+    Returns a new shape which is s1 mirrored about (0.0, 0.0, 0.0) in
+    the x-direction
     """
-    return mirror(s1, (0.0, 0.0, 0.0), (1.0, 0.0, 0.0))
+    s2 = s1.copy()
+    s2.mirrorx()
+    return s2
 
 
-def mirrory(s1):
+def mirroredy(s1):
     """
-    mirrors s1 about (0.0, 0.0, 0.0) in the y-direction
+    Returns a new shape which is s1 mirrored about (0.0, 0.0, 0.0) in
+    the y-direction
     """
-    return mirror(s1, (0.0, 0.0, 0.0), (0.0, 1.0, 0.0))
+    s2 = s1.copy()
+    s2.mirrory()
+    return s2
 
 
-def mirrorz(s1):
+def mirroredz(s1):
     """
-    mirrors s1 about (0.0, 0.0, 0.0) in the z-direction
+    Returns a new shape which is s1 mirrored about (0.0, 0.0, 0.0) in
+    the z-direction
     """
-    return mirror(s1, (0.0, 0.0, 0.0), (0.0, 0.0, 1.0))
+    s2 = s1.copy()
+    s2.mirrorz()
+    return s2
 
 
-def scale(s1, sfx, sfy=None, sfz=None):
+def scaled(s1, sfx, sfy=None, sfz=None):
     """
-    Scales shape s1 by a different scale factor in all 3 dimensions.
-    If sfy and sfz are left undefined, all 3 dimensions are scaled by
-    sfx.
+    Returns a new shape which is s1 scaled by a different scale factor
+    in all 3 dimensions.  If sfy and sfz are left undefined, all 3
+    dimensions are scaled by sfx.
     """
-    if sfy and sfz:
-        return eval(s1.stype + '(_scale(s1, sfx, sfy, sfz))')
-    else:
-        return eval(s1.stype + '(_scale(s1, sfx, sfx, sfx))')
+    s2 = s1.copy()
+    s2.scale(sfx, sfy, sfz)
+    return s2
 
 
-def scalex(s1, sfx):
+def scaledx(s1, sfx):
     """
-    Scales shape s1 by scale factor sfx in the x-dimension
+    Returns a new shape which is s1 scaled by sfx in the x-dimension
     """
-    return eval(s1.stype + '(_scale(s1, sfx, 1.0, 1.0))')
+    s2 = s1.copy()
+    s2.scalex(sfx)
+    return s2
 
 
-def scaley(s1, sfy):
+def scaledy(s1, sfy):
     """
-    Scales shape s1 by scale factor sfy in the y-dimension
+    Returns a new shape which is s1 scaled by sfy in the y-dimension
     """
-    return eval(s1.stype + '(_scale(s1, 1.0, sfy, 1.0))')
+    s2 = s1.copy()
+    s2.scaley(sfy)
+    return s2
 
 
-def scalez(s1, sfz):
+def scaledz(s1, sfz):
     """
-    Scales shape s1 by scale factor sfz in the z-dimension
+    Returns a new shape which is s1 scaled by sfz in the z-dimension
     """
-    return eval(s1.stype + '(_scale(s1, 1.0, 1.0, sfz))')
+    s2 = s1.copy()
+    s2.scalez(sfz)
+    return s2
 
 
-def reverse(s1):
-    retval = s1.copy()
-    retval.reverse()
-    return retval
+def reversed(s1):
+    """
+    Returns a new shape which is s1 reversed in orientation.
+    """
+    s2 = s1.copy()
+    s2.reverse()
+    return s2
 
 
 # Face Functions
@@ -688,6 +720,17 @@ def simple_glue(s1, s2, face_pairs=[], tolerance=1e-3):
         return solid(new_shell)
 
 
+# Import Functions
+def _convert_import(s):
+    stype = _raw_type(s)
+    if stype in ['solid', 'compound', 'compsolid']:
+        return solid(s)
+    elif stype == 'shape':
+        print 'Error: Unsupported type', stype
+    else:
+        return eval(stype + '(s)')
+    
+
 def from_brep(name):
     """
     Imports a brep file and returns the shape.
@@ -696,20 +739,14 @@ def from_brep(name):
         s = _TopoDS.TopoDS_Shape()
         b = _BRep_Builder()
         _BRepTools.BRepTools().Read(s, name, b)
-        stype = _raw_type(s)
-        if stype in ['solid', 'compound', 'compsolid']:
-            return solid(s)
-        elif stype == 'shape':
-            print 'Error: Unsupported type', stype
-        else:
-            return eval(stype + '(s)')
+        return _convert_import(s)
     else:
         print 'Error: Can\'t find', name
 
 
 def from_iges(name):
     """
-    Imports an iges file and returns the solid.
+    Imports an iges file and returns the shape.
     """
     if _path.exists(name):
         reader = _IGESControl_Reader()
@@ -718,21 +755,21 @@ def from_iges(name):
         if not okay:
             print 'Warning: Could not translate all shapes'
         shape = reader.OneShape()
-        return solid(shape)
+        return _convert_import(shape)
     else:
         print 'Error: Can\'t find', name
 
 
 def from_step(name):
     """
-    Imports a step file and returns the solid.
+    Imports a step file and returns the shape.
     """
     if _path.exists(name):
         reader = _STEPControl.STEPControl_Reader()
         status = reader.ReadFile(name)
         okay = reader.TransferRoots()
         shape = reader.OneShape()
-        return solid(shape)
+        return _convert_import(shape)
     else:
         print 'Error: Can\'t find', name
 
@@ -741,9 +778,6 @@ def from_svg(name):
     """
     Imports a 2D svg file, converts each graphics path into a wire,
     and returns a list of wires.
-
-    It wouldn't be too hard to remove the numpy dependencies.  But
-    it's hard enough, and it would be slower.
 
     Warning: Currently only implements a subset of the svg protocol.
     The subset follows.  However, it's pretty easy to add more.
@@ -754,12 +788,6 @@ def from_svg(name):
 
     Warning: Only checked with small inkscape-generated files
     """
-
-    try:
-        import numpy as np
-    except:
-        print 'Error: Must have numpy installed to use from_svg'
-        return
 
     def finish_wire():
         if len(local_wire) > 0:
@@ -774,9 +802,9 @@ def from_svg(name):
         return (pt[0], pt[1])
 
     def transform_matrix():
-        retval = np.array([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])
+        retval = _gp.gp_Mat(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0)
         for matrix in matrices:
-            retval = np.dot(retval, matrix[1])
+            retval.Multiply(matrix[1]) # second element is the matrix
         return retval
 
     def transform_pts(transform, pts):
@@ -784,13 +812,11 @@ def from_svg(name):
         retval = []
         for pt in pts:
             #retval.append((pt[0], pt[1], 0.0)) # No transform (for debug)
-            xpt = np.dot(transform, np.array([pt[0], pt[1], 1.0]))
+            xyz = _gp.gp_XYZ(pt[0], pt[1], 1.0)
+            xyz.Multiply(transform)
             # svg y increases downward; height - xpt[1] corrects
-            retval.append((xpt[0], height - xpt[1], 0.0))
+            retval.append((xyz.X(), height - xyz.Y(), 0.0))
         return retval
-
-    def mag(v):
-        return _math.sqrt((v**2).sum())
 
     def vector_angle(u, v):
         # Computes the angle between two vectors
@@ -798,7 +824,10 @@ def from_svg(name):
             s = -1
         else:
             s = 1
-        return s * _math.acos(min(1.0, max(-1.0, np.dot(u, v) / (mag(u) * mag(v)))))
+        dot = u[0]*v[0] + u[1]*v[1]
+        magu = _math.sqrt(u[0]**2 + u[1]**2)
+        magv = _math.sqrt(v[0]**2 + v[1]**2)
+        return s * _math.acos(min(1.0, max(-1.0, dot / (magu * magv))))
 
     height = 0.0
     fp = open(name, 'r')
@@ -823,11 +852,11 @@ def from_svg(name):
             m = _re.match('\s*transform="matrix\((.+)\)"', line)
             if m:
                 matrix = map(lambda x: float(x), m.group(1).split(','))
-                matrices.append((len(entities), np.array([[matrix[0], matrix[2], matrix[4]], [matrix[1], matrix[3], matrix[5]], [0.0, 0.0, 1.0]])))
+                matrices.append((len(entities), _gp.gp_Mat(matrix[0], matrix[2], matrix[4], matrix[1], matrix[3], matrix[5], 0.0, 0.0, 1.0)))
             m = _re.match('\s*transform="translate\((.+)\)"', line)
             if m:
                 matrix = map(lambda x: float(x), m.group(1).split(','))
-                matrices.append((len(entities), np.array([[1.0, 0.0, matrix[0]], [0.0, 1.0, matrix[1]], [0.0, 0.0, 1.0]])))
+                matrices.append((len(entities), _gp.gp_Mat(1.0, 0.0, matrix[0], 0.0, 1.0, matrix[1], 0.0, 0.0, 1.0)))
         m = _re.match('.*/>|.*</', line)  # End of an entity
         if m:
             if entities[-1] == 'g' and len(matrices) > 0 and matrices[-1][0] == len(entities):
@@ -916,7 +945,10 @@ def from_svg(name):
                     else:
                         cosphi = _math.cos(phi)
                         sinphi = _math.sin(phi)
-                        x1p, y1p = np.dot(np.array([[cosphi, sinphi], [-sinphi, cosphi]]), np.array([(x1-x2)/2, (y1-y2)/2]))
+                        x = (x1-x2)/2
+                        y = (y1-y2)/2
+                        x1p = cosphi*x + sinphi*y
+                        y1p = -sinphi*x + cosphi*y
                         # Correct for out-of-range radii
                         l = _math.sqrt((x1p**2) / (rx**2) + (y1p**2) / (ry**2))
                         if l > 1.0:
@@ -927,11 +959,14 @@ def from_svg(name):
                             s = -1
                         else:
                             s = 1
-                        cxp, cyp = s * _math.sqrt(max(0.0, (rx**2)*(ry**2) - (rx**2)*(y1p**2) - (ry**2)*(x1p**2)) / ((rx**2)*(y1p**2) + (ry**2)*(x1p**2))) * np.array([rx*y1p/ry, -ry*x1p/rx])
-                        cx, cy = np.dot(np.array([[cosphi, -sinphi], [sinphi, cosphi]]), np.array([cxp, cyp])) + np.array([(x1+x2)/2, (y1+y2)/2])
-                        v1 = np.array([1.0, 0.0])
-                        v2 = np.array([(x1p-cxp)/rx, (y1p-cyp)/ry])
-                        v3 = np.array([(-x1p-cxp)/rx, (-y1p-cyp)/ry])
+                        c = s * _math.sqrt(max(0.0, (rx**2)*(ry**2) - (rx**2)*(y1p**2) - (ry**2)*(x1p**2)) / ((rx**2)*(y1p**2) + (ry**2)*(x1p**2)))
+                        cxp = c * rx*y1p/ry
+                        cyp = c * (-ry)*x1p/rx
+                        cx = cosphi*cxp - sinphi*cyp + (x1+x2)/2
+                        cy = sinphi*cxp + cosphi*cyp + (y1+y2)/2
+                        v1 = (1.0, 0.0)
+                        v2 = ((x1p-cxp)/rx, (y1p-cyp)/ry)
+                        v3 = ((-x1p-cxp)/rx, (-y1p-cyp)/ry)
                         theta = vector_angle(v1, v2)
                         dtheta = vector_angle(v2, v3) % (2 * _math.pi)
                         if fs == 0 and dtheta > 0.0:
@@ -948,9 +983,10 @@ def from_svg(name):
                         a.bounds()
                         # Transform a
                         m = _gp.gp_Trsf()
-                        m.SetValues(transform[0, 0], transform[0, 1], 0.0, transform[0, 2],
-                                    transform[1, 0], transform[1, 1], 0.0, transform[1, 2],
-                                    0.0, 0.0, transform[0, 0], 0.0, 1e-16, 1e-7)  # unsure of TolAng and TolDist
+                        # There's probably a better way to convert a matrix to a transformation
+                        m.SetValues(transform.Value(1, 1), transform.Value(1, 2), 0.0, transform.Value(1, 3),
+                                    transform.Value(2, 1), transform.Value(2, 2), 0.0, transform.Value(2, 3),
+                                    0.0, 0.0, transform.Value(1, 1), 0.0, 1e-16, 1e-7)  # unsure of TolAng and TolDist
                         trf = _BRepBuilderAPI.BRepBuilderAPI_Transform(m)
                         trf.Perform(a.shape, 1)
                         a.shape = trf.Shape()
@@ -1006,6 +1042,169 @@ class shape(object):
         Exports the shape in .brep format
         """
         _BRepTools.BRepTools().Write(self.shape, name)
+
+    def to_iges(self, name, **options):
+        """
+        Exports the shape in .igs format.  It supports the following options:
+
+        precision_mode:
+            -1: uncertainty is set to the minimum tolerance of all shapes
+            0 (Default): uncertainty is set to the average tolerance of all
+            shapes
+            1: uncertainty is set to the maximum tolerance of all shapes
+            2: uncertainty is set to precision_value
+
+        precision_value (0.0001 Default): for precision_mode 2, uncertainty is
+        set to this
+
+        brep_mode:
+            0 (Default): faces translated to IGES 144 entities (no brep)
+            1: faces translated to IGES 510 entities (will have brep)
+
+        convert_surface_mode:
+            0 (Default): elementary surfaces are written as surfaces of
+            revolution
+            1: elementary surfaces are converted to corresponding IGES surfaces
+
+        units:
+            'MM': millimeters
+            'INCH': inches
+
+        author: the author of the file
+
+        sending_company:
+
+        receiving_company:
+
+        product: the product creating the file
+        """
+
+        # Setup
+        c = _IGESControl_Controller()
+        c.Init()
+        if 'units' in options:
+            units = options['units']
+        else:
+            units = 'MM'
+        if 'brep_mode' in options:
+            brep_mode = options['brep_mode']
+        else:
+            brep_mode = 0
+        w = _IGESControl_Writer(units, brep_mode)
+
+        # Parse Options
+        if 'precision_mode' in options:
+            _Interface_Static_SetIVal('write.precision.mode', options['precision_mode'])
+        if 'precision_value' in options:
+            _Interface_Static_SetRVal('write.precision.val', options['precision_value'])
+        #if 'brep_mode' in options:
+        #    # Didn't work here
+        #    _Interface_Static_SetIVal('write.iges.brep.mode', options['brep_mode'])
+        if 'convert_surface_mode' in options:
+            if options['convert_surface_mode'] == 1:
+                value = 'On'
+            else:
+                value = 'Off'
+            _Interface_Static_SetCVal('write.convertsurface.mode', value)
+        #if 'units' in options:
+        #    _Interface_Static_SetCVal('write.step.unit', options['units'])
+        if 'author' in options:
+            _Interface_Static_SetCVal('write.iges.header.author', options['author'])
+        if 'sending_company' in options:
+            _Interface_Static_SetCVal('write.iges.header.company', options['sending_company'])
+        if 'receiving_company' in options:
+            _Interface_Static_SetCVal('write.iges.header.receiver', options['receiveing_company'])
+        if 'product' in options:
+            _Interface_Static_SetCVal('write.iges.header.product', options['product'])
+
+        # Write
+        okay = w.AddShape(self.shape)
+        if not okay:
+            print 'Warning: Could not translate all shapes'
+        w.Write(name)
+
+    def to_step(self, name, **options):
+        """
+        Exports the shape in .stp format.  It supports the following options:
+
+        precision_mode:
+            -1: uncertainty is set to the minimum tolerance of all shapes
+            0 (Default): uncertainty is set to the average tolerance of all
+            shapes
+            1: uncertainty is set the the maximum tolerance of all shapes
+            2: uncertainty is set to precision_value
+
+        precision_value (0.0001 Default): for precision_mode 2, uncertainty is
+        set to this
+
+        assembly:
+            0 (Default): writes without assemblies
+            1: writes with assemblies
+            2: TopoDS_Compounds are written as assemblies
+
+        schema: defines the version of schema
+            1 (Default): AP214CD
+            2: AP214DIS
+            3: AP203
+            4: AP214IS
+
+        surface_curve_mode:
+            0: write without pcurves
+            1 (Default): write with pcurves
+
+        transfer_mode:
+            0 (Default): automatic
+            1: transfer to manifold solid brep
+            2: transfer to faceted brep (only for planar faces and linear
+                edges)
+            3: transfer to shell based surface model
+            4: transfer to geometric curve set
+
+        units:
+            'MM': millimeters
+            'INCH': inches
+
+        product: the product creating the file
+        """
+
+        # Setup
+        c = _STEPControl.STEPControl_Controller()
+        c.Init()
+        w = _STEPControl.STEPControl_Writer()
+
+        # Parse Options
+        if 'precision_mode' in options:
+            _Interface_Static_SetIVal('write.precision.mode', options['precision_mode'])
+        if 'precision_value' in options:
+            _Interface_Static_SetRVal('write.precision.val', options['precision_value'])
+        if 'assembly' in options:
+            _Interface_Static_SetIVal('write.step.assembly', options['assembly'])
+        if 'schema' in options:
+            _Interface_Static_SetCVal('write.step.schema', str(options['schema']))
+            w.Model(True)
+        if 'product' in options:
+            _Interface_Static_SetCVal('write.product.name', options['product'])
+        if 'surface_curve_mode' in options:
+            _Interface_Static_SetIVal('write.surfacecurve.mode', options['surface_curve_mode'])
+        if 'units' in options:
+            _Interface_Static_SetCVal('write.step.unit', options['units'])
+        if 'transfer_mode' in options:
+            transfer_mode = [_STEPControl.STEPControl_AsIs,
+                             _STEPControl.STEPControl_ManifoldSolidBrep,
+                             _STEPControl.STEPControl_FacetedBrep,
+                             _STEPControl.STEPControl_ShellBasedSurfaceModel,
+                             _STEPControl.STEPControl_GeometricCurveSet][options['transfer_mode']]
+        else:
+            transfer_mode = _STEPControl.STEPControl_AsIs
+
+        # Write
+        okay = w.Transfer(self.shape, transfer_mode)
+        if okay in [_IFSelect.IFSelect_RetError,
+                    _IFSelect.IFSelect_RetFail,
+                    _IFSelect.IFSelect_RetStop]:
+            print 'Error: Could not translate shape to step'
+        else:
+            w.Write(name)
 
     def translate(self, pdir):
         """
@@ -1123,11 +1322,15 @@ class shape(object):
             ex.Next()
         return retval
 
-    def _valid_subshape(self, stype):
+    def _valid_subshapes(self, include_top = False):
         types = ['vertex', 'edge', 'wire', 'face', 'shell', 'solid']
         self_index = types.index(self.stype)
-        sub_index = types.index(stype)
-        if sub_index < self_index:
+        if include_top:
+            self_index = self_index + 1
+        return types[:self_index]
+
+    def _valid_subshape(self, stype):
+        if stype in self._valid_subshapes():
             return True
         else:
             print 'Warning: ' + stype + ' is not a subshape of ' + self.stype
@@ -1149,7 +1352,6 @@ class shape(object):
         """
         Copies the shape and returns the copied shape
         """
-        #return eval(self.stype + '(self.shape)')
         s = _BRepBuilderAPI.BRepBuilderAPI_Copy(self.shape).Shape()
         return eval(self.stype + '(s)')
 
@@ -1214,33 +1416,40 @@ class shape(object):
         b.Perform()
         self.shape = b.Shape()
 
-    def dump(shape, level=0):
+    def dump(self, flat = True, _level = 0):
         """
-        Print the details of an object from the top down.  *** Doesn't work
+        Print the details of an object from the top down.
+
+        If flat is False, dumps a hierarchy form.
+        _level is used for the recursion; don't touch it.
         """
-        brt = _BRep_Tool()
-        s = shape.ShapeType()
-        print "." * level, shapeTypeString(shape),
-
-        if s == _TopAbs.TopAbs_VERTEX:
-            pnt = brt.Pnt(_TopoDS_vertex(shape))  # Added by Charles
-            print "<Vertex: %s %s %s>" % (pnt.X(), pnt.Y(), pnt.Z())
-
-        it = _TopoDS.TopoDS_Iterator(shape)
-        while it.More():
-            shp = it.Value()
-            it.Next()
-            dump(shp, level + 1)
+        types = self._valid_subshapes()
+        types.reverse()
+        if not flat and len(types) > 0:
+            types = [types[0]]
+        for t in types:
+            ss = self.subshapes(t)
+            for count, s in enumerate(ss):
+                x, y, z = s.center()
+                if t in ['vertex', 'edge', 'face']:
+                    suffix = ' tolerance: %.4e' % s.tolerance()
+                else:
+                    suffix = ''
+                print '.'*_level + '%s%d location: (%.6f,%.6f,%.6f)%s' % (t, count, x, y, z, suffix)
+                if not flat:
+                    s.dump(False, level + 1)
 
     def nearest(self, stype, positions, eps=1e-12):
         """
         Returns the index of the subshape nearest each position in
         positions.  If more than one shape tie for nearest, a 4th
         argument in positions selects which item to choose.
+
+        This algorithm could probably be improved ***
         """
         shape_centers = self.subcenters(stype)
         shape_indices = []
-        for pt in positions:  # Would be much faster with numpy ***
+        for pt in positions:
             min_dsq = (pt[0]-shape_centers[0][0])**2 + (pt[1]-shape_centers[0][1])**2 + (pt[2]-shape_centers[0][2])**2
             arg_min = 0
             arg_mins = []
@@ -1314,7 +1523,7 @@ class vertex(shape):
     stype = 'vertex'
 
     def __init__(self, s):
-        if isinstance(s, (list, tuple)):
+        if hasattr(s, '__getitem__') and isinstance(s[0], (int, float)):
             b = _BRepBuilderAPI.BRepBuilderAPI_MakeVertex(
                         _gp.gp_Pnt(s[0], s[1], s[2]))
             self.shape = b.Vertex()
@@ -1326,7 +1535,7 @@ class vertex(shape):
             raise TypeError
 
     def center(self):
-        p = _BRep_Tool.Pnt(self.shape)
+        p = _BRep_Tool.Pnt(_TopoDS_vertex(self.shape))
         return (p.X(), p.Y(), p.Z())
 
     def tolerance(self):
@@ -1499,7 +1708,7 @@ class face(shape):
         """
 
         raw_vertices = self._raw('vertex')
-        if isinstance(rad, float):
+        if isinstance(rad, (int, float)):
             # Make real vertex_indices
             if vertex_indices is None:
                 vertex_indices = range(len(raw_vertices))
@@ -1676,169 +1885,6 @@ class solid(shape):
     def __and__(self, other):
         return common(self, other)
 
-    def to_step(self, name, **options):
-        """
-        Exports the solid in .stp format.  It supports the following options:
-
-        precision_mode:
-            -1: uncertainty is set to the minimum tolerance of all shapes
-            0 (Default): uncertainty is set to the average tolerance of all
-            shapes
-            1: uncertainty is set the the maximum tolerance of all shapes
-            2: uncertainty is set to precision_value
-
-        precision_value (0.0001 Default): for precision_mode 2, uncertainty is
-        set to this
-
-        assembly:
-            0 (Default): writes without assemblies
-            1: writes with assemblies
-            2: TopoDS_Compounds are written as assemblies
-
-        schema: defines the version of schema
-            1 (Default): AP214CD
-            2: AP214DIS
-            3: AP203
-            4: AP214IS
-
-        surface_curve_mode:
-            0: write without pcurves
-            1 (Default): write with pcurves
-
-        transfer_mode:
-            0 (Default): automatic
-            1: transfer to manifold solid brep
-            2: transfer to faceted brep (only for planar faces and linear
-                edges)
-            3: transfer to shell based surface model
-            4: transfer to geometric curve set
-
-        units:
-            'MM': millimeters
-            'INCH': inches
-
-        product: the product creating the file
-        """
-
-        # Setup
-        c = _STEPControl.STEPControl_Controller()
-        c.Init()
-        w = _STEPControl.STEPControl_Writer()
-
-        # Parse Options
-        if 'precision_mode' in options:
-            _Interface_Static_SetIVal('write.precision.mode', options['precision_mode'])
-        if 'precision_value' in options:
-            _Interface_Static_SetRVal('write.precision.val', options['precision_value'])
-        if 'assembly' in options:
-            _Interface_Static_SetIVal('write.step.assembly', options['assembly'])
-        if 'schema' in options:
-            _Interface_Static_SetCVal('write.step.schema', str(options['schema']))
-            w.Model(True)
-        if 'product' in options:
-            _Interface_Static_SetCVal('write.product.name', options['product'])
-        if 'surface_curve_mode' in options:
-            _Interface_Static_SetIVal('write.surfacecurve.mode', options['surface_curve_mode'])
-        if 'units' in options:
-            _Interface_Static_SetCVal('write.step.unit', options['units'])
-        if 'transfer_mode' in options:
-            transfer_mode = [_STEPControl.STEPControl_AsIs,
-                             _STEPControl.STEPControl_ManifoldSolidBrep,
-                             _STEPControl.STEPControl_FacetedBrep,
-                             _STEPControl.STEPControl_ShellBasedSurfaceModel,
-                             _STEPControl.STEPControl_GeometricCurveSet][options['transfer_mode']]
-        else:
-            transfer_mode = _STEPControl.STEPControl_AsIs
-
-        # Write
-        okay = w.Transfer(self.shape, transfer_mode)
-        if okay in [_IFSelect.IFSelect_RetError,
-                    _IFSelect.IFSelect_RetFail,
-                    _IFSelect.IFSelect_RetStop]:
-            print 'Error: Could not translate shape to step'
-        else:
-            w.Write(name)
-
-    def to_iges(self, name, **options):
-        """
-        Exports the solid in .igs format.  It supports the following options:
-
-        precision_mode:
-            -1: uncertainty is set to the minimum tolerance of all shapes
-            0 (Default): uncertainty is set to the average tolerance of all
-            shapes
-            1: uncertainty is set to the maximum tolerance of all shapes
-            2: uncertainty is set to precision_value
-
-        precision_value (0.0001 Default): for precision_mode 2, uncertainty is
-        set to this
-
-        brep_mode:
-            0 (Default): faces translated to IGES 144 entities (no brep)
-            1: faces translated to IGES 510 entities (will have brep)
-
-        convert_surface_mode:
-            0 (Default): elementary surfaces are written as surfaces of
-            revolution
-            1: elementary surfaces are converted to corresponding IGES surfaces
-
-        units:
-            'MM': millimeters
-            'INCH': inches
-
-        author: the author of the file
-
-        sending_company:
-
-        receiving_company:
-
-        product: the product creating the file
-        """
-
-        # Setup
-        c = _IGESControl_Controller()
-        c.Init()
-        if 'units' in options:
-            units = options['units']
-        else:
-            units = 'MM'
-        if 'brep_mode' in options:
-            brep_mode = options['brep_mode']
-        else:
-            brep_mode = 0
-        w = _IGESControl_Writer(units, brep_mode)
-
-        # Parse Options
-        if 'precision_mode' in options:
-            _Interface_Static_SetIVal('write.precision.mode', options['precision_mode'])
-        if 'precision_value' in options:
-            _Interface_Static_SetRVal('write.precision.val', options['precision_value'])
-        #if options.has_key('brep_mode'):
-        #    # Didn't work here
-        #    _Interface_Static_SetIVal('write.iges.brep.mode', options['brep_mode'])
-        if 'convert_surface_mode' in options:
-            if options['convert_surface_mode'] == 1:
-                value = 'On'
-            else:
-                value = 'Off'
-            _Interface_Static_SetCVal('write.convertsurface.mode', value)
-        #if options.has_key('units'):
-        #    _Interface_Static_SetCVal('write.step.unit', options['units'])
-        if 'author' in options:
-            _Interface_Static_SetCVal('write.iges.header.author', options['author'])
-        if options.has_key('sending_company'):
-            _Interface_Static_SetCVal('write.iges.header.company', options['sending_company'])
-        if options.has_key('receiving_company'):
-            _Interface_Static_SetCVal('write.iges.header.receiver', options['receiveing_company'])
-        if options.has_key('product'):
-            _Interface_Static_SetCVal('write.iges.header.product', options['product'])
-
-        # Write
-        okay = w.AddShape(self.shape)
-        if not okay:
-            print 'Warning: Could not translate all shapes'
-        w.Write(name)
-
     def to_stl(self, name, **options):
         """
         Exports the solid in .stl format.  It supports the following options:
@@ -1925,7 +1971,7 @@ class solid(shape):
         """
 
         raw_edges = self._raw('edge')
-        if isinstance(rad, float):
+        if isinstance(rad, (int, float)):
             # Make real edge_indices
             if edge_indices is None:
                 edge_indices = range(len(raw_edges))
@@ -1942,7 +1988,7 @@ class solid(shape):
         changed = 0
         for fillet_rad in fillet_rads:
             rad, edge_indices = fillet_rad
-            if isinstance(rad, float):
+            if isinstance(rad, (int, float)):
                 if rad > 0.0:
                     for edge_index in edge_indices:
                         changed = 1
@@ -1957,6 +2003,9 @@ class solid(shape):
     def chamfer(self, dist, edge_indices=None):
         """
         chamfers all edges in edge_indices the same distance at 45 degrees
+
+        The arguments are more primitive than boolean--should change
+        to be like boolean. ***
         """
         if dist > 0.0:
             edge_map = _TopTools.TopTools_IndexedDataMapOfShapeListOfShape()
@@ -2178,8 +2227,8 @@ topologies.  Those varieties with differing positions and orientations
 are not used.  They can be arrived at with transformations.
 """
 
-# Edge Primitives
 
+# Edge Primitives
 
 def segment(pt1, pt2):
     """
@@ -2279,8 +2328,8 @@ def ellipse(rad1, rad2):
         _sys.exit()
     return edge(_BRepBuilderAPI.BRepBuilderAPI_MakeEdge(_gp.gp_Elips(_gp.gp_Ax2(_gp.gp_Pnt(0.0, 0.0, 0.0), _gp.gp_Dir(0.0, 0.0, 1.0)), rad1, rad2)).Edge())
 
-# Wire Primitives
 
+# Wire Primitives
 
 def polygon(pts):
     """
@@ -2371,8 +2420,8 @@ def helix(rad, angle, turns, eps=1e-12):
         retval.append(locale)
     return wire(retval)
 
-# Face Primitives
 
+# Face Primitives
 
 def plane(w1, inner_wires=[]):
     """
@@ -2401,10 +2450,12 @@ def plane(w1, inner_wires=[]):
         return retval
 
 
-def surface(f1, w1):
+def face_from(f1, w1):
     """
     Returns a face whose underlying geometry is the same underlying
     geometry of f1 but is bounded by the closed wire w1.
+
+    Trim is a misnomer.  w1 can be beyond the original face.
     """
     s = _BRep_Tool.Surface(_TopoDS_face(f1.shape))
     b = _BRepBuilderAPI.BRepBuilderAPI_MakeFace(s, _TopoDS_wire(w1.shape))
@@ -2490,8 +2541,8 @@ def slice(s1, x=None, y=None, z=None):
     s2 = solid(b1.Shape())
     return s2.subshapes('face')
 
-# Solid Primitives
 
+# Solid Primitives
 
 def box(dx, dy, dz):
     """
@@ -2691,7 +2742,7 @@ def loft(ws, ruled=False, stype='solid'):
         return solid(b.Shape())
 
 
-def plane_loft(ws, ruled=False, stype='solid'):
+def plane_loft(ws, stype='solid'):
     """
     Returns a solid or shell which is a fit of a list of closed wires.
     Expects a list of closed wires.
@@ -2848,8 +2899,8 @@ def helical_solid(profile, rad, angle, turns):
         retval = retval + local_thread
     return retval
 
-# Useful functions that return arbitrary shapes
 
+# Useful functions that return arbitrary shapes
 
 def offset(s1, dist, tolerance=1e-3, join='arc'):
     """

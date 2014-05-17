@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Stand-Alone Viewing &mdash; ccad v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ccad v0.1 documentation" href="index.html" />
+    <link rel="up" title="Displaying" href="displaying.html" />
+    <link rel="next" title="Interactive Viewing" href="interactive.html" />
+    <link rel="prev" title="Displaying" href="displaying.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="interactive.html" title="Interactive Viewing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="displaying.html" title="Displaying"
+             accesskey="P">previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" accesskey="U">Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="displaying.html"
+                                  title="previous chapter">Displaying</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="interactive.html"
+                                  title="next chapter">Interactive Viewing</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/stand_alone.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="stand-alone-viewing">
+<h1>Stand-Alone Viewing<a class="headerlink" href="#stand-alone-viewing" title="Permalink to this headline">¶</a></h1>
+<p>To run the viewer stand-alone, from your own python program, call
+ccad.display() on all the shapes you&#8217;d like to see, then call
+ccad.start(), which will start the GUI (Graphical User Interface).
+The following python program creates a sphere and a box, calls the
+display function on each, then starts the viewer:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">ccad</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">sphere</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+    <span class="n">s2</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+    <span class="n">v1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+    <span class="n">v1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+    <span class="n">ccad</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If you&#8217;ve read about modelling, you should understand the listing up
+to the view line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span> <span class="o">=</span> <span class="n">ccad</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>which instantiates a ccad viewing window.  The next line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>displays s1 in the v1 window.  And:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>displays s2 in the v1 window.  The final line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ccad</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>starts the viewer.  Once you start the viewer, the program is locked
+until you exit the viewer.  Usually, you want to make this the last
+line in your code.</p>
+<p>After running, the following window appears</p>
+<img alt="_images/display_spherebox1.png" src="_images/display_spherebox1.png" />
+<p>Now, you can view your design.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="interactive.html" title="Interactive Viewing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="displaying.html" title="Displaying"
+             >previous</a> |</li>
+        <li><a href="contents.html">ccad v0.1 documentation</a> &raquo;</li>
+          <li><a href="displaying.html" >Displaying</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2014 by Charles Sharman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>
