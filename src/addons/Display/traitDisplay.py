@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-
-##Copyright 2008-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -17,39 +15,32 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+
 # Draft implementation of a custom editor for Enthought Traits GUI,
 # simply assign the editor to a Traited list of Topo_DS shapes and off you go.
 
 
 from itertools import izip
-import os
-
-import OCCViewer
-from qtDisplay import qtViewer3d
+import random, os
 
 try:
     if os.environ["ETS_TOOLKIT"] == "wx":
-        print "ETS_TOOLKIT variable has been set to wx, though this module \
-        explicitly uses the Qt backed setting the backend to Qt4..."
+        print "ETS_TOOLKIT variable has been set to wx, though this example explicitly uses the Qt backed\
+        setting the backend to Qt4..."
 except KeyError:
     pass
 
 os.environ["ETS_TOOLKIT"] = "qt4"
-try:
-    from pyface.qt import QtGui
-except ImportError:
-    raise ImportError('pyface package required but not found. Please visit https://pypi.python.org/pypi/pyface')
-try:
-    from traits.api import HasTraits, Any, Button, List, Instance, Str, Bool
+# abstracts PyQt4 and PySide
+from pyface.qt import QtGui
 
-except ImportError:
-    raise ImportError('Enthought traits package required but not found.')
-
-try:
-    from traitsui.api import EditorFactory, Editor
-except ImportError:
-    raise ImportError('traitsui required but not found.')
-
+from traits.api import HasTraits, Any, Button, List, Instance, Str, Bool
+from traitsui.api import Item, View, EditorFactory, Editor
+from OCC.gp import gp_Trsf, gp_Vec
+from OCC.TopLoc import TopLoc_Location
+from OCC.Display.qtDisplay import qtViewer3d
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
+from OCC.Display import OCCViewer
 
 class TraitOCCViewer3d(OCCViewer.Viewer3d):
     '''
@@ -68,9 +59,11 @@ class TraitOCCViewer3d(OCCViewer.Viewer3d):
             ais = OCCViewer.Viewer3d.DisplayShape(self, shapes, **kwargs)
             self.ShapeMap[shapes] = ais
 
+
     def EraseShape(self, shape):
         if shape not in self.ShapeMap:
-            raise Exception("shape not in shapemap")
+             raise Exception("shape not in shapemap")
+
         self.Context.Erase(self.ShapeMap[shape])
         del self.ShapeMap[shape]
 
@@ -79,12 +72,13 @@ class OCCTraitViewer(qtViewer3d):
     def __init__(self, editor=None, selection=None, **kwargs):
         super(OCCTraitViewer, self).__init__(**kwargs)
         self.editor = editor
-
+        
         self._initialized = False
         self.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding));
         self.setMinimumHeight(100)
         self.setMinimumWidth(150)
-
+        
+    
     def paintEvent(self, event):
         # Display can only be initialized when window is shown.
         # Showing windows etc is all magically done by traits
@@ -94,6 +88,7 @@ class OCCTraitViewer(qtViewer3d):
             self.InitDriver()
             self._initialized = True
             self.editor.initialized = True
+
         super(OCCTraitViewer, self).paintEvent(event)
 
     def InitDriver(self):
@@ -105,22 +100,23 @@ class OCCTraitViewer(qtViewer3d):
         self._inited = True
         # dict mapping keys to functions
         self._SetupKeyMap()
-
+        
     def mouseReleaseEvent(self, event):
         super(OCCTraitViewer, self).mouseReleaseEvent(event)
+        #not the nicest solution but heck.
+
         if len(self.editor.selection) < 1:
             self.editor.selection.append(self._display.selected_shape)
-        else:
+        else: 
             self.editor.selection[0] = self._display.selected_shape
-
-
+         
 class OCCEditor(Editor):
     shapes = List(Any)
     selection = List(Any)
     display = Instance(OCCViewer)
     initialized = Bool
 
-    def init(self, parent):
+    def init ( self, parent):
         self.control = OCCTraitViewer(self, self.selection)
         self.sync_value(self.name, 'shapes', 'both', is_list=True)
         if self.factory.selection:
@@ -144,7 +140,7 @@ class OCCEditor(Editor):
         for s in change:
             self.control._display.DisplayShape(s)
         self.control._display.FitAll()
-
+            
     def _shapes_items_changed(self, name, nothing, change):
         '''update display when the list is modified'''
         for s in change.added:
@@ -154,11 +150,67 @@ class OCCEditor(Editor):
         self.control._display.FitAll()
 
 
-class ToolkitEditorFactory(EditorFactory):
+
+class ToolkitEditorFactory ( EditorFactory ):
     selection = Str
     display = Str
-
     def _get_simple_editor_class(self):
         return OCCEditor
 
 OCCEditorFactory = ToolkitEditorFactory
+
+if __name__ == '__main__':
+    #Todo move this to examples
+    """
+
+    add cylinders to the viewer, remove cylinders selected in the viewer
+
+    """
+    class Example(HasTraits):
+        shapes = List
+
+        add_stuff = Button
+        remove_stuff = Button
+
+        #these are synced with the OCCEditor, name is refered to in OCCEditorFactory
+        selection = List
+        display = Instance(OCCViewer)
+        
+        view = View(
+            #set editor for the shapelist
+            #optional selection and display can set to the string name of the display instance and selection list
+            Item('shapes', editor=OCCEditorFactory(selection='selection', display='display'), show_label=False),
+
+
+            Item('add_stuff', show_label=False),
+            Item('remove_stuff', show_label=False),
+            width= 0.8, 
+            height=0.8, 
+            resizable=True
+        )
+        
+        def _selection_items_changed(self, name, undefined, list_change):
+            print "selection trait changed", list_change.added, self.display
+        
+        def _add_stuff_changed(self, old, new):
+            for i in xrange(20):
+                brep = BRepPrimAPI_MakeCylinder(random.random()*50, random.random()*50).Shape()
+                trsf = gp_Trsf()
+                trsf.SetTranslation(gp_Vec(random.random()*100, random.random()*100, random.random()*100))
+                brep.Move(TopLoc_Location(trsf))
+                self.shapes.append(brep)
+     
+        def _remove_stuff_changed(self, old, new):
+            if len(self.selection) >= 1:
+                for shape in self.selection:
+                    self.shapes.remove(shape)
+                self.selection = []
+            else:
+                print "nothing selected so removing an arbitrary number of shapes"
+                for i in range(random.randint(1, 8)):
+                    if len(self.shapes) > 0:
+                        self.shapes.pop()
+                    else:
+                        print "you should add some if you want me to remove stuff..."
+
+    Example(shapes=[]).configure_traits()
