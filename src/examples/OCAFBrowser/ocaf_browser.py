@@ -17,10 +17,10 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from enthought.traits.ui.api import View, Item, TreeEditor, TreeNode,\
+from traitsui.api import View, Item, TreeEditor, TreeNode,\
         ListEditor, VGroup
 
-from enthought.traits.api import (HasTraits, Property, Bool, 
+from traits.api import (HasTraits, Property, Bool,
                         on_trait_change, cached_property, Instance, File,
                         Float as _Float, List, Str, Enum, Int
                                   )

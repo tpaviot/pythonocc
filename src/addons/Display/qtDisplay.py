@@ -21,6 +21,8 @@ import os,sys
 from PyQt4 import Qt, QtCore, QtGui, QtOpenGL
 import OCCViewer
 
+from OpenGL.GL import *
+
 class point(object):
    def __init__(self,obj=None):
        self.x = 0
@@ -34,16 +36,34 @@ class point(object):
 
 
 class qtBaseViewer(QtOpenGL.QGLWidget):
+# class qtBaseViewer(QtGui.QWidget):
     ''' The base Qt Widget for an OCC viewer
     '''
     def __init__(self, parent = None):
+        # super(qtBaseViewer, self).__init__(QtOpenGL.QGLFormat(QtOpenGL.QGL.SampleBuffers), parent)
         super(qtBaseViewer, self).__init__(parent)
-        self.initializeGL()
-        self.initializeOverlayGL()
+        # self.makeCurrent()
+        super(qtBaseViewer, self).initializeGL()
+
+        # super(qtBaseViewer, self).initializeOverlayGL()
 
         # both required for drawing boxes over the OpenGL image
+
+        # These are correct for the OCC viewer
+        # self.setAutoFillBackground(False)
+        # self.setAutoBufferSwap(True)
+
         self.setAutoFillBackground(False)
-        self.setAutoBufferSwap(True)
+        # self.setAutoBufferSwap(True)
+
+
+        # ol = self.overlayContext()
+        # format_ = QtOpenGL.QGLFormat()
+        # f = format_.defaultOverlayFormat()
+        # f.setDoubleBuffer(True)
+        # ol.format().defaultFormat(format_)
+        # f.hasOverlay()
+        # f.setOverlay()
 
         self._display = None
         self._inited = False
@@ -52,11 +72,15 @@ class qtBaseViewer(QtOpenGL.QGLWidget):
         # On X11, setting this attribute will disable all double buffering
         # self.setAttribute(QtCore.Qt.WA_PaintOnScreen)
 
+    def initializeGL(self):
+        glEnable(GL_MULTISAMPLE)
+
     def GetHandle(self):
         return int(self.winId())
     
     def resizeEvent(self, event):
         if self._inited:
+            print "resizeEvent"
             self._display.OnResize()
 
 class qtViewer3d(qtBaseViewer):
@@ -109,20 +133,22 @@ class qtViewer3d(qtBaseViewer):
             self._display.Test()
     
     def focusInEvent(self, event):
-        #print 'focus in!!'
+        print 'focus in!!'
         if self._inited:
             self._display.Repaint()
 
     def focusOutEvent(self, event):
-        #print 'focus out'
+        print 'focus out'
         if self._inited:
             self._display.Repaint()
             #print 'repainted'
 
     def resizeGL(self, width, height):
+        print "resizeGL"
         self.setupViewport(width, height)
 
     def paintEvent(self, event):
+        print "paint event qt viewer"
         if self._inited:
             # the jitteriness is because of the many
             # and quite likely unnessecary updates of the viewer

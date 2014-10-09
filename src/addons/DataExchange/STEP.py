@@ -137,7 +137,7 @@ class STEPExporter(object):
     def add_shape(self, aShape):
         # First check the shape
         if aShape.IsNull():
-            raise Assertion("STEPExporter Error: the shape is NULL")
+            raise AssertionError("STEPExporter Error: the shape is NULL")
         else: 
             self._shapes.append(aShape)
     
@@ -145,8 +145,8 @@ class STEPExporter(object):
         # workaround for an OCC bug: temporarily changing the locale in order to 
         # avoid issues when exporting, see:
         # http://tracker.dev.opencascade.org/view.php?id=22898
-        loc = locale.getlocale()
-        locale.setlocale(locale.LC_ALL, 'C')
+        # loc = locale.getlocale()
+        # locale.setlocale(locale.LC_ALL, 'C')
         for shp in self._shapes:
             status = self.stepWriter.Transfer(shp, STEPControl_AsIs )
         if status == IFSelect_RetDone:
@@ -154,7 +154,7 @@ class STEPExporter(object):
         else:
             return False
         # restoring the old locale
-        locale.setlocale(locale.LC_ALL, loc)
+        # locale.setlocale(locale.LC_ALL, loc)
         if self.verbose:
             self.stepWriter.PrintStatsTransfer()
         

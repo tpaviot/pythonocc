@@ -130,9 +130,9 @@ def _Tcol_dim_1(li, _type):
 #     return pts
 
 def point_list_to_TColgp_Array1OfPnt(li):
-    pts = TColgp_Array1OfPnt(0, len(li)-1)
+    pts = TColgp_Array1OfPnt(1, len(li)+1)
     for n,i in enumerate(li):
-        pts.SetValue(n,i)
+        pts.SetValue(n+1,i)
     return pts
 
 def point2d_list_to_TColgp_Array1OfPnt2d(li):

@@ -23,6 +23,7 @@ import math
 import itertools
 
 from OCC.AIS import AIS_MultipleConnectedInteractive
+from OCC.MeshVS import MeshVS_Mesh, Handle_MeshVS_Mesh
 from OCC.TopoDS import *
 from OCC.Utils.Common import to_string, color
 from OCC.Utils.Construct import gp_Dir
@@ -253,6 +254,10 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 elif material:
                     shape_to_display = OCC.AIS.AIS_Shape(shape)
                     shape_to_display.SetMaterial(material)
+            if isinstance(shape, Handle_MeshVS_Mesh):
+                    shape_to_display = shape
+            if isinstance(shape, MeshVS_Mesh):
+                    shape_to_display = shape.GetHandle()
             else:
                 # TODO: can we use .Set to attach all TopoDS_Shapes to this AIS_Shape instance?
                 shape_to_display = OCC.AIS.AIS_Shape(shape)

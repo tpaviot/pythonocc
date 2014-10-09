@@ -1,3 +1,4 @@
+import itertools
 from OCC.BRep import BRep_Tool_Surface, BRep_Tool
 from OCC.BRepIntCurveSurface import BRepIntCurveSurface_Inter
 from OCC.BRepTopAdaptor import BRepTopAdaptor_FClass2d
@@ -16,7 +17,6 @@ from OCC.IntTools import IntTools_FaceFace
 from OCC.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.GeomProjLib import GeomProjLib
 from OCC.Adaptor3d import Adaptor3d_IsoCurve
-
 from OCC.KBE.base import Display, KbeObject, GlobalProperties
 from OCC.KBE.edge import Edge
 from OCC.Utils.Construct import *
@@ -190,12 +190,15 @@ class Face(KbeObject, TopoDS_Face):
     object is a Face iff part of a Solid
     otherwise the same methods do apply, apart from the topology obviously
     """
+
+    counter = itertools.count()
+
     def __init__(self, face):
         '''
         '''
-        KbeObject.__init__(self, name='face')
+        KbeObject.__init__(self)
         TopoDS_Face.__init__(self, face)
-
+        self.name = "face {0}".format(self.counter.next())
         # cooperative classes
         self.DiffGeom = DiffGeomSurface(self)
 
@@ -440,6 +443,7 @@ class Face(KbeObject, TopoDS_Face):
         """
         uv = 0 if u_or_v == 'u' else 1
         # TODO: REFACTOR, part of the Face class now...
+        # TODO: should use param_start & param_end to extract the iso curve given a specific domain
         iso = Adaptor3d_IsoCurve(self.adaptor_handle.GetHandle(), uv, param)
         return iso
 

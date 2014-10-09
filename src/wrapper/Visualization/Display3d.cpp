@@ -44,6 +44,7 @@ void Display3d::Init(long window_handle)
   #elif defined(__APPLE__) && !defined(MACOSX_USE_GLX)
       gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
       printf("OSX - Graphic device created.\n");
+      // no support for HiDPI / Retina devices
       myWindow = new Cocoa_Window (reinterpret_cast<NSView *>(window_handle));
       printf("Cocoa window created.\n");
   #else
