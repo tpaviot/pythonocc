@@ -37,3 +37,7 @@ Following projects are known to run/extend pythonocc features.
 
 - [Pycado](http://julienbld.github.io/pycado/) is an object oriented 3D CAD scripting language based on pythonocc with a graphical interactive editor.
 
+- [emcfab](http://code.google.com/p/emcfab/) aim is to create a rapid prototyping machine using standard 3-axis mill controller and hardware.
+
+- [kubos](http://sourceforge.net/projects/kubos/) Kubos is a CAD application which is in an early stage of development. A derivative version called Kubos Schript can be used for creating scripted objects.
+
