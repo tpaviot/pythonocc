@@ -41,3 +41,5 @@ Following projects are known to run/extend pythonocc features.
 
 - [kubos](http://sourceforge.net/projects/kubos/) Kubos is a CAD application which is in an early stage of development. A derivative version called Kubos Schript can be used for creating scripted objects.
 
+- [DeclaraCAD](https://github.com/codelv/declaracad) is an application that lets users define 3D models declaratively using enaml.
+
