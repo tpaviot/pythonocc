@@ -21,7 +21,12 @@ The pythonocc project has been splitted over different repositories.
 
 [pythonocc-core](https://github.com/tpaviot/pythonocc-core)
 ----------------
-The basis of pythonocc is a python wrapper for the [oce C++ library](https://github.com/tpaviot/oce), aka pythonocc-core. 100% pure Python module are also availble for topology and geometry process, visualization.
+The basis of pythonocc is a python wrapper for the [oce C++ library](https://github.com/tpaviot/oce), aka pythonocc-core. 100% pure Python module are also availble for topology and geometry process, visualization. SWIG is used to generate the C++
+to python bridge.
+
+[pythonocc-generator](https://github.com/tpaviot/pythonocc-generator)
+---------------------
+A set of python scripts that generate, from oce C++ headers, the SWIG files required by the pythonocc-core project.
 
 [pythonocc-documentation](https://github.com/tpaviot/pythonocc-documentation)
 -------------------------
