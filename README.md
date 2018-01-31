@@ -3,7 +3,7 @@ pythonOCC portal
 
 #### Get ready for agile CAD development ####
 
-pythonOCC is a 3D CAD/CAE/PLM development framework for the Python programming language. It provides features such as advanced topological and geometrical operations, data exchange (STEP, IGES, STL import/export), (GUI management support).
+pythonOCC is a 3D CAD/CAE/PLM development framework for the Python programming language. It provides features such as advanced topological and geometrical operations, data exchange (STEP, IGES, STL import/export), GUI based visualization (wx, Qt), jupyter notebook rendering.
 
 pythonOCC is built upon free and open source 3D CAD kernel [OCE project](https://github.com/tpaviot/oce/).
 
@@ -12,32 +12,25 @@ We use the following online resources:
        http://www.pythonocc.org
   * Mailing list
        http://groups.google.com/group/pythonocc/about
-  * Travic-CI
-       https://travis-ci.org/tpaviot/pythonocc
   * twitter
        https://twitter.com/pythonocc
 
-Subprojects
-===========
-pythonocc is composed of several parts: a set of optional python package that require a *core* to be used.
+Subprojects and related repositories
+====================================
+The pythonocc project has been splitted over different repositories.
 
-[pythonocc-core](https://github.com/tpaviot/pythonocc-core) (required)
+[pythonocc-core](https://github.com/tpaviot/pythonocc-core)
 ----------------
-The basis of pythonocc is a python wrapper for the [oce C++ library](https://github.com/tpaviot/oce), aka pythonocc-core. This is a requirement.
+The basis of pythonocc is a python wrapper for the [oce C++ library](https://github.com/tpaviot/oce), aka pythonocc-core. 100% pure Python module are also availble for topology and geometry process, visualization.
 
-[pythonocc-dataexchange](https://github.com/tpaviot/pythonocc-dataexchange) (optional)
-------------------------
-Built upon the core, provides extra data exchange features for common CAD file formats (STEP, IGES etc.)
+[pythonocc-documentation](https://github.com/tpaviot/pythonocc-documentation)
+-------------------------
+The place where all the documentation takes place (API doc, user guides, tutorials).
 
-Ecosystem
-=========
-Following projects are known to run/extend pythonocc features.
+[pythonocc-binderhub](https://github.com/tpaviot/pythonocc-binderhub)
+---------------------
+A docker image file that can be launched online thanks to the myBinder.org service.
 
-- [ccad](https://github.com/charles-sharman/ccad) is a text-based mechanical CAD (computer aided design) tool.  It is a python module you import within a python file or from the python prompt.  Once imported, you can create and view mechanical objects.
-
-- [Pycado](http://julienbld.github.io/pycado/) is an object oriented 3D CAD scripting language based on pythonocc with a graphical interactive editor.
-
-- [emcfab](http://code.google.com/p/emcfab/) aim is to create a rapid prototyping machine using standard 3-axis mill controller and hardware.
-
-- [kubos](http://sourceforge.net/projects/kubos/) Kubos is a CAD application which is in an early stage of development. A derivative version called Kubos Schript can be used for creating scripted objects.
-
+[pythonocc-demos](https://github.com/tpaviot/pythonocc-demos)
+-----------------
+Some demos/examples/code snippets.
